@@ -12,6 +12,9 @@
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */; };
 		06D2AC1F24599554000CC0AB /* Trick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1E24599554000CC0AB /* Trick.swift */; };
+		06D2AC222459B8EB000CC0AB /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC212459B8E2000CC0AB /* Heebo-Regular.ttf */; };
+		06D2AC242459B905000CC0AB /* Polly-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC232459B905000CC0AB /* Polly-Regular.otf */; };
+		06D2AC262459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */; };
 		06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */; };
 		0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D36244D88D200D13D0C /* AppDelegate.swift */; };
 		0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */; };
@@ -28,6 +31,9 @@
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06D2AC1E24599554000CC0AB /* Trick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trick.swift; sourceTree = "<group>"; };
+		06D2AC212459B8E2000CC0AB /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Heebo-Regular.ttf"; path = "../../../../font/Heebo/Heebo-Regular.ttf"; sourceTree = "<group>"; };
+		06D2AC232459B905000CC0AB /* Polly-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Polly-Regular.otf"; path = "../../../../font/Polly/Polly-Regular.otf"; sourceTree = "<group>"; };
+		06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TuskerGrotesk-4500Medium.ttf"; path = "../../../../font/Tusker/TuskerGrotesk-4500Medium.ttf"; sourceTree = "<group>"; };
 		06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F5D3D33244D88D200D13D0C /* crewsade_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crewsade_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D3D36244D88D200D13D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +115,9 @@
 		06D2AC202459B74C000CC0AB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */,
+				06D2AC232459B905000CC0AB /* Polly-Regular.otf */,
+				06D2AC212459B8E2000CC0AB /* Heebo-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -226,7 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */,
+				06D2AC222459B8EB000CC0AB /* Heebo-Regular.ttf in Resources */,
+				06D2AC242459B905000CC0AB /* Polly-Regular.otf in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
+				06D2AC262459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf in Resources */,
 				06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */,
 				0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */,
 				06601D012453187700267E5D /* AR.storyboard in Resources */,
