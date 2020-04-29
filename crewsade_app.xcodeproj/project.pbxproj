@@ -66,6 +66,7 @@
 		06BB7847245194F60018F605 /* SharedUI */ = {
 			isa = PBXGroup;
 			children = (
+				06D2AC202459B74C000CC0AB /* Fonts */,
 				06BB7848245195730018F605 /* Style */,
 			);
 			path = SharedUI;
@@ -103,6 +104,13 @@
 				06D2AC1E24599554000CC0AB /* Trick.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		06D2AC202459B74C000CC0AB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		0F5D3D2A244D88D200D13D0C = {
