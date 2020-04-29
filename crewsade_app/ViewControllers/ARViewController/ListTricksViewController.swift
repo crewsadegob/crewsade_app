@@ -10,6 +10,7 @@ import UIKit
 
 class ListTricksViewController: UIViewController {
 
+    @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
