@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="test" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
-                                <rect key="frame" x="0.0" y="102" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTricksCell" rowHeight="140" id="ANQ-Gl-ccS" customClass="ListTricksTableViewCell" customModule="crewsade_app" customModuleProvider="target">
@@ -38,14 +38,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAy-6o-lVG" userLabel="LevelTrick">
-                                                    <rect key="frame" x="40" y="56" width="300" height="21"/>
+                                                    <rect key="frame" x="30" y="56" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-Tt-PsI">
-                                                    <rect key="frame" x="40" y="80" width="300" height="49"/>
+                                                    <rect key="frame" x="30" y="80" width="300" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">A fundamental trick where the rider and board leap into the air without the use of the rider’s hands. A fundamental trick where the rider and board leap into the air.</string>
                                                     <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="11"/>
@@ -53,7 +53,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
-                                                    <rect key="frame" x="40" y="10" width="300" height="43"/>
+                                                    <rect key="frame" x="30" y="10" width="300" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="26"/>
                                                     <nil key="textColor"/>
@@ -70,7 +70,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHu-Mk-dsa">
-                                <rect key="frame" x="0.0" y="54" width="414" height="47"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="47"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="eiN-Ik-Ta0"/>
@@ -80,11 +80,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2rK-EE-vVg" firstAttribute="bottom" secondItem="CQM-Hz-ZbN" secondAttribute="bottom" constant="23" id="47B-5f-HaX"/>
                             <constraint firstItem="CQM-Hz-ZbN" firstAttribute="leading" secondItem="2rK-EE-vVg" secondAttribute="leading" id="6lg-rU-58L"/>
+                            <constraint firstItem="2rK-EE-vVg" firstAttribute="bottom" secondItem="CQM-Hz-ZbN" secondAttribute="bottom" id="Apm-8d-v4p"/>
+                            <constraint firstItem="GHu-Mk-dsa" firstAttribute="top" secondItem="2rK-EE-vVg" secondAttribute="top" id="OLJ-vH-wYZ"/>
                             <constraint firstItem="2rK-EE-vVg" firstAttribute="trailing" secondItem="CQM-Hz-ZbN" secondAttribute="trailing" id="PAC-bi-Zgy"/>
                             <constraint firstItem="CQM-Hz-ZbN" firstAttribute="top" secondItem="GHu-Mk-dsa" secondAttribute="bottom" constant="1" id="UNm-Fc-SK9"/>
-                            <constraint firstItem="GHu-Mk-dsa" firstAttribute="top" secondItem="2rK-EE-vVg" secondAttribute="top" constant="10" id="bIJ-54-9CZ"/>
                             <constraint firstItem="2rK-EE-vVg" firstAttribute="trailing" secondItem="GHu-Mk-dsa" secondAttribute="trailing" id="dR7-Wk-9qL"/>
                             <constraint firstItem="GHu-Mk-dsa" firstAttribute="leading" secondItem="2rK-EE-vVg" secondAttribute="leading" id="hso-9V-mX3"/>
                         </constraints>

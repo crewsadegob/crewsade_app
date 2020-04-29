@@ -16,7 +16,7 @@ class ListTricksViewController: UIViewController {
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
     
-    var buttonX:Int = 0
+    var buttonX:Int = 30
     let buttonY:Int = 0
     let buttonWidth = 63
     let buttonHeight = 50
@@ -78,7 +78,7 @@ class ListTricksViewController: UIViewController {
 
                 button.frame = CGRect(x: self.buttonX, y: self.buttonY, width: self.buttonWidth, height: self.buttonHeight)
                                                                 
-                button.setTitle(name, for: .normal)
+                    button.setTitle(name.uppercased(), for: .normal)
                     button.titleLabel?.font = UIFont(name: "Polly-Regular", size: 9)
                 button.tintColor = UIColor.CrewSade.secondaryColorLight
                                                                                       
@@ -91,15 +91,19 @@ class ListTricksViewController: UIViewController {
     }
     
     @objc private func levelClicked(_ sender: UIButton) {
-        sender.tintColor = UIColor.CrewSade.mainColor
-          let tricksCloned = tricksGet
-          
-          let tricksFiltering = tricksCloned.filter{ $0.level == sender.titleLabel?.text}
-          
-          tricksDisplay = tricksFiltering
-          ListTricksTable.reloadData()
+        let buttons = ButtonSection.subviews.filter{$0 is UIButton}
+        for button in buttons{
+            button.tintColor = UIColor.CrewSade.secondaryColorLight
+        }
         
-      }
+        sender.tintColor = UIColor.CrewSade.mainColor
+        let tricksCloned = tricksGet
+                  
+        let tricksFiltering = tricksCloned.filter{ $0.level?.lowercased() == sender.titleLabel?.text?.lowercased()}
+                  
+        tricksDisplay = tricksFiltering
+        ListTricksTable.reloadData()
+    }
     
 
     /*
