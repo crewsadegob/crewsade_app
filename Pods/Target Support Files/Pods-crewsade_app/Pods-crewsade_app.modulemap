@@ -1,0 +1,6 @@
+framework module Pods_crewsade_app {
+  umbrella header "Pods-crewsade_app-umbrella.h"
+
+  export *
+  module * { export * }
+}
