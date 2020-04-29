@@ -15,17 +15,22 @@ class ListTricksViewController: UIViewController {
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
-    var levelName:String?
+    
+    var buttonX:Int = 0
+    let buttonY:Int = 0
+    let buttonWidth = 63
+    let buttonHeight = 50
 
+    @IBOutlet weak var ButtonSection: UIStackView!
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
-
         // Do any additional setup after loading the view.
         getTricks()
+        createButtonFilter()
     }
     
    private func getTricks(){
@@ -45,9 +50,9 @@ class ListTricksViewController: UIViewController {
                              }
                              else{
                                  if let level = documentSnapshot{
-                                     self.levelName = level.data()?["Name"] as! String
-                                     
-                                     self.tricksGet.append(Trick(name: name, content: content, level: self.levelName))
+                                     let levelName = level.data()?["Name"] as! String
+                                    
+                                     self.tricksGet.append(Trick(name: name, content: content, level: levelName))
                                      self.tricksDisplay = self.tricksGet
                                     
                                     self.ListTricksTable.reloadData()
@@ -58,6 +63,43 @@ class ListTricksViewController: UIViewController {
                  }
              }
     }
+    
+    private func createButtonFilter(){
+        ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
+        
+        db.collection("level").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                let name = document.get("Name") as! String
+
+                let button = UIButton(type: .system)
+
+                button.frame = CGRect(x: self.buttonX, y: self.buttonY, width: self.buttonWidth, height: self.buttonHeight)
+                                                                
+                button.setTitle(name, for: .normal)
+                    button.titleLabel?.font = UIFont(name: "Polly-Regular", size: 9)
+                button.tintColor = UIColor.CrewSade.secondaryColorLight
+                                                                                      
+                self.buttonX += self.buttonWidth
+                button.addTarget(self, action: #selector(self.levelClicked(_:)), for: .touchUpInside)
+                self.ButtonSection.addSubview(button)
+                }
+            }
+        }
+    }
+    
+    @objc private func levelClicked(_ sender: UIButton) {
+        sender.tintColor = UIColor.CrewSade.mainColor
+          let tricksCloned = tricksGet
+          
+          let tricksFiltering = tricksCloned.filter{ $0.level == sender.titleLabel?.text}
+          
+          tricksDisplay = tricksFiltering
+          ListTricksTable.reloadData()
+        
+      }
     
 
     /*

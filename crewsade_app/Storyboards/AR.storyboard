@@ -71,6 +71,7 @@
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHu-Mk-dsa">
                                 <rect key="frame" x="0.0" y="54" width="414" height="47"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="eiN-Ik-Ta0"/>
                                     <constraint firstAttribute="width" constant="414" id="es3-vf-Czb"/>
@@ -90,6 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="2rK-EE-vVg"/>
                     </view>
                     <connections>
+                        <outlet property="ButtonSection" destination="GHu-Mk-dsa" id="x6K-IL-1oP"/>
                         <outlet property="ListTricksTable" destination="CQM-Hz-ZbN" id="ihP-zz-v6i"/>
                     </connections>
                 </viewController>
