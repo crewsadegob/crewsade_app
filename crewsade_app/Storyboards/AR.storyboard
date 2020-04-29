@@ -69,13 +69,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHu-Mk-dsa">
+                                <rect key="frame" x="0.0" y="54" width="414" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="eiN-Ik-Ta0"/>
+                                    <constraint firstAttribute="width" constant="414" id="es3-vf-Czb"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="2rK-EE-vVg" firstAttribute="trailing" secondItem="CQM-Hz-ZbN" secondAttribute="trailing" id="CoP-ik-TcE"/>
-                            <constraint firstItem="CQM-Hz-ZbN" firstAttribute="top" secondItem="2rK-EE-vVg" secondAttribute="top" constant="58" id="VNy-jV-9Ty"/>
-                            <constraint firstItem="CQM-Hz-ZbN" firstAttribute="leading" secondItem="2rK-EE-vVg" secondAttribute="leading" id="Y6I-9P-xRY"/>
-                            <constraint firstItem="2rK-EE-vVg" firstAttribute="bottom" secondItem="CQM-Hz-ZbN" secondAttribute="bottom" constant="23" id="gUe-s8-Feg"/>
+                            <constraint firstItem="2rK-EE-vVg" firstAttribute="bottom" secondItem="CQM-Hz-ZbN" secondAttribute="bottom" constant="23" id="47B-5f-HaX"/>
+                            <constraint firstItem="CQM-Hz-ZbN" firstAttribute="leading" secondItem="2rK-EE-vVg" secondAttribute="leading" id="6lg-rU-58L"/>
+                            <constraint firstItem="2rK-EE-vVg" firstAttribute="trailing" secondItem="CQM-Hz-ZbN" secondAttribute="trailing" id="PAC-bi-Zgy"/>
+                            <constraint firstItem="CQM-Hz-ZbN" firstAttribute="top" secondItem="GHu-Mk-dsa" secondAttribute="bottom" constant="1" id="UNm-Fc-SK9"/>
+                            <constraint firstItem="GHu-Mk-dsa" firstAttribute="top" secondItem="2rK-EE-vVg" secondAttribute="top" constant="10" id="bIJ-54-9CZ"/>
+                            <constraint firstItem="2rK-EE-vVg" firstAttribute="trailing" secondItem="GHu-Mk-dsa" secondAttribute="trailing" id="dR7-Wk-9qL"/>
+                            <constraint firstItem="GHu-Mk-dsa" firstAttribute="leading" secondItem="2rK-EE-vVg" secondAttribute="leading" id="hso-9V-mX3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2rK-EE-vVg"/>
                     </view>

@@ -7,16 +7,16 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 class ListTricksViewController: UIViewController {
 
-    var datas:[Trick] = [
-        Trick(name: "Ollie", content: "A fundamental trick where the rider and board leap into the air without the use of the rider’s hands. A fundamental trick where the rider and board leap into the air.", level: "Difficult"),
-        Trick(name: "Kickflip", content: "A fundamental trick where the rider and board leap into the air without the use of the rider’s hands. A fundamental trick where the rider and board leap into the air.", level: "Average"),
-        Trick(name: "HeelFlip", content: "A fundamental trick where the rider and board leap into the air without the use of the rider’s hands. A fundamental trick where the rider and board leap into the air.", level: "Basic"),
-        Trick(name: "Pop Shove It", content: "A fundamental trick where the rider and board leap into the air without the use of the rider’s hands. A fundamental trick where the rider and board leap into the air.", level: "Expert"),
-    ]
-    
+    let db = Firestore.firestore()
+    var tricksDisplay = [Trick]()
+    var tricksGet = [Trick]()
+    var levelName:String?
+
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,38 @@ class ListTricksViewController: UIViewController {
         ListTricksTable.dataSource = self
 
         // Do any additional setup after loading the view.
+        getTricks()
+    }
+    
+   private func getTricks(){
+        db.collection("tricks").getDocuments() { (querySnapshot, err) in
+                 if let err = err {
+                     print("Error getting documents: \(err)")
+                 } else {
+                     for document in querySnapshot!.documents {
+                         
+                         let level = document.get("Level") as! DocumentReference
+                         let name = document.get("Name") as! String
+                         let content = document.get("Content") as! String
+
+                         level.getDocument { (documentSnapshot, err) in
+                             if let err = err{
+                                 print("Error getting documents: \(err)")
+                             }
+                             else{
+                                 if let level = documentSnapshot{
+                                     self.levelName = level.data()?["Name"] as! String
+                                     
+                                     self.tricksGet.append(Trick(name: name, content: content, level: self.levelName))
+                                     self.tricksDisplay = self.tricksGet
+                                    
+                                    self.ListTricksTable.reloadData()
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
     }
     
 
@@ -42,7 +74,7 @@ class ListTricksViewController: UIViewController {
 
 extension ListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
+        return tricksDisplay.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,9 +90,9 @@ extension ListTricksViewController: UITableViewDataSource{
         default:
             cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColorLight
         }
-        cell.trickName.text = datas[indexPath.row].name.uppercased()
-        cell.trickContent.text = datas[indexPath.row].content
-        cell.trickLevel.text = datas[indexPath.row].level?.uppercased()
+        cell.trickName.text = tricksDisplay[indexPath.row].name.uppercased()
+        cell.trickContent.text = tricksDisplay[indexPath.row].content
+        cell.trickLevel.text = tricksDisplay[indexPath.row].level?.uppercased()
         
         return cell
     }
