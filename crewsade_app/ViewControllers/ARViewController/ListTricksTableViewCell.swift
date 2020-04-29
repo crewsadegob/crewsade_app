@@ -10,6 +10,9 @@ import UIKit
 
 class ListTricksTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var trickName: UILabel!
+    @IBOutlet weak var trickLevel: UILabel!
+    @IBOutlet weak var trickContent: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

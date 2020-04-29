@@ -10,12 +10,12 @@
         <!--List Tricks View Controller-->
         <scene sceneID="Ejx-Kt-f1C">
             <objects>
-                <viewController id="V2g-8V-bMH" customClass="ListTricksViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListTricksViewController" id="V2g-8V-bMH" customClass="ListTricksViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NtF-sT-nSX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="test" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
                                 <rect key="frame" x="0.0" y="102" width="414" height="737"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -27,21 +27,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
-                                                    <rect key="frame" x="40" y="20" width="42" height="21"/>
+                                                    <rect key="frame" x="40" y="20" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAy-6o-lVG" userLabel="LevelTrick">
-                                                    <rect key="frame" x="40" y="56" width="42" height="21"/>
+                                                    <rect key="frame" x="40" y="56" width="300" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="1KV-Tt-PsI">
-                                                    <rect key="frame" x="40" y="80" width="328" height="46"/>
+                                                    <rect key="frame" x="40" y="80" width="300" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
@@ -56,6 +56,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="trickContent" destination="1KV-Tt-PsI" id="nU2-G8-Kwb"/>
+                                            <outlet property="trickLevel" destination="vAy-6o-lVG" id="Xfd-8f-c7h"/>
+                                            <outlet property="trickName" destination="g3e-bM-Moc" id="9Kn-9S-QvW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
