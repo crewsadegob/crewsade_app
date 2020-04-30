@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061AAAB9245B42000010152E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* SignUp.storyboard */; };
+		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061AAAB8245B42000010152E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061AAABA245B42050010152E /* SignViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				061AAABB245B421A0010152E /* SignUpViewController.swift */,
+			);
+			path = SignViewControllers;
+			sourceTree = "<group>";
+		};
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				061AAABA245B42050010152E /* SignViewControllers */,
 				0633FC83245AD4AE0096D2E4 /* NavigationControllers */,
 				06601CFF2453167700267E5D /* ARViewController */,
 				0F5D3D3A244D88D200D13D0C /* ViewController.swift */,
@@ -123,6 +136,7 @@
 				0633FC7D245AC8C80096D2E4 /* Map.storyboard */,
 				0633FC7F245AC8D60096D2E4 /* Games.storyboard */,
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
+				061AAAB8245B42000010152E /* SignUp.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 			files = (
 				0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */,
 				0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */,
+				061AAAB9245B42000010152E /* SignUp.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
@@ -324,6 +339,7 @@
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
+				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
@@ -474,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86D3RP5457;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = crewsade_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -493,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86D3RP5457;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = crewsade_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
