@@ -25,7 +25,6 @@ class ListTricksViewController: UIViewController {
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
         // Do any additional setup after loading the view.

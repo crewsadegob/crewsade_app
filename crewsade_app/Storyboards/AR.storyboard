@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="test" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTricksCell" rowHeight="140" id="ANQ-Gl-ccS" customClass="ListTricksTableViewCell" customModule="crewsade_app" customModuleProvider="target">
@@ -90,6 +90,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2rK-EE-vVg"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="training" landscapeImage="training" largeContentSizeImage="training" id="Spw-hp-oTT"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ButtonSection" destination="GHu-Mk-dsa" id="x6K-IL-1oP"/>
                         <outlet property="ListTricksTable" destination="CQM-Hz-ZbN" id="ihP-zz-v6i"/>
@@ -100,4 +102,7 @@
             <point key="canvasLocation" x="650.72463768115949" y="-655.58035714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="training" width="25" height="25"/>
+    </resources>
 </document>
