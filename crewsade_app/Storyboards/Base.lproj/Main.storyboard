@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-2600" y="15"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Jvs-fj-ygQ">
             <objects>
-                <tabBarController id="ycm-B8-zDq" sceneMemberID="viewController">
+                <tabBarController id="ycm-B8-zDq" customClass="TabBarViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="j9k-2k-uqb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="gsB-lx-Am9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -41,6 +41,7 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="TabBar" destination="gsB-lx-Am9" id="yKz-ms-d2y"/>
                         <segue destination="NKo-Q3-ft0" kind="relationship" relationship="viewControllers" id="gvH-ta-OyR"/>
                         <segue destination="ENF-ya-CA7" kind="relationship" relationship="viewControllers" id="hK9-ux-IDP"/>
                         <segue destination="4ky-JR-2xC" kind="relationship" relationship="viewControllers" id="zPz-97-8v2"/>

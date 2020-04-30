@@ -10,9 +10,9 @@
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
-		0633FC85245AD4D70096D2E4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0633FC84245AD4D70096D2E4 /* TabBarViewController.swift */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
+		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */; };
 		06D2AC1F24599554000CC0AB /* Trick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1E24599554000CC0AB /* Trick.swift */; };
@@ -34,9 +34,9 @@
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		0633FC84245AD4D70096D2E4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
+		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06D2AC1E24599554000CC0AB /* Trick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trick.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0633FC84245AD4D70096D2E4 /* TabBarViewController.swift */,
+				06A52816245AE38D0026C2A1 /* TabBarViewController.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
-				0633FC85245AD4D70096D2E4 /* TabBarViewController.swift in Sources */,
+				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,

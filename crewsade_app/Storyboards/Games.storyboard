@@ -26,7 +26,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Pi3-MB-sjO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="lrT-Hc-agl"/>
+                    <tabBarItem key="tabBarItem" title="" image="games_icon" landscapeImage="games_icon" largeContentSizeImage="games_icon" id="lrT-Hc-agl"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j6-b8-bty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -34,4 +34,7 @@
             <point key="canvasLocation" x="-39.130434782608695" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="games_icon" width="24" height="25"/>
+    </resources>
 </document>

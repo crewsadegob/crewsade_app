@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--View Controller-->
         <scene sceneID="aaL-hy-Ijd">
             <objects>
                 <viewController storyboardIdentifier="Profile" id="IMa-Ql-Gr5" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="YDa-Dh-X6m"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="gPc-YW-0Zu"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile_icon" landscapeImage="profile_icon" largeContentSizeImage="profile_icon" id="gPc-YW-0Zu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNo-O3-khf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="profile_icon" width="25" height="18"/>
     </resources>
 </document>
