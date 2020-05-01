@@ -9,13 +9,14 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
 
 class ListTricksViewController: UIViewController {
 
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
-    
+    let userID = Auth.auth().currentUser!.uid
     var buttonX:Int = 30
     let buttonY:Int = 0
     let buttonWidth = 63
@@ -38,6 +39,8 @@ class ListTricksViewController: UIViewController {
                      print("Error getting documents: \(err)")
                  } else {
                      for document in querySnapshot!.documents {
+                        
+                         let reference = document.reference
                          
                          let level = document.get("Level") as! DocumentReference
                          let name = document.get("Name") as! String
@@ -51,7 +54,7 @@ class ListTricksViewController: UIViewController {
                                  if let level = documentSnapshot{
                                      let levelName = level.data()?["Name"] as! String
                                     
-                                     self.tricksGet.append(Trick(name: name, content: content, level: levelName))
+                                    self.tricksGet.append(Trick(name: name, content: content, level: levelName,reference: reference))
                                      self.tricksDisplay = self.tricksGet
                                     
                                     self.ListTricksTable.reloadData()
@@ -97,24 +100,19 @@ class ListTricksViewController: UIViewController {
         
         sender.tintColor = UIColor.CrewSade.mainColor
         let tricksCloned = tricksGet
-                  
         let tricksFiltering = tricksCloned.filter{ $0.level?.lowercased() == sender.titleLabel?.text?.lowercased()}
-                  
+        
         tricksDisplay = tricksFiltering
         ListTricksTable.reloadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func buttonSaveClicked(_ sender: UIButton){
+        sender.setImage(UIImage(named: "saveFull"), for: .normal)
+        self.db.collection("users").document(userID).collection("tricks").addDocument(data:[
+            "Trick": tricksDisplay[sender.tag].reference,
+            "Status": "None"
+        ])
     }
-    */
-
 }
 
 extension ListTricksViewController: UITableViewDataSource{
@@ -123,7 +121,6 @@ extension ListTricksViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
         
         switch indexPath.row % 2 {
@@ -138,6 +135,8 @@ extension ListTricksViewController: UITableViewDataSource{
         cell.trickName.text = tricksDisplay[indexPath.row].name.uppercased()
         cell.trickContent.text = tricksDisplay[indexPath.row].content
         cell.trickLevel.text = tricksDisplay[indexPath.row].level?.uppercased()
+        cell.saveButton.tag = indexPath.row
+        cell.saveButton.addTarget(self, action: #selector(buttonSaveClicked(_:)), for: .touchUpInside)
         
         return cell
     }
@@ -146,7 +145,9 @@ extension ListTricksViewController: UITableViewDataSource{
 
 extension ListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        print(tricksDisplay[indexPath.row].reference)
+      
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

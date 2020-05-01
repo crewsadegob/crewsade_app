@@ -18,16 +18,64 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Main List Tricks View Controller-->
+        <scene sceneID="4v1-yV-QGh">
+            <objects>
+                <viewController storyboardIdentifier="MainListTricksViewController" id="3ji-q7-NH0" customClass="MainListTricksViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dug-dV-wVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-ZR-G9y">
+                                <rect key="frame" x="43" y="384" width="336" height="330"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="irA-1l-EEs">
+                                        <rect key="frame" x="0.0" y="28" width="336" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="irA-1l-EEs" id="WiJ-7K-mqy">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-CS-ewj">
+                                <rect key="frame" x="132" y="219" width="150" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Voir tout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="V2g-8V-bMH" kind="show" id="1Qo-Vi-gom"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="e4u-62-5Yg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="training" landscapeImage="training" largeContentSizeImage="training" id="EJx-yj-S0a"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainListTricksTable" destination="VFe-ZR-G9y" id="sxS-Fz-lZI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qYp-KC-o76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-543.47826086956525" y="-656.25"/>
+        </scene>
         <!--List Tricks View Controller-->
         <scene sceneID="Ejx-Kt-f1C">
             <objects>
                 <viewController storyboardIdentifier="ListTricksViewController" id="V2g-8V-bMH" customClass="ListTricksViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NtF-sT-nSX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="test" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="test" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQM-Hz-ZbN">
+                                <rect key="frame" x="0.0" y="48" width="414" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTricksCell" rowHeight="140" id="ANQ-Gl-ccS" customClass="ListTricksTableViewCell" customModule="crewsade_app" customModuleProvider="target">
@@ -59,9 +107,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSv-dv-B5Z">
+                                                    <rect key="frame" x="379" y="20" width="15" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="save"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="saveButton" destination="OSv-dv-B5Z" id="NyQ-fR-X9m"/>
                                             <outlet property="trickContent" destination="1KV-Tt-PsI" id="nU2-G8-Kwb"/>
                                             <outlet property="trickLevel" destination="vAy-6o-lVG" id="Xfd-8f-c7h"/>
                                             <outlet property="trickName" destination="g3e-bM-Moc" id="9Kn-9S-QvW"/>
@@ -70,7 +124,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHu-Mk-dsa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="47"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="eiN-Ik-Ta0"/>
@@ -90,7 +144,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2rK-EE-vVg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="training" landscapeImage="training" largeContentSizeImage="training" id="Spw-hp-oTT"/>
+                    <navigationItem key="navigationItem" id="ZV8-Hi-k0x"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ButtonSection" destination="GHu-Mk-dsa" id="x6K-IL-1oP"/>
@@ -103,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="save" width="15" height="23"/>
         <image name="training" width="25" height="25"/>
     </resources>
 </document>
