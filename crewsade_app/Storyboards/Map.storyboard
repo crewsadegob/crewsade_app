@@ -10,7 +10,7 @@
         <!--Map-->
         <scene sceneID="JrO-0b-bXl">
             <objects>
-                <viewController storyboardIdentifier="Map" id="NKh-Au-RZ8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="NKh-Au-RZ8" customClass="ViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="05E-P1-vF6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rhl-Mk-Akq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="pencil" catalog="system" id="pUu-uy-Oc9"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="0CB-xC-XUQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sw-33-sKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -34,7 +34,4 @@
             <point key="canvasLocation" x="-20.289855072463769" y="100.44642857142857"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
-    </resources>
 </document>

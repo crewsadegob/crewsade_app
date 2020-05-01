@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061AAAB9245B42000010152E /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* SignUp.storyboard */; };
+		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
@@ -16,6 +16,7 @@
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
+		06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C56B8B245C358D00BAC9FB /* SignInViewController.swift */; };
 		06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */; };
 		06D2AC1F24599554000CC0AB /* Trick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D2AC1E24599554000CC0AB /* Trick.swift */; };
 		06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */; };
@@ -33,7 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		061AAAB8245B42000010152E /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		06C56B8B245C358D00BAC9FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06D2AC1E24599554000CC0AB /* Trick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trick.swift; sourceTree = "<group>"; };
 		06D2AC212459B8E2000CC0AB /* Heebo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Heebo-Regular.ttf"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				061AAABB245B421A0010152E /* SignUpViewController.swift */,
+				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
 			);
 			path = SignViewControllers;
 			sourceTree = "<group>";
@@ -136,7 +139,7 @@
 				0633FC7D245AC8C80096D2E4 /* Map.storyboard */,
 				0633FC7F245AC8D60096D2E4 /* Games.storyboard */,
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
-				061AAAB8245B42000010152E /* SignUp.storyboard */,
+				061AAAB8245B42000010152E /* Sign.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -274,7 +277,7 @@
 			files = (
 				0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */,
 				0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */,
-				061AAAB9245B42000010152E /* SignUp.storyboard in Resources */,
+				061AAAB9245B42000010152E /* Sign.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
 				0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */,
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
