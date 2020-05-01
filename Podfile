@@ -10,6 +10,9 @@ target 'crewsade_app' do
   
  # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
+  
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
 
   # Pods for crewsade_app
 
