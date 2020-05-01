@@ -16,38 +16,30 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordInput: UITextView!
     @IBOutlet weak var usernameInput: UITextView!
     
-    let db = Firestore.firestore()
+    let signUpManager = FirebaseAuthManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
     @IBAction func buttonSignUpClicked(_ sender: Any) {
         
         if let email = emailInput.text,let password = passwordInput.text, let username = usernameInput.text{
-            Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-                if let user = authResult?.user{
-                    print(user)
-                    self.db.collection("users").document(user.uid).setData([
-                        "Username": username])
+            signUpManager.createUser(email: email, password: password,username: username) {[weak self] (success) in
+                guard let `self` = self else { return }
+                if (success) {
+                    self.switchToMainStoryboard()
+                } else {
+                    print("Error")
                 }
-                else{
-                    print(error as Any)
-                }
+            }
         }
-          // ...
-        }
+    }
+    
+    private func switchToMainStoryboard(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
+        self.show(mainViewController, sender: nil)
     }
 }

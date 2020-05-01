@@ -13,6 +13,8 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var emailInput: UITextView!
     @IBOutlet weak var passwordInput: UITextView!
+    
+    let signInManager = FirebaseAuthManager()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,29 +25,20 @@ class SignInViewController: UIViewController {
     @IBAction func buttonSignInClicked(_ sender: Any) {
         
         if let email = emailInput.text, let password = passwordInput.text {
-            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                if let error = error{
-                    print(error)
-                }
-                else{
-                    print(result?.user)
-                    let View: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let mainVC = View.instantiateViewController(identifier: "TabBar")
-                    self.show(mainVC, sender: nil)
-                }
-            
-               
+            signInManager.signIn(email: email, password: password) {[weak self] (success) in
+                guard let `self` = self else { return }
+                    if (success) {
+                        self.switchToMainStoryboard()
+                    } else {
+                        print("There was an error.")
+                    }
             }
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func switchToMainStoryboard(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
+        self.show(mainViewController, sender: nil)
     }
-    */
-
 }
