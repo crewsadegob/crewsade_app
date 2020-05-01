@@ -15,6 +15,12 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         addCenterButton()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.hidesBackButton = true
+
+    }
 
     private func addCenterButton() {
         let button = UIButton(type: .custom)

@@ -30,7 +30,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="Jvs-fj-ygQ">
             <objects>
-                <tabBarController id="ycm-B8-zDq" customClass="TabBarViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" id="ycm-B8-zDq" customClass="TabBarViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="j9k-2k-uqb"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="gsB-lx-Am9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -71,7 +71,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Fg-yK-Woj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-804" y="-56"/>
+            <point key="canvasLocation" x="-757" y="-61"/>
         </scene>
         <!--Games-->
         <scene sceneID="Wlz-Bx-InB">
