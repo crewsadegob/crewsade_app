@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-1647" y="15"/>
         </scene>
-        <!--ListTricksViewController-->
+        <!--MainListTricksViewController-->
         <scene sceneID="in1-HS-TiA">
             <objects>
-                <viewControllerPlaceholder storyboardName="AR" referencedIdentifier="ListTricksViewController" id="ENF-ya-CA7" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AR" referencedIdentifier="MainListTricksViewController" id="ENF-ya-CA7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Cmn-r0-Qds"/>
                     <navigationItem key="navigationItem" id="8QG-Da-5fE"/>
                 </viewControllerPlaceholder>

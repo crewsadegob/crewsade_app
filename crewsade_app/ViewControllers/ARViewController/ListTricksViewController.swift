@@ -9,86 +9,53 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
 
 class ListTricksViewController: UIViewController {
-
+    
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
-    
+    var tricksSavedIndex = [Int]()
     var buttonX:Int = 30
     let buttonY:Int = 0
     let buttonWidth = 63
     let buttonHeight = 50
-
+    
     @IBOutlet weak var ButtonSection: UIStackView!
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
-        // Do any additional setup after loading the view.
-        getTricks()
-        createButtonFilter()
-    }
-    
-   private func getTricks(){
-        db.collection("tricks").getDocuments() { (querySnapshot, err) in
-                 if let err = err {
-                     print("Error getting documents: \(err)")
-                 } else {
-                     for document in querySnapshot!.documents {
-                         
-                         let level = document.get("Level") as! DocumentReference
-                         let name = document.get("Name") as! String
-                         let content = document.get("Content") as! String
-
-                         level.getDocument { (documentSnapshot, err) in
-                             if let err = err{
-                                 print("Error getting documents: \(err)")
-                             }
-                             else{
-                                 if let level = documentSnapshot{
-                                     let levelName = level.data()?["Name"] as! String
-                                    
-                                     self.tricksGet.append(Trick(name: name, content: content, level: levelName))
-                                     self.tricksDisplay = self.tricksGet
-                                    
-                                    self.ListTricksTable.reloadData()
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }
-    }
-    
-    private func createButtonFilter(){
-        ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
-        
-        db.collection("level").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                let name = document.get("Name") as! String
-
+        compareTricksSavedAndTricksList()
+        TrickService().getTricks(){ result in
+            if let tricks = result{
+                self.tricksGet = tricks
+                self.tricksDisplay = tricks
+                self.ListTricksTable.reloadData()
+            }
+        }
+        LevelService().getLevels(){ result in
+            if let level = result{
+                
                 let button = UIButton(type: .system)
-
+                
                 button.frame = CGRect(x: self.buttonX, y: self.buttonY, width: self.buttonWidth, height: self.buttonHeight)
-                                                                
-                    button.setTitle(name.uppercased(), for: .normal)
-                    button.titleLabel?.font = UIFont(name: "Polly-Regular", size: 9)
+                
+                button.setTitle(level.uppercased(), for: .normal)
+                button.titleLabel?.font = UIFont(name: "Polly-Regular", size: 9)
                 button.tintColor = UIColor.CrewSade.secondaryColorLight
-                                                                                      
+                
                 self.buttonX += self.buttonWidth
                 button.addTarget(self, action: #selector(self.levelClicked(_:)), for: .touchUpInside)
                 self.ButtonSection.addSubview(button)
-                }
             }
+            
         }
-    }
-    
+}
+
     @objc private func levelClicked(_ sender: UIButton) {
         let buttons = ButtonSection.subviews.filter{$0 is UIButton}
         for button in buttons{
@@ -97,24 +64,38 @@ class ListTricksViewController: UIViewController {
         
         sender.tintColor = UIColor.CrewSade.mainColor
         let tricksCloned = tricksGet
-                  
         let tricksFiltering = tricksCloned.filter{ $0.level?.lowercased() == sender.titleLabel?.text?.lowercased()}
-                  
+        
         tricksDisplay = tricksFiltering
         ListTricksTable.reloadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc private func buttonSaveClicked(_ sender: UIButton){
+        sender.setImage(UIImage(named: "saveFull"), for: .normal)
+        if let trickClicked = tricksDisplay[sender.tag].reference{
+            UserService().saveTricks(trick: trickClicked)
+        }
     }
-    */
+    
+    private func compareTricksSavedAndTricksList(){
+        UserService().getTricksSaved(){result in
+            if  let tricksSaved = result{
+                for trickSaved in tricksSaved {
+                    TrickService().getTricks(){result in
+                        if let listTricks = result{
+                            for (index,listTricksItem) in listTricks.enumerated() {
+                                if (listTricksItem.reference == trickSaved.reference) {
+                                    self.tricksSavedIndex.append(index)
+                                    self.ListTricksTable.reloadData()
 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+     }
 }
 
 extension ListTricksViewController: UITableViewDataSource{
@@ -123,8 +104,13 @@ extension ListTricksViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
+        
+        for index in tricksSavedIndex{
+            if indexPath.row == index {
+                cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
+            }
+        }
         
         switch indexPath.row % 2 {
         case 1:
@@ -135,9 +121,11 @@ extension ListTricksViewController: UITableViewDataSource{
         default:
             cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColorLight
         }
-        cell.trickName.text = tricksDisplay[indexPath.row].name.uppercased()
+        cell.trickName.text = tricksDisplay[indexPath.row].name?.uppercased()
         cell.trickContent.text = tricksDisplay[indexPath.row].content
         cell.trickLevel.text = tricksDisplay[indexPath.row].level?.uppercased()
+        cell.saveButton.tag = indexPath.row
+        cell.saveButton.addTarget(self, action: #selector(buttonSaveClicked(_:)), for: .touchUpInside)
         
         return cell
     }
@@ -146,7 +134,7 @@ extension ListTricksViewController: UITableViewDataSource{
 
 extension ListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        print(tricksDisplay[indexPath.row].reference)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

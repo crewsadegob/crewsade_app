@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class ListTricksTableViewCell: UITableViewCell {
 
     @IBOutlet weak var trickName: UILabel!
     @IBOutlet weak var trickLevel: UILabel!
     @IBOutlet weak var trickContent: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        print(self.index)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +29,4 @@ class ListTricksTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
