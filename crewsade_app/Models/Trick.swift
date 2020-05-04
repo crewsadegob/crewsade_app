@@ -11,9 +11,9 @@ import FirebaseFirestore
 
 struct Trick {
     
-    var name:String
-    var content:String
+    var name:String?
+    var content:String?
     var level:String?
-    var reference:DocumentReference
+    var reference:DocumentReference?
     
 }
