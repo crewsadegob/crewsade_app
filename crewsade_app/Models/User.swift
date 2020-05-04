@@ -12,5 +12,4 @@ struct User {
     let username: String?
     let firstname: String?
     let lastname: String?
-    var tricks: [Trick]
 }

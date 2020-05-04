@@ -13,9 +13,8 @@ import FirebaseAuth
 class MainListTricksViewController: UIViewController {
     
     let db = Firestore.firestore()
-    let userID = Auth.auth().currentUser!.uid
     
-    var tricks = [String]()
+    var tricks = [Trick]()
     
     @IBOutlet weak var mainListTricksTable: UITableView!
     override func viewDidLoad() {
@@ -25,45 +24,15 @@ class MainListTricksViewController: UIViewController {
         mainListTricksTable.delegate = self
 
         // Do any additional setup after loading the view.
-        
-        
-        db.collection("users").document(userID).collection("tricks").getDocuments() { (querySnapshot, err) in
-                 if let err = err {
-                     print("Error getting documents: \(err)")
-                 } else {
-                     for document in querySnapshot!.documents {
-                        
-                         let trick = document.get("Trick") as! DocumentReference
+        UserService().getTricksSaved(){ result in
+            if let tricksSaved = result{
+                self.tricks = tricksSaved
+                self.mainListTricksTable.reloadData()
 
-                         trick.getDocument { (documentSnapshot, err) in
-                             if let err = err{
-                                 print("Error getting documents: \(err)")
-                             }
-                             else{
-                                 if let trick = documentSnapshot{
-                                     let trickData = trick.data()
-                                     let trickName = trickData?["Name"] as! String
-                                    self.tricks.append(trickName)
-                                    self.mainListTricksTable.reloadData()
-                                 }
-                             }
-                         }
-                     }
-                 }
-             }
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MainListTricksViewController: UITableViewDataSource{
@@ -74,9 +43,7 @@ extension MainListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
         
-        
-        
-        cell.textLabel?.text = tricks[indexPath.row]
+        cell.textLabel?.text = tricks[indexPath.row].name?.uppercased()
         
         return cell
     }
@@ -86,8 +53,6 @@ extension MainListTricksViewController: UITableViewDataSource{
 extension MainListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-      
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

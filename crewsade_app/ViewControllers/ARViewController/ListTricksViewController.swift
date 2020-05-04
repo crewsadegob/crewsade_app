@@ -14,10 +14,8 @@ import FirebaseAuth
 class ListTricksViewController: UIViewController {
     
     let db = Firestore.firestore()
-    
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
-    let userID = Auth.auth().currentUser!.uid
     var buttonX:Int = 30
     let buttonY:Int = 0
     let buttonWidth = 63
@@ -30,10 +28,10 @@ class ListTricksViewController: UIViewController {
         ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
-        // Do any additional setup after loading the view.
         
         TrickService().getTricks(){ result in
             if let tricks = result{
+                self.tricksGet = tricks
                 self.tricksDisplay = tricks
                 self.ListTricksTable.reloadData()
             }
@@ -73,10 +71,9 @@ class ListTricksViewController: UIViewController {
     
     @objc private func buttonSaveClicked(_ sender: UIButton){
         sender.setImage(UIImage(named: "saveFull"), for: .normal)
-        self.db.collection("users").document(userID).collection("tricks").addDocument(data:[
-            "Trick": tricksDisplay[sender.tag].reference,
-            "Status": "None"
-        ])
+        if let trickClicked = tricksDisplay[sender.tag].reference{
+            UserService().saveTricks(trick: trickClicked)
+        }
     }
 }
 
@@ -111,8 +108,6 @@ extension ListTricksViewController: UITableViewDataSource{
 extension ListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(tricksDisplay[indexPath.row].reference)
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
