@@ -16,6 +16,7 @@ class ListTricksViewController: UIViewController {
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
+    var tricksSavedIndex = [Int]()
     var buttonX:Int = 30
     let buttonY:Int = 0
     let buttonWidth = 63
@@ -28,7 +29,7 @@ class ListTricksViewController: UIViewController {
         ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
-        
+        compareTricksSavedAndTricksList()
         TrickService().getTricks(){ result in
             if let tricks = result{
                 self.tricksGet = tricks
@@ -75,6 +76,26 @@ class ListTricksViewController: UIViewController {
             UserService().saveTricks(trick: trickClicked)
         }
     }
+    
+    private func compareTricksSavedAndTricksList(){
+        UserService().getTricksSaved(){result in
+            if  let tricksSaved = result{
+                for trickSaved in tricksSaved {
+                    TrickService().getTricks(){result in
+                        if let listTricks = result{
+                            for (index,listTricksItem) in listTricks.enumerated() {
+                                if (listTricksItem.reference == trickSaved.reference) {
+                                    self.tricksSavedIndex.append(index)
+                                    self.ListTricksTable.reloadData()
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+     }
 }
 
 extension ListTricksViewController: UITableViewDataSource{
@@ -84,6 +105,12 @@ extension ListTricksViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
+        
+        for index in tricksSavedIndex{
+            if indexPath.row == index {
+                cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
+            }
+        }
         
         switch indexPath.row % 2 {
         case 1:

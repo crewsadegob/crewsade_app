@@ -20,6 +20,8 @@ class ListTricksTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        print(self.index)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseFirestore
 
-
 class TrickService {
     
     let db = Firestore.firestore()
@@ -50,6 +49,5 @@ class TrickService {
             }
         }
     }
-    
-    
+
 }
