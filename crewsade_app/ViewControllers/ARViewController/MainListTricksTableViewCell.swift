@@ -16,8 +16,7 @@ class MainListTrickTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.backgroundColor = UIColor.CrewSade.secondaryColorLight
-        self.layer.cornerRadius = 15.0
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -25,5 +24,7 @@ class MainListTrickTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+    
 
 }

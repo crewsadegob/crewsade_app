@@ -20,10 +20,18 @@ class MainListTricksViewController: UIViewController {
     @IBOutlet weak var ctaButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = UIImage(named: "background.png")
+            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+            self.view.insertSubview(backgroundImage, at: 0)
+        
         ctaButton.layer.cornerRadius = 4.0
         ctaButton.addTextSpacing(6.0)
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
+        mainListTricksTable.layer.cornerRadius = 15.0
 
         // Do any additional setup after loading the view.
         UserService().getTricksSaved(){ result in
@@ -45,6 +53,10 @@ extension MainListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MainListTricksCell",for: indexPath) as! MainListTrickTableViewCell
         
+        cell.contentView.layer.cornerRadius = 15.0
+
+        cell.contentView.layoutMargins.bottom = 20.0
+        
         cell.nameLabel?.text = tricks[indexPath.row].name?.uppercased()
         
         return cell
@@ -60,4 +72,5 @@ extension MainListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+   
 }
