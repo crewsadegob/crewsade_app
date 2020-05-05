@@ -29,8 +29,7 @@ class ListTricksViewController: UIViewController {
         ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
-        compareTricksSavedAndTricksList()
-        TrickService().getTricks(){ result in
+        TrickService().compareSavedTricksAndListTricks(){ result in
             if let tricks = result{
                 self.tricksGet = tricks
                 self.tricksDisplay = tricks
@@ -71,31 +70,19 @@ class ListTricksViewController: UIViewController {
     }
     
     @objc private func buttonSaveClicked(_ sender: UIButton){
-        sender.setImage(UIImage(named: "saveFull"), for: .normal)
-        if let trickClicked = tricksDisplay[sender.tag].reference{
-            UserService().saveTricks(trick: trickClicked)
-        }
-    }
-    
-    private func compareTricksSavedAndTricksList(){
-        UserService().getTricksSaved(){result in
-            if  let tricksSaved = result{
-                for trickSaved in tricksSaved {
-                    TrickService().getTricks(){result in
-                        if let listTricks = result{
-                            for (index,listTricksItem) in listTricks.enumerated() {
-                                if (listTricksItem.reference == trickSaved.reference) {
-                                    self.tricksSavedIndex.append(index)
-                                    self.ListTricksTable.reloadData()
-
-                                }
-                            }
-                        }
-                    }
-                }
+        if (tricksDisplay[sender.tag].saved){
+            if let trickClicked = tricksDisplay[sender.tag].reference{
+                UserService().deleteTrick(trick: trickClicked)
             }
         }
-     }
+        else{
+            if let trickClicked = tricksDisplay[sender.tag].reference{
+                UserService().saveTrick(trick: trickClicked)
+            }
+        }
+        tricksDisplay[sender.tag].saved = !tricksDisplay[sender.tag].saved
+        print(tricksDisplay[sender.tag])
+    }
 }
 
 extension ListTricksViewController: UITableViewDataSource{
@@ -105,11 +92,11 @@ extension ListTricksViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
-        
-        for index in tricksSavedIndex{
-            if indexPath.row == index {
-                cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
-            }
+        if tricksDisplay[indexPath.row].saved {
+            cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
+        }
+        else{
+            cell.saveButton.setImage(UIImage(named: "save"), for: .normal)
         }
         
         switch indexPath.row % 2 {

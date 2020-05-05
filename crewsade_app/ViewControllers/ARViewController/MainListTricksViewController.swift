@@ -17,9 +17,11 @@ class MainListTricksViewController: UIViewController {
     var tricks = [Trick]()
     
     @IBOutlet weak var mainListTricksTable: UITableView!
+    @IBOutlet weak var ctaButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ctaButton.layer.cornerRadius = 4.0
+        ctaButton.addTextSpacing(6.0)
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
 
@@ -41,9 +43,9 @@ extension MainListTricksViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainListTricksCell",for: indexPath) as! MainListTrickTableViewCell
         
-        cell.textLabel?.text = tricks[indexPath.row].name?.uppercased()
+        cell.nameLabel?.text = tricks[indexPath.row].name?.uppercased()
         
         return cell
     }
@@ -56,6 +58,6 @@ extension MainListTricksViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 100
     }
 }

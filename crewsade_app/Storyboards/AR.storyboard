@@ -27,26 +27,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-ZR-G9y">
-                                <rect key="frame" x="43" y="384" width="336" height="330"/>
+                                <rect key="frame" x="20" y="529" width="374" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="irA-1l-EEs">
-                                        <rect key="frame" x="0.0" y="28" width="336" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainListTricksCell" rowHeight="100" id="irA-1l-EEs" customClass="MainListTrickTableViewCell" customModule="crewsade_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="irA-1l-EEs" id="WiJ-7K-mqy">
-                                            <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-U1-5ZJ">
+                                                    <rect key="frame" x="344" y="39" width="15" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="save"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EuE-Zl-puE" userLabel="NameTrick">
+                                                    <rect key="frame" x="20" y="29" width="316" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="26"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="EuE-Zl-puE" id="Uy2-7v-kI8"/>
+                                            <outlet property="saveButton" destination="1zy-U1-5ZJ" id="PKl-zG-aHv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-CS-ewj">
-                                <rect key="frame" x="132" y="219" width="150" height="57"/>
+                                <rect key="frame" x="117" y="386" width="180" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Voir tout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.43137254901960786" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
+                                <state key="normal" title="VOIR TOUT">
+                                    <color key="titleColor" red="1" green="0.9882352941176471" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="V2g-8V-bMH" kind="show" id="1Qo-Vi-gom"/>
@@ -59,6 +78,7 @@
                     <tabBarItem key="tabBarItem" title="" image="training" landscapeImage="training" largeContentSizeImage="training" id="EJx-yj-S0a"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ctaButton" destination="2tU-CS-ewj" id="bzC-sK-8l8"/>
                         <outlet property="mainListTricksTable" destination="VFe-ZR-G9y" id="sxS-Fz-lZI"/>
                     </connections>
                 </viewController>
