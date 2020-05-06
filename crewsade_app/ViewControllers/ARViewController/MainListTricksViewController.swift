@@ -40,6 +40,12 @@ class MainListTricksViewController: UIViewController {
             }
         }
     }
+    @objc private func buttonSaveClicked(_ sender: UIButton){
+        if let trickClicked = tricks[sender.tag].reference{
+            UserService().deleteTrick(trick: trickClicked)
+            mainListTricksTable.reloadData()
+        }
+    }
     
 }
 
@@ -57,12 +63,15 @@ extension MainListTricksViewController: UITableViewDataSource{
         roundedView.layer.backgroundColor = UIColor.CrewSade.secondaryColorLight.cgColor
         roundedView.layer.masksToBounds = false
         roundedView.layer.cornerRadius = 15.0
+    
         
         cell.contentView.addSubview(roundedView)
         cell.contentView.sendSubviewToBack(roundedView)
         
         cell.nameLabel?.text = tricks[indexPath.row].name?.uppercased()
-        
+        cell.saveButton.tag = indexPath.row
+        cell.saveButton.addTarget(self, action: #selector(self.buttonSaveClicked(_:)), for: .touchUpInside)
+
         return cell
     }
     

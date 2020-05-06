@@ -67,7 +67,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zy-U1-5ZJ">
                                                     <rect key="frame" x="344" y="49" width="15" height="23"/>
-                                                    <state key="normal" image="save"/>
+                                                    <state key="normal" image="saveFull"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -205,6 +205,7 @@
     </scenes>
     <resources>
         <image name="save" width="15" height="23"/>
+        <image name="saveFull" width="15" height="23"/>
         <image name="training" width="25" height="25"/>
     </resources>
 </document>
