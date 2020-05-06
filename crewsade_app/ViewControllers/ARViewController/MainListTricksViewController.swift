@@ -17,12 +17,20 @@ class MainListTricksViewController: UIViewController {
     var tricks = [Trick]()
     
     @IBOutlet weak var mainListTricksTable: UITableView!
+    @IBOutlet weak var ctaButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+            backgroundImage.image = UIImage(named: "background.png")
+            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+            self.view.insertSubview(backgroundImage, at: 0)
+        
+        ctaButton.layer.cornerRadius = 4.0
+        ctaButton.addTextSpacing(6.0)
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
-
         // Do any additional setup after loading the view.
         UserService().getTricksSaved(){ result in
             if let tricksSaved = result{
@@ -41,9 +49,19 @@ extension MainListTricksViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MainListTricksCell",for: indexPath) as! MainListTrickTableViewCell
         
-        cell.textLabel?.text = tricks[indexPath.row].name?.uppercased()
+        cell.contentView.backgroundColor = UIColor.clear
+        
+        let roundedView : UIView = UIView(frame: CGRect(x: 0, y: 10, width: cell.frame.size.width, height: 100))
+        roundedView.layer.backgroundColor = UIColor.CrewSade.secondaryColorLight.cgColor
+        roundedView.layer.masksToBounds = false
+        roundedView.layer.cornerRadius = 15.0
+        
+        cell.contentView.addSubview(roundedView)
+        cell.contentView.sendSubviewToBack(roundedView)
+        
+        cell.nameLabel?.text = tricks[indexPath.row].name?.uppercased()
         
         return cell
     }
@@ -56,6 +74,8 @@ extension MainListTricksViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 120
     }
+
+   
 }
