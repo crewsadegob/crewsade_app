@@ -17,7 +17,7 @@ class SignInViewController: UIViewController {
     let signInManager = FirebaseAuthManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupToHideKeyboardOnTapOnView()
         // Do any additional setup after loading the view.
     }
     
@@ -40,5 +40,23 @@ class SignInViewController: UIViewController {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
+    }
+}
+
+extension UIViewController
+{
+    func setupToHideKeyboardOnTapOnView()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
 }
