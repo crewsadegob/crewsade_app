@@ -11,8 +11,10 @@ import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
-    @IBOutlet weak var emailInput: UITextView!
-    @IBOutlet weak var passwordInput: UITextView!
+    var showPasswordIcon:Bool = true
+    
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
     
     let signInManager = FirebaseAuthManager()
     override func viewDidLoad() {
@@ -36,6 +38,15 @@ class SignInViewController: UIViewController {
         }
     }
     
+    @IBAction func showPassword(_ sender: Any) {
+        if(showPasswordIcon == true) {
+                  passwordInput.isSecureTextEntry = false
+              } else {
+                  passwordInput.isSecureTextEntry = true
+              }
+
+              showPasswordIcon = !showPasswordIcon
+    }
     private func switchToMainStoryboard(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
@@ -44,6 +55,9 @@ class SignInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = false
+        
+
+
     }
 }
 
