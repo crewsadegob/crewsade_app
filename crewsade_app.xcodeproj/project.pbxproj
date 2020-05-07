@@ -11,6 +11,7 @@
 		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
+		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -48,6 +49,7 @@
 		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -105,11 +107,12 @@
 			path = SignViewControllers;
 			sourceTree = "<group>";
 		};
-		063073752463FE4C00436F70 /* New Group */ = {
+		063073752463FE4C00436F70 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				063073762463FEEF00436F70 /* OnBoardingViewController.swift */,
 			);
-			path = "New Group";
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
@@ -154,7 +157,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				063073752463FE4C00436F70 /* New Group */,
+				063073752463FE4C00436F70 /* OnBoarding */,
 				061AAABA245B42050010152E /* SignViewControllers */,
 				0633FC83245AD4AE0096D2E4 /* NavigationControllers */,
 				06601CFF2453167700267E5D /* ARViewController */,
@@ -412,6 +415,7 @@
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
+				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,

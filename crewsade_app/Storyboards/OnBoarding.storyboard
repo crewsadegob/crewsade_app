@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kew-FS-P6J">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Polly-Regular.otf">
+            <string>Polly-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--On Boarding View Controller-->
         <scene sceneID="KN3-lV-BC2">
             <objects>
-                <viewController id="Kew-FS-P6J" sceneMemberID="viewController">
+                <viewController id="Kew-FS-P6J" customClass="OnBoardingViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KWA-JY-aqO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +30,7 @@
                                     <constraint firstAttribute="height" constant="40" id="BBK-GO-Xk4"/>
                                     <constraint firstAttribute="width" constant="180" id="NJ8-Wh-xKF"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="17"/>
                                 <color key="tintColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="GO !"/>
                             </button>
@@ -41,6 +47,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x9l-zj-Byz"/>
                     </view>
+                    <connections>
+                        <outlet property="OnBoardingButton" destination="W6A-fg-eOL" id="dO4-u4-MW1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSp-Fd-UxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
