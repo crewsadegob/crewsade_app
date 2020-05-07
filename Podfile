@@ -13,6 +13,7 @@ target 'crewsade_app' do
   
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
+  pod 'FBSDKLoginKit'
 
   # Pods for crewsade_app
 

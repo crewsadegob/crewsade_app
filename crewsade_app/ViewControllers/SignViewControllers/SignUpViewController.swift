@@ -9,7 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
-
+import FBSDKLoginKit
+import FBSDKCoreKit
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailInput: UITextView!
@@ -21,6 +22,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         self.setupToHideKeyboardOnTapOnView()
         // Do any additional setup after loading the view.
+
     }
  
     @IBAction func buttonSignUpClicked(_ sender: Any) {
