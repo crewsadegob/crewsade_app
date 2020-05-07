@@ -23,6 +23,7 @@
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
+		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C56B8B245C358D00BAC9FB /* SignInViewController.swift */; };
 		06C6AF0524600A2A008E45AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0424600A2A008E45AC /* User.swift */; };
@@ -62,6 +63,7 @@
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06C56B8B245C358D00BAC9FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		06C6AF0424600A2A008E45AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				06BB7849245195910018F605 /* Colors.swift */,
 				06E352CB2459D14500722B02 /* StackView.swift */,
 				06987C9C2461A5B100D4BF8F /* Button.swift */,
+				06B03C422464553300191C15 /* textField.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
+				06B03C432464553300191C15 /* textField.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
 				0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */,
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,

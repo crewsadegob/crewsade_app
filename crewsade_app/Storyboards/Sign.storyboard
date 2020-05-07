@@ -219,6 +219,9 @@
                                 <state key="normal" title="Se connecter avec Facebook">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButton:" destination="qmW-vq-Xne" eventType="touchUpInside" id="Yxt-MO-nE6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0v-bM-6D4">
                                 <rect key="frame" x="17" y="184" width="340" height="40"/>
@@ -266,6 +269,13 @@
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="0df-dr-KyQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnq-go-OXp">
+                                <rect key="frame" x="17" y="72" width="402" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.91764705882352937" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iIu-is-4BZ"/>
@@ -273,6 +283,7 @@
                     <navigationItem key="navigationItem" title="CONNEXION" id="guN-VT-d6Q"/>
                     <connections>
                         <outlet property="emailInput" destination="5lg-xM-c99" id="cTu-gU-Ipe"/>
+                        <outlet property="errorDisplay" destination="wnq-go-OXp" id="BuA-LF-i4g"/>
                         <outlet property="passwordInput" destination="UCw-CU-zbG" id="Qkd-FD-mDn"/>
                     </connections>
                 </viewController>

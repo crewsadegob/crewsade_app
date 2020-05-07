@@ -13,12 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
-       let loginButton = FBLoginButton()
-        let buttonText = NSAttributedString(string: "Connexion avec Facebook")
-        loginButton.setAttributedTitle(buttonText, for: .normal)
-       loginButton.center = view.center
-       view.addSubview(loginButton)
       
     }
     
