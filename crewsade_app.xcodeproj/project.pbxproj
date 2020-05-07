@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */; };
 		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
+		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
+		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
+		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -38,12 +42,16 @@
 		0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D3D3C244D88D200D13D0C /* Main.storyboard */; };
 		0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D3D3F244D88D500D13D0C /* Assets.xcassets */; };
 		0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F5D3D41244D88D500D13D0C /* LaunchScreen.storyboard */; };
-		125240290539B23050BFC336 /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B16517FEB9E9BF248EFC5C /* Pods_crewsade_app.framework */; };
+		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTricksCollectionViewCell.swift; sourceTree = "<group>"; };
 		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -76,7 +84,7 @@
 		0F5D3D42244D88D500D13D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F5D3D44244D88D500D13D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
-		81B16517FEB9E9BF248EFC5C /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125240290539B23050BFC336 /* Pods_crewsade_app.framework in Frameworks */,
+				A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,8 +105,17 @@
 			children = (
 				061AAABB245B421A0010152E /* SignUpViewController.swift */,
 				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
+				0630737824640A7F00436F70 /* SignsViewController.swift */,
 			);
 			path = SignViewControllers;
+			sourceTree = "<group>";
+		};
+		063073752463FE4C00436F70 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				063073762463FEEF00436F70 /* OnBoardingViewController.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
@@ -116,6 +133,7 @@
 				06D2AC1B24598552000CC0AB /* ListTricksTableViewCell.swift */,
 				069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */,
 				06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */,
+				061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */,
 			);
 			path = ARViewController;
 			sourceTree = "<group>";
@@ -142,6 +160,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				063073752463FE4C00436F70 /* OnBoarding */,
 				061AAABA245B42050010152E /* SignViewControllers */,
 				0633FC83245AD4AE0096D2E4 /* NavigationControllers */,
 				06601CFF2453167700267E5D /* ARViewController */,
@@ -159,6 +178,7 @@
 				0633FC7F245AC8D60096D2E4 /* Games.storyboard */,
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
 				061AAAB8245B42000010152E /* Sign.storyboard */,
+				063073732463FAF800436F70 /* OnBoarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -241,7 +261,7 @@
 		DF7087A665FCF5AC616A4BB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81B16517FEB9E9BF248EFC5C /* Pods_crewsade_app.framework */,
+				97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,8 +277,8 @@
 				0F5D3D2F244D88D200D13D0C /* Sources */,
 				0F5D3D30244D88D200D13D0C /* Frameworks */,
 				0F5D3D31244D88D200D13D0C /* Resources */,
-				C25B1544B2163D545BE10DD9 /* [CP] Embed Pods Frameworks */,
 				877BF4EDEB1E4D8EDA98E187 /* [CP] Copy Pods Resources */,
+				85B6D729DF078544FB728B29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,6 +330,7 @@
 				0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */,
 				0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */,
 				061AAAB9245B42000010152E /* Sign.storyboard in Resources */,
+				063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
@@ -325,6 +346,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		85B6D729DF078544FB728B29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		877BF4EDEB1E4D8EDA98E187 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,23 +402,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C25B1544B2163D545BE10DD9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-crewsade_app/Pods-crewsade_app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -397,6 +418,7 @@
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
+				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
@@ -406,6 +428,8 @@
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
+				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
+				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86D3RP5457;
 				INFOPLIST_FILE = crewsade_app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,7 +586,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LB.crewsade-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -573,6 +598,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 86D3RP5457;
 				INFOPLIST_FILE = crewsade_app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,7 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LB.crewsade-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
