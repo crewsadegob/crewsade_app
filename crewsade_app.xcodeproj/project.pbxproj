@@ -12,6 +12,7 @@
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
 		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
+		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -50,6 +51,7 @@
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				061AAABB245B421A0010152E /* SignUpViewController.swift */,
 				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
+				0630737824640A7F00436F70 /* SignsViewController.swift */,
 			);
 			path = SignViewControllers;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
+				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);

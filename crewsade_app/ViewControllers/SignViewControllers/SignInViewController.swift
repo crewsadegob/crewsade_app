@@ -41,6 +41,10 @@ class SignInViewController: UIViewController {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = false
+    }
 }
 
 extension UIViewController
