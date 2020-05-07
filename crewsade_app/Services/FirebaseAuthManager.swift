@@ -11,18 +11,19 @@ import FirebaseAuth
 import FirebaseFirestore
 import FBSDKCoreKit
 import FBSDKLoginKit
+import GoogleSignIn
 
-class FirebaseAuthManager {
+
+class FirebaseAuthManager{
     
     let db = Firestore.firestore()
     let loginManager = LoginManager()
     
     
     
-    func createUser(email: String, password: String, username: String, completionBlock: @escaping (_ success: Bool) -> Void){
+    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void){
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
-                self.db.collection("users").document(user.uid).setData(["Username": username])
                 completionBlock(true)
             } else {
                 completionBlock(false)
@@ -39,6 +40,13 @@ class FirebaseAuthManager {
             }
         }
     }
+    
+    func googleLogin( _ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!,completionBlock: @escaping (_ success: Bool) -> Void){
+          
+        
+        
+    }
+    
     func facebookLogin(_ sender: Any, viewController: UIViewController, completionBlock: @escaping (_ success: Bool) -> Void){
         if let sender = AccessToken.current {
             completionBlock(true)

@@ -17,6 +17,12 @@ class UserService {
     
     var tricks = [Trick]()
     
+    func setUsername(username: String){
+        if let user = user {
+            db.collection("users").document(user.uid).setData(["Username": username])
+        }
+    }
+    
     func saveTrick(trick: DocumentReference){
         if let user = user {
             trick.getDocument{(DocumentSnapshot, err) in
@@ -78,13 +84,13 @@ class UserService {
                                 
                                 self.tricks.append(Trick(name: trickName, content: trickContent, level: trickLevel, reference: reference))
                                 group.leave()
-
+                                
                             }
                         }
                     }
                 }
                 
-
+                
                 group.notify(queue: .main, execute: {
                     completionHandler(self.tricks)
                 })

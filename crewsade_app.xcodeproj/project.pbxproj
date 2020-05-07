@@ -22,6 +22,8 @@
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
+		06A053092464B59F00EB21C1 /* SetUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A053082464B59F00EB21C1 /* SetUsernameViewController.swift */; };
+		06A0530B2464B65C00EB21C1 /* Username.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A0530A2464B65C00EB21C1 /* Username.storyboard */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
@@ -62,6 +64,8 @@
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
+		06A053082464B59F00EB21C1 /* SetUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUsernameViewController.swift; sourceTree = "<group>"; };
+		06A0530A2464B65C00EB21C1 /* Username.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Username.storyboard; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				061AAABB245B421A0010152E /* SignUpViewController.swift */,
 				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
 				0630737824640A7F00436F70 /* SignsViewController.swift */,
+				06A053082464B59F00EB21C1 /* SetUsernameViewController.swift */,
 			);
 			path = SignViewControllers;
 			sourceTree = "<group>";
@@ -182,6 +187,7 @@
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
 				061AAAB8245B42000010152E /* Sign.storyboard */,
 				063073732463FAF800436F70 /* OnBoarding.storyboard */,
+				06A0530A2464B65C00EB21C1 /* Username.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
+				06A0530B2464B65C00EB21C1 /* Username.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
 				06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */,
 				0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */,
@@ -433,6 +440,7 @@
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
+				06A053092464B59F00EB21C1 /* SetUsernameViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);

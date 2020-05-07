@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
-
+import GoogleSignIn
 class SignInViewController: UIViewController {
 
     var showPasswordIcon:Bool = true
@@ -24,7 +24,8 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
-        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+
     }
     
 
@@ -37,6 +38,9 @@ class SignInViewController: UIViewController {
                 print("There was an error.")
             }
         }
+    }
+    @IBAction func googleButtonclicked(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
     }
     @IBAction func buttonSignInClicked(_ sender: Any) {
         if let email = emailInput.text, let password = passwordInput.text {
