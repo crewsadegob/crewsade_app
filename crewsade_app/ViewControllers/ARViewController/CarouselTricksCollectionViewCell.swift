@@ -23,6 +23,8 @@ class CarouselTricksCollectionViewCell: UICollectionViewCell {
            if let trick = trick {
             nameTrick.text = trick.name
             nameLevel.text = trick.level
+         
+            
                
            } else {
                nameTrick.text = nil

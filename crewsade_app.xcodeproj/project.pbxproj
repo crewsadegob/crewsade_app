@@ -10,6 +10,7 @@
 		061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */; };
 		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
+		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -46,6 +47,7 @@
 		061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTricksCollectionViewCell.swift; sourceTree = "<group>"; };
 		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,13 @@
 			path = SignViewControllers;
 			sourceTree = "<group>";
 		};
+		063073752463FE4C00436F70 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +154,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				063073752463FE4C00436F70 /* New Group */,
 				061AAABA245B42050010152E /* SignViewControllers */,
 				0633FC83245AD4AE0096D2E4 /* NavigationControllers */,
 				06601CFF2453167700267E5D /* ARViewController */,
@@ -162,6 +172,7 @@
 				0633FC7F245AC8D60096D2E4 /* Games.storyboard */,
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
 				061AAAB8245B42000010152E /* Sign.storyboard */,
+				063073732463FAF800436F70 /* OnBoarding.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -313,6 +324,7 @@
 				0F5D3D43244D88D500D13D0C /* LaunchScreen.storyboard in Resources */,
 				0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */,
 				061AAAB9245B42000010152E /* Sign.storyboard in Resources */,
+				063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
@@ -566,7 +578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LB.crewsade-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -586,7 +598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "LB.crewsade-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

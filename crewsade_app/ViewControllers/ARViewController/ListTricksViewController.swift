@@ -107,6 +107,9 @@ extension ListTricksViewController: UITableViewDataSource{
             cell.trickContent.textColor = UIColor.CrewSade.secondaryColorLight
         default:
             cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColor
+            cell.trickName.textColor = UIColor.CrewSade.darkGrey
+            cell.trickLevel.textColor = UIColor.CrewSade.darkGrey
+            cell.trickContent.textColor = UIColor.CrewSade.darkGrey
         }
         cell.trickName.text = tricksDisplay[indexPath.row].name?.uppercased()
         cell.trickContent.text = tricksDisplay[indexPath.row].content
