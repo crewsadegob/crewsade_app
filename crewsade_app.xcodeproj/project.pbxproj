@@ -19,6 +19,10 @@
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6924657EF000280A7F /* ProfileViewController.swift */; };
+		06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */; };
+		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
+		06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F712465C18400280A7F /* GoogleAuthManager.swift */; };
+		06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F732465C19700280A7F /* FacebookAuthManager.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
@@ -60,6 +64,10 @@
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		06805F6924657EF000280A7F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfileInformation.storyboard; sourceTree = "<group>"; };
+		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
+		06805F712465C18400280A7F /* GoogleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthManager.swift; sourceTree = "<group>"; };
+		06805F732465C19700280A7F /* FacebookAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthManager.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 				061AAABB245B421A0010152E /* SignUpViewController.swift */,
 				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
 				0630737824640A7F00436F70 /* SignsViewController.swift */,
+				06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */,
 			);
 			path = SignViewControllers;
 			sourceTree = "<group>";
@@ -148,6 +157,16 @@
 				06805F6924657EF000280A7F /* ProfileViewController.swift */,
 			);
 			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		06805F752465C1A100280A7F /* AuthManagers */ = {
+			isa = PBXGroup;
+			children = (
+				069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */,
+				06805F712465C18400280A7F /* GoogleAuthManager.swift */,
+				06805F732465C19700280A7F /* FacebookAuthManager.swift */,
+			);
+			path = AuthManagers;
 			sourceTree = "<group>";
 		};
 		06BB7847245194F60018F605 /* SharedUI */ = {
@@ -193,6 +212,7 @@
 				0633FC81245AC8F20096D2E4 /* Profile.storyboard */,
 				061AAAB8245B42000010152E /* Sign.storyboard */,
 				063073732463FAF800436F70 /* OnBoarding.storyboard */,
+				06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -200,8 +220,8 @@
 		06C6AF0624600E42008E45AC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06805F752465C1A100280A7F /* AuthManagers */,
 				06C6AF0924600F7D008E45AC /* TrickService.swift */,
-				069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */,
 				06C6AF0B246021D5008E45AC /* LevelService.swift */,
 				06C6AF0D24604507008E45AC /* UserService.swift */,
 			);
@@ -347,6 +367,7 @@
 				063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */,
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
+				06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
 				06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */,
 				0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */,
@@ -423,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* textField.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
@@ -430,6 +452,8 @@
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
+				06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */,
+				06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */,
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,

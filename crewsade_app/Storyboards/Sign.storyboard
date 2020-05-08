@@ -75,7 +75,7 @@
                                 <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="vdsgds" placeholder="Choisis ton blase" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqv-6O-zVH">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choisis ton blase" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqv-6O-zVH">
                                 <rect key="frame" x="16" y="180" width="340" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,20 +129,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charaMainSign" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
-                                <rect key="frame" x="52" y="26" width="270" height="368"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charaMainSign" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
+                                <rect key="frame" x="103" y="81" width="169" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REJOINS LE CREW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkP-Nf-EWL">
-                                <rect key="frame" x="58" y="421" width="258" height="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="REJOINS LE CREW" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkP-Nf-EWL">
+                                <rect key="frame" x="41" y="274" width="258" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="42"/>
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-nC-vmz">
-                                <rect key="frame" x="0.0" y="510" width="375" height="157"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-nC-vmz">
+                                <rect key="frame" x="0.0" y="373" width="375" height="294"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-7b-ePf">
-                                        <rect key="frame" x="17" y="41" width="340" height="40"/>
+                                        <rect key="frame" x="17" y="164" width="340" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
@@ -153,50 +156,53 @@
                                             <segue destination="Sle-FI-nEr" kind="show" id="DOg-Zs-wl9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-9I-dlO">
-                                        <rect key="frame" x="17" y="90" width="340" height="40"/>
-                                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Geq-84-JjA"/>
-                                            <constraint firstAttribute="width" constant="340" id="bMn-uP-jcO"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj6-9I-dlO">
+                                        <rect key="frame" x="17" y="213" width="340" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
                                         <state key="normal" title="Se connecter">
-                                            <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="qmW-vq-Xne" kind="show" id="YGk-4Q-gkZ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MjT-Ci-PoZ">
+                                        <rect key="frame" x="17" y="43" width="340" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
+                                        <state key="normal" title="Continuer avec Facebook">
+                                            <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="facebookButton:" destination="qmW-vq-Xne" eventType="touchUpInside" id="6Mp-lR-uPv"/>
+                                            <action selector="facebookButtonClicked:" destination="UTK-Ee-d4W" eventType="touchUpInside" id="XC0-Kk-NSG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7V8-xG-duI">
+                                        <rect key="frame" x="17" y="91" width="340" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
+                                        <state key="normal" title="Continuer avec Google">
+                                            <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="googleButtonClicked:" destination="UTK-Ee-d4W" eventType="touchUpInside" id="qDL-ru-32w"/>
+                                            <action selector="googleButtonclicked:" destination="qmW-vq-Xne" eventType="touchUpInside" id="U19-TB-1iu"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-h8-hNV">
+                                        <rect key="frame" x="0.0" y="-29" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94509803921568625" green="0.91764705882352937" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Uj6-9I-dlO" secondAttribute="trailing" constant="18" id="9zB-ec-yKj"/>
-                                    <constraint firstAttribute="bottom" secondItem="Uj6-9I-dlO" secondAttribute="bottom" constant="27" id="BFA-US-xB1"/>
-                                    <constraint firstItem="Uj6-9I-dlO" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" constant="17" id="uv5-aD-f1W"/>
-                                </constraints>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-h8-hNV">
-                                <rect key="frame" x="0.0" y="483" width="375" height="50"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="trailing" secondItem="kus-up-uoU" secondAttribute="trailing" constant="53" id="4tB-Zf-y2g"/>
-                            <constraint firstItem="kus-up-uoU" firstAttribute="leading" secondItem="GOR-Yc-ZHB" secondAttribute="leading" constant="52" id="AjD-LV-Drz"/>
-                            <constraint firstItem="Pp9-h8-hNV" firstAttribute="top" secondItem="nkP-Nf-EWL" secondAttribute="bottom" constant="17" id="CAX-B3-yhV"/>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="top" secondItem="kus-up-uoU" secondAttribute="top" constant="18" id="MCW-qx-kNI"/>
-                            <constraint firstItem="Pp9-h8-hNV" firstAttribute="leading" secondItem="GOR-Yc-ZHB" secondAttribute="leading" id="MOS-Cs-qqU"/>
-                            <constraint firstItem="nkP-Nf-EWL" firstAttribute="leading" secondItem="GOR-Yc-ZHB" secondAttribute="leading" constant="58" id="QFH-CS-XSk"/>
-                            <constraint firstItem="nkP-Nf-EWL" firstAttribute="top" secondItem="kus-up-uoU" secondAttribute="bottom" constant="27" id="QTM-FC-Gfb"/>
-                            <constraint firstItem="f6E-nC-vmz" firstAttribute="top" secondItem="GOR-Yc-ZHB" secondAttribute="top" constant="466" id="Ssb-KM-cye"/>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="trailing" secondItem="nkP-Nf-EWL" secondAttribute="trailing" constant="59" id="Wqz-Lo-LkZ"/>
-                            <constraint firstItem="f6E-nC-vmz" firstAttribute="leading" secondItem="GOR-Yc-ZHB" secondAttribute="leading" id="YMa-1d-MRc"/>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="trailing" secondItem="Pp9-h8-hNV" secondAttribute="trailing" id="bkP-Os-11E"/>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="trailing" secondItem="f6E-nC-vmz" secondAttribute="trailing" id="cFl-OF-CTg"/>
-                            <constraint firstItem="GOR-Yc-ZHB" firstAttribute="bottom" secondItem="f6E-nC-vmz" secondAttribute="bottom" id="pIk-jp-H8u"/>
-                            <constraint firstItem="kus-up-uoU" firstAttribute="leading" secondItem="nkP-Nf-EWL" secondAttribute="trailing" constant="-264" id="zpe-rN-Unz"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GOR-Yc-ZHB"/>
                     </view>
                     <navigationItem key="navigationItem" id="b9i-oV-Ppv"/>
@@ -213,30 +219,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jax-yc-7KV">
-                                <rect key="frame" x="17" y="136" width="340" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                <state key="normal" title="Se connecter avec Facebook">
-                                    <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookButton:" destination="qmW-vq-Xne" eventType="touchUpInside" id="Yxt-MO-nE6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0v-bM-6D4">
-                                <rect key="frame" x="17" y="184" width="340" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91764705882352937" green="0.2627450980392157" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                <state key="normal" title="Se connecter avec Google">
-                                    <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="googleButtonclicked:" destination="qmW-vq-Xne" eventType="touchUpInside" id="htf-BH-3RT"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5lg-xM-c99">
                                 <rect key="frame" x="17" y="307" width="340" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -267,28 +249,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH5-Em-br0">
-                                <rect key="frame" x="327" y="368" width="25" height="25"/>
+                                <rect key="frame" x="327" y="368" width="25" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="eye"/>
+                                <state key="normal" backgroundImage="eyeClose"/>
                                 <connections>
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="0df-dr-KyQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnq-go-OXp">
-                                <rect key="frame" x="17" y="72" width="402" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.91764705882352937" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iIu-is-4BZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="CONNEXION" id="guN-VT-d6Q"/>
                     <connections>
                         <outlet property="emailInput" destination="5lg-xM-c99" id="cTu-gU-Ipe"/>
-                        <outlet property="errorDisplay" destination="wnq-go-OXp" id="BuA-LF-i4g"/>
                         <outlet property="passwordInput" destination="UCw-CU-zbG" id="Qkd-FD-mDn"/>
                     </connections>
                 </viewController>
@@ -299,7 +273,6 @@
     </scenes>
     <resources>
         <image name="charaMainSign" width="277" height="368"/>
-        <image name="eye" width="512" height="512"/>
         <image name="eyeClose" width="24" height="22"/>
         <image name="picturePicker" width="120" height="120"/>
         <image name="separator" width="375" height="50"/>
