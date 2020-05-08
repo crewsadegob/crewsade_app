@@ -13,7 +13,8 @@ class SetUsernameViewController: UIViewController {
     @IBOutlet weak var usernameInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "VOTRE PROFILE"
+        usernameInput.setLeftPaddingPoints(10)
         // Do any additional setup after loading the view.
     }
 
