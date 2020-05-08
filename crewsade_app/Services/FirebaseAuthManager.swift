@@ -41,12 +41,6 @@ class FirebaseAuthManager{
         }
     }
     
-    func googleLogin( _ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!,completionBlock: @escaping (_ success: Bool) -> Void){
-          
-        
-        
-    }
-    
     func facebookLogin(_ sender: Any, viewController: UIViewController, completionBlock: @escaping (_ success: Bool) -> Void){
         if let sender = AccessToken.current {
             completionBlock(true)

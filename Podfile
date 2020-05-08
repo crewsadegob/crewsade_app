@@ -7,7 +7,8 @@ target 'crewsade_app' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
-  
+  pod 'Firebase/Storage'
+
  # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
   

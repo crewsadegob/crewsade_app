@@ -145,6 +145,13 @@
 			path = ARViewController;
 			sourceTree = "<group>";
 		};
+		06805F6824657A4100280A7F /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
 		06BB7847245194F60018F605 /* SharedUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +175,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				06805F6824657A4100280A7F /* ProfileViewController */,
 				063073752463FE4C00436F70 /* OnBoarding */,
 				061AAABA245B42050010152E /* SignViewControllers */,
 				0633FC83245AD4AE0096D2E4 /* NavigationControllers */,

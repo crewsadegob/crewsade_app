@@ -9,17 +9,42 @@
 import Foundation
 import FirebaseAuth
 import Firebase
-
+import FirebaseStorage
 class UserService {
     
     let user = Auth.auth().currentUser
     let db = Firestore.firestore()
-    
+    let storage = Storage.storage()
+    lazy var storageRef = storage.reference()
     var tricks = [Trick]()
     
-    func setUsername(username: String){
+    
+    func setProfile(username: String, Image: UIImage,completionHandler: @escaping (_ success: Bool) -> Void){
         if let user = user {
-            db.collection("users").document(user.uid).setData(["Username": username])
+            let profilePictureStorageRef = storageRef.child("user_profiles/\(user.uid)/profile_picture")
+            
+            guard let imageData = Image.jpegData(compressionQuality: 0.4) else{ return}
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            
+            profilePictureStorageRef.putData(imageData, metadata: metadata){(metadata, error) in
+                if(error == nil){
+                    profilePictureStorageRef.downloadURL(completion: {(url,error) in
+                        if let metaImageUrl = url?.absoluteString{
+                            self.db.collection("users").document(user.uid).setData([
+                                "Username": username,
+                                "ProfileImage": metaImageUrl
+                            ])
+                        }
+                    })
+                    completionHandler(true)
+                }
+                else{
+                    print(error?.localizedDescription)
+                    completionHandler(false)
+                }
+            }
         }
     }
     

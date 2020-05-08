@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6qw-PH-VYZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -23,10 +23,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaY-ew-PNd">
-                                <rect key="frame" x="17" y="475" width="340" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaY-ew-PNd">
+                                <rect key="frame" x="17" y="350" width="340" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IOU-e1-JCp"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
                                 <state key="normal" title="TERMINER">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,34 +37,59 @@
                                     <action selector="completeButtonClicked:" destination="6qw-PH-VYZ" eventType="touchUpInside" id="sZN-QV-SFQ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-UL-1wo">
-                                <rect key="frame" x="17" y="351" width="340" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-UL-1wo">
+                                <rect key="frame" x="18" y="240" width="340" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="IIg-8v-zWq"/>
+                                </constraints>
                                 <color key="textColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHOISIS TON BLAZE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ml-F3-f5D">
-                                <rect key="frame" x="123" y="254" width="128" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picturePicker" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-qn-3Qk">
+                                <rect key="frame" x="128" y="60" width="120" height="120"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aFi-mH-7zJ" appends="YES" id="eyT-C5-35F"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOISIS TON BLAZE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ml-F3-f5D">
+                                <rect key="frame" x="123" y="205" width="128" height="15"/>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePicker" translatesAutoresizingMaskIntoConstraints="NO" id="dfV-qn-3Qk">
-                                <rect key="frame" x="127" y="75" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="arQ-UL-1wo" firstAttribute="leading" secondItem="K99-gO-2OD" secondAttribute="leading" constant="18" id="1Ao-rd-W2n"/>
+                            <constraint firstItem="dfV-qn-3Qk" firstAttribute="top" secondItem="K99-gO-2OD" secondAttribute="top" constant="60" id="2TJ-Jm-FsV"/>
+                            <constraint firstItem="gaY-ew-PNd" firstAttribute="top" secondItem="arQ-UL-1wo" secondAttribute="bottom" constant="40" id="4H3-qC-V1n"/>
+                            <constraint firstItem="K99-gO-2OD" firstAttribute="trailing" secondItem="gaY-ew-PNd" secondAttribute="trailing" constant="18" id="54x-Ux-O8n"/>
+                            <constraint firstItem="7Ml-F3-f5D" firstAttribute="leading" secondItem="K99-gO-2OD" secondAttribute="leading" constant="123" id="IMU-Kd-rLz"/>
+                            <constraint firstItem="K99-gO-2OD" firstAttribute="trailing" secondItem="dfV-qn-3Qk" secondAttribute="trailing" constant="127" id="JZS-hp-1tD"/>
+                            <constraint firstItem="K99-gO-2OD" firstAttribute="trailing" secondItem="arQ-UL-1wo" secondAttribute="trailing" constant="17" id="Wc0-ov-kiK"/>
+                            <constraint firstItem="gaY-ew-PNd" firstAttribute="leading" secondItem="K99-gO-2OD" secondAttribute="leading" constant="17" id="Yh7-e6-iz3"/>
+                            <constraint firstItem="K99-gO-2OD" firstAttribute="trailing" secondItem="7Ml-F3-f5D" secondAttribute="trailing" constant="124" id="dlR-ss-Qm3"/>
+                            <constraint firstItem="dfV-qn-3Qk" firstAttribute="leading" secondItem="K99-gO-2OD" secondAttribute="leading" constant="128" id="iOw-Sw-5B2"/>
+                            <constraint firstItem="K99-gO-2OD" firstAttribute="bottom" secondItem="gaY-ew-PNd" secondAttribute="bottom" constant="277" id="nqQ-oo-O4x"/>
+                            <constraint firstItem="arQ-UL-1wo" firstAttribute="top" secondItem="7Ml-F3-f5D" secondAttribute="bottom" constant="20" id="oBG-dY-Avm"/>
+                            <constraint firstItem="7Ml-F3-f5D" firstAttribute="top" secondItem="dfV-qn-3Qk" secondAttribute="bottom" constant="25" id="z5A-hg-u04"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K99-gO-2OD"/>
                     </view>
                     <connections>
+                        <outlet property="profilePicture" destination="dfV-qn-3Qk" id="Tgc-fN-hoU"/>
                         <outlet property="usernameInput" destination="arQ-UL-1wo" id="FLS-K3-naj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uc-RC-Agv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aFi-mH-7zJ">
+                    <connections>
+                        <action selector="didTapProfilePicture:" destination="6qw-PH-VYZ" id="mNb-zT-QZJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="0.0" y="22"/>
         </scene>
