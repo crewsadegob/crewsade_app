@@ -12,36 +12,47 @@ import FirebaseFirestore
 import FBSDKLoginKit
 import FBSDKCoreKit
 class SignUpViewController: UIViewController {
-
-    @IBOutlet weak var emailInput: UITextView!
-    @IBOutlet weak var passwordInput: UITextView!
-    @IBOutlet weak var usernameInput: UITextView!
+    
+    var showPasswordIcon:Bool = true
+    
+    @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
     
     let signUpManager = FirebaseAuthManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupToHideKeyboardOnTapOnView()
+        emailInput.setLeftPaddingPoints(10)
+        passwordInput.setLeftPaddingPoints(10)
         // Do any additional setup after loading the view.
-
+        
     }
- 
+    
     @IBAction func buttonSignUpClicked(_ sender: Any) {
         
-        if let email = emailInput.text,let password = passwordInput.text, let username = usernameInput.text{
-            signUpManager.createUser(email: email, password: password,username: username) {[weak self] (success) in
+        if let email = emailInput.text,let password = passwordInput.text{
+            signUpManager.createUser(email: email, password: password) {[weak self] (success) in
                 guard let `self` = self else { return }
                 if (success) {
-                    self.switchToMainStoryboard()
+                    self.switchToSetUsernameStoryboard()
                 } else {
                     print("Error")
                 }
             }
         }
     }
+    @IBAction func showPassword(_ sender: Any) {
+        if(showPasswordIcon == true) {
+                         passwordInput.isSecureTextEntry = false
+                     } else {
+                         passwordInput.isSecureTextEntry = true
+                     }
+
+                     showPasswordIcon = !showPasswordIcon
+    }
     
-    private func switchToMainStoryboard(){
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
+    private func switchToSetUsernameStoryboard(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Username", bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: "SetUsername")
         self.show(mainViewController, sender: nil)
     }
 }
