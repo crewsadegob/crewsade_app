@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import  FirebaseAuth
 class SignsViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -18,7 +18,10 @@ class SignsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        checkIfUserIsSignedIn()
+
     }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -29,8 +32,25 @@ class SignsViewController: UIViewController {
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
         UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColor
-
-        
-
     }
+    
+
+    private func checkIfUserIsSignedIn() {
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.switchToMainStoryboard()
+            }
+        }
+    }
+    
+    // save a ref to the handler
+
+    private func switchToMainStoryboard(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
+        self.show(mainViewController, sender: nil)
+    }
+
+    // Remove the listener once it's no longer needed
+ 
 }

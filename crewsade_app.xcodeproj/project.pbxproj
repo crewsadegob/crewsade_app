@@ -18,6 +18,7 @@
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
+		06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6924657EF000280A7F /* ProfileViewController.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
@@ -60,6 +61,7 @@
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
+		06805F6924657EF000280A7F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		06805F6824657A4100280A7F /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				06805F6924657EF000280A7F /* ProfileViewController.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				06A053092464B59F00EB21C1 /* SetUsernameViewController.swift in Sources */,
+				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
