@@ -14,49 +14,11 @@ class UserService {
     
     let user = Auth.auth().currentUser
     let db = Firestore.firestore()
-    let storage = Storage.storage()
-    lazy var storageRef = storage.reference()
+    
     var tricks = [Trick]()
     
     
-    func setProfile(username: String, Image: UIImage,completionHandler: @escaping (_ success: Bool) -> Void){
-        if let user = user {
-            
-            let changeRequest = user.createProfileChangeRequest()
-            
-            let profilePictureStorageRef = storageRef.child("user_profiles/\(user.uid)/profile_picture")
-            
-            guard let imageData = Image.jpegData(compressionQuality: 0.4) else{ return}
-            
-            let metadata = StorageMetadata()
-            metadata.contentType = "image/jpg"
-            
-            profilePictureStorageRef.putData(imageData, metadata: metadata){(metadata, error) in
-                if(error == nil){
-                    profilePictureStorageRef.downloadURL(completion: {(url,error) in
-                        if let url = url{
-                            changeRequest.photoURL = url
-                            changeRequest.commitChanges { error in
-                                  if let error = error {
-                                    print(error.localizedDescription)
-                                  } else {
-                                    print("User updated")
-                                  }
-                                }
-                        }
-                    })
-                    self.db.collection("users").document(user.uid).setData([
-                        "Username": username
-                    ])
-                    completionHandler(true)
-                }
-                else{
-                    print(error?.localizedDescription)
-                    completionHandler(false)
-                }
-            }
-        }
-    }
+
     
     func getUserInformations(completionHandler: @escaping (_ result: User?) -> Void){
         if let user = user{

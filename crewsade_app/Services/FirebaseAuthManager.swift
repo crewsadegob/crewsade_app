@@ -12,24 +12,56 @@ import FirebaseFirestore
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
-
+import FirebaseStorage
 
 class FirebaseAuthManager{
-    
     let db = Firestore.firestore()
     let loginManager = LoginManager()
+    let storage = Storage.storage()
+    lazy var storageRef = storage.reference()
     
     
-    
-    func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void){
+    func createUser(username: String, Image: UIImage,email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void){
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
+                let changeRequest = user.createProfileChangeRequest()
+                
+                let profilePictureStorageRef = self.storageRef.child("user_profiles/\(user.uid)/profile_picture")
+                
+                guard let imageData = Image.jpegData(compressionQuality: 0.4) else{ return}
+                
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpg"
+                
+                profilePictureStorageRef.putData(imageData, metadata: metadata){(metadata, error) in
+                    if(error == nil){
+                        profilePictureStorageRef.downloadURL(completion: {(url,error) in
+                            if let url = url{
+                                changeRequest.photoURL = url
+                                changeRequest.commitChanges { error in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                    } else {
+                                        print("User updated")
+                                    }
+                                }
+                            }
+                        })
+                        self.db.collection("users").document(user.uid).setData([
+                            "Username": username
+                        ])
+                    }
+                    else{
+                        print(error?.localizedDescription)
+                    }
+                }
                 completionBlock(true)
             } else {
                 completionBlock(false)
             }
         }
     }
+    
     
     func signIn(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in

@@ -18,7 +18,6 @@ class SignsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        checkIfUserIsSignedIn()
 
     }
 
@@ -31,7 +30,7 @@ class SignsViewController: UIViewController {
     private func setCrewsadeNavigation(){
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColor
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
     }
     
 
