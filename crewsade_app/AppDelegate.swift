@@ -13,7 +13,7 @@ import FBSDKLoginKit
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let barButtonAppareance = UINavigationBar.appearance()
 
@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
         
         let backImage = UIImage(named: "backItem")?.withRenderingMode(.alwaysOriginal)
           UINavigationBar.appearance().backIndicatorImage = backImage
@@ -39,35 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
     }
 
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-      // ...
-        let db = Firestore.firestore()
-
-       print("Google Sing In didSignInForUser")
-                if let error = error {
-                    print(error.localizedDescription)
-                    return
-                }
-                guard let authentication = user.authentication else { return }
-                let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
-                // When user is signed in
-                Auth.auth().signIn(with: credential)  { (authResult, error) in
-                    if let error = error {
-                        print("Login error: \(error.localizedDescription)")
-                        return
-                    }
-                    if let userSign = authResult?.user{
-                        db.collection("users").document(userSign.uid).setData(["Username": user.profile.name])
-                    }
-                }
-    }
-
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-        
-    
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

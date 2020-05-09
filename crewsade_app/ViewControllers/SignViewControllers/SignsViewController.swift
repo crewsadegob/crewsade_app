@@ -8,17 +8,21 @@
 
 import UIKit
 import  FirebaseAuth
-class SignsViewController: UIViewController {
+import FBSDKLoginKit
+import GoogleSignIn
+class SignsViewController: UIViewController, GIDSignInDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setCrewsadeNavigation()
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+              GIDSignIn.sharedInstance()?.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-        checkIfUserIsSignedIn()
 
     }
 
@@ -31,20 +35,45 @@ class SignsViewController: UIViewController {
     private func setCrewsadeNavigation(){
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColor
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
     }
     
-
-    private func checkIfUserIsSignedIn() {
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                self.switchToMainStoryboard()
+    @IBAction func facebookButtonClicked(_ sender: Any) {
+        FacebookAuthManager().facebookLogin(sender, viewController: self){[weak self] (success) in
+               guard let `self` = self else { return }
+               if (success) {
+                   self.switchToMainStoryboard()
+               } else {
+                   print("There was an error.")
+               }
+           }
+    }
+    
+    @IBAction func googleButtonClicked(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("Google Sing In didSignInForUser")
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
+        // When user is signed in
+        Auth.auth().signIn(with: credential)  { (authResult, error) in
+            if let error = error {
+                print("Login error: \(error.localizedDescription)")
+                return
             }
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "SetProfileInformation", bundle: nil)
+            let mainViewController = mainStoryboard.instantiateViewController(identifier: "SetProfileInformation")
+            self.show(mainViewController, sender: nil)
+            
         }
     }
     
-    // save a ref to the handler
-
     private func switchToMainStoryboard(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")

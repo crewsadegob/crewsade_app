@@ -11,58 +11,59 @@ import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
 class SignInViewController: UIViewController {
-
+    
     var showPasswordIcon:Bool = true
     
-    @IBOutlet weak var errorDisplay: UILabel!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    let yourAttributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont(name: "Heebo-Regular.ttf", size: 12) ?? UIFont.systemFont(ofSize: 12),
+        .foregroundColor: UIColor.CrewSade.darkGrey.withAlphaComponent(0.5),
+        .underlineStyle: NSUnderlineStyle.single.rawValue]
     
-    let signInManager = FirebaseAuthManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-
+        
+        let attributeString = NSMutableAttributedString(string: "Mot de passe oublié ?",attributes: yourAttributes)
+        forgotPasswordButton.setAttributedTitle(attributeString, for: .normal)
+        
     }
     
-
-    @IBAction func facebookButton(_ sender: Any) {
-        signInManager.facebookLogin(sender, viewController: self){[weak self] (success) in
-            guard let `self` = self else { return }
-            if (success) {
-                self.switchToMainStoryboard()
-            } else {
-                print("There was an error.")
-            }
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = false
     }
-    @IBAction func googleButtonclicked(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-    }
+    
     @IBAction func buttonSignInClicked(_ sender: Any) {
         if let email = emailInput.text, let password = passwordInput.text {
-            signInManager.signIn(email: email, password: password) {[weak self] (success) in
+            FirebaseAuthManager().signIn(email: email, password: password) {[weak self] (success) in
                 guard let `self` = self else { return }
-                    if (success) {
-                        self.switchToMainStoryboard()
-                    } else {
-                        print("There was an error.")
-                    }
+                if (success) {
+                    self.switchToMainStoryboard()
+                } else {
+                    print("There was an error.")
+                }
             }
         }
     }
     
-    @IBAction func showPassword(_ sender: Any) {
+    @IBAction func forgotPasswordButtonClicked(_ sender: Any) {
+        
+    }
+    @IBAction func showPassword(_ sender: UIButton) {
         if(showPasswordIcon == true) {
-                  passwordInput.isSecureTextEntry = false
-              } else {
-                  passwordInput.isSecureTextEntry = true
-              }
-
-              showPasswordIcon = !showPasswordIcon
+            passwordInput.isSecureTextEntry = false
+            sender.setBackgroundImage(UIImage(named: "eyeOpen.png"), for: .normal)
+        } else {
+            passwordInput.isSecureTextEntry = true
+            sender.setBackgroundImage(UIImage(named: "eyeClose.png"), for: .normal)
+        }
+        
+        showPasswordIcon = !showPasswordIcon
     }
     private func switchToMainStoryboard(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -70,9 +71,5 @@ class SignInViewController: UIViewController {
         self.show(mainViewController, sender: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.hidesBackButton = false
-        
-    }
+    
 }
