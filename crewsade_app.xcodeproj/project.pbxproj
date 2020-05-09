@@ -15,6 +15,8 @@
 		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
 		06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06324E3B2466A32A006EA196 /* handleErrors.swift */; };
 		06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06324E3D2466AF47006EA196 /* ForgotPasswordViewController.swift */; };
+		06324E402467012F006EA196 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 06324E3F2467012F006EA196 /* art.scnassets */; };
+		06324E422467018F006EA196 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06324E412467018F006EA196 /* ARViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -62,6 +64,8 @@
 		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
 		06324E3B2466A32A006EA196 /* handleErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handleErrors.swift; sourceTree = "<group>"; };
 		06324E3D2466AF47006EA196 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		06324E3F2467012F006EA196 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		06324E412467018F006EA196 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */,
 				06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */,
 				061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */,
+				06324E412467018F006EA196 /* ARViewController.swift */,
 			);
 			path = ARViewController;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				0F5D3D41244D88D500D13D0C /* LaunchScreen.storyboard */,
 				0F5D3D44244D88D500D13D0C /* Info.plist */,
 				06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */,
+				06324E3F2467012F006EA196 /* art.scnassets */,
 			);
 			path = crewsade_app;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				0F5D3D40244D88D500D13D0C /* Assets.xcassets in Resources */,
 				0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */,
 				06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */,
+				06324E402467012F006EA196 /* art.scnassets in Resources */,
 				0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */,
 				06E0F51324596BB6003CAB56 /* GoogleService-Info.plist in Resources */,
 				0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */,
@@ -467,6 +474,7 @@
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
 				06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */,
+				06324E422467018F006EA196 /* ARViewController.swift in Sources */,
 				06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */,
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
