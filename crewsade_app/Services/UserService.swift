@@ -22,17 +22,17 @@ class UserService {
     
     func getUserInformations(completionHandler: @escaping (_ result: User?) -> Void){
         if let user = user{
-            self.db.collection("users").document(user.uid).getDocument { (document, error) in
-                if let document = document, document.exists {
-                    let username = document.get("Username") as? String
-                    let image = user.photoURL
-                    
-                    completionHandler(User(username: username, ProfilePicture: image))
-                } else {
-                    print("User doesn't not exist")
-                    completionHandler(nil)
-                }
-            }
+              self.db.collection("users").document(user.uid).getDocument { (document, error) in
+                  if let document = document, document.exists {
+                      let username = document.get("Username") as? String
+                      let image = user.photoURL
+
+                      completionHandler(User(username: username, ProfilePicture: image))
+                  } else {
+                      print("User doesn't not exist")
+                      completionHandler(nil)
+                  }
+              }
             
         }
     }
