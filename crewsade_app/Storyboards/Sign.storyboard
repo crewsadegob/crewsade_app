@@ -256,6 +256,18 @@
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="0df-dr-KyQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfD-as-y3x">
+                                <rect key="frame" x="107" y="507" width="160" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Heebo-Regular" family="Heebo" pointSize="12"/>
+                                <state key="normal" title="Mot de passe oublié ?">
+                                    <color key="titleColor" red="0.17254901960784313" green="0.1724938452" blue="0.17245113849999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="forgotPasswordButtonClicked:" destination="qmW-vq-Xne" eventType="touchUpInside" id="dRf-DF-U2d"/>
+                                    <segue destination="ETo-Pb-hFU" kind="show" id="hVG-tF-WXb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iIu-is-4BZ"/>
@@ -263,12 +275,56 @@
                     <navigationItem key="navigationItem" title="CONNEXION" id="guN-VT-d6Q"/>
                     <connections>
                         <outlet property="emailInput" destination="5lg-xM-c99" id="cTu-gU-Ipe"/>
+                        <outlet property="forgotPasswordButton" destination="lfD-as-y3x" id="4MC-p8-Lpm"/>
                         <outlet property="passwordInput" destination="UCw-CU-zbG" id="Qkd-FD-mDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2n-bG-0J9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="772.26386806596713"/>
+        </scene>
+        <!--Mot de passe oublié-->
+        <scene sceneID="MPT-7a-Nvt">
+            <objects>
+                <viewController id="ETo-Pb-hFU" customClass="ForgotPasswordViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="djK-rO-aNF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-xL-myo">
+                                <rect key="frame" x="17" y="225" width="340" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNL-fL-G3B">
+                                <rect key="frame" x="16" y="294" width="340" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
+                                <state key="normal" title="Terminer">
+                                    <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSignInClicked:" destination="qmW-vq-Xne" eventType="touchUpInside" id="tBx-yF-iL4"/>
+                                    <action selector="buttonSignUpClicked:" destination="Sle-FI-nEr" eventType="touchUpInside" id="kgw-fc-WWv"/>
+                                    <action selector="finishButtonClicked:" destination="ETo-Pb-hFU" eventType="touchUpInside" id="DED-R9-VPL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="GZF-8l-q1H"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mot de passe oublié" id="oUR-QZ-FOt"/>
+                    <connections>
+                        <outlet property="emailInput" destination="wDm-xL-myo" id="pFH-3Z-kkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0q4-eL-dCN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998" y="772"/>
         </scene>
     </scenes>
     <resources>

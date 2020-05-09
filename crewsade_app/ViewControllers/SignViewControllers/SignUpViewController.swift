@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func buttonSignUpClicked(_ sender: Any) {
         if let email = emailInput.text,let password = passwordInput.text, let username = usernameInput.text, let image = profilePicture.image{
-            signUpManager.createUser(username: username,Image: image,email: email, password: password) {[weak self] (success) in
+            signUpManager.createUser(username: username,Image: image,email: email, password: password, view: self) {[weak self] (success) in
                 guard let `self` = self else { return }
                 if (success) {
                     self.switchToMainStoryboard()

@@ -13,6 +13,8 @@
 		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
 		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
 		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
+		06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06324E3B2466A32A006EA196 /* handleErrors.swift */; };
+		06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06324E3D2466AF47006EA196 /* ForgotPasswordViewController.swift */; };
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
@@ -58,6 +60,8 @@
 		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
+		06324E3B2466A32A006EA196 /* handleErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handleErrors.swift; sourceTree = "<group>"; };
+		06324E3D2466AF47006EA196 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				06C56B8B245C358D00BAC9FB /* SignInViewController.swift */,
 				0630737824640A7F00436F70 /* SignsViewController.swift */,
 				06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */,
+				06324E3D2466AF47006EA196 /* ForgotPasswordViewController.swift */,
 			);
 			path = SignViewControllers;
 			sourceTree = "<group>";
@@ -129,6 +134,14 @@
 				063073762463FEEF00436F70 /* OnBoardingViewController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		06324E3A2466A2F4006EA196 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				06324E3B2466A32A006EA196 /* handleErrors.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		0633FC83245AD4AE0096D2E4 /* NavigationControllers */ = {
@@ -268,6 +281,7 @@
 		0F5D3D35244D88D200D13D0C /* crewsade_app */ = {
 			isa = PBXGroup;
 			children = (
+				06324E3A2466A2F4006EA196 /* Utils */,
 				06C6AF0624600E42008E45AC /* Services */,
 				06D2AC1D24599542000CC0AB /* Models */,
 				06BB784C24519E9D0018F605 /* Storyboards */,
@@ -466,10 +480,12 @@
 				06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
+				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
+				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
