@@ -26,4 +26,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    @IBAction func logOutButtonClicked(_ sender: Any) {
+        UserService().logOut()
+    }
 }

@@ -45,7 +45,7 @@ class FacebookAuthManager {
                       }
                       
                       Profile.loadCurrentProfile { (profile, error) in
-                          let mainStoryboard: UIStoryboard = UIStoryboard(name: "SetProfileInformation", bundle: nil)
+                          let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                           let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
                           viewController.show(mainViewController, sender: nil)
                       }

@@ -37,6 +37,10 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = false
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.CrewSade.darkGrey
+    }
     
     @IBAction func buttonSignInClicked(_ sender: Any) {
         if let email = emailInput.text, let password = passwordInput.text {

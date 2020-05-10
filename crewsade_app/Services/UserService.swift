@@ -17,9 +17,6 @@ class UserService {
     
     var tricks = [Trick]()
     
-    
-
-    
     func getUserInformations(completionHandler: @escaping (_ result: User?) -> Void){
         if let user = user{
               self.db.collection("users").document(user.uid).getDocument { (document, error) in
@@ -31,9 +28,8 @@ class UserService {
                   } else {
                       print("User doesn't not exist")
                       completionHandler(nil)
-                  }
-              }
-            
+                }
+            }
         }
     }
     
@@ -51,7 +47,6 @@ class UserService {
                         ])
                     }
                 }
-                
             }
         }
     }
@@ -110,5 +105,15 @@ class UserService {
                 })
             }
         }
+    }
+    func logOut(){
+        do
+          {
+              try Auth.auth().signOut()
+          }
+          catch let error as NSError
+          {
+              print(error.localizedDescription)
+          }
     }
 }

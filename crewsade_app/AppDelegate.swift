@@ -16,13 +16,15 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let barButtonAppareance = UINavigationBar.appearance()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
         ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
 
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+
         
         let backImage = UIImage(named: "backItem")?.withRenderingMode(.alwaysOriginal)
           UINavigationBar.appearance().backIndicatorImage = backImage

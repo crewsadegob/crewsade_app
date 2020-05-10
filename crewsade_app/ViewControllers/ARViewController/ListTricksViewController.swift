@@ -124,7 +124,7 @@ extension ListTricksViewController: UITableViewDataSource{
 
 extension ListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tricksDisplay[indexPath.row].reference)
+        self.performSegue(withIdentifier: "toARViewController", sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
