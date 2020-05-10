@@ -67,9 +67,7 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
                 print("Login error: \(error.localizedDescription)")
                 return
             }
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "SetProfileInformation", bundle: nil)
-            let mainViewController = mainStoryboard.instantiateViewController(identifier: "SetProfileInformation")
-            self.show(mainViewController, sender: nil)
+            self.switchToMainStoryboard()
             
         }
     }

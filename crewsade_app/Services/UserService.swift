@@ -106,4 +106,14 @@ class UserService {
             }
         }
     }
+    func logOut(){
+        do
+          {
+              try Auth.auth().signOut()
+          }
+          catch let error as NSError
+          {
+              print(error.localizedDescription)
+          }
+    }
 }
