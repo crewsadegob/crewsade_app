@@ -22,6 +22,7 @@
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
+		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
 		06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6924657EF000280A7F /* ProfileViewController.swift */; };
 		06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */; };
 		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
@@ -46,6 +47,8 @@
 		06E352C92459BE8900722B02 /* Polly-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC232459B905000CC0AB /* Polly-Regular.otf */; };
 		06E352CA2459BE8C00722B02 /* TuskerGrotesk-4500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */; };
 		06E352CC2459D14500722B02 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E352CB2459D14500722B02 /* StackView.swift */; };
+		06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F21246937C3005CBFB4 /* NavigationViewController.swift */; };
+		06E37F242469426F005CBFB4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F232469426F005CBFB4 /* Gradient.swift */; };
 		0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D36244D88D200D13D0C /* AppDelegate.swift */; };
 		0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */; };
 		0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D3A244D88D200D13D0C /* ViewController.swift */; };
@@ -71,6 +74,7 @@
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
+		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		06805F6924657EF000280A7F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfileInformation.storyboard; sourceTree = "<group>"; };
 		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TuskerGrotesk-4500Medium.ttf"; sourceTree = "<group>"; };
 		06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06E352CB2459D14500722B02 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		06E37F21246937C3005CBFB4 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		06E37F232469426F005CBFB4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		0F5D3D33244D88D200D13D0C /* crewsade_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crewsade_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D3D36244D88D200D13D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				06A52816245AE38D0026C2A1 /* TabBarViewController.swift */,
+				0669151824687BED003D2B29 /* CustomTabBar.swift */,
+				06E37F21246937C3005CBFB4 /* NavigationViewController.swift */,
 			);
 			path = NavigationControllers;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 				06E352CB2459D14500722B02 /* StackView.swift */,
 				06987C9C2461A5B100D4BF8F /* Button.swift */,
 				06B03C422464553300191C15 /* textField.swift */,
+				06E37F232469426F005CBFB4 /* Gradient.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -473,6 +482,8 @@
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
+				06E37F242469426F005CBFB4 /* Gradient.swift in Sources */,
+				06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */,
 				06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */,
 				06324E422467018F006EA196 /* ARViewController.swift in Sources */,
 				06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */,
@@ -494,6 +505,7 @@
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
+				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

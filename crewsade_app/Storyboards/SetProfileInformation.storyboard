@@ -23,26 +23,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choisis ton blase" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-CI-uLW">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choisis ton blase" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-CI-uLW">
                                 <rect key="frame" x="17" y="199" width="340" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1eH-dO-V46"/>
+                                </constraints>
                                 <color key="textColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picturePicker" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-jK-Tot">
-                                <rect key="frame" x="127" y="49" width="120" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picturePicker" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-jK-Tot">
+                                <rect key="frame" x="127.5" y="49" width="120" height="120"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="JdW-zv-iGf"/>
+                                    <constraint firstAttribute="width" constant="120" id="znH-16-x5j"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="2th-ru-kJb" appends="YES" id="qCp-56-bGj"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sta-O4-Glz">
-                                <rect key="frame" x="8" y="313" width="341" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sta-O4-Glz">
+                                <rect key="frame" x="17" y="313" width="341" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xr6-c0-lKE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
                                 <state key="normal" title="INSCRIPTION">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,6 +60,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sta-O4-Glz" firstAttribute="top" secondItem="R2K-CI-uLW" secondAttribute="bottom" constant="44" id="5dM-RT-7R0"/>
+                            <constraint firstItem="R2K-CI-uLW" firstAttribute="top" secondItem="pdz-jK-Tot" secondAttribute="bottom" constant="30" id="Gkc-6Q-Z0P"/>
+                            <constraint firstItem="pdz-jK-Tot" firstAttribute="centerX" secondItem="R4e-Zw-Utq" secondAttribute="centerX" id="KTo-4L-Lst"/>
+                            <constraint firstItem="R4e-Zw-Utq" firstAttribute="trailing" secondItem="sta-O4-Glz" secondAttribute="trailing" constant="17" id="LW9-ng-bpI"/>
+                            <constraint firstItem="R2K-CI-uLW" firstAttribute="leading" secondItem="R4e-Zw-Utq" secondAttribute="leading" constant="17" id="Oad-jk-3s9"/>
+                            <constraint firstItem="pdz-jK-Tot" firstAttribute="top" secondItem="R4e-Zw-Utq" secondAttribute="top" constant="49" id="W2v-cX-mxk"/>
+                            <constraint firstItem="sta-O4-Glz" firstAttribute="leading" secondItem="R4e-Zw-Utq" secondAttribute="leading" constant="17" id="cTv-Bg-GPi"/>
+                            <constraint firstItem="R4e-Zw-Utq" firstAttribute="trailing" secondItem="R2K-CI-uLW" secondAttribute="trailing" constant="18" id="xLe-gb-wjp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="R4e-Zw-Utq"/>
                     </view>
                     <connections>

@@ -12,13 +12,13 @@ import ARKit
 class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    var sceneMain = SCNScene()
    var sceneNode = SCNNode()
        var isSceneRendered = false
-       var trick:String? = ""
        
        override func viewDidLoad() {
            super.viewDidLoad()
-           
            // Set the view's delegate
            sceneView.delegate = self
            
@@ -29,7 +29,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
        }
        
     @IBAction func test(_ sender: Any) {
-        print("stop")
+        sceneView.scene.isPaused = true
+        let node = sceneMain.rootNode
+    
+        print(node)
+//        print(node.animationPlayer(forKey: "ID90"))
     }
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
@@ -103,10 +107,14 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                print("Impossible de charger la scène !")
                return
            }
+        sceneMain = scene
            let childNodes = scene.rootNode.childNodes
         let time = childNodes[0].animationKeys
-
+        print(scene.rootNode)
+        print(time)
         print(childNodes[0].animationPlayer(forKey: time[0])?.animation.duration)
+     
+
            for childNode in childNodes {
                sceneNode.addChildNode(childNode)
            }
