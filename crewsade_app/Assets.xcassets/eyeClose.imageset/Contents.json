@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "eyeClosex2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "eyeClosex3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

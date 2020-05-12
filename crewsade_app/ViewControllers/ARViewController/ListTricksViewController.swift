@@ -26,6 +26,7 @@ class ListTricksViewController: UIViewController {
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
@@ -54,6 +55,10 @@ class ListTricksViewController: UIViewController {
             
         }
 }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     @objc private func levelClicked(_ sender: UIButton) {
         let buttons = ButtonSection.subviews.filter{$0 is UIButton}

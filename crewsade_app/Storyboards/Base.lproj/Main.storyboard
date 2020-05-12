@@ -6,13 +6,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="09x-1s-gJF">
             <objects>
-                <navigationController storyboardIdentifier="Nav" id="36m-EU-SsP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" id="36m-EU-SsP" customClass="NavigationViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1mf-EJ-Rz1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="17"/>
@@ -32,7 +33,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBar" id="ycm-B8-zDq" customClass="TabBarViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="j9k-2k-uqb"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="gsB-lx-Am9">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="centered" id="gsB-lx-Am9" customClass="CustomTabBar" customModule="crewsade_app" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,7 +72,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Fg-yK-Woj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-757" y="-61"/>
+            <point key="canvasLocation" x="-826" y="-61"/>
         </scene>
         <!--Games-->
         <scene sceneID="Wlz-Bx-InB">
@@ -81,7 +82,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnx-cf-kG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="43"/>
+            <point key="canvasLocation" x="-814" y="44"/>
         </scene>
         <!--Profile-->
         <scene sceneID="v6W-rO-y8b">
@@ -91,7 +92,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wbb-Gm-QaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794" y="107"/>
+            <point key="canvasLocation" x="-816" y="106"/>
         </scene>
     </scenes>
 </document>

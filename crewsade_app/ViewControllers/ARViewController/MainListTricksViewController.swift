@@ -23,7 +23,9 @@ class MainListTricksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.navigationController?.navigationBar.topItem?.title = "TRAINING";
+
+
             let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
             backgroundImage.image = UIImage(named: "background.png")
             backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -85,7 +87,7 @@ extension MainListTricksViewController: UITableViewDataSource{
         cell.contentView.backgroundColor = UIColor.clear
         
         let roundedView : UIView = UIView(frame: CGRect(x: 0, y: 10, width: cell.frame.size.width, height: 100))
-        roundedView.layer.backgroundColor = UIColor.CrewSade.secondaryColor.cgColor
+        roundedView.layer.backgroundColor = UIColor.CrewSade.secondaryColorLight.cgColor
         roundedView.layer.masksToBounds = false
         roundedView.layer.cornerRadius = 15.0
     
@@ -127,7 +129,7 @@ extension MainListTricksViewController : UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrickCell", for: indexPath) as! CarouselTricksCollectionViewCell
         
         cell.trick = tricks[indexPath.item]
-        cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColor
+        cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColorLight
         cell.contentView.layer.cornerRadius = 15.0
         return cell
     }

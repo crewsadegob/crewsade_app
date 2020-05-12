@@ -7,15 +7,24 @@
 //
 
 import UIKit
-
+import Firebase
 class SetProfileInformationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    let user = Auth.auth().currentUser
+
+    
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var usernameInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameInput.setLeftPaddingPoints(10)
         usernameInput.underlined()
+        
+        profilePicture.layer.borderWidth = 1
+        profilePicture.layer.masksToBounds = false
+        profilePicture.layer.borderColor = UIColor.black.cgColor
+        profilePicture.layer.cornerRadius = profilePicture.frame.width/2 //This will change with corners of image and height/2 will make this circle shape
+        profilePicture.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }
@@ -46,7 +55,7 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         profilePicture.image =  image
-        
+
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -61,15 +70,15 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
     }
     
     @IBAction func buttonFinishClicked(_ sender: Any) {
-        if let username = usernameInput.text, let image = profilePicture.image{
-//            FirebaseAuthManager().setProfile(username: username, Image: image){[weak self] (success) in
-//                guard let `self` = self else { return }
-//                if (success) {
-//                    self.switchToMainStoryboard()
-//                } else {
-//                    print("There was an error.")
-//                }
-//            }
+        if let username = usernameInput.text, let image = profilePicture.image, let user = user{
+            FirebaseAuthManager().setProfile(username: username, user: user, Image: image){[weak self] (success) in
+                guard let `self` = self else { return }
+                if (success) {
+                    self.switchToMainStoryboard()
+                } else {
+                    print("There was an error.")
+                }
+            }
         }
     }
 }
