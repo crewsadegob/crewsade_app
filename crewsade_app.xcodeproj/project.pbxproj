@@ -23,6 +23,10 @@
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
+		066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD08246AE56500F0147F /* GamesViewController.swift */; };
+		066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */; };
+		066AFD0D246AECD200F0147F /* GamesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0C246AECD200F0147F /* GamesService.swift */; };
+		066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */; };
 		06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6924657EF000280A7F /* ProfileViewController.swift */; };
 		06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */; };
 		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
@@ -75,6 +79,10 @@
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		066AFD08246AE56500F0147F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlayersViewController.swift; sourceTree = "<group>"; };
+		066AFD0C246AECD200F0147F /* GamesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesService.swift; sourceTree = "<group>"; };
+		066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlayersTableViewCell.swift; sourceTree = "<group>"; };
 		06805F6924657EF000280A7F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfileInformation.storyboard; sourceTree = "<group>"; };
 		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +185,24 @@
 			path = ARViewController;
 			sourceTree = "<group>";
 		};
+		066AFD06246AE53E00F0147F /* GamesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				066AFD07246AE54B00F0147F /* Out */,
+				066AFD08246AE56500F0147F /* GamesViewController.swift */,
+			);
+			path = GamesViewController;
+			sourceTree = "<group>";
+		};
+		066AFD07246AE54B00F0147F /* Out */ = {
+			isa = PBXGroup;
+			children = (
+				066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */,
+				066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */,
+			);
+			path = Out;
+			sourceTree = "<group>";
+		};
 		06805F6824657A4100280A7F /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +245,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				066AFD06246AE53E00F0147F /* GamesViewController */,
 				06805F6824657A4100280A7F /* ProfileViewController */,
 				063073752463FE4C00436F70 /* OnBoarding */,
 				061AAABA245B42050010152E /* SignViewControllers */,
@@ -251,6 +278,7 @@
 				06C6AF0924600F7D008E45AC /* TrickService.swift */,
 				06C6AF0B246021D5008E45AC /* LevelService.swift */,
 				06C6AF0D24604507008E45AC /* UserService.swift */,
+				066AFD0C246AECD200F0147F /* GamesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -477,6 +505,7 @@
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* textField.swift in Sources */,
+				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
 				0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */,
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
@@ -495,13 +524,16 @@
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
+				066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
+				066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */,
 				06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
+				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,

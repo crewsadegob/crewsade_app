@@ -22,7 +22,10 @@ class ProfileViewController: UIViewController {
             if let user = result{
                 self.User = user
                 self.usernameLabel.text = self.User?.username
-                self.imageProfile.sd_setImage(with: self.User?.ProfilePicture, placeholderImage: UIImage(named:"placeholder.png"))
+                let image = user.Image
+                self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder.png"))
+                
+                
             }
         }
     }

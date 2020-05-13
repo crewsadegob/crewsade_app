@@ -22,9 +22,11 @@ class UserService {
               self.db.collection("users").document(user.uid).getDocument { (document, error) in
                   if let document = document, document.exists {
                       let username = document.get("Username") as? String
-                      let image = user.photoURL
+                    if let image = document.get("Image") as? String{
+                        completionHandler(User(username: username, Image: URL(string:image), id: user.uid))
 
-                      completionHandler(User(username: username, ProfilePicture: image))
+                    }
+
                   } else {
                       print("User doesn't not exist")
                       completionHandler(nil)
