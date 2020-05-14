@@ -15,9 +15,9 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var mapView: MGLMapView!
     
     let locationManager = CLLocationManager()
-    lazy var mapView = MGLMapView()
     lazy var annotations = [MGLPointAnnotation]()
     
     var displayedSpotId = ""
@@ -102,19 +102,17 @@ class MapViewController: UIViewController {
     }
     
     func setupMap() {
-        mapView = MGLMapView(frame: view.bounds)
         
         mapView.showsUserLocation = true
         
         mapView.userTrackingMode = .followWithHeading
-        mapView.showsUserHeadingIndicator = true
+        mapView.showsUserHeadingIndicator = false
         
         mapView.delegate = self
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
-        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
-        view.addSubview(mapView)
+//        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
     }
     
     func updateMapAnnotations(spot: Spot) {
@@ -170,6 +168,7 @@ extension MapViewController: MGLMapViewDelegate {
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
         if annotation is MGLUserLocation && mapView.userLocation != nil {
+            print("user")
             return CustomUserLocationAnnotationView()
         }
     

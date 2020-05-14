@@ -6,6 +6,7 @@
 ##IDE
 .idea/
 .DS_Store
+.mapbox
 
 ## User settings
 xcuserdata/
