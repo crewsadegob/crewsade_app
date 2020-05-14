@@ -17,13 +17,12 @@ class UserService {
     
     var tricks = [Trick]()
     
-    func getUserInformations(completionHandler: @escaping (_ result: User?) -> Void){
-        if let user = user{
-              self.db.collection("users").document(user.uid).getDocument { (document, error) in
+    func getUserInformations(id: String, completionHandler: @escaping (_ result: User?) -> Void){
+              self.db.collection("users").document(id).getDocument { (document, error) in
                   if let document = document, document.exists {
                       let username = document.get("Username") as? String
                     if let image = document.get("Image") as? String{
-                        completionHandler(User(username: username, Image: URL(string:image), id: user.uid))
+                        completionHandler(User(username: username, Image: URL(string:image), id: id))
 
                     }
 
@@ -32,7 +31,7 @@ class UserService {
                       completionHandler(nil)
                 }
             }
-        }
+        
     }
     
     func saveTrick(trick: DocumentReference){

@@ -1,41 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="TuskerGrotesk-4500Medium.ttf">
+            <string>TuskerGrotesk-4500Medium</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Profile View Controller-->
+        <!--PROFIL-->
         <scene sceneID="aaL-hy-Ijd">
             <objects>
-                <viewController storyboardIdentifier="Profile" id="IMa-Ql-Gr5" customClass="ProfileViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" title="PROFIL" id="IMa-Ql-Gr5" customClass="ProfileViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sE4-JW-d5i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-Ds-QTg">
-                                <rect key="frame" x="87" y="195" width="240" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiC-we-cbz">
-                                <rect key="frame" x="149" y="400" width="117" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-IA-Sht">
-                                <rect key="frame" x="301" y="78" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Déconnexion"/>
-                                <connections>
-                                    <action selector="logOutButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="RTc-Gw-qQU"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-5c-Qww">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-Ds-QTg">
+                                        <rect key="frame" x="147.5" y="70" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="FRs-PY-OQs"/>
+                                            <constraint firstAttribute="height" constant="80" id="mhD-to-NU6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiC-we-cbz">
+                                        <rect key="frame" x="112" y="136" width="151" height="35"/>
+                                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="33o-8g-Pp2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
+                                        <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-IA-Sht">
+                                        <rect key="frame" x="255" y="30" width="90" height="30"/>
+                                        <state key="normal" title="Déconnexion"/>
+                                        <connections>
+                                            <action selector="logOutButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="RTc-Gw-qQU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="top" constant="70" id="1I2-wq-eep"/>
+                                    <constraint firstItem="FiC-we-cbz" firstAttribute="top" secondItem="VTF-Ds-QTg" secondAttribute="bottom" constant="-14" id="LHO-dY-y5E"/>
+                                    <constraint firstItem="CDU-IA-Sht" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="top" constant="30" id="SUN-dl-6Q2"/>
+                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="centerX" secondItem="iR9-5c-Qww" secondAttribute="centerX" id="UNU-TC-0o0"/>
+                                    <constraint firstItem="CDU-IA-Sht" firstAttribute="leading" secondItem="iR9-5c-Qww" secondAttribute="leading" constant="255" id="dhh-81-OE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="CDU-IA-Sht" secondAttribute="trailing" constant="30" id="pTt-Mg-B3E"/>
+                                    <constraint firstAttribute="trailing" secondItem="FiC-we-cbz" secondAttribute="trailing" constant="112" id="q4u-Zz-ia4"/>
+                                    <constraint firstAttribute="height" constant="307" id="uGg-6e-FA4"/>
+                                    <constraint firstItem="FiC-we-cbz" firstAttribute="leading" secondItem="iR9-5c-Qww" secondAttribute="leading" constant="112" id="wLk-aM-78N"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iR9-5c-Qww" firstAttribute="top" secondItem="YDa-Dh-X6m" secondAttribute="top" id="4bD-5m-nEJ"/>
+                            <constraint firstItem="iR9-5c-Qww" firstAttribute="trailing" secondItem="YDa-Dh-X6m" secondAttribute="trailing" id="Gyi-dH-Luw"/>
+                            <constraint firstItem="iR9-5c-Qww" firstAttribute="leading" secondItem="YDa-Dh-X6m" secondAttribute="leading" id="c1C-iZ-Nfo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YDa-Dh-X6m"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile_icon" landscapeImage="profile_icon" largeContentSizeImage="profile_icon" id="gPc-YW-0Zu"/>
@@ -47,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNo-O3-khf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-437.68115942028987" y="-120.53571428571428"/>
+            <point key="canvasLocation" x="-439.19999999999999" y="-120.98950524737631"/>
         </scene>
     </scenes>
     <resources>

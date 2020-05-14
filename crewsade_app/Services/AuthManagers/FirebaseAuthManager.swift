@@ -42,9 +42,6 @@ class FirebaseAuthManager: UIViewController{
         }
     }
     func setProfile(username: String,user: Firebase.User, Image: UIImage,completionBlock: @escaping (_ success: Bool) -> Void){
-        
-        print(user.uid)
-        
         let profilePictureStorageRef = self.storageRef.child("user_profiles/\(user.uid)/profile_picture")
         
         guard let imageData = Image.jpegData(compressionQuality: 0.4) else{ return}

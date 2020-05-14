@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
-
+import Firebase
 class ProfileViewController: UIViewController {
+    let user = Auth.auth().currentUser
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
@@ -17,15 +18,23 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+      
+        imageProfile.layer.masksToBounds = false
+        imageProfile.layer.borderColor = UIColor.black.cgColor
+        imageProfile.layer.cornerRadius = imageProfile.frame.width/2 
+        imageProfile.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
-        UserService().getUserInformations(){ result in
-            if let user = result{
-                self.User = user
-                self.usernameLabel.text = self.User?.username
-                let image = user.Image
-                self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder.png"))
-                
-                
+        if let user = user{
+            UserService().getUserInformations(id: user.uid){ result in
+                if let user = result{
+                    self.User = user
+                    self.usernameLabel.text = self.User?.username
+                    let image = user.Image
+                    self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder.png"))
+                    
+                    
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ import Firebase
 class GamesService {
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
-    
+    var players = [User]()
     
     func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void){
         let group = DispatchGroup()
@@ -29,19 +29,19 @@ class GamesService {
                     if let image = user.get("Image") as? String{
                         let imageUrl = URL(string: image)
                         
-                        self.players.append(User(username: name, Image: imageUrl, id: id))
+                        players.append(User(username: name, Image: imageUrl, id: id))
                     }
                     group.leave()
                     
                 }
                 group.notify(queue: .main, execute: {
-                    completionHandler(self.players)
+                    completionHandler(players)
                 })
             }
         }
     }
     
-    func checkIsUserChallenged(){
+    func checkIsUserChallenged(view: ViewController){
         if let user = user{
             db.collection("users").document(user.uid).addSnapshotListener() { (player, err) in
                 if let err = err {
@@ -50,27 +50,75 @@ class GamesService {
                     if let player = player {
                         if let isChallenged = player.get("challenged") as? Bool{
                             if isChallenged{
-                                print("On te défie")
+                                let challengeNotification = UIAlertController(title: "Défi OUT", message: "On te défie", preferredStyle: UIAlertController.Style.actionSheet)
+                                
+                                challengeNotification.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
+                                    
+                                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
+                                    let mainViewController = mainStoryboard.instantiateViewController(identifier: "StartChallenge")
+                                    view.show(mainViewController, sender: nil)
+                                    
+                                }))
+                                
+                                challengeNotification.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {(action:UIAlertAction) in
+                                }))
+                                
+                                view.present(challengeNotification, animated: true, completion: nil)
                             }
-                            print("check")
                         }
-                        
                     }
-                    
                 }
             }
         }
     }
     
     
-    func challengedUser(userId: String){
-        db.collection("users").document(userId).updateData(["challenged": true]) {  err in
+    func createSession(player1: String,player2: String, state: Bool, view: UIViewController){
+        let UsersId = [player1,player2]
+        
+        for userId in UsersId{
+            UserService().getUserInformations(id: userId){result in
+                if let user = result{
+                    self.players.append(User(username: user.username, Image: user.Image, id: user.id))
+                }
+                
+            }
+        }
+        
+        self.db.collection("users").document(player1).updateData(["challenged": state]) {  err in
             if let err = err {
                 print("Problème pour l'event: \(err)")
             } else {
-                print("Tu as bien défié : \(userId)")
+                print("Tu as bien défié : \(player1)")
+                self.db.collection("games").document("OUT").collection("Sessions").document().setData([
+                    "Player1": [
+                        "Username": self.players[0].username,
+                        "UserId": self.players[0].id,
+                        "Score": 3
+                    ],
+                    "Player2":[
+                        "Username": self.players[1].username,
+                        "UserId": self.players[1].id,
+                        "Score": 3
+                    ]
+                ])
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainViewController = mainStoryboard.instantiateViewController(identifier: "StartChallenge")
+                view.show(mainViewController, sender: nil)
+                
             }
         }
     }
     
+    
+    func test(){
+        db.collection("games").document("OUT").collection("Sessions").addSnapshotListener(){ (players, error) in
+            if error == nil{
+                print(players?.documentChanges)
+            }
+            print(error)
+            
+        }
+    }
 }
+

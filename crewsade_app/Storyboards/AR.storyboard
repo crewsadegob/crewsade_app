@@ -21,7 +21,6 @@
         <!--Navigation Controller-->
         <scene sceneID="bll-ce-Med">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ef7-aV-l9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="tR3-iO-7V4" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bib-jL-wt8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -31,6 +30,7 @@
                         <segue destination="3ji-q7-NH0" kind="relationship" relationship="rootViewController" id="pA7-uz-KnP"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ef7-aV-l9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1062" y="-656"/>
         </scene>
@@ -45,9 +45,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VFe-ZR-G9y">
                                 <rect key="frame" x="20" y="460" width="335" height="207"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="207" id="aUD-1A-1CK"/>
-                                </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainListTricksCell" rowHeight="120" id="irA-1l-EEs" customClass="MainListTrickTableViewCell" customModule="crewsade_app" customModuleProvider="target">
@@ -90,7 +87,7 @@
                                 </prototypes>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wby-TM-6DB">
-                                <rect key="frame" x="20" y="114" width="374" height="248"/>
+                                <rect key="frame" x="20" y="64" width="374" height="248"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="248" id="CBK-5h-sR9"/>
@@ -134,7 +131,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tU-CS-ewj">
-                                <rect key="frame" x="97" y="384" width="181" height="40"/>
+                                <rect key="frame" x="97" y="334" width="181" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.43137254901960786" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fZJ-We-D4u"/>
@@ -148,7 +145,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MA LISTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcI-17-Uhs">
-                                <rect key="frame" x="160" y="454" width="54" height="18"/>
+                                <rect key="frame" x="160" y="404" width="54" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="iLQ-3w-T5h"/>
                                 </constraints>
@@ -162,6 +159,7 @@
                             <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="GcI-17-Uhs" secondAttribute="trailing" constant="161" id="1Iy-DA-R1p"/>
                             <constraint firstItem="2tU-CS-ewj" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="97" id="5ha-CI-w3z"/>
                             <constraint firstItem="VFe-ZR-G9y" firstAttribute="bottom" secondItem="e4u-62-5Yg" secondAttribute="bottom" constant="49" id="BGo-Ew-Xde"/>
+                            <constraint firstItem="VFe-ZR-G9y" firstAttribute="top" secondItem="GcI-17-Uhs" secondAttribute="bottom" constant="38" id="BVk-yJ-1zB"/>
                             <constraint firstItem="GcI-17-Uhs" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="160" id="DcX-QT-dQl"/>
                             <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="VFe-ZR-G9y" secondAttribute="trailing" constant="20" id="EQr-0I-zMs"/>
                             <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="2tU-CS-ewj" secondAttribute="trailing" constant="97" id="GWK-7h-jUx"/>
@@ -169,7 +167,7 @@
                             <constraint firstItem="wby-TM-6DB" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="20" id="UdW-0M-IxY"/>
                             <constraint firstItem="VFe-ZR-G9y" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="20" id="ZSX-Sc-Skg"/>
                             <constraint firstItem="wby-TM-6DB" firstAttribute="trailing" secondItem="e4u-62-5Yg" secondAttribute="trailing" constant="19" id="n9k-mE-9gv"/>
-                            <constraint firstItem="wby-TM-6DB" firstAttribute="top" secondItem="e4u-62-5Yg" secondAttribute="top" constant="70" id="rhn-gF-sD3"/>
+                            <constraint firstItem="wby-TM-6DB" firstAttribute="top" secondItem="e4u-62-5Yg" secondAttribute="top" constant="20" id="rhn-gF-sD3"/>
                             <constraint firstItem="GcI-17-Uhs" firstAttribute="top" secondItem="2tU-CS-ewj" secondAttribute="bottom" constant="30" id="zMs-47-Vwx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e4u-62-5Yg"/>

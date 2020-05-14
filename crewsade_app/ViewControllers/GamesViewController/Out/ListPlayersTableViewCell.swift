@@ -12,6 +12,7 @@ class ListPlayersTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imagePlayer: UIImageView!
     @IBOutlet weak var namePlayer: UILabel!
+    @IBOutlet weak var buttonIsChallenged: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
