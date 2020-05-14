@@ -7,16 +7,23 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("init")
-        print("test")
+        GamesService().checkIsUserChallenged(view:self)
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+
+
     }
 
-
+    // fonction de remplacement Swift viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
+        
 }
 
