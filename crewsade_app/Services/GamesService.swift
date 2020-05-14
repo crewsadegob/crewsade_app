@@ -48,23 +48,64 @@ class GamesService {
                     print("Problème pour l'event: \(err)")
                 } else {
                     if let player = player {
-                        if let isChallenged = player.get("challenged") as? Bool{
-                            if isChallenged{
-                                let challengeNotification = UIAlertController(title: "Défi OUT", message: "On te défie", preferredStyle: UIAlertController.Style.actionSheet)
-                                
-                                challengeNotification.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
+                        if let challengeData = player.get("challenge") as? [String: Any]{
+                            if let state = challengeData["state"] as? Bool{
+                                if state{
+                                    let challengeNotification = UIAlertController(title: "Défi OUT", message: "On te défie", preferredStyle: UIAlertController.Style.actionSheet)
                                     
-                                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
-                                    let mainViewController = mainStoryboard.instantiateViewController(identifier: "StartChallenge")
-                                    view.show(mainViewController, sender: nil)
+                                    challengeNotification.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
+                                        
+                                        
+                                        if let refId = challengeData["referenceId"] as? String{
+                                            self.ChallengeStart(view: view, sessionId: refId)
+
+                                            self.db.collection("games").document("OUT").collection("Sessions").document(refId).updateData(["create": true]) { err in
+                                                if let err = err {
+                                                    print("Error removing document: \(err)")
+                                                } else {
+                                                    print("Document successfully update!")
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        
+                                    }))
                                     
-                                }))
-                                
-                                challengeNotification.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {(action:UIAlertAction) in
-                                }))
-                                
-                                view.present(challengeNotification, animated: true, completion: nil)
+                                    challengeNotification.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {(action:UIAlertAction) in
+                                        if let refId = challengeData["referenceId"] as? String{
+                                            self.db.collection("games").document("OUT").collection("Sessions").document(refId).delete() { err in
+                                                if let err = err {
+                                                    print("Error removing document: \(err)")
+                                                } else {
+                                                    print("Document successfully removed!")
+                                                }
+                                            }
+                                        }
+                                        
+                                        self.db.collection("users").document(user.uid).updateData(["challenge": FieldValue.delete()]) {  err in
+                                            if let err = err {
+                                                print("Problème pour l'event: \(err)")
+                                            } else {
+                                                print("Défi refusé")
+                                            }
+                                        }
+                                        if let challenger = challengeData["challenger"] as? String {
+                                            self.db.collection("users").document(challenger).updateData(["challenge": FieldValue.delete()]) {  err in
+                                                if let err = err {
+                                                    print("Problème pour l'event: \(err)")
+                                                } else {
+                                                    print("Défi refusé")
+                                                }
+                                            }
+                                        }
+                                        
+                                    }))
+                                    
+                                    view.present(challengeNotification, animated: true, completion: nil)
+                                }
                             }
+                            
                         }
                     }
                 }
@@ -73,52 +114,103 @@ class GamesService {
     }
     
     
-    func createSession(player1: String,player2: String, state: Bool, view: UIViewController){
+    func createSession(player1: String,player2: String, state: Bool,view: UIViewController){
         let UsersId = [player1,player2]
+        let referenceSession = self.db.collection("games").document("OUT").collection("Sessions").document()
         
-        for userId in UsersId{
-            UserService().getUserInformations(id: userId){result in
-                if let user = result{
-                    self.players.append(User(username: user.username, Image: user.Image, id: user.id))
-                }
-                
-            }
-        }
-        
-        self.db.collection("users").document(player1).updateData(["challenged": state]) {  err in
+        self.db.collection("users").document(player1).updateData(["challenge": ["state":state, "referenceId": referenceSession.documentID, "challenger": player2]]) {  err in
             if let err = err {
                 print("Problème pour l'event: \(err)")
             } else {
                 print("Tu as bien défié : \(player1)")
-                self.db.collection("games").document("OUT").collection("Sessions").document().setData([
+                referenceSession.setData([
                     "Player1": [
-                        "Username": self.players[0].username,
-                        "UserId": self.players[0].id,
+                        "UserId": UsersId[0],
                         "Score": 3
                     ],
                     "Player2":[
-                        "Username": self.players[1].username,
-                        "UserId": self.players[1].id,
+                        "UserId": UsersId[1],
                         "Score": 3
-                    ]
+                    ],
+                    "create": false
                 ])
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainViewController = mainStoryboard.instantiateViewController(identifier: "StartChallenge")
-                view.show(mainViewController, sender: nil)
-                
+            }
+        }
+        self.db.collection("users").document(player2).updateData(["challenge": ["referenceId": referenceSession.documentID, "challenger": player1]]) {  err in
+            if let err = err {
+                print("Problème pour l'event: \(err)")
+            } else {
+                self.ChallengeStart(view: view, sessionId: referenceSession.documentID)
+                print("Tu as bien défié : \(player1)")
             }
         }
     }
     
     
-    func test(){
-        db.collection("games").document("OUT").collection("Sessions").addSnapshotListener(){ (players, error) in
-            if error == nil{
-                print(players?.documentChanges)
+    func getInformationsChallenge(userId: String,completionHandler: @escaping (_ result: [User]?) -> Void){
+        var playersArray = [User]()
+        self.db.collection("users").document(userId).getDocument{(document, error) in
+            if let user = document, document!.exists{
+                if let challenge = user.get("challenge") as? [String: Any]{
+                    if let sessionId = challenge["referenceId"] as? String{
+                        print(sessionId)
+                        let group =  DispatchGroup()
+                        self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{(players, err) in
+                            if let player = players, players!.exists {
+                                let dataPlayer1 = player.get("Player1") as? [String: Any]
+                                let dataPlayer2 = player.get("Player2") as? [String: Any]
+                                
+                                let playersId = [dataPlayer1!["UserId"] as! String, dataPlayer2!["UserId"] as! String]
+                                
+                                for playerId in playersId{
+                                    group.enter()
+                                    UserService().getUserInformations(id: playerId){result in
+                                        if let user = result{
+                                            playersArray.append(User(username: user.username, Image: user.Image, id: user.id))
+                                            group.leave()
+                                        }
+                                    }
+                                }
+                                
+                                group.notify(queue: .main, execute: {
+                                    completionHandler(playersArray)
+                                })
+                                
+                            } else {
+                                print("Document does not exist")
+                                completionHandler(nil)
+                            }
+                            
+                        }
+                    }
+                }
             }
-            print(error)
-            
         }
     }
+    
+    func ChallengeStart(view: UIViewController, sessionId: String){
+        self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener() { (session, err) in
+            if let err = err {
+                print("Problème pour l'event: \(err)")
+            }
+            else{
+                if let session = session{
+                    if let state = session.get("create") as? Bool{
+                        if state{
+
+                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
+                            let mainViewController = mainStoryboard.instantiateViewController(identifier: "gameStart")
+                            view.show(mainViewController, sender: nil)
+                            SessionService().beginner(sessionId: sessionId)
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
 }
 

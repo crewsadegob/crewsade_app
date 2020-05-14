@@ -7,13 +7,31 @@
 //
 
 import UIKit
-
+import Firebase
 class ChallengeAcceptedViewController: UIViewController {
+    let user = Auth.auth().currentUser
 
+    @IBOutlet weak var notPlaying: UIView!
+    @IBOutlet weak var isPlaying: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            print(user)
+           if let user = user{
+            SessionService().setViewPlayer(userId: user.uid){ result in
+                print(result)
+                print(user)
+
+                if result == user.uid{
+                    self.notPlaying.isHidden = true
+                }else{
+                    self.isPlaying.isHidden = true
+                }
+            }// Do any additional setup after loading the view.
+        }
     }
     
 }

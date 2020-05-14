@@ -12,6 +12,7 @@
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		06222CF3246C067B00E3D454 /* ChallengeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */; };
 		06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */; };
+		06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF6246D3BB300E3D454 /* SettingsViewController.swift */; };
 		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
 		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
 		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
@@ -38,6 +39,7 @@
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
+		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
@@ -70,6 +72,7 @@
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeLandingViewController.swift; sourceTree = "<group>"; };
 		06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeAcceptedViewController.swift; sourceTree = "<group>"; };
+		06222CF6246D3BB300E3D454 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
+		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				06805F6924657EF000280A7F /* ProfileViewController.swift */,
+				06222CF6246D3BB300E3D454 /* SettingsViewController.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				06C6AF0B246021D5008E45AC /* LevelService.swift */,
 				06C6AF0D24604507008E45AC /* UserService.swift */,
 				066AFD0C246AECD200F0147F /* GamesService.swift */,
+				069CE52B246D9F5900C0EFE8 /* SessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
+				06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
 				066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
@@ -545,6 +552,7 @@
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
+				069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */,
 				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);

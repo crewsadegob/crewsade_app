@@ -24,6 +24,9 @@ class ProfileViewController: UIViewController {
         imageProfile.layer.cornerRadius = imageProfile.frame.width/2 
         imageProfile.clipsToBounds = true
         
+        self.navigationController?.navigationBar.topItem?.title = "PROFIL";
+
+        
         // Do any additional setup after loading the view.
         if let user = user{
             UserService().getUserInformations(id: user.uid){ result in
@@ -37,8 +40,5 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-    }
-    @IBAction func logOutButtonClicked(_ sender: Any) {
-        UserService().logOut()
     }
 }

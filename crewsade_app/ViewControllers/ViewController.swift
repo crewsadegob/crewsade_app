@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         GamesService().checkIsUserChallenged(view:self)
-        GamesService().test()
        
     }
     override func viewWillAppear(_ animated: Bool) {

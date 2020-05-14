@@ -107,10 +107,13 @@ class UserService {
             }
         }
     }
-    func logOut(){
+    func logOut(view: UIViewController){
         do
           {
               try Auth.auth().signOut()
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Sign", bundle: nil)
+            let mainViewController = mainStoryboard.instantiateViewController(identifier: "SignView")
+            view.show(mainViewController, sender: nil)
           }
           catch let error as NSError
           {

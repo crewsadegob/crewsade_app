@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9KS-yA-qJ9">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,21 +13,41 @@
     </customFonts>
     <scenes>
         <!--PROFIL-->
+        <scene sceneID="nLh-zv-nd1">
+            <objects>
+                <navigationController storyboardIdentifier="Profile" title="PROFIL" id="9KS-yA-qJ9" customClass="NavigationViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Uit-5A-dYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IMa-Ql-Gr5" kind="relationship" relationship="rootViewController" id="WMs-Y1-mTw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcQ-JE-qdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1367" y="-121"/>
+        </scene>
+        <!--PROFIL-->
         <scene sceneID="aaL-hy-Ijd">
             <objects>
-                <viewController storyboardIdentifier="Profile" title="PROFIL" id="IMa-Ql-Gr5" customClass="ProfileViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PROFIL" id="IMa-Ql-Gr5" customClass="ProfileViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sE4-JW-d5i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-5c-Qww">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="307"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-Ds-QTg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTF-Ds-QTg">
                                         <rect key="frame" x="147.5" y="70" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="FRs-PY-OQs"/>
-                                            <constraint firstAttribute="height" constant="80" id="mhD-to-NU6"/>
+                                            <constraint firstAttribute="height" constant="80" id="5cX-9s-jR4"/>
+                                            <constraint firstAttribute="width" constant="80" id="Rm3-65-6If"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiC-we-cbz">
@@ -40,22 +60,12 @@
                                         <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="highlightedColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-IA-Sht">
-                                        <rect key="frame" x="255" y="30" width="90" height="30"/>
-                                        <state key="normal" title="Déconnexion"/>
-                                        <connections>
-                                            <action selector="logOutButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="RTc-Gw-qQU"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="top" constant="70" id="1I2-wq-eep"/>
                                     <constraint firstItem="FiC-we-cbz" firstAttribute="top" secondItem="VTF-Ds-QTg" secondAttribute="bottom" constant="-14" id="LHO-dY-y5E"/>
-                                    <constraint firstItem="CDU-IA-Sht" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="top" constant="30" id="SUN-dl-6Q2"/>
-                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="centerX" secondItem="iR9-5c-Qww" secondAttribute="centerX" id="UNU-TC-0o0"/>
-                                    <constraint firstItem="CDU-IA-Sht" firstAttribute="leading" secondItem="iR9-5c-Qww" secondAttribute="leading" constant="255" id="dhh-81-OE5"/>
-                                    <constraint firstAttribute="trailing" secondItem="CDU-IA-Sht" secondAttribute="trailing" constant="30" id="pTt-Mg-B3E"/>
+                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="centerX" secondItem="iR9-5c-Qww" secondAttribute="centerX" id="OsG-Dh-Y4D"/>
+                                    <constraint firstItem="VTF-Ds-QTg" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="top" constant="70" id="mX8-iC-Rqq"/>
                                     <constraint firstAttribute="trailing" secondItem="FiC-we-cbz" secondAttribute="trailing" constant="112" id="q4u-Zz-ia4"/>
                                     <constraint firstAttribute="height" constant="307" id="uGg-6e-FA4"/>
                                     <constraint firstItem="FiC-we-cbz" firstAttribute="leading" secondItem="iR9-5c-Qww" secondAttribute="leading" constant="112" id="wLk-aM-78N"/>
@@ -71,6 +81,18 @@
                         <viewLayoutGuide key="safeArea" id="YDa-Dh-X6m"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile_icon" landscapeImage="profile_icon" largeContentSizeImage="profile_icon" id="gPc-YW-0Zu"/>
+                    <navigationItem key="navigationItem" title="PROFIL" id="7vT-Cd-JcG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="33G-GY-4Un">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OJe-CR-RiP">
+                                <rect key="frame" x="337" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="settings"/>
+                                <connections>
+                                    <segue destination="5b1-LU-j8p" kind="show" id="gRV-qu-8cN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageProfile" destination="VTF-Ds-QTg" id="6vJ-dN-LS6"/>
@@ -81,8 +103,45 @@
             </objects>
             <point key="canvasLocation" x="-439.19999999999999" y="-120.98950524737631"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="3WD-JC-mj2">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="5b1-LU-j8p" customClass="SettingsViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5JD-rE-jO3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-IA-Sht">
+                                <rect key="frame" x="66" y="272" width="243" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="koq-8v-bmT"/>
+                                </constraints>
+                                <state key="normal" title="DÉCONNEXION">
+                                    <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonClicked:" destination="5b1-LU-j8p" eventType="touchUpInside" id="blB-nl-VzF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CDU-IA-Sht" firstAttribute="centerY" secondItem="65o-9c-ZIo" secondAttribute="centerY" id="0of-Fk-FC8"/>
+                            <constraint firstItem="CDU-IA-Sht" firstAttribute="leading" secondItem="65o-9c-ZIo" secondAttribute="leading" constant="66" id="Unf-Kr-uRf"/>
+                            <constraint firstItem="65o-9c-ZIo" firstAttribute="trailing" secondItem="CDU-IA-Sht" secondAttribute="trailing" constant="66" id="vk4-1K-Opf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="65o-9c-ZIo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Nd-7G-Yrl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fxa-Rc-WB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367.19999999999999" y="-107.49625187406298"/>
+        </scene>
     </scenes>
     <resources>
         <image name="profile_icon" width="25" height="18"/>
+        <image name="settings" width="22" height="22"/>
     </resources>
 </document>
