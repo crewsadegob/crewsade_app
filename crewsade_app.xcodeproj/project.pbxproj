@@ -10,6 +10,9 @@
 		061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */; };
 		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
+		06222CF3246C067B00E3D454 /* ChallengeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */; };
+		06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */; };
+		06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF6246D3BB300E3D454 /* SettingsViewController.swift */; };
 		063073742463FAF800436F70 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063073732463FAF800436F70 /* OnBoarding.storyboard */; };
 		063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063073762463FEEF00436F70 /* OnBoardingViewController.swift */; };
 		0630737924640A7F00436F70 /* SignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0630737824640A7F00436F70 /* SignsViewController.swift */; };
@@ -23,6 +26,10 @@
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
+		066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD08246AE56500F0147F /* GamesViewController.swift */; };
+		066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */; };
+		066AFD0D246AECD200F0147F /* GamesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0C246AECD200F0147F /* GamesService.swift */; };
+		066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */; };
 		06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6924657EF000280A7F /* ProfileViewController.swift */; };
 		06805F6E2465BC7C00280A7F /* SetProfileInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */; };
 		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
@@ -32,6 +39,7 @@
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
+		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
@@ -62,6 +70,9 @@
 		061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTricksCollectionViewCell.swift; sourceTree = "<group>"; };
 		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeLandingViewController.swift; sourceTree = "<group>"; };
+		06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeAcceptedViewController.swift; sourceTree = "<group>"; };
+		06222CF6246D3BB300E3D454 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		063073732463FAF800436F70 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		063073762463FEEF00436F70 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		0630737824640A7F00436F70 /* SignsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +86,10 @@
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		066AFD08246AE56500F0147F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
+		066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlayersViewController.swift; sourceTree = "<group>"; };
+		066AFD0C246AECD200F0147F /* GamesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesService.swift; sourceTree = "<group>"; };
+		066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlayersTableViewCell.swift; sourceTree = "<group>"; };
 		06805F6924657EF000280A7F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06805F6D2465BC7C00280A7F /* SetProfileInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfileInformation.storyboard; sourceTree = "<group>"; };
 		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +99,7 @@
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
+		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -177,10 +193,31 @@
 			path = ARViewController;
 			sourceTree = "<group>";
 		};
+		066AFD06246AE53E00F0147F /* GamesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				066AFD07246AE54B00F0147F /* Out */,
+				066AFD08246AE56500F0147F /* GamesViewController.swift */,
+			);
+			path = GamesViewController;
+			sourceTree = "<group>";
+		};
+		066AFD07246AE54B00F0147F /* Out */ = {
+			isa = PBXGroup;
+			children = (
+				066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */,
+				066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */,
+				06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */,
+				06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */,
+			);
+			path = Out;
+			sourceTree = "<group>";
+		};
 		06805F6824657A4100280A7F /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
 				06805F6924657EF000280A7F /* ProfileViewController.swift */,
+				06222CF6246D3BB300E3D454 /* SettingsViewController.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -219,6 +256,7 @@
 		06BB784B24519D600018F605 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				066AFD06246AE53E00F0147F /* GamesViewController */,
 				06805F6824657A4100280A7F /* ProfileViewController */,
 				063073752463FE4C00436F70 /* OnBoarding */,
 				061AAABA245B42050010152E /* SignViewControllers */,
@@ -251,6 +289,8 @@
 				06C6AF0924600F7D008E45AC /* TrickService.swift */,
 				06C6AF0B246021D5008E45AC /* LevelService.swift */,
 				06C6AF0D24604507008E45AC /* UserService.swift */,
+				066AFD0C246AECD200F0147F /* GamesService.swift */,
+				069CE52B246D9F5900C0EFE8 /* SessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -477,8 +517,10 @@
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* textField.swift in Sources */,
+				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
 				0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */,
+				06222CF3246C067B00E3D454 /* ChallengeLandingViewController.swift in Sources */,
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
@@ -492,19 +534,25 @@
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
+				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
+				06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
+				066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
+				066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */,
 				06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
+				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
+				069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */,
 				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);

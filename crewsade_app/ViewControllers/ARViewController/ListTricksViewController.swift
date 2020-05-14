@@ -34,6 +34,7 @@ class ListTricksViewController: UIViewController {
             if let tricks = result{
                 self.tricksGet = tricks
                 self.tricksDisplay = tricks
+                self.ListTricksTable.rowHeight = UITableView.automaticDimension
                 self.ListTricksTable.reloadData()
             }
         }
@@ -88,6 +89,16 @@ class ListTricksViewController: UIViewController {
         tricksDisplay[sender.tag].saved = !tricksDisplay[sender.tag].saved
         print(tricksDisplay[sender.tag])
     }
+    
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toARViewController"{
+            if let dest = segue.destination as? ARViewController{
+                if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
+                    dest.trick = tricksDisplay[indexPath.row].name
+                }
+            }
+        }
+    }
 }
 
 extension ListTricksViewController: UITableViewDataSource{
@@ -118,6 +129,7 @@ extension ListTricksViewController: UITableViewDataSource{
         }
         cell.trickName.text = tricksDisplay[indexPath.row].name?.uppercased()
         cell.trickContent.text = tricksDisplay[indexPath.row].content
+        cell.trickContent.sizeToFit()
         cell.trickLevel.text = tricksDisplay[indexPath.row].level?.uppercased()
         cell.saveButton.tag = indexPath.row
         cell.saveButton.addTarget(self, action: #selector(buttonSaveClicked(_:)), for: .touchUpInside)

@@ -78,7 +78,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }))
         
-        profilePictureSheet.addAction(UIAlertAction(title: "Gallerie", style: .default, handler: {(action:UIAlertAction) in
+        profilePictureSheet.addAction(UIAlertAction(title: "Galerie", style: .default, handler: {(action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
             
