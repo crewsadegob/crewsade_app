@@ -9,6 +9,7 @@ target 'crewsade_app' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'SDWebImage', '~> 5.0'
+  pod 'MapboxNavigation', '~> 0.39.0'
 
  # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
