@@ -12,12 +12,6 @@ import CoreLocation
 import FirebaseFirestore
 
 class MapViewController: UIViewController {
-
-    @IBOutlet weak var spotDetails: UIView!
-    @IBOutlet weak var spotPicture: UIImageView!
-    @IBOutlet weak var spotName: UILabel!
-    @IBOutlet weak var spotDistance: UILabel!
-    @IBOutlet weak var spotNearUsers: UILabel!
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var centerButton: UIButton!
@@ -36,9 +30,6 @@ class MapViewController: UIViewController {
         setupLocationManager()
         getDatabaseUpdates()
         
-        spotDetails.isHidden = true
-        
-        view.bringSubviewToFront(spotDetails)
         view.bringSubviewToFront(addButton)
         view.bringSubviewToFront(centerButton)
     }
