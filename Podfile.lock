@@ -233,6 +233,8 @@ PODS:
     - FBSDKLoginKit/Login (= 7.0.0)
   - FBSDKLoginKit/Login (7.0.0):
     - FBSDKCoreKit (~> 7.0.0)
+  - Firebase (6.24.0):
+    - Firebase/Core (= 6.24.0)
   - Firebase/Analytics (6.24.0):
     - Firebase/Core
   - Firebase/Auth (6.24.0):
@@ -314,6 +316,13 @@ PODS:
   - FirebaseUI/Google (8.4.2):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 5.0)
+  - GeoFire (4.0.1):
+    - Firebase/Database (~> 6.0)
+  - Geofirestore (1.0.1):
+    - Firebase
+    - FirebaseCore
+    - FirebaseFirestore
+    - GeoFire
   - GoogleAppMeasurement (6.5.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -380,15 +389,34 @@ PODS:
   - GTMSessionFetcher/Full (1.4.0):
     - GTMSessionFetcher/Core (= 1.4.0)
   - leveldb-library (1.22)
+  - Mapbox-iOS-SDK (5.5.1)
+  - MapboxCoreNavigation (0.39.1):
+    - MapboxDirections.swift (~> 0.30.0)
+    - MapboxMobileEvents (~> 0.9.5)
+    - MapboxNavigationNative (~> 6.2.1)
+    - Turf (~> 0.3.0)
+  - MapboxDirections.swift (0.30.0):
+    - Polyline (~> 4.2)
+  - MapboxMobileEvents (0.9.5)
+  - MapboxNavigation (0.39.1):
+    - Mapbox-iOS-SDK (= 5.5.1)
+    - MapboxCoreNavigation (= 0.39.1)
+    - MapboxSpeech (~> 0.1.0)
+    - Solar (~> 2.1)
+  - MapboxNavigationNative (6.2.1)
+  - MapboxSpeech (0.1.1)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
   - nanopb/decode (1.30905.0)
   - nanopb/encode (1.30905.0)
+  - Polyline (4.2.1)
   - PromisesObjC (1.2.8)
   - SDWebImage (5.7.4):
     - SDWebImage/Core (= 5.7.4)
   - SDWebImage/Core (5.7.4)
+  - Solar (2.1.0)
+  - Turf (0.3.0)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -399,7 +427,9 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - FirebaseUI/Auth
   - FirebaseUI/Google
+  - Geofirestore (from `https://github.com/basementaspirations/GeoFirestore-iOS`, branch `firebase-upgrade`)
   - GoogleSignIn
+  - MapboxNavigation (~> 0.39.0)
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
@@ -422,6 +452,7 @@ SPEC REPOS:
     - FirebaseInstallations
     - FirebaseStorage
     - FirebaseUI
+    - GeoFire
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -432,9 +463,29 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - leveldb-library
+    - Mapbox-iOS-SDK
+    - MapboxCoreNavigation
+    - MapboxDirections.swift
+    - MapboxMobileEvents
+    - MapboxNavigation
+    - MapboxNavigationNative
+    - MapboxSpeech
     - nanopb
+    - Polyline
     - PromisesObjC
     - SDWebImage
+    - Solar
+    - Turf
+
+EXTERNAL SOURCES:
+  Geofirestore:
+    :branch: firebase-upgrade
+    :git: https://github.com/basementaspirations/GeoFirestore-iOS
+
+CHECKOUT OPTIONS:
+  Geofirestore:
+    :commit: 1f7ff28dc0f652fb401ee58d88931ea18752b522
+    :git: https://github.com/basementaspirations/GeoFirestore-iOS
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -455,6 +506,8 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
   FirebaseUI: e57e9b9c4340631151fbe67a14206d23d0974f37
+  GeoFire: 67b5276c561434b4e4c7ea567c2c4d64e711339c
+  Geofirestore: 46c079cf1ceeb03e77e7b2e4a3e65530527b6f95
   GoogleAppMeasurement: 4c644d86835d827bab30ab6aabb9ecaf1f500735
   GoogleDataTransport: f6f8eba931df03ebd2232ff4645aa85f8f47b5ab
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
@@ -465,10 +518,20 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  Mapbox-iOS-SDK: 051d78eb8beb4bd0601212a18ea3ba8608bae32f
+  MapboxCoreNavigation: cf6ec1b4d3920f9178f4b3557750327f76acdb1a
+  MapboxDirections.swift: 1c6df988c24b753888ebd9976d7c98632501a413
+  MapboxMobileEvents: f6c21b2e59066c5c7093585de7c15adae3b63da0
+  MapboxNavigation: 45fa17b2dfd023b0b8ea78990d872b7e50c3d78f
+  MapboxNavigationNative: 11dc22140f4698d3f26989f2b6379dc81ef0d4c1
+  MapboxSpeech: 59b3984d3f433a443d24acf53097f918c5cc70f9
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  Polyline: 0e9890790292741c8186201a536b6bb6a78d02dd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SDWebImage: 48b88379b798fd1e4298f95bb25d2cdabbf4deb3
+  Solar: 2dc6e7cc39186cb0c8228fa08df76fb50c7d8f24
+  Turf: c6bdf62d6a70c647874f295dd1cf4eefc0c3e9e6
 
-PODFILE CHECKSUM: e0944841fbcef3641de768b0ea355778a5c76aa2
+PODFILE CHECKSUM: cae97afd0f3427c26b7770de204f8793ad631a6a
 
 COCOAPODS: 1.9.1

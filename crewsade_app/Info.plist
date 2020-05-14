@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>sk.eyJ1IjoibG91YmF0aWVyIiwiYSI6ImNrYTI3ejZ5MzAxYmgzZnFiaXZtdWNvc2EifQ.Zd4kxb60TUMbOs-PvtmQpQ</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Shows your location on the map and helps improve the map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
