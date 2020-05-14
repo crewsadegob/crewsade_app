@@ -47,6 +47,7 @@ class MapViewController: UIViewController {
     
     // ------------------- ACTIONS
     @IBAction func centerMapOnUser(_ sender: UIButton) {
+        
         let user = self.locationManager.location!.coordinate
         let coordinate = CLLocationCoordinate2D(latitude: user.latitude, longitude: user.longitude)
         let camera = MGLMapCamera(lookingAtCenter: coordinate, altitude: 1500, pitch: 15, heading: 0)
@@ -86,6 +87,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
+        
     }
     
     func setupLocationManager() {
@@ -103,12 +105,11 @@ class MapViewController: UIViewController {
     
     func setupMap() {
         
-        mapView.showsUserLocation = true
-        
-        mapView.userTrackingMode = .followWithHeading
-        mapView.showsUserHeadingIndicator = false
+//        mapView.userTrackingMode = .followWithHeading
+//        mapView.showsUserHeadingIndicator = true
         
         mapView.delegate = self
+        mapView.showsUserLocation = true
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
@@ -167,12 +168,13 @@ extension MapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        if annotation is MGLUserLocation && mapView.userLocation != nil {
-            print("user")
+
+        if annotation is MGLUserLocation {
             return CustomUserLocationAnnotationView()
         }
-    
+        
         return nil
+        
     }
     
 }
