@@ -30,8 +30,6 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         setupLocationManager()
     }
     
-    // PASSER LE locationManager DANS UN SEGUE ?
-    
     func setupLocationManager() {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()

@@ -18,11 +18,9 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MGLMapView!
     
     let locationManager = CLLocationManager()
-    lazy var annotations = [MGLPointAnnotation]()
+    let db = Firestore.firestore()
     
     var displayedSpotId = ""
-
-    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +67,7 @@ class MapViewController: UIViewController {
         
     }
     
+    // GETSPOTSINDATABASE
     func getDatabaseContent() {
         
         let _ = db.collection("spots").getDocuments { (snapshot, err) in

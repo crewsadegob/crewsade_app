@@ -8,6 +8,9 @@ target 'crewsade_app' do
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  
+  # TODO : Faire un fork depuis le repo original dans notre orga
+  pod 'Geofirestore', :git => 'https://github.com/basementaspirations/GeoFirestore-iOS', :branch => 'firebase-upgrade'
   pod 'SDWebImage', '~> 5.0'
   pod 'MapboxNavigation', '~> 0.39.0'
 

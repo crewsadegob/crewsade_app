@@ -6,6 +6,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Polly-Regular.otf">
+            <string>Polly-Regular</string>
+        </array>
+        <array key="TuskerGrotesk-4500Medium.ttf">
+            <string>TuskerGrotesk-4500Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map-->
         <scene sceneID="JrO-0b-bXl">
@@ -154,15 +162,62 @@
                                     <constraint firstItem="8j9-jt-iby" firstAttribute="top" secondItem="LIU-0S-oY0" secondAttribute="top" id="p25-d5-GK7"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-Gr-sQ8">
+                                <rect key="frame" x="25" y="539" width="389" height="248"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="248" id="qkV-hD-d9V"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BE9-8g-uKV">
+                                    <size key="itemSize" width="160" height="240"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrickCell" id="KS4-rh-3XS" customClass="CarouselTricksCollectionViewCell" customModule="crewsade_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="4" width="160" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZX-uU-NKf">
+                                                    <rect key="frame" x="8" y="20" width="121" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="25"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGo-hc-tbB">
+                                                    <rect key="frame" x="9" y="64" width="131" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameLevel" destination="WGo-hc-tbB" id="p0H-Lo-DOB"/>
+                                            <outlet property="nameTrick" destination="NZX-uU-NKf" id="A5u-3f-3mT"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LIU-0S-oY0" firstAttribute="top" secondItem="Xae-62-yjm" secondAttribute="top" constant="25" id="33W-6s-dnY"/>
                             <constraint firstItem="Xae-62-yjm" firstAttribute="trailing" secondItem="LIU-0S-oY0" secondAttribute="trailing" constant="25" id="Cm6-am-y3L"/>
+                            <constraint firstItem="7jj-Gr-sQ8" firstAttribute="trailing" secondItem="Xae-62-yjm" secondAttribute="trailing" id="DuF-FF-5vF"/>
                             <constraint firstItem="Xae-62-yjm" firstAttribute="trailing" secondItem="NOC-Lb-DIv" secondAttribute="trailing" id="ZgO-DW-GxL"/>
                             <constraint firstItem="NOC-Lb-DIv" firstAttribute="height" secondItem="whw-EI-io2" secondAttribute="height" id="b43-dX-ADg"/>
                             <constraint firstItem="LIU-0S-oY0" firstAttribute="leading" secondItem="Xae-62-yjm" secondAttribute="leading" constant="25" id="dob-r1-Ykl"/>
                             <constraint firstItem="NOC-Lb-DIv" firstAttribute="width" secondItem="whw-EI-io2" secondAttribute="width" id="goP-To-O0C"/>
+                            <constraint firstItem="7jj-Gr-sQ8" firstAttribute="leading" secondItem="Xae-62-yjm" secondAttribute="leading" constant="25" id="ifX-6X-hTB"/>
+                            <constraint firstItem="Xae-62-yjm" firstAttribute="bottom" secondItem="7jj-Gr-sQ8" secondAttribute="bottom" constant="75" id="ijG-77-OyL"/>
                             <constraint firstItem="Xae-62-yjm" firstAttribute="leading" secondItem="NOC-Lb-DIv" secondAttribute="leading" id="jIj-Qa-I4c"/>
                             <constraint firstItem="Xae-62-yjm" firstAttribute="bottom" secondItem="NOC-Lb-DIv" secondAttribute="bottom" id="xt9-aw-GK9"/>
                         </constraints>

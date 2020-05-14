@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Geofirestore
 import FirebaseFirestore
 import SDWebImage
 
@@ -20,7 +21,8 @@ class SpotDetailViewController: UIViewController {
     @IBOutlet weak var spotCloseUsersLabel: UILabel!
     
     let locationManager = CLLocationManager()
-    var db = Firestore.firestore()
+    let db = Firestore.firestore()
+    let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
     
     var id: String = ""
     
