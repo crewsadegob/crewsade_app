@@ -105,7 +105,7 @@ class MapViewController: UIViewController {
     func setupMap() {
         
 //        mapView.userTrackingMode = .followWithHeading
-//        mapView.showsUserHeadingIndicator = true
+        mapView.showsUserHeadingIndicator = true
         
         mapView.delegate = self
         mapView.showsUserLocation = true

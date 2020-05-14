@@ -36,8 +36,8 @@ class SpotDetailViewController: UIViewController {
         usersCarousel.delegate = self
         
         setupLocationManager()
-        getRequestedSpot()
         getCloseUsers()
+        getRequestedSpot()
     }
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
@@ -103,7 +103,8 @@ class SpotDetailViewController: UIViewController {
         let distance = round(spotLocation.distance(from: userLocation))
         
         spotName.text = name
-        spotDistanceLabel.text = String(distance)
+        spotDistanceLabel.text = "\(distance)m"
+        spotCloseUsersLabel.text = "2 riders sont à ce spot"
         spotPicture.sd_setImage(with: URL(string: image))
     }
     
