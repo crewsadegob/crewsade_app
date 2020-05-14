@@ -23,11 +23,10 @@ class MainListTricksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-            backgroundImage.image = UIImage(named: "background.png")
-            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-            self.view.insertSubview(backgroundImage, at: 0)
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background.png")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
         
         ctaButton.layer.cornerRadius = 4.0
         ctaButton.addTextSpacing(6.0)
@@ -53,10 +52,9 @@ class MainListTricksViewController: UIViewController {
                 self.tricks = tricks
                 let screenSize = UIScreen.main.bounds.size
 
-                
                 let cellWidth = CGFloat(160.0)
                 let cellHeight = CGFloat(240.0)
-
+                
                 let layout = self.carouselTrick.collectionViewLayout as! UICollectionViewFlowLayout
                    layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
                 self.carouselTrick.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

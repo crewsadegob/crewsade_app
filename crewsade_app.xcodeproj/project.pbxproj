@@ -57,6 +57,7 @@
 		0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */; };
 		0F7906A1246D1282008A25B7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A0246D1282008A25B7 /* Spot.swift */; };
 		0F7906A3246D1A53008A25B7 /* .mapbox in Resources */ = {isa = PBXBuildFile; fileRef = 0F7906A2246D1A53008A25B7 /* .mapbox */; };
+		0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCreationViewController.swift; sourceTree = "<group>"; };
 		0F7906A0246D1282008A25B7 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		0F7906A2246D1A53008A25B7 /* .mapbox */ = {isa = PBXFileReference; lastKnownFileType = text; path = .mapbox; sourceTree = "<group>"; };
+		0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUsersTableViewCell.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				0F79069A246D1181008A25B7 /* MapViewController.swift */,
 				0F79069C246D1191008A25B7 /* SpotDetailViewController.swift */,
 				0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */,
+				0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */,
 			);
 			path = MapViewControllers;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
+				0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);

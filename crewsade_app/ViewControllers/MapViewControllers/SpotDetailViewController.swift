@@ -20,18 +20,24 @@ class SpotDetailViewController: UIViewController {
     @IBOutlet weak var spotDistanceLabel: UILabel!
     @IBOutlet weak var spotCloseUsersLabel: UILabel!
     
+    @IBOutlet weak var usersCarousel: UICollectionView!
+    
     let locationManager = CLLocationManager()
     let db = Firestore.firestore()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
     
     var id: String = ""
+    var users = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        usersCarousel.dataSource = self
+        usersCarousel.delegate = self
+        
         setupLocationManager()
         getRequestedSpot()
-        
+        getCloseUsers()
     }
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
@@ -50,6 +56,40 @@ class SpotDetailViewController: UIViewController {
                 
                 print("Spot does not exist")
                 
+            }
+        }
+    }
+    
+    func getCloseUsers() {
+        
+        let _ = db.collection("spots").document(id).collection("closeUsers").getDocuments { (snapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                
+                for document in snapshot!.documents {
+//                    let id = document.documentID
+                    let userReference = document.get("user") as! DocumentReference
+                    
+                    let user = userReference
+                    
+                    user.getDocument { (user, error) in
+                        if let user = user, user.exists {
+
+                            let name = user.get("Username") as! String
+                            let image = URL(string: user.get("Image") as! String)
+
+                            let user = User(username: name, ProfilePicture: image)
+                            self.users.append(user)
+                            self.usersCarousel.reloadData()
+
+                        } else {
+                            
+                            print("User does not exist")
+                            
+                        }
+                    }
+                }
             }
         }
     }
@@ -85,5 +125,42 @@ extension SpotDetailViewController: CLLocationManagerDelegate {
         guard let _ : CLLocationCoordinate2D = manager.location?.coordinate else {
             return
         }
+    }
+}
+
+extension SpotDetailViewController : UICollectionViewDataSource
+{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! CarouselUsersCollectionViewCell
+        
+        cell.user = users[indexPath.item]
+        cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColor
+        cell.contentView.layer.cornerRadius = 15.0
+        return cell
+    }
+}
+
+extension SpotDetailViewController: UIScrollViewDelegate, UICollectionViewDelegate
+{
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
+    {
+        let layout = self.usersCarousel.collectionViewLayout as! UICollectionViewFlowLayout
+        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+        
+        var offset = targetContentOffset.pointee
+        let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
+        let roundedIndex = round(index)
+        
+        offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+        targetContentOffset.pointee = offset
     }
 }
