@@ -55,6 +55,7 @@
 		0F79069B246D1181008A25B7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069A246D1181008A25B7 /* MapViewController.swift */; };
 		0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069C246D1191008A25B7 /* SpotDetailViewController.swift */; };
 		0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */; };
+		0F7906A1246D1282008A25B7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A0246D1282008A25B7 /* Spot.swift */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		0F79069A246D1181008A25B7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0F79069C246D1191008A25B7 /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
 		0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCreationViewController.swift; sourceTree = "<group>"; };
+		0F7906A0246D1282008A25B7 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				06D2AC1E24599554000CC0AB /* Trick.swift */,
 				06C6AF0424600A2A008E45AC /* User.swift */,
+				0F7906A0246D1282008A25B7 /* Spot.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
+				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
