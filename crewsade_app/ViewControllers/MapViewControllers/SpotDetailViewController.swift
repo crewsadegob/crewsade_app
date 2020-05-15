@@ -111,7 +111,6 @@ class SpotDetailViewController: UIViewController {
         spotCloseUsersLabel.text = "2 riders sont à ce spot"
         spotPicture.sd_setImage(with: URL(string: image), completed: nil)
         
-        
     }
     
     func setupLocationManager() {
