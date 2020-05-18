@@ -23,7 +23,9 @@
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
+		064D5FB32472A81F005747B4 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
+		065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C7E292472F49A00037CE6 /* tableView.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
 		066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD08246AE56500F0147F /* GamesViewController.swift */; };
@@ -88,7 +90,9 @@
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
+		065C7E292472F49A00037CE6 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		066AFD08246AE56500F0147F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				064D5FB32472A81F005747B4 /* MapboxMobileEvents.framework in Frameworks */,
 				A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				06324E3B2466A32A006EA196 /* handleErrors.swift */,
+				065C7E292472F49A00037CE6 /* tableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 		DF7087A665FCF5AC616A4BB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */,
 				97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */,
 			);
 			name = Frameworks;
@@ -572,6 +579,7 @@
 				06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */,
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
+				065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,

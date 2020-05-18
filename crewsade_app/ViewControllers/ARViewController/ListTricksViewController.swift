@@ -17,7 +17,7 @@ class ListTricksViewController: UIViewController {
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
     var tricksSavedIndex = [Int]()
-    var buttonX:Int = 30
+    var buttonX:Int = 0
     let buttonY:Int = 0
     let buttonWidth = 63
     let buttonHeight = 50
@@ -43,13 +43,13 @@ class ListTricksViewController: UIViewController {
                 
                 let button = UIButton(type: .system)
                 
-                button.frame = CGRect(x: self.buttonX, y: self.buttonY, width: self.buttonWidth, height: self.buttonHeight)
+                button.frame = CGRect(x: self.buttonX, y: self.buttonY, width: Int(self.ButtonSection.frame.size.width) / 5, height: Int(self.ButtonSection.frame.size.height))
                 
                 button.setTitle(level.uppercased(), for: .normal)
                 button.titleLabel?.font = UIFont(name: "Polly-Regular", size: 9)
                 button.tintColor = UIColor.CrewSade.secondaryColorLight
                 
-                self.buttonX += self.buttonWidth
+                self.buttonX += Int(self.ButtonSection.frame.size.width) / 5
                 button.addTarget(self, action: #selector(self.levelClicked(_:)), for: .touchUpInside)
                 self.ButtonSection.addSubview(button)
             }
