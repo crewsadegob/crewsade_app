@@ -91,8 +91,17 @@ class ListTricksViewController: UIViewController {
             }
         }
         tricksDisplay[sender.tag].saved = !tricksDisplay[sender.tag].saved
-        print(tricksDisplay[sender.tag])
     }
+    
+    @objc private func buttonLearnClicked(_ sender: UIButton){
+          if (tricksDisplay[sender.tag].learn == false){
+              if let trickClicked = tricksDisplay[sender.tag].reference{
+                  UserService().learnTrick(trick: trickClicked)
+                tricksDisplay[sender.tag].learn = !tricksDisplay[sender.tag].learn
+                print(tricksDisplay[sender.tag])
+              }
+          }
+      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toARViewController"{
@@ -120,6 +129,10 @@ extension ListTricksViewController: UITableViewDataSource{
             cell.saveButton.setImage(UIImage(named: "save"), for: .normal)
         }
         
+        if tricksDisplay[indexPath.row].learn{
+            cell.learnButton.setImage(UIImage(named: "learned.png"), for: .normal)
+        }
+        
         switch indexPath.row % 2 {
         case 1:
             cell.contentView.backgroundColor = UIColor.CrewSade.darkGrey
@@ -138,7 +151,7 @@ extension ListTricksViewController: UITableViewDataSource{
         cell.trickLevel.text = tricksDisplay[indexPath.row].level?.uppercased()
         cell.saveButton.tag = indexPath.row
         cell.saveButton.addTarget(self, action: #selector(buttonSaveClicked(_:)), for: .touchUpInside)
-        
+        cell.learnButton.addTarget(self, action: #selector(buttonLearnClicked(_:)), for: .touchUpInside)
         return cell
     }
     

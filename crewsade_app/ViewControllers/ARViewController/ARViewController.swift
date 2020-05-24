@@ -13,6 +13,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
+    @IBOutlet weak var nameTrick: UILabel!
     var sceneMain = SCNScene()
     var sceneNode = SCNNode()
     var isSceneRendered = false
@@ -25,7 +26,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
-        
+        nameTrick.text = trick?.uppercased()
         loadScene()
     }
     

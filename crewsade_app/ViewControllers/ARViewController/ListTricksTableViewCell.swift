@@ -16,7 +16,8 @@ class ListTricksTableViewCell: UITableViewCell {
     @IBOutlet weak var trickLevel: UILabel!
     @IBOutlet weak var trickContent: UILabel!
     @IBOutlet weak var saveButton: UIButton!
-
+    @IBOutlet weak var learnButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
