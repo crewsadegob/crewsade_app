@@ -22,16 +22,20 @@ class ListTricksViewController: UIViewController {
     let buttonWidth = 63
     let buttonHeight = 50
     
+    
+    var urlScene:String?
+    
     @IBOutlet weak var ButtonSection: UIStackView!
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         ButtonSection.addBackground(color: UIColor.CrewSade.darkGrey)
         ListTricksTable.delegate = self
         ListTricksTable.dataSource = self
         TrickService().compareSavedTricksAndListTricks(){ result in
             if let tricks = result{
+                print(tricks)
                 self.tricksGet = tricks
                 self.tricksDisplay = tricks
                 self.ListTricksTable.rowHeight = UITableView.automaticDimension
@@ -55,12 +59,12 @@ class ListTricksViewController: UIViewController {
             }
             
         }
-}
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
-
+    
     @objc private func levelClicked(_ sender: UIButton) {
         let buttons = ButtonSection.subviews.filter{$0 is UIButton}
         for button in buttons{
@@ -90,10 +94,11 @@ class ListTricksViewController: UIViewController {
         print(tricksDisplay[sender.tag])
     }
     
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toARViewController"{
             if let dest = segue.destination as? ARViewController{
                 if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
+                    
                     dest.trick = tricksDisplay[indexPath.row].name
                 }
             }
@@ -141,8 +146,11 @@ extension ListTricksViewController: UITableViewDataSource{
 
 extension ListTricksViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         self.performSegue(withIdentifier: "toARViewController", sender: self)
+        
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tR3-iO-7V4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tR3-iO-7V4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -72,6 +72,14 @@
                                                     </constraints>
                                                     <state key="normal" image="saveFull"/>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhO-JN-2PO">
+                                                    <rect key="frame" x="153" y="46" width="29" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" backgroundImage="btnAdd"/>
+                                                    <connections>
+                                                        <segue destination="V2g-8V-bMH" kind="show" id="03N-DT-BbD"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -83,6 +91,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addTrick" destination="mhO-JN-2PO" id="x3g-ed-Y8d"/>
                                             <outlet property="nameLabel" destination="EuE-Zl-puE" id="Uy2-7v-kI8"/>
                                             <outlet property="saveButton" destination="1zy-U1-5ZJ" id="PKl-zG-aHv"/>
                                             <outlet property="viewCell" destination="WiJ-7K-mqy" id="s00-at-rGM"/>
@@ -358,7 +367,11 @@
             <point key="canvasLocation" x="1648.8" y="-656.22188905547227"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="03N-DT-BbD"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="btnAdd" width="29" height="28.5"/>
         <image name="save" width="15" height="23"/>
         <image name="saveFull" width="15" height="23"/>
         <image name="training" width="25" height="25"/>

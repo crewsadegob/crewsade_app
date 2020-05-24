@@ -104,15 +104,15 @@ class MapViewController: UIViewController {
     
     func setupMap() {
 
-//        mapView.userTrackingMode = .followWithHeading
-//        mapView.showsUserHeadingIndicator = true
-//
-//        mapView.delegate = self
-//        mapView.showsUserLocation = true
-//
-//        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
-//        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
+        mapView.userTrackingMode = .followWithHeading
+        mapView.showsUserHeadingIndicator = true
+
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
+        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
     }
     
     func updateMapAnnotations(spot: Spot) {
