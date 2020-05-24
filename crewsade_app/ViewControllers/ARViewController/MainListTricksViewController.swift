@@ -156,6 +156,7 @@ extension MainListTricksViewController : UICollectionViewDataSource
         cell.trick = tricks[indexPath.item]
         cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColorLight
         cell.contentView.layer.cornerRadius = 15.0
+        
         return cell
     }
 }
