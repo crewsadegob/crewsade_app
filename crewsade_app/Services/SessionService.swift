@@ -7,15 +7,16 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 class SessionService{
-
+    
     let db = Firestore.firestore()
-    var session: String?
+    var i:Int = 0
+    let user = Auth.auth().currentUser
+    
     func beginner(sessionId: String){
-        session = sessionId
         let random = Int.random(in: 0 ... 1)
-        print(random)
         db.collection("games").document("OUT").collection("Sessions").document(sessionId).getDocument{ (document, error) in
             if let document = document, document.exists {
                 let player1 = document.get("Player1") as? [String: Any]
@@ -28,7 +29,6 @@ class SessionService{
                             "isPlayed": player1["UserId"] as! String
                         ])
                     }
-                    
                     break
                 default:
                     if let player2 = player2{
@@ -46,27 +46,113 @@ class SessionService{
     
     
     func setViewPlayer(userId: String,completionHandler: @escaping (_ result: String) -> Void){
-        
-            if let session = session{
-                db.collection("games").document("OUT").collection("Sessions").document(session).getDocument{ (document, error) in
-                    if let document = document, document.exists {
-                        print(document)
-
-                        if let isPlayed = document.get("isPlayed") as? String {
-                            if userId == isPlayed{
-                                completionHandler(userId)
-                            }
-                            else{
-                                completionHandler(userId)
+        if(i < 1){
+            self.db.collection("users").document(userId).getDocument{(document, error) in
+                if let user = document, document!.exists{
+                    if let challenge = user.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).getDocument{ (document, error) in
+                                if let document = document, document.exists {
+                                    
+                                    if let isPlayed = document.get("isPlayed") as? String {
+                                        if userId == isPlayed{
+                                            completionHandler(userId)
+                                            self.i += 1
+                                        }
+                                        else{
+                                            completionHandler("Zoulou")
+                                        }
+                                    }
+                                    
+                                }
+                                else {
+                                    print("User doesn't not exist")
+                                }
                             }
                         }
-            
-                    }
-                    else {
-                        print("User doesn't not exist")
                     }
                 }
             }
+        }
+    }
+    
+    func trickIsValidate(completionHandler: @escaping (_ success: Bool) -> Void){
+        if let user = user{
+            self.db.collection("users").document(user.uid).getDocument{(document, error) in
+                if let user = document, document!.exists{
+                    if let challenge = user.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["isPlayed": challenge["challenger"] as! String]){err in
+                                if let error = err{
+                                    print(error.localizedDescription)
+                                    completionHandler(false)
+                                }else{
+                                    print("Document modified")
+                                    completionHandler(true)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func trickIsDeny(completionHandler: @escaping (_ success: Bool) -> Void){
+        if let user = user{
+            self.db.collection("users").document(user.uid).getDocument{(document, error) in
+                if let user = document, document!.exists{
+                    if let challenge = user.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).getDocument{ (document, error) in
+                                if let document = document, document.exists {
+                                    if let isPlayed = document.get("isPlayed") as? String {
+                                        if let Player1 = document.get("Player1") as? [String: Any] {
+                                            let idPlayer1 = Player1["UserId"] as! String
+                                            let scorePlayer1 = Player1["Score"] as! Int
+                                            
+                                            if let Player2 = document.get("Player2") as? [String: Any]{
+                                                let idPlayer2 = Player2["UserId"] as! String
+                                                let scorePlayer2 = Player2["Score"] as! Int
+                                                
+                                                
+                                                switch isPlayed {
+                                                case idPlayer1:
+                                                    self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Player1":[
+                                                        "UserId": idPlayer1,
+                                                        "Score": scorePlayer1 - 1
+                                                        ],
+                                                                                                                                                       "isPlayed": idPlayer2])
+                                                    
+                                                    completionHandler(true)
+                                                    break
+                                                default:
+                                                    self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Player2":[
+                                                        "UserId": idPlayer2,
+                                                        "Score": scorePlayer2 - 1
+                                                        ],"isPlayed": idPlayer2 ])
+                                                    
+                                                    completionHandler(true)
+                                                    break
+                                                }
+                                                
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                                else {
+                                    print("User doesn't not exist")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
+        func manageScore(){
+            
+        }
     }
 }

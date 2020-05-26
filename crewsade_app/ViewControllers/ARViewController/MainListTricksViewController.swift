@@ -119,6 +119,7 @@ extension MainListTricksViewController: UITableViewDataSource{
         }else{
             cell.nameLabel?.text = ""
             cell.saveButton.isHidden = true
+            cell.learnTrick.isHidden = true
             cell.addTrick.isHidden = false
         }
         

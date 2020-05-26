@@ -15,23 +15,35 @@ class ChallengeAcceptedViewController: UIViewController {
     @IBOutlet weak var isPlaying: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-            print(user)
-           if let user = user{
+          if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
-                print(result)
-                print(user)
-
                 if result == user.uid{
-                    self.notPlaying.isHidden = true
-                }else{
                     self.isPlaying.isHidden = true
+                    print("player")
+                }else{
+                    self.notPlaying.isHidden = true
+                    print("Not player")
+
                 }
             }// Do any additional setup after loading the view.
         }
+
+    }
+
+    @IBAction func validateButton(_ sender: UIButton) {
+        SessionService().trickIsValidate(){ success in
+            if success{
+                self.notPlaying.isHidden = true
+                self.isPlaying.isHidden = false
+            }
+        }
     }
     
+    @IBAction func denyButton(_ sender: UIButton) {
+        SessionService().trickIsDeny(){ success in
+            if success{
+               print("Perdu")
+            }
+        }
+    }
 }

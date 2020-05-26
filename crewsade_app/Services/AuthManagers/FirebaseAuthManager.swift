@@ -66,7 +66,6 @@ class FirebaseAuthManager: UIViewController{
                 print(error?.localizedDescription)
                 completionBlock(false)
             }
-            
         }
     }
     func signIn(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {

@@ -103,6 +103,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="addTrick" destination="mhO-JN-2PO" id="x3g-ed-Y8d"/>
+                                            <outlet property="learnTrick" destination="DmK-72-jfj" id="dSx-PL-gYp"/>
                                             <outlet property="nameLabel" destination="EuE-Zl-puE" id="Uy2-7v-kI8"/>
                                             <outlet property="saveButton" destination="1zy-U1-5ZJ" id="PKl-zG-aHv"/>
                                             <outlet property="viewCell" destination="WiJ-7K-mqy" id="s00-at-rGM"/>
@@ -414,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYo-iG-j9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648.8" y="-656.22188905547227"/>
+            <point key="canvasLocation" x="1524" y="-656"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

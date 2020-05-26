@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 class GamesService {
     let db = Firestore.firestore()
@@ -41,7 +42,7 @@ class GamesService {
         }
     }
     
-    func checkIsUserChallenged(view: ViewController){
+    func checkIsUserChallenged(view: UIViewController){
         if let user = user{
             db.collection("users").document(user.uid).addSnapshotListener() { (player, err) in
                 if let err = err {
@@ -55,21 +56,18 @@ class GamesService {
                                     
                                     challengeNotification.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
                                         
-                                        
                                         if let refId = challengeData["referenceId"] as? String{
-                                            self.ChallengeStart(view: view, sessionId: refId)
 
                                             self.db.collection("games").document("OUT").collection("Sessions").document(refId).updateData(["create": true]) { err in
                                                 if let err = err {
                                                     print("Error removing document: \(err)")
                                                 } else {
                                                     print("Document successfully update!")
+                                                    self.ChallengeStart(view: view, sessionId: refId)
+                                                    print(view)
                                                 }
                                             }
                                         }
-                                        
-                                        
-                                        
                                     }))
                                     
                                     challengeNotification.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {(action:UIAlertAction) in
@@ -105,7 +103,6 @@ class GamesService {
                                     view.present(challengeNotification, animated: true, completion: nil)
                                 }
                             }
-                            
                         }
                     }
                 }
@@ -171,7 +168,6 @@ class GamesService {
                                         }
                                     }
                                 }
-                                
                                 group.notify(queue: .main, execute: {
                                     completionHandler(playersArray)
                                 })
@@ -189,6 +185,7 @@ class GamesService {
     }
     
     func ChallengeStart(view: UIViewController, sessionId: String){
+        print(view)
         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener() { (session, err) in
             if let err = err {
                 print("Problème pour l'event: \(err)")
@@ -197,20 +194,16 @@ class GamesService {
                 if let session = session{
                     if let state = session.get("create") as? Bool{
                         if state{
-
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
                             let mainViewController = mainStoryboard.instantiateViewController(identifier: "gameStart")
                             view.show(mainViewController, sender: nil)
+                            
                             SessionService().beginner(sessionId: sessionId)
-
                         }
                     }
                 }
             }
         }
     }
-    
-    
-    
 }
 
