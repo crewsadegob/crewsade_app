@@ -49,8 +49,12 @@ class SpotDetailViewController: UIViewController {
         
         spot.getDocument { (spot, error) in
             if let spot = spot, spot.exists {
-
-                self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: spot.get("image") as! String)
+                if spot.get("image") != nil {
+                    self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: spot.get("image") as! String)
+                } else {
+                    self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: "https://1.bp.blogspot.com/-kfpNhCO5Kxc/XXuFXWhvRoI/AAAAAAABC4g/8JvpD2-ar74RF7OCyZh88s8zfpbuDqwiQCLcBGAsYHQ/s1600/Skatepark%2BGennevilliers%2B3%2Bbis.jpg")
+                }
+                
 
             } else {
                 
@@ -105,7 +109,8 @@ class SpotDetailViewController: UIViewController {
         spotName.text = name
         spotDistanceLabel.text = "\(distance)m"
         spotCloseUsersLabel.text = "2 riders sont à ce spot"
-        spotPicture.sd_setImage(with: URL(string: image))
+        spotPicture.sd_setImage(with: URL(string: image), completed: nil)
+        
     }
     
     func setupLocationManager() {

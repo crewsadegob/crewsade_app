@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="JrO-0b-bXl">
             <objects>
                 <viewController storyboardIdentifier="Map" id="NKh-Au-RZ8" customClass="MapViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rhl-Mk-Akq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="0CB-xC-XUQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="map-icon" id="0CB-xC-XUQ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="NiX-Y1-BAL" id="hL3-X6-Lh6"/>
@@ -316,4 +316,7 @@
             <point key="canvasLocation" x="1138" y="-153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map-icon" width="18" height="25"/>
+    </resources>
 </document>

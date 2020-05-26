@@ -13,7 +13,7 @@ class MainListTrickTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var viewCell: UIView!
-    
+    @IBOutlet weak var addTrick: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
