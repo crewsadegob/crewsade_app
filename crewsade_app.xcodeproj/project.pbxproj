@@ -37,6 +37,9 @@
 		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
 		06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F712465C18400280A7F /* GoogleAuthManager.swift */; };
 		06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F732465C19700280A7F /* FacebookAuthManager.swift */; };
+		06849F5224813A4800E10CFB /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F5124813A4800E10CFB /* Label.swift */; };
+		06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */; };
+		06849F562481558A00E10CFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F552481558A00E10CFB /* UIViewController.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
@@ -104,6 +107,9 @@
 		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
 		06805F712465C18400280A7F /* GoogleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthManager.swift; sourceTree = "<group>"; };
 		06805F732465C19700280A7F /* FacebookAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthManager.swift; sourceTree = "<group>"; };
+		06849F5124813A4800E10CFB /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInvitationViewController.swift; sourceTree = "<group>"; };
+		06849F552481558A00E10CFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				066AFD0E246AFCDB00F0147F /* ListPlayersTableViewCell.swift */,
 				06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */,
 				06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */,
+				06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */,
 			);
 			path = Out;
 			sourceTree = "<group>";
@@ -266,6 +273,8 @@
 				06987C9C2461A5B100D4BF8F /* Button.swift */,
 				06B03C422464553300191C15 /* textField.swift */,
 				06E37F232469426F005CBFB4 /* Gradient.swift */,
+				06849F5124813A4800E10CFB /* Label.swift */,
+				06849F552481558A00E10CFB /* UIViewController.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* textField.swift in Sources */,
+				06849F562481558A00E10CFB /* UIViewController.swift in Sources */,
 				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
 				0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */,
@@ -581,7 +591,9 @@
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
+				06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
+				06849F5224813A4800E10CFB /* Label.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,

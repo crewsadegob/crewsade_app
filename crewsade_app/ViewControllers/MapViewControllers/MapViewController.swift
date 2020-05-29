@@ -79,10 +79,10 @@ class MapViewController: UIViewController {
                     let id = document.documentID
                     let name = document.get("name") as! String
                     let game = document.get("game") as! Bool
-                    let coords = document.get("coords") as! GeoPoint
+                    let coords = document.get("l") as! GeoPoint
 
                     let spot = Spot(id: id, name: name, coords: CLLocationCoordinate2D(latitude: coords.latitude, longitude: coords.longitude), game: game, reference: document.reference)
-                    
+
                     self.updateMapAnnotations(spot: spot)
                 }
             }

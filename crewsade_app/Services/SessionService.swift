@@ -123,7 +123,6 @@ class SessionService{
                                                         "Score": scorePlayer1 - 1
                                                         ],
                                                                                                                                                        "isPlayed": idPlayer2])
-                                                    
                                                     completionHandler(true)
                                                     break
                                                 default:
@@ -150,9 +149,45 @@ class SessionService{
                 }
             }
         }
-        
-        func manageScore(){
-            
+    }
+    func manageScore(completionHandler: @escaping (_ result: Int) -> Void){
+        if let user = user{
+            self.db.collection("users").document(user.uid).getDocument{(document, error) in
+                if let player = document, document!.exists{
+                    if let challenge = player.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{ documentSnapshot, error in
+                                guard let document = documentSnapshot else {
+                                    print("Error fetching document: \(error!)")
+                                    return
+                                }
+                                guard let data = document.data() else {
+                                    print("Document data was empty.")
+                                    return
+                                }
+                                if let player1 =  data["Player1"] as? [String: Any]{
+                                    let idPlayer1 = player1["UserId"] as! String
+                                    let scorePlayer1 = player1["Score"] as! Int
+                                    
+                                    if let Player2 = data["Player2"] as? [String: Any]{
+                                        let scorePlayer2 = Player2["Score"] as! Int
+                                        
+                                        
+                                        switch user.uid {
+                                        case idPlayer1:
+                                                completionHandler(scorePlayer1)
+                                            break
+                                        default:
+                                            completionHandler(scorePlayer2)
+                                            break
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

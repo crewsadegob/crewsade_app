@@ -13,6 +13,7 @@ class ChallengeAcceptedViewController: UIViewController {
 
     @IBOutlet weak var notPlaying: UIView!
     @IBOutlet weak var isPlaying: UIView!
+    @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
           if let user = user{
@@ -26,6 +27,11 @@ class ChallengeAcceptedViewController: UIViewController {
 
                 }
             }// Do any additional setup after loading the view.
+        }
+   scoreLabel.test(x: 3)
+
+        SessionService().manageScore(){ result in
+            self.scoreLabel.test(x: result)
         }
 
     }
