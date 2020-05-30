@@ -55,7 +55,12 @@ class FirebaseAuthManager: UIViewController{
                     if let url = url{
                         self.db.collection("users").document(user.uid).setData([
                             "Username": username,
-                            "Image": url.absoluteString
+                            "Image": url.absoluteString,
+                            "Stats":[
+                                "Victory": 0,
+                                "Spots":0,
+                                "Challenge":0,
+                                "Tricks":0]
                         ])
                     }
                 })

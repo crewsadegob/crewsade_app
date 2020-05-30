@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import Firebase
 
 class GamesService {
     let db = Firestore.firestore()
@@ -53,61 +54,9 @@ class GamesService {
                         if let challengeData = player.get("challenge") as? [String: Any]{
                             if let state = challengeData["state"] as? Bool{
                                 if state{
-                                    
                                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
                                     let mainViewController = mainStoryboard.instantiateViewController(identifier: "challengeInvitation")
                                     view.show(mainViewController, sender: nil)
-                                    
-                                    
-                                    //                                    let challengeNotification = UIAlertController(title: "Défi OUT", message: "On te défie", preferredStyle: UIAlertController.Style.actionSheet)
-                                    //
-                                    //                                    challengeNotification.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
-                                    //
-                                    //                                        if let refId = challengeData["referenceId"] as? String{
-                                    //
-                                    //                                            self.db.collection("games").document("OUT").collection("Sessions").document(refId).updateData(["create": true]) { err in
-                                    //                                                if let err = err {
-                                    //                                                    print("Error removing document: \(err)")
-                                    //                                                } else {
-                                    //                                                    print("Document successfully update!")
-                                    //                                                    self.ChallengeStart(view: view, sessionId: refId)
-                                    //                                                    print(view)
-                                    //                                                }
-                                    //                                            }
-                                    //                                        }
-                                    //                                    }))
-                                    //
-                                    //                                    challengeNotification.addAction(UIAlertAction(title: "Annuler", style: .cancel, handler: {(action:UIAlertAction) in
-                                    //                                        if let refId = challengeData["referenceId"] as? String{
-                                    //                                            self.db.collection("games").document("OUT").collection("Sessions").document(refId).delete() { err in
-                                    //                                                if let err = err {
-                                    //                                                    print("Error removing document: \(err)")
-                                    //                                                } else {
-                                    //                                                    print("Document successfully removed!")
-                                    //                                                }
-                                    //                                            }
-                                    //                                        }
-                                    //
-                                    //                                        self.db.collection("users").document(user.uid).updateData(["challenge": FieldValue.delete()]) {  err in
-                                    //                                            if let err = err {
-                                    //                                                print("Problème pour l'event: \(err)")
-                                    //                                            } else {
-                                    //                                                print("Défi refusé")
-                                    //                                            }
-                                    //                                        }
-                                    //                                        if let challenger = challengeData["challenger"] as? String {
-                                    //                                            self.db.collection("users").document(challenger).updateData(["challenge": FieldValue.delete()]) {  err in
-                                    //                                                if let err = err {
-                                    //                                                    print("Problème pour l'event: \(err)")
-                                    //                                                } else {
-                                    //                                                    print("Défi refusé")
-                                    //                                                }
-                                    //                                            }
-                                    //                                        }
-                                    //
-                                    //                                    }))
-                                    //
-                                    //                                    view.present(challengeNotification, animated: true, completion: nil)
                                 }
                             }
                         }
@@ -231,7 +180,6 @@ class GamesService {
             if let user = document, document!.exists{
                 if let challenge = user.get("challenge") as? [String: Any]{
                     if let sessionId = challenge["referenceId"] as? String{
-                        print(sessionId)
                         let group =  DispatchGroup()
                         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{(players, err) in
                             if let player = players, players!.exists {

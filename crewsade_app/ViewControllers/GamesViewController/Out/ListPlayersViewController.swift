@@ -33,6 +33,7 @@ class ListPlayersViewController: UIViewController {
     @objc private func buttonIsChallengedClicked(_ sender: UIButton){
         if let id = players[sender.tag].id{
             if let user = Auth.auth().currentUser{
+                UserService().updateChallenge()
                 GamesService().createSession(player1: id, player2: user.uid ,state: true, view: self)
                 
             }

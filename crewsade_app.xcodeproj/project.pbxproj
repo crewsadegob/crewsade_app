@@ -48,6 +48,8 @@
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
 		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
+		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
+		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
 		06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C56B8B245C358D00BAC9FB /* SignInViewController.swift */; };
 		06C6AF0524600A2A008E45AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0424600A2A008E45AC /* User.swift */; };
 		06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0924600F7D008E45AC /* TrickService.swift */; };
@@ -118,6 +120,8 @@
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
+		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
 		06C56B8B245C358D00BAC9FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		06C6AF0424600A2A008E45AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06C6AF0924600F7D008E45AC /* TrickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrickService.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */,
 				06222CF4246C7C2600E3D454 /* ChallengeAcceptedViewController.swift */,
 				06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */,
+				06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */,
+				06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */,
 			);
 			path = Out;
 			sourceTree = "<group>";
@@ -573,6 +579,7 @@
 				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
 				0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
+				06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */,
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
@@ -594,6 +601,7 @@
 				06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
 				06849F5224813A4800E10CFB /* Label.swift in Sources */,
+				06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
