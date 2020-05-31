@@ -91,6 +91,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
                                 "game" : false,
                                 "image" : url.absoluteString
                             ])
+                            UserService().updateSpots()
                         }
                     })
                     

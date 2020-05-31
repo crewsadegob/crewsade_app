@@ -144,4 +144,31 @@ class UserService {
             print(error.localizedDescription)
         }
     }
+    
+    func updateVictory(){
+        if let user = user{
+            self.db.collection("users").document(user.uid).updateData(["Stats": [
+                "Victory": FieldValue.increment(Int64(1))]])
+        }
+    }
+    
+    func updateChallenge(){
+        if let user = user{
+              self.db.collection("users").document(user.uid).updateData(["Stats": [
+                  "Challenge": FieldValue.increment(Int64(1))]])
+          }
+    }
+    
+    func updateSpots(){
+         if let user = user{
+               self.db.collection("users").document(user.uid).updateData(["Stats": [
+                   "Spots": FieldValue.increment(Int64(1))]])
+           }
+     }
+    func updateTricks(){
+           if let user = user{
+                 self.db.collection("users").document(user.uid).updateData(["Stats": [
+                     "Tricks": FieldValue.increment(Int64(1))]])
+             }
+       }
 }

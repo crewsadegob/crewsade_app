@@ -27,6 +27,7 @@ class MapViewController: UIViewController {
         
         setupLocationManager()
         getDatabaseUpdates()
+        GamesService().checkIsUserChallenged(view: self)
         
         view.bringSubviewToFront(addButton)
         view.bringSubviewToFront(centerButton)
@@ -78,10 +79,10 @@ class MapViewController: UIViewController {
                     let id = document.documentID
                     let name = document.get("name") as! String
                     let game = document.get("game") as! Bool
-                    let coords = document.get("coords") as! GeoPoint
+                    let coords = document.get("l") as! GeoPoint
 
                     let spot = Spot(id: id, name: name, coords: CLLocationCoordinate2D(latitude: coords.latitude, longitude: coords.longitude), game: game, reference: document.reference)
-                    
+
                     self.updateMapAnnotations(spot: spot)
                 }
             }
@@ -104,15 +105,15 @@ class MapViewController: UIViewController {
     
     func setupMap() {
 
-        mapView.userTrackingMode = .followWithHeading
-        mapView.showsUserHeadingIndicator = true
-
-        mapView.delegate = self
-        mapView.showsUserLocation = true
-
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
-        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
+//        mapView.userTrackingMode = .followWithHeading
+//        mapView.showsUserHeadingIndicator = true
+//
+//        mapView.delegate = self
+//        mapView.showsUserLocation = true
+//
+//        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
+//        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
     }
     
     func updateMapAnnotations(spot: Spot) {
