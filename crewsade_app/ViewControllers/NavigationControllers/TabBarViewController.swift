@@ -13,13 +13,15 @@ class TabBarViewController: UITabBarController {
     @IBOutlet weak var TabBar: UITabBar!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TabBar.layer.masksToBounds = false
+        TabBar.layer.cornerRadius = 50.0
 //        addCenterButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.hidesBackButton = true
-
+        self.tabBarController?.navigationItem.hidesBackButton = false
     }
 
 //    private func addCenterButton() {

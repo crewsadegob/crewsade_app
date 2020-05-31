@@ -54,7 +54,7 @@ class SpotDetailViewController: UIViewController {
         
         spot.getDocument { (spot, error) in
             if let spot = spot, spot.exists {
-
+                
                 self.buildDetailView(name: spot.get("name") as! String, location: spot.get("l") as! GeoPoint, image: spot.get("image") as! String)
 
             } else {
@@ -92,7 +92,7 @@ class SpotDetailViewController: UIViewController {
                                 let name = user.get("Username") as! String
                                 let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, ProfilePicture: image)
+                                let user = User(username: name, Image: image, id: userId)
                                 self.users.append(user)
                                 
                                 self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
@@ -118,7 +118,7 @@ class SpotDetailViewController: UIViewController {
                                 let name = user.get("Username") as! String
                                 let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, ProfilePicture: image)
+                                let user = User(username: name, Image: image, id: userId)
                                 
                                 if let index = self.users.firstIndex(of: user) {
                                     self.users.remove(at: index)

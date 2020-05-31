@@ -25,7 +25,7 @@ class CarouselUsersCollectionViewCell: UICollectionViewCell {
         if let user = user {
             
             userName.text = user.username
-            userPicture.sd_setImage(with: user.ProfilePicture)
+            userPicture.sd_setImage(with: user.Image)
             
         } else {
             

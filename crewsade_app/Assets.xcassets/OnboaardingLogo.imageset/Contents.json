@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "lauch.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "launchx2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "OnboaardingLogo.png",
+      "filename" : "launchx3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

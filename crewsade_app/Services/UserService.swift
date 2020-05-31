@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 import FirebaseStorage
 class UserService {
     
@@ -17,20 +18,21 @@ class UserService {
     
     var tricks = [Trick]()
     
-    func getUserInformations(completionHandler: @escaping (_ result: User?) -> Void){
-        if let user = user{
-              self.db.collection("users").document(user.uid).getDocument { (document, error) in
-                  if let document = document, document.exists {
-                      let username = document.get("Username") as? String
-                      let image = user.photoURL
-
-                      completionHandler(User(username: username, ProfilePicture: image))
-                  } else {
-                      print("User doesn't not exist")
-                      completionHandler(nil)
+    func getUserInformations(id: String, completionHandler: @escaping (_ result: User?) -> Void){
+        self.db.collection("users").document(id).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let username = document.get("Username") as? String
+                if let image = document.get("Image") as? String{
+                    completionHandler(User(username: username, Image: URL(string:image), id: id))
+                    
                 }
+                
+            } else {
+                print("User doesn't not exist")
+                completionHandler(nil)
             }
         }
+        
     }
     
     func saveTrick(trick: DocumentReference){
@@ -43,8 +45,31 @@ class UserService {
                     if let trickData = DocumentSnapshot{
                         self.db.collection("users").document(user.uid).collection("tricks").document(trickData.get("Name") as! String).setData([
                             "Trick": trick,
-                            "Status": "None"
+                            "Status": false
                         ])
+                    }
+                }
+            }
+        }
+    }
+    func learnTrick(trick: DocumentReference){
+        if let user = user {
+            trick.getDocument{(DocumentSnapshot, err) in
+                if let err = err{
+                    print("Error getting documents: \(err)")
+                }
+                else{
+                    print("ok learned")
+                    if let trickData = DocumentSnapshot{
+                        self.db.collection("users").document(user.uid).collection("tricks").document(trickData.get("Name") as! String).setData([
+                            "Trick": trick,
+                            "Status": true
+                        ]){err in
+                            if let err = err{
+                                print(err.localizedDescription)
+                            }
+                            
+                        }
                     }
                 }
             }
@@ -106,14 +131,44 @@ class UserService {
             }
         }
     }
-    func logOut(){
+    func logOut(view: UIViewController){
         do
-          {
-              try Auth.auth().signOut()
-          }
-          catch let error as NSError
-          {
-              print(error.localizedDescription)
+        {
+            try Auth.auth().signOut()
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Sign", bundle: nil)
+            let mainViewController = mainStoryboard.instantiateViewController(identifier: "SignView")
+            view.show(mainViewController, sender: nil)
+        }
+        catch let error as NSError
+        {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateVictory(){
+        if let user = user{
+            self.db.collection("users").document(user.uid).updateData(["Stats": [
+                "Victory": FieldValue.increment(Int64(1))]])
+        }
+    }
+    
+    func updateChallenge(){
+        if let user = user{
+              self.db.collection("users").document(user.uid).updateData(["Stats": [
+                  "Challenge": FieldValue.increment(Int64(1))]])
           }
     }
+    
+    func updateSpots(){
+         if let user = user{
+               self.db.collection("users").document(user.uid).updateData(["Stats": [
+                   "Spots": FieldValue.increment(Int64(1))]])
+           }
+     }
+    func updateTricks(){
+           if let user = user{
+                 self.db.collection("users").document(user.uid).updateData(["Stats": [
+                     "Tricks": FieldValue.increment(Int64(1))]])
+             }
+       }
 }

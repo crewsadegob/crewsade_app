@@ -30,6 +30,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         usernameInput.underlined()
         emailInput.underlined()
         passwordInput.underlined()
+        
+        
+        profilePicture.layer.borderWidth = 1
+        profilePicture.layer.masksToBounds = false
+        profilePicture.layer.borderColor = UIColor.black.cgColor
+        profilePicture.layer.cornerRadius = profilePicture.frame.width/2 //This will change with corners of image and height/2 will make this circle shape
+        profilePicture.clipsToBounds = true
         // Do any additional setup after loading the view.
         
     }
@@ -71,7 +78,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
         }))
         
-        profilePictureSheet.addAction(UIAlertAction(title: "Gallerie", style: .default, handler: {(action:UIAlertAction) in
+        profilePictureSheet.addAction(UIAlertAction(title: "Galerie", style: .default, handler: {(action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
             
@@ -86,7 +93,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         profilePicture.image =  image
-        
+
         picker.dismiss(animated: true, completion: nil)
     }
     

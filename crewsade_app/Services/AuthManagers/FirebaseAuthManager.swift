@@ -42,10 +42,6 @@ class FirebaseAuthManager: UIViewController{
         }
     }
     func setProfile(username: String,user: Firebase.User, Image: UIImage,completionBlock: @escaping (_ success: Bool) -> Void){
-        
-        let changeRequest = user.createProfileChangeRequest()
-        print(user.uid)
-        
         let profilePictureStorageRef = self.storageRef.child("user_profiles/\(user.uid)/profile_picture")
         
         guard let imageData = Image.jpegData(compressionQuality: 0.4) else{ return}
@@ -57,26 +53,24 @@ class FirebaseAuthManager: UIViewController{
             if(error == nil){
                 profilePictureStorageRef.downloadURL(completion: {(url,error) in
                     if let url = url{
-                        changeRequest.photoURL = url
-                        changeRequest.commitChanges { error in
-                            if let error = error {
-                                print(error.localizedDescription)
-                            } else {
-                                print("User updated")
-                            }
-                        }
+                        self.db.collection("users").document(user.uid).setData([
+                            "Username": username,
+                            "Image": url.absoluteString,
+                            "Stats":[
+                                "Victory": 0,
+                                "Spots":0,
+                                "Challenge":0,
+                                "Tricks":0]
+                        ])
                     }
                 })
-                self.db.collection("users").document(user.uid).setData([
-                    "Username": username
-                ])
+                
                 completionBlock(true)
             }
             else{
                 print(error?.localizedDescription)
                 completionBlock(false)
             }
-            
         }
     }
     func signIn(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
