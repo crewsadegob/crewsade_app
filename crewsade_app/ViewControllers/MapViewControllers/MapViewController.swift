@@ -10,6 +10,7 @@ import UIKit
 import Mapbox
 import CoreLocation
 import FirebaseFirestore
+import Geofirestore
 
 class MapViewController: UIViewController {
     
@@ -44,6 +45,7 @@ class MapViewController: UIViewController {
     }
     
     // ------------------- ACTIONS
+    
     @IBAction func centerMapOnUser(_ sender: UIButton) {
         
         let user = self.locationManager.location!.coordinate
@@ -61,14 +63,13 @@ class MapViewController: UIViewController {
             if let err = err {
                 print("Error retreiving collection: \(err)")
             } else {
-                self.getDatabaseContent()
+                self.getSpotsInDatabase()
             }
         }
         
     }
     
-    // GETSPOTSINDATABASE
-    func getDatabaseContent() {
+    func getSpotsInDatabase() {
         
         let _ = db.collection("spots").getDocuments { (snapshot, err) in
             if let err = err {
@@ -78,15 +79,14 @@ class MapViewController: UIViewController {
                     let id = document.documentID
                     let name = document.get("name") as! String
                     let game = document.get("game") as! Bool
-                    let coords = document.get("coords") as! GeoPoint
+                    let location = document.get("l") as! GeoPoint
 
-                    let spot = Spot(id: id, name: name, coords: CLLocationCoordinate2D(latitude: coords.latitude, longitude: coords.longitude), game: game, reference: document.reference)
+                    let spot = Spot(id: id, name: name, location: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), game: game, reference: document.reference)
                     
                     self.updateMapAnnotations(spot: spot)
                 }
             }
         }
-        
     }
     
     func setupLocationManager() {
@@ -118,7 +118,7 @@ class MapViewController: UIViewController {
     func updateMapAnnotations(spot: Spot) {
         
         let point = MGLPointAnnotation()
-        point.coordinate = spot.coords
+        point.coordinate = spot.location
         point.title = "\(spot.id)"
         point.subtitle = "\(spot.game)"
         mapView.addAnnotation(point)
@@ -186,7 +186,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
-// CUSTOM USER
+// CUSTOM USER VIEW
 
 class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
     let size: CGFloat = 48

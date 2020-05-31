@@ -12,6 +12,7 @@ import UIKit
 import CoreLocation
 import FirebaseFirestore
 import FirebaseStorage
+import Geofirestore
 
 class SpotCreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -30,16 +31,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         setupLocationManager()
     }
     
-    func setupLocationManager() {
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-    }
+    // ------------------- ACTIONS
     
     @IBAction func didTapSpotPicture(_ sender: UITapGestureRecognizer) {
         
@@ -69,9 +61,11 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func submitSpot(_ sender: UIButton) {
         
         let location = locationManager.location!.coordinate
+        let spotsRef = db.collection("spots")
+        let spotsCol = GeoFirestore(collectionRef: spotsRef)
+        let spot = spotsRef.document()
         
-        let newSpot = db.collection("spots").document()
-        let spotPictureStorageRef = self.storage.reference().child("spots/\(newSpot.documentID)/spot_picture")
+        let spotPictureStorageRef = self.storage.reference().child("spots/\(spot.documentID)/spot_picture")
         
         if let name = spotNameInput.text, let image = spotPicture.image {
             
@@ -85,12 +79,18 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
                     
                     spotPictureStorageRef.downloadURL(completion: {(url,error) in
                         if let url = url{
-                            newSpot.setData([
+                            spot.setData([
                                 "name" : name,
-                                "coords" : GeoPoint(latitude: location.latitude, longitude: location.longitude),
                                 "game" : false,
                                 "image" : url.absoluteString
                             ])
+                            spotsCol.setLocation(geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), forDocumentWithID: spot.documentID) { (error) in
+                                if let error = error {
+                                    print("Une erreur est survenue : \(error)")
+                                } else {
+                                    print("Spot \(spot.documentID) enregistré !")
+                                }
+                            }
                         }
                     })
                     
@@ -103,6 +103,19 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         
         // A FAIRE DANS UN CALLBACK POUR S'ASSURER QUE LES INFOS SONT ENREGISTRÉES ?
         dismiss(animated: true, completion: nil)
+    }
+    
+    // ------------------- METHODS
+    
+    func setupLocationManager() {
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -118,6 +131,9 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     }
 
 }
+
+
+// ------------------- EXTENSIONS
 
 extension SpotCreationViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
