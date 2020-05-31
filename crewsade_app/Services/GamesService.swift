@@ -28,11 +28,12 @@ class GamesService {
                 for user in users!.documents {
                     group.enter()
                     let name = user.get("Username") as? String
+                    let stats = user.get("Stats") as! [String: Int]
                     let id = user.documentID
                     if let image = user.get("Image") as? String{
                         let imageUrl = URL(string: image)
                         
-                        players.append(User(username: name, Image: imageUrl, id: id))
+                        players.append(User(username: name, Image: imageUrl, id: id,stats: stats))
                     }
                     group.leave()
                     
@@ -192,7 +193,7 @@ class GamesService {
                                     group.enter()
                                     UserService().getUserInformations(id: playerId){result in
                                         if let user = result{
-                                            playersArray.append(User(username: user.username, Image: user.Image, id: user.id))
+                                            playersArray.append(User(username: user.username, Image: user.Image, id: user.id,stats: user.stats))
                                             group.leave()
                                         }
                                     }

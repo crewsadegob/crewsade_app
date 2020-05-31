@@ -12,4 +12,6 @@ struct User {
     let username: String?
     let Image: URL?
     let id: String?
+    let stats: [String: Int]
+    
 }

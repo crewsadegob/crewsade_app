@@ -19,20 +19,19 @@ class UserService {
     var tricks = [Trick]()
     
     func getUserInformations(id: String, completionHandler: @escaping (_ result: User?) -> Void){
-        self.db.collection("users").document(id).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let username = document.get("Username") as? String
-                if let image = document.get("Image") as? String{
-                    completionHandler(User(username: username, Image: URL(string:image), id: id))
-                    
-                }
-                
-            } else {
-                print("User doesn't not exist")
+        self.db.collection("users").document(id).addSnapshotListener { DocumentSnapshot, err in
+            guard let document = DocumentSnapshot else{
+                print("Error fetching document: \(err!)")
                 completionHandler(nil)
+                return
+            }
+            let username = document.get("Username") as? String
+            let stats = document.get("Stats") as! [String: Int]
+            if let image = document.get("Image") as? String{
+                completionHandler(User(username: username, Image: URL(string:image), id: id, stats: stats))
+                
             }
         }
-        
     }
     
     func saveTrick(trick: DocumentReference){
@@ -147,28 +146,24 @@ class UserService {
     
     func updateVictory(){
         if let user = user{
-            self.db.collection("users").document(user.uid).updateData(["Stats": [
-                "Victory": FieldValue.increment(Int64(1))]])
+            self.db.collection("users").document(user.uid).updateData(["Stats.Victory": FieldValue.increment(Int64(1))])
         }
     }
     
     func updateChallenge(){
         if let user = user{
-              self.db.collection("users").document(user.uid).updateData(["Stats": [
-                  "Challenge": FieldValue.increment(Int64(1))]])
-          }
+            self.db.collection("users").document(user.uid).updateData(["Stats.Challenge": FieldValue.increment(Int64(1))])
+        }
     }
     
     func updateSpots(){
-         if let user = user{
-               self.db.collection("users").document(user.uid).updateData(["Stats": [
-                   "Spots": FieldValue.increment(Int64(1))]])
-           }
-     }
+        if let user = user{
+            self.db.collection("users").document(user.uid).updateData(["Stats.Spots": FieldValue.increment(Int64(1))])
+        }
+    }
     func updateTricks(){
-           if let user = user{
-                 self.db.collection("users").document(user.uid).updateData(["Stats": [
-                     "Tricks": FieldValue.increment(Int64(1))]])
-             }
-       }
+        if let user = user{
+            self.db.collection("users").document(user.uid).updateData(["Stats.Tricks": FieldValue.increment(Int64(1))])
+        }
+    }
 }

@@ -13,7 +13,7 @@ import FirebaseFirestore
 import SDWebImage
 
 class SpotDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -55,7 +55,7 @@ class SpotDetailViewController: UIViewController {
                     self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: "https://1.bp.blogspot.com/-kfpNhCO5Kxc/XXuFXWhvRoI/AAAAAAABC4g/8JvpD2-ar74RF7OCyZh88s8zfpbuDqwiQCLcBGAsYHQ/s1600/Skatepark%2BGennevilliers%2B3%2Bbis.jpg")
                 }
                 
-
+                
             } else {
                 
                 print("Spot does not exist")
@@ -72,7 +72,7 @@ class SpotDetailViewController: UIViewController {
             } else {
                 
                 for document in snapshot!.documents {
-//                    let id = document.documentID
+                    //                    let id = document.documentID
                     let userReference = document.get("user") as! DocumentReference
                     
                     let user = userReference
@@ -82,11 +82,11 @@ class SpotDetailViewController: UIViewController {
                             
                             let name = user.get("Username") as! String
                             let image = URL(string: user.get("Image") as! String)
-
-                            let user = User(username: name, Image: image, id: user.documentID)
+                            let stats = user.get("Stats") as! [String: Int]
+                            let user = User(username: name, Image: image, id: user.documentID,stats: stats)
                             self.users.append(user)
                             self.usersCarousel.reloadData()
-
+                            
                         } else {
                             
                             print("User does not exist")

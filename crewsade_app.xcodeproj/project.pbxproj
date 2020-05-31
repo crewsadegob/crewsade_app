@@ -50,6 +50,7 @@
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
 		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
+		06BF0A8F2482D310000E5F33 /* ProfileStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */; };
 		06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C56B8B245C358D00BAC9FB /* SignInViewController.swift */; };
 		06C6AF0524600A2A008E45AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0424600A2A008E45AC /* User.swift */; };
 		06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0924600F7D008E45AC /* TrickService.swift */; };
@@ -122,6 +123,7 @@
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
 		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
+		06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsTableViewCell.swift; sourceTree = "<group>"; };
 		06C56B8B245C358D00BAC9FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		06C6AF0424600A2A008E45AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06C6AF0924600F7D008E45AC /* TrickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrickService.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				06805F6924657EF000280A7F /* ProfileViewController.swift */,
 				06222CF6246D3BB300E3D454 /* SettingsViewController.swift */,
+				06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */,
+				06BF0A8F2482D310000E5F33 /* ProfileStatsTableViewCell.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
