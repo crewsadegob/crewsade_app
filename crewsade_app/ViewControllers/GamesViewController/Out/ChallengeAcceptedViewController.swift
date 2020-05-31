@@ -19,6 +19,8 @@ class ChallengeAcceptedViewController: UIViewController {
     @IBOutlet weak var challengerImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        challengerImage.setRoundedImage()
+        
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
                 if result == user.uid{

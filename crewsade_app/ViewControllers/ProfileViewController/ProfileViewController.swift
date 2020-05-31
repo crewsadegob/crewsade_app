@@ -23,13 +23,10 @@ class ProfileViewController: UIViewController {
         statsTable.delegate = self
         statsTable.dataSource = self
         
-        imageProfile.layer.masksToBounds = false
-        imageProfile.layer.borderColor = UIColor.black.cgColor
-        imageProfile.layer.cornerRadius = imageProfile.frame.width/2 
-        imageProfile.clipsToBounds = true
+        imageProfile.setRoundedImage()
         
         self.navigationController?.navigationBar.topItem?.title = "PROFIL";
-        
+        usernameLabel.test(x: 2)
         
         // Do any additional setup after loading the view.
         if let user = user{
@@ -86,17 +83,16 @@ extension ProfileViewController: UITableViewDataSource{
             return cell
         }
         
-                switch indexPath.row % 2 {
-                case 1:
-                    cell.contentView.backgroundColor = UIColor.CrewSade.mainColor
-                  
-                default:
-                    cell.contentView.backgroundColor = UIColor.CrewSade.darkGrey
-                   
+        switch indexPath.row % 2 {
+        case 1:
+            cell.contentView.backgroundColor = UIColor.CrewSade.mainColor
+            
+        default:
+            cell.contentView.backgroundColor = UIColor.CrewSade.darkGrey
+            
+        }
         
-                }
         
-
         
         return cell
     }

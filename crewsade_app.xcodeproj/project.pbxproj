@@ -42,6 +42,7 @@
 		06849F562481558A00E10CFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F552481558A00E10CFB /* UIViewController.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
+		069A915A2483C1C7007432C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A91592483C1C7007432C9 /* ImageView.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
@@ -115,6 +116,7 @@
 		06849F552481558A00E10CFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		069A91592483C1C7007432C9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				06E37F232469426F005CBFB4 /* Gradient.swift */,
 				06849F5124813A4800E10CFB /* Label.swift */,
 				06849F552481558A00E10CFB /* UIViewController.swift */,
+				069A91592483C1C7007432C9 /* ImageView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
+				069A915A2483C1C7007432C9 /* ImageView.swift in Sources */,
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,

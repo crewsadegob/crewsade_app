@@ -19,14 +19,16 @@ extension UILabel{
                NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 160)]
                as [NSAttributedString.Key : Any]
            //Making outline here
-           self.attributedText = NSMutableAttributedString(string: "OUT", attributes: strokeTextAttributes)
+           self.attributedText = NSMutableAttributedString(string: "h", attributes: strokeTextAttributes)
            
         let range = NSRange(location:0,length: 3 - x)
 
-        let attributedString = NSMutableAttributedString(string: "OUT", attributes: nil)
+        let attributedString = self.text as! NSMutableAttributedString
           // here you change the character to red color
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.CrewSade.secondaryColorLight, range: range)
           self.attributedText = attributedString
+        
+        print(self.attributedText)
         
     }
 }
