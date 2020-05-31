@@ -15,7 +15,7 @@ struct Spot {
     
     var id: String
     var name: String
-    var coords: CLLocationCoordinate2D
+    var location: CLLocationCoordinate2D
     var game: Bool
     var reference: DocumentReference
     

@@ -15,6 +15,8 @@ struct Trick {
     var content:String?
     var level:String?
     var reference:DocumentReference?
+    var scene: String?
     var saved = false
+    var learn = false
     
 }

@@ -72,11 +72,25 @@ class MainListTricksViewController: UIViewController {
         }
     }
     
+    @objc private func emptyList(_ sender: UIButton){
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "AR", bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: "ListTricksViewController")
+        self.show(mainViewController, sender: nil)
+         
+      }
+    
 }
 
 extension MainListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tricksSaved.count
+        
+        if tricksSaved.count > 0 {
+            return tricksSaved.count
+        }
+        else{
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,14 +102,28 @@ extension MainListTricksViewController: UITableViewDataSource{
         roundedView.layer.backgroundColor = UIColor.CrewSade.secondaryColorLight.cgColor
         roundedView.layer.masksToBounds = false
         roundedView.layer.cornerRadius = 15.0
-    
+
         
         cell.contentView.addSubview(roundedView)
         cell.contentView.sendSubviewToBack(roundedView)
+    
+
         
-        cell.nameLabel?.text = tricksSaved[indexPath.row].name?.uppercased()
-        cell.saveButton.tag = indexPath.row
-        cell.saveButton.addTarget(self, action: #selector(self.buttonSaveClicked(_:)), for: .touchUpInside)
+        if tricksSaved.count > 0 {
+            cell.nameLabel?.text = tricksSaved[indexPath.row].name?.uppercased()
+            cell.saveButton.isHidden = false
+            cell.saveButton.tag = indexPath.row
+            cell.saveButton.addTarget(self, action: #selector(self.buttonSaveClicked(_:)), for: .touchUpInside)
+            cell.addTrick.isHidden = true
+
+        }else{
+            cell.nameLabel?.text = ""
+            cell.saveButton.isHidden = true
+            cell.learnTrick.isHidden = true
+            cell.addTrick.isHidden = false
+        }
+        
+    
 
         return cell
     }
@@ -129,6 +157,7 @@ extension MainListTricksViewController : UICollectionViewDataSource
         cell.trick = tricks[indexPath.item]
         cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColorLight
         cell.contentView.layer.cornerRadius = 15.0
+        
         return cell
     }
 }

@@ -13,6 +13,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
     
+    @IBOutlet weak var nameTrick: UILabel!
     var sceneMain = SCNScene()
     var sceneNode = SCNNode()
     var isSceneRendered = false
@@ -25,7 +26,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
-        
+        nameTrick.text = trick?.uppercased()
         loadScene()
     }
     
@@ -99,9 +100,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     private func loadScene() {
         if let trick = trick{
             guard let scene = SCNScene(named: "art.scnassets/\(trick.uppercased()).dae") else {
+                print(trick)
                 print("Impossible de charger la scène !")
                 return
             }
+            print("scene ok")
             sceneMain = scene
             let childNodes = scene.rootNode.childNodes
             
