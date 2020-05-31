@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>MGLMapboxAccessToken</key>
-	<string>sk.eyJ1IjoibG91YmF0aWVyIiwiYSI6ImNrYTI3ejZ5MzAxYmgzZnFiaXZtdWNvc2EifQ.Zd4kxb60TUMbOs-PvtmQpQ</string>
+	<string>sk.eyJ1IjoibG91YmF0aWVyIiwiYSI6ImNrYXZiYWJ2cjB6cHoycm8zcDFidnFkaHMifQ.kzZf73uJ7euHP-8HTChW7Q</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Shows your location on the map and helps improve the map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
