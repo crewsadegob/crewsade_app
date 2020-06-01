@@ -89,6 +89,7 @@ class SpotDetailViewController: UIViewController {
                         let user = usersRef.document(userId)
                         user.getDocument { (user, error) in
                             if let user = user, user.exists {
+                                
                                 let name = user.get("Username") as! String
                                 let image = URL(string: user.get("Image") as! String)
 
