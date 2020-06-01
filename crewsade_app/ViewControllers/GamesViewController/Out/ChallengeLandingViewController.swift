@@ -23,7 +23,8 @@ class ChallengeLandingViewController: UIViewController {
     @IBOutlet weak var usernamePlayer2: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imagePlayer1.setRoundedImage()
+        imagePlayer2.setRoundedImage()
         // Do any additional setup after loading the view.
         if let user = user{
             GamesService().getInformationsChallenge(userId: user.uid){ result in

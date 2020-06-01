@@ -17,11 +17,11 @@ class CarouselUsersCollectionViewCell: UICollectionViewCell {
     
     var user: User? {
         didSet {
-            self.updateUI()
+            self.updateCell()
         }
     }
     
-    private func updateUI() {
+    private func updateCell() {
         if let user = user {
             
             userName.text = user.username

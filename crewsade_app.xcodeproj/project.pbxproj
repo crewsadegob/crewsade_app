@@ -42,6 +42,7 @@
 		06849F562481558A00E10CFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F552481558A00E10CFB /* UIViewController.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
 		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
+		069A915A2483C1C7007432C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A91592483C1C7007432C9 /* ImageView.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
@@ -50,6 +51,7 @@
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
 		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
+		06BF0A8F2482D310000E5F33 /* ProfileStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */; };
 		06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C56B8B245C358D00BAC9FB /* SignInViewController.swift */; };
 		06C6AF0524600A2A008E45AC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0424600A2A008E45AC /* User.swift */; };
 		06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C6AF0924600F7D008E45AC /* TrickService.swift */; };
@@ -114,6 +116,7 @@
 		06849F552481558A00E10CFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
 		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		069A91592483C1C7007432C9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
 		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
+		06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStatsTableViewCell.swift; sourceTree = "<group>"; };
 		06C56B8B245C358D00BAC9FB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		06C6AF0424600A2A008E45AC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		06C6AF0924600F7D008E45AC /* TrickService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrickService.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			children = (
 				06805F6924657EF000280A7F /* ProfileViewController.swift */,
 				06222CF6246D3BB300E3D454 /* SettingsViewController.swift */,
+				06BF0A8E2482D310000E5F33 /* ProfileStatsTableViewCell.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				06E37F232469426F005CBFB4 /* Gradient.swift */,
 				06849F5124813A4800E10CFB /* Label.swift */,
 				06849F552481558A00E10CFB /* UIViewController.swift */,
+				069A91592483C1C7007432C9 /* ImageView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
+				069A915A2483C1C7007432C9 /* ImageView.swift in Sources */,
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
@@ -597,6 +604,7 @@
 				06D2AC1C24598552000CC0AB /* ListTricksTableViewCell.swift in Sources */,
 				0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */,
 				065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */,
+				06BF0A8F2482D310000E5F33 /* ProfileStatsTableViewCell.swift in Sources */,
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,

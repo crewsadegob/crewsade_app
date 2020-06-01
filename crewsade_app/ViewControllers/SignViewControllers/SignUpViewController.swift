@@ -32,11 +32,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         passwordInput.underlined()
         
         
-        profilePicture.layer.borderWidth = 1
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.borderColor = UIColor.black.cgColor
-        profilePicture.layer.cornerRadius = profilePicture.frame.width/2 //This will change with corners of image and height/2 will make this circle shape
-        profilePicture.clipsToBounds = true
+        profilePicture.setRoundedImage()
         // Do any additional setup after loading the view.
         
     }

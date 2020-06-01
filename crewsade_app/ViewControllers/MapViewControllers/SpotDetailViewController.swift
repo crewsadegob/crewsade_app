@@ -13,7 +13,7 @@ import FirebaseFirestore
 import SDWebImage
 
 class SpotDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -36,81 +36,127 @@ class SpotDetailViewController: UIViewController {
         usersCarousel.delegate = self
         
         setupLocationManager()
-        getCloseUsers()
+        getSurroundings()
         getRequestedSpot()
+        
     }
+    
+    // ------------------- ACTIONS
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // ------------------- METHODS
     
     func getRequestedSpot() {
         let spot = db.collection("spots").document(id)
         
         spot.getDocument { (spot, error) in
             if let spot = spot, spot.exists {
-                if spot.get("image") != nil {
-                    self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: spot.get("image") as! String)
-                } else {
-                    self.buildDetail(name: spot.get("name") as! String, coords: spot.get("coords") as! GeoPoint, image: "https://1.bp.blogspot.com/-kfpNhCO5Kxc/XXuFXWhvRoI/AAAAAAABC4g/8JvpD2-ar74RF7OCyZh88s8zfpbuDqwiQCLcBGAsYHQ/s1600/Skatepark%2BGennevilliers%2B3%2Bbis.jpg")
-                }
                 
+                self.buildDetailView(name: spot.get("name") as! String, location: spot.get("l") as! GeoPoint, image: spot.get("image") as! String)
 
             } else {
                 
-                print("Spot does not exist")
+                print("Le spot n'existe pas")
                 
             }
         }
     }
     
-    func getCloseUsers() {
+    func getSurroundings() {
         
-        let _ = db.collection("spots").document(id).collection("closeUsers").getDocuments { (snapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
+        let spotsRef = db.collection("spots")
+        let spotsCol = GeoFirestore(collectionRef: spotsRef)
+        
+        let usersRef = db.collection("users")
+        let usersCol = GeoFirestore(collectionRef: usersRef)
+        
+        spotsCol.getLocation(forDocumentWithID: id) { (location: GeoPoint?, error) in
+            if let error = error {
+                print("Une erreur est survenue : \(error)")
+            } else if let location = location {
                 
-                for document in snapshot!.documents {
-//                    let id = document.documentID
-                    let userReference = document.get("user") as! DocumentReference
-                    
-                    let user = userReference
-                    
-                    user.getDocument { (user, error) in
-                        if let user = user, user.exists {
-                            
-                            let name = user.get("Username") as! String
-                            let image = URL(string: user.get("Image") as! String)
+                let center = GeoPoint(latitude: location.latitude, longitude: location.longitude)
+                let rangeQuery = usersCol.query(withCenter: center, radius: 1)
+                print("Centre de la zone du spot : \(center)")
+                
+                let _ = rangeQuery.observe(.documentEntered, with: { (key, location) in
+                    if let userId = key {
+                        print("Le document d'id : '\(String(describing: userId))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
+                        
+                        let user = usersRef.document(userId)
+                        user.getDocument { (user, error) in
+                            if let user = user, user.exists {
+                                let name = user.get("Username") as! String
+                                let image = URL(string: user.get("Image") as! String)
+                                let stats = user.get("Stats") as! [String: Int]
+                                let user = User(username: name, Image: image, id: userId, stats: stats)
+                                self.users.append(user)
+                                
+                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                self.usersCarousel.reloadData()
 
-                            let user = User(username: name, Image: image, id: user.documentID)
-                            self.users.append(user)
-                            self.usersCarousel.reloadData()
-
-                        } else {
-                            
-                            print("User does not exist")
-                            
+                            } else {
+                                
+                                print("User does not exist")
+                                
+                            }
                         }
                     }
-                }
+                    
+                })
+                
+                let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
+                    if let userId = key {
+                        print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
+                        
+                        let user = usersRef.document(userId)
+                        user.getDocument { (user, error) in
+                            if let user = user, user.exists {
+                                let name = user.get("Username") as! String
+                                let image = URL(string: user.get("Image") as! String)
+                                let stats = user.get("Stats") as! [String: Int]
+
+                                let user = User(username: name, Image: image, id: userId, stats: stats)
+                                
+                                if let index = self.users.firstIndex(of: user) {
+                                    self.users.remove(at: index)
+                                }
+                                
+                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                self.usersCarousel.reloadData()
+
+                            } else {
+                                
+                                print("User does not exist")
+                                
+                            }
+
+                        }
+                    }
+                    
+                })
+                
+            } else {
+                print("Ce document ne possède pas de localisation")
             }
         }
     }
     
-    func buildDetail(name: String, coords: GeoPoint, image: String) {
+    func buildDetailView(name: String, location: GeoPoint, image: String) {
         
         let user = locationManager.location!.coordinate
-        let spotLocation = CLLocation(latitude: coords.latitude, longitude: coords.longitude)
+        let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
         
         let distance = round(spotLocation.distance(from: userLocation))
         
         spotName.text = name
         spotDistanceLabel.text = "\(distance)m"
-        spotCloseUsersLabel.text = "2 riders sont à ce spot"
-        spotPicture.sd_setImage(with: URL(string: image), completed: nil)
-        
+        spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
+        spotPicture.sd_setImage(with: URL(string: image))
     }
     
     func setupLocationManager() {
@@ -125,6 +171,8 @@ class SpotDetailViewController: UIViewController {
     }
     
 }
+
+// ------------------- EXTENSIONS
 
 extension SpotDetailViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

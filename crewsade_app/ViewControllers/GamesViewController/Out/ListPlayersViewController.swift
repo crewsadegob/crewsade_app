@@ -21,7 +21,7 @@ class ListPlayersViewController: UIViewController {
         playersTableView.dataSource = self
         
         // Do any additional setup after loading the view.
-        GamesService().getPlayers(){result in
+        GamesService().getSurroundings(){result in
             if let playersGet = result{
                 self.players = playersGet
                 self.playersTableView.reloadData()
