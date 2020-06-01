@@ -10,13 +10,110 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 import Firebase
+import Geofirestore
+import CoreLocation
+
 
 class GamesService {
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
     var players = [User]()
     var i = 0
-
+    
+    let locationManager = CLLocationManager()
+    let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
+    
+    func getSurroundings(completionHandler: @escaping (_ result: [User]?) -> Void) {
+        
+        let usersRef = db.collection("users")
+        let usersCol = GeoFirestore(collectionRef: usersRef)
+        if let userConnected = user{
+            usersCol.getLocation(forDocumentWithID: userConnected.uid) { (location: GeoPoint?, error) in
+                if let error = error {
+                    print("Une erreur est survenue : \(error)")
+                } else if let location = location {
+                    
+                    let center = GeoPoint(latitude: location.latitude, longitude: location.longitude)
+                    let rangeQuery = usersCol.query(withCenter: center, radius: 1)
+                    print("Centre de la zone du spot : \(center)")
+                    
+                    let _ = rangeQuery.observe(.documentEntered, with: { (key, location) in
+                        if let userId = key {
+                            print("Le document d'id : '\(String(describing: userId))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
+                            
+                            let user = usersRef.document(userId)
+                            if userConnected.uid != userId{
+                                user.getDocument { (user, error) in
+                                    
+                                    if let user = user, user.exists {
+                                        
+                                        let name = user.get("Username") as! String
+                                        let image = URL(string: user.get("Image") as! String)
+                                        let stats = user.get("Stats") as! [String: Int]
+                                        let user = User(username: name, Image: image, id: userId, stats: stats)
+                                        self.players.append(user)
+                                        completionHandler(self.players)
+                                        
+                                        
+                                        
+                                        
+                                    } else {
+                                        
+                                        print("User does not exist")
+                                        
+                                    }
+                                }
+                            }
+                            
+                        }
+                        
+                    })
+                    
+                    let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
+                        if let userId = key {
+                            print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
+                            
+                            let user = usersRef.document(userId)
+                            
+                            if userConnected.uid != userId{
+                                user.getDocument { (user, error) in
+                                    if let user = user, user.exists {
+                                        let name = user.get("Username") as! String
+                                        let image = URL(string: user.get("Image") as! String)
+                                        let stats = user.get("Stats") as! [String: Int]
+                                        
+                                        let user = User(username: name, Image: image, id: userId, stats: stats)
+                                        
+                                        if let index = self.players.firstIndex(of: user) {
+                                            self.players.remove(at: index)
+                                            completionHandler(self.players)
+                                            
+                                        }
+                                        
+                                        
+                                    } else {
+                                        
+                                        print("User does not exist")
+                                        
+                                    }
+                                    
+                                }
+                            }
+                            
+                        }
+                        
+                    })
+                    
+                    
+                } else {
+                    print("Ce document ne possède pas de localisation")
+                }
+            }
+        }
+        
+        
+    }
+    
     func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void){
         let group = DispatchGroup()
         db.collection("users").addSnapshotListener() { (users, err) in

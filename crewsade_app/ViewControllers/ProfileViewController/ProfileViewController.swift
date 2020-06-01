@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController {
         imageProfile.setRoundedImage()
         
         self.navigationController?.navigationBar.topItem?.title = "PROFIL";
-        usernameLabel.test(x: 2)
         
         // Do any additional setup after loading the view.
         if let user = user{

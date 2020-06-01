@@ -19,17 +19,19 @@ class UserService {
     var tricks = [Trick]()
     
     func getUserInformations(id: String, completionHandler: @escaping (_ result: User?) -> Void){
-        self.db.collection("users").document(id).addSnapshotListener { DocumentSnapshot, err in
-            guard let document = DocumentSnapshot else{
-                print("Error fetching document: \(err!)")
-                completionHandler(nil)
-                return
-            }
-            let username = document.get("Username") as? String
-            let stats = document.get("Stats") as! [String: Int]
-            if let image = document.get("Image") as? String{
-                completionHandler(User(username: username, Image: URL(string:image), id: id, stats: stats))
+        
+        self.db.collection("users").document(id).getDocument { (document, error) in
+            if let document = document, document.exists {
+                let username = document.get("Username") as? String
+                let stats = document.get("Stats") as! [String: Int]
+                if let image = document.get("Image") as? String{
+                    completionHandler(User(username: username, Image: URL(string:image), id: id,stats: stats))
+                    
+                }
                 
+            } else {
+                print("User doesn't not exist")
+                completionHandler(nil)
             }
         }
     }

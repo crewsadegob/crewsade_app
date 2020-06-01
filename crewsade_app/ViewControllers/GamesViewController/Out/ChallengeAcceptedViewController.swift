@@ -26,12 +26,16 @@ class ChallengeAcceptedViewController: UIViewController {
                 if result == user.uid{
                     self.notPlaying.isHidden = true
                     self.isPlaying.isHidden = false
-                    
+                    SessionService().manageScore(){result in
+                               self.scoreLabel.setOutlineTextByScore(score: result)
+                           }
                     print("player")
                 }else{
                     self.isPlaying.isHidden = true
                     self.notPlaying.isHidden = false
-                    
+                    SessionService().manageScore(){result in
+                               self.scoreLabel.setOutlineTextByScore(score: result)
+                    }
                     print("Not player")
                     
                 }
@@ -58,6 +62,8 @@ class ChallengeAcceptedViewController: UIViewController {
                 self.challengerImage.sd_setImage(with: challenger.Image, placeholderImage: UIImage(named:"placeholder.png"))
             }
         }
+        
+       
         
         
     }
