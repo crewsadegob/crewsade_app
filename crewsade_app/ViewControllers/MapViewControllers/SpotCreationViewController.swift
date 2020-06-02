@@ -17,6 +17,7 @@ import Geofirestore
 class SpotCreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var spotPicture: UIImageView!
+    @IBOutlet weak var separator: UIImageView!
     @IBOutlet weak var spotNameInputLabel: UILabel!
     @IBOutlet weak var spotNameInput: UITextField!
     @IBOutlet weak var submitButton: UIButton!
@@ -29,6 +30,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewDidLoad()
 
         setupLocationManager()
+        customizeInterface()
     }
     
     // ------------------- ACTIONS
@@ -108,6 +110,20 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     // ------------------- METHODS
+    
+    func customizeInterface() {
+        
+        spotNameInputLabel.text = spotNameInputLabel.text?.uppercased()
+        
+        spotNameInput.underlined()
+        spotNameInput.setLeftPaddingPoints(10)
+        
+        submitButton.layer.cornerRadius = 4
+        submitButton.backgroundColor = UIColor.CrewSade.mainColorLight
+        submitButton.setTitle(submitButton.titleLabel?.text?.uppercased(), for: .normal)
+        
+        
+    }
     
     func setupLocationManager() {
         self.locationManager.requestAlwaysAuthorization()

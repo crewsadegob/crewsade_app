@@ -40,6 +40,7 @@ class SpotDetailViewController: UIViewController {
         setupLocationManager()
         getSurroundings()
         getRequestedSpot()
+        customizeInterface()
         
     }
     
@@ -50,6 +51,48 @@ class SpotDetailViewController: UIViewController {
     }
     
     // ------------------- METHODS
+    
+    func customizeInterface() {
+        spotDetailContainer.layer.cornerRadius = 15
+        spotPicture.layer.cornerRadius = 15
+        spotPicture.layer.masksToBounds = true
+        
+        spotDistanceLabel.textColor = UIColor.white
+        spotDistanceLabel.backgroundColor = UIColor.CrewSade.darkGrey
+        spotDistanceLabel.layer.cornerRadius = 9
+        spotDistanceLabel.layer.masksToBounds = true
+        spotCloseUsersLabel.textColor = UIColor.white
+        spotCloseUsersLabel.backgroundColor = UIColor.CrewSade.mainColorLight
+        spotCloseUsersLabel.layer.cornerRadius = 9
+        spotCloseUsersLabel.layer.masksToBounds = true
+        
+        spotCloseUsersLabel.sizeToFit()
+    }
+    
+    func convertToGrayScale(image: UIImage) -> UIImage {
+
+        // Create image rectangle with current image width/height
+        let imageRect:CGRect = CGRect(x:0, y:0, width:image.size.width, height: image.size.height)
+
+        // Grayscale color space
+        let colorSpace = CGColorSpaceCreateDeviceGray()
+        let width = image.size.width
+        let height = image.size.height
+
+        // Create bitmap content with current image size and grayscale colorspace
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.none.rawValue)
+
+        // Draw image into current context, with specified rectangle
+        // using previously defined context (with grayscale colorspace)
+        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        context?.draw(image.cgImage!, in: imageRect)
+        let imageRef = context!.makeImage()
+
+        // Create a new UIImage object
+        let newImage = UIImage(cgImage: imageRef!)
+
+        return newImage
+    }
     
     func getRequestedSpot() {
         let spot = db.collection("spots").document(id)
@@ -88,25 +131,34 @@ class SpotDetailViewController: UIViewController {
                     if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
                         
-                        if self.user!.uid != key {
-                            let user = usersRef.document(key)
-                            user.getDocument { (user, error) in
-                                if let user = user, user.exists {
-                                    
-                                    let name = user.get("Username") as! String
-                                    let image = URL(string: user.get("Image") as! String)
+//                        if self.user!.uid != key {
+                        
+//                        }
+                        
+                        let user = usersRef.document(key)
+                        user.getDocument { (user, error) in
+                            if let user = user, user.exists {
+                                
+                                let name = user.get("Username") as! String
+                                let image = URL(string: user.get("Image") as! String)
 
-                                    let user = User(username: name, Image: image, id: key)
-                                    self.users.append(user)
-                                    
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                    self.usersCarousel.reloadData()
-
+                                let user = User(username: name, Image: image, id: key)
+                                self.users.append(user)
+                                
+                                if self.users.count == 0  {
+                                    self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                } else if self.users.count == 1{
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
                                 } else {
-                                    
-                                    print("User does not exist")
-                                    
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
                                 }
+                                
+                                self.usersCarousel.reloadData()
+
+                            } else {
+                                
+                                print("User does not exist")
+                                
                             }
                         }
                     }
@@ -115,27 +167,36 @@ class SpotDetailViewController: UIViewController {
                 let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
                     if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
-                        if self.user!.uid != key {
-                            let user = usersRef.document(key)
-                            user.getDocument { (user, error) in
-                                if let user = user, user.exists {
-                                    let name = user.get("Username") as! String
-                                    let image = URL(string: user.get("Image") as! String)
+//                        if self.user!.uid != key {
+//
+//                        }
+                        
+                        let user = usersRef.document(key)
+                        user.getDocument { (user, error) in
+                            if let user = user, user.exists {
+                                let name = user.get("Username") as! String
+                                let image = URL(string: user.get("Image") as! String)
 
-                                    let user = User(username: name, Image: image, id: key)
-                                    
-                                    if let index = self.users.firstIndex(of: user) {
-                                        self.users.remove(at: index)
-                                    }
-                                    
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                    self.usersCarousel.reloadData()
-
-                                } else {
-                                    
-                                    print("User does not exist")
-                                    
+                                let user = User(username: name, Image: image, id: key)
+                                
+                                if let index = self.users.firstIndex(of: user) {
+                                    self.users.remove(at: index)
                                 }
+                                
+                                if self.users.count == 0  {
+                                    self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                } else if self.users.count == 1{
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                } else {
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                }
+                                
+                                self.usersCarousel.reloadData()
+
+                            } else {
+                                
+                                print("User does not exist")
+                                
                             }
                         }
                     }
@@ -165,10 +226,17 @@ class SpotDetailViewController: UIViewController {
         } else {
             print("Location services are not enabled")
         }
-    
-        spotName.text = name
         
-        spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
+        spotName.text = name.uppercased()
+        
+        if users.count == 0  {
+            spotCloseUsersLabel.text = "Aucun rider à ce spot"
+        } else if users.count == 1{
+            spotCloseUsersLabel.text = "\(users.count) rider est à ce spot"
+        } else {
+            spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
+        }
+        
         spotPicture.sd_setImage(with: URL(string: image))
     }
     
@@ -210,8 +278,9 @@ extension SpotDetailViewController : UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! CarouselUsersCollectionViewCell
         
         cell.user = users[indexPath.item]
-        cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColor
+        cell.contentView.backgroundColor = UIColor.CrewSade.mainColorLight
         cell.contentView.layer.cornerRadius = 15.0
+        
         return cell
     }
 }
