@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 import CoreLocation
+import FirebaseAuth
 import FirebaseFirestore
 import Geofirestore
 
@@ -18,6 +19,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var mapView: MGLMapView!
     
+    let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
     let db = Firestore.firestore()
     
@@ -32,6 +34,8 @@ class MapViewController: UIViewController {
         
         view.bringSubviewToFront(addButton)
         view.bringSubviewToFront(centerButton)
+        
+        updateLocation()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,6 +61,15 @@ class MapViewController: UIViewController {
     }
     
     // ------------------- METHODS
+    
+    func updateLocation() {
+        print("update loc")
+        UserService().updateUserLocation(location: locationManager.location!.coordinate)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { [weak self] in
+            self?.updateLocation()
+        }
+    }
     
     func getDatabaseUpdates() {
         

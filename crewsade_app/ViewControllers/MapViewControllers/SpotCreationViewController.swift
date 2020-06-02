@@ -84,7 +84,6 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
                                 "game" : false,
                                 "image" : url.absoluteString
                             ])
-                            
                             spotsCol.setLocation(geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), forDocumentWithID: spot.documentID) { (error) in
                                 if let error = error {
                                     print("Une erreur est survenue : \(error)")

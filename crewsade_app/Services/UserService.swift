@@ -11,6 +11,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
+import Geofirestore
+import CoreLocation
+
 class UserService {
     
     let user = Auth.auth().currentUser
@@ -171,5 +174,20 @@ class UserService {
          self.db.collection("users").document(user.uid).updateData(["Stats": [
                 "Tricks": FieldValue.increment(Int64(1))]])
        }
-   }
+    }
+    
+    func updateUserLocation(location : CLLocationCoordinate2D) {
+        if let user = user {
+            
+            let usersRef = db.collection("users")
+            let usersCol = GeoFirestore(collectionRef: usersRef)
+                usersCol.setLocation(geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), forDocumentWithID: user.uid) { (error) in
+                if let error = error {
+                    print("Une erreur est survenue : \(error)")
+                } else {
+                    print("Position de l'utilisateur \(user.uid) mise à jour !")
+                }
+            }
+        }
+    }
 }
