@@ -17,14 +17,25 @@ class CarouselUsersCollectionViewCell: UICollectionViewCell {
     
     var user: User? {
         didSet {
+            customizeInterface()
             self.updateCell()
         }
+    }
+    
+    func customizeInterface() {
+        userPicture.layer.cornerRadius = userPicture.frame.size.width / 2
+        duelButton.setTitle(duelButton.titleLabel?.text?.uppercased(), for: .normal)
+        duelButton.backgroundColor = UIColor.CrewSade.darkGrey
+        duelButton.layer.cornerRadius = 5
+        duelButton.contentEdgeInsets = UIEdgeInsets.init(top: 5, left: 15, bottom: 5, right: 15)
+        duelButton.sizeToFit()
+        
     }
     
     private func updateCell() {
         if let user = user {
             
-            userName.text = user.username
+            userName.text = user.username?.uppercased()
             userPicture.sd_setImage(with: user.Image)
             
         } else {

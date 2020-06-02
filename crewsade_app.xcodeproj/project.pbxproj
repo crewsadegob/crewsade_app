@@ -66,6 +66,7 @@
 		06E352CC2459D14500722B02 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E352CB2459D14500722B02 /* StackView.swift */; };
 		06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F21246937C3005CBFB4 /* NavigationViewController.swift */; };
 		06E37F242469426F005CBFB4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F232469426F005CBFB4 /* Gradient.swift */; };
+		0F1541702486AA5D00036B25 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15416F2486AA5D00036B25 /* UILabelPadding.swift */; };
 		0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D36244D88D200D13D0C /* AppDelegate.swift */; };
 		0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */; };
 		0F5D3D3B244D88D200D13D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5D3D3A244D88D200D13D0C /* ViewController.swift */; };
@@ -140,6 +141,7 @@
 		06E352CB2459D14500722B02 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		06E37F21246937C3005CBFB4 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		06E37F232469426F005CBFB4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		0F15416F2486AA5D00036B25 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 		0F5D3D33244D88D200D13D0C /* crewsade_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crewsade_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F5D3D36244D88D200D13D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				06E37F232469426F005CBFB4 /* Gradient.swift */,
 				06849F5124813A4800E10CFB /* Label.swift */,
 				06849F552481558A00E10CFB /* UIViewController.swift */,
+				0F15416F2486AA5D00036B25 /* UILabelPadding.swift */,
 				069A91592483C1C7007432C9 /* ImageView.swift */,
 			);
 			path = Style;
@@ -595,6 +598,7 @@
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
+				0F1541702486AA5D00036B25 /* UILabelPadding.swift in Sources */,
 				06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
 				066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */,
