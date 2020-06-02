@@ -131,34 +131,32 @@ class SpotDetailViewController: UIViewController {
                     if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
                         
-//                        if self.user!.uid != key {
-                        
-//                        }
-                        
-                        let user = usersRef.document(key)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, Image: image, id: key)
-                                self.users.append(user)
-                                
-                                if self.users.count == 0  {
-                                    self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
-                                } else if self.users.count == 1{
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    let user = User(username: name, Image: image, id: key)
+                                    self.users.append(user)
+                                    
+                                    if self.users.count == 0  {
+                                        self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                    } else if self.users.count == 1{
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    } else {
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    }
+                                    
+                                    self.usersCarousel.reloadData()
+
                                 } else {
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    
+                                    print("User does not exist")
+                                    
                                 }
-                                
-                                self.usersCarousel.reloadData()
-
-                            } else {
-                                
-                                print("User does not exist")
-                                
                             }
                         }
                     }
@@ -167,36 +165,35 @@ class SpotDetailViewController: UIViewController {
                 let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
                     if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
-//                        if self.user!.uid != key {
-//
-//                        }
                         
-                        let user = usersRef.document(key)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, Image: image, id: key)
-                                
-                                if let index = self.users.firstIndex(of: user) {
-                                    self.users.remove(at: index)
-                                }
-                                
-                                if self.users.count == 0  {
-                                    self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
-                                } else if self.users.count == 1{
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    let user = User(username: name, Image: image, id: key)
+                                    
+                                    if let index = self.users.firstIndex(of: user) {
+                                        self.users.remove(at: index)
+                                    }
+                                    
+                                    if self.users.count == 0  {
+                                        self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                    } else if self.users.count == 1{
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    } else {
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    }
+                                    
+                                    self.usersCarousel.reloadData()
+
                                 } else {
-                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    
+                                    print("User does not exist")
+                                    
                                 }
-                                
-                                self.usersCarousel.reloadData()
-
-                            } else {
-                                
-                                print("User does not exist")
-                                
                             }
                         }
                     }
