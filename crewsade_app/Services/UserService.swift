@@ -11,6 +11,9 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import FirebaseStorage
+import Geofirestore
+import CoreLocation
+
 class UserService {
     
     let user = Auth.auth().currentUser
@@ -25,8 +28,7 @@ class UserService {
                 let username = document.get("Username") as? String
                 let stats = document.get("Stats") as! [String: Int]
                 if let image = document.get("Image") as? String{
-                    completionHandler(User(username: username, Image: URL(string:image), id: id,stats: stats))
-                    
+                    completionHandler(User(username: username, Image: URL(string:image), id: id, stats: stats))
                 }
                 
             } else {
@@ -132,6 +134,7 @@ class UserService {
             }
         }
     }
+    
     func logOut(view: UIViewController){
         do
         {
@@ -153,8 +156,9 @@ class UserService {
     }
     
     func updateChallenge(){
-        if let user = user{
-            self.db.collection("users").document(user.uid).updateData(["Stats.Challenge": FieldValue.increment(Int64(1))])
+        if let user = user {
+          self.db.collection("users").document(user.uid).updateData(["Stats": [
+                "Challenge": FieldValue.increment(Int64(1))]])
         }
     }
     
@@ -163,9 +167,26 @@ class UserService {
             self.db.collection("users").document(user.uid).updateData(["Stats.Spots": FieldValue.increment(Int64(1))])
         }
     }
+    
     func updateTricks(){
         if let user = user{
             self.db.collection("users").document(user.uid).updateData(["Stats.Tricks": FieldValue.increment(Int64(1))])
         }
     }
+    
+    func updateUserLocation(location : CLLocationCoordinate2D) {
+        if let user = user {
+            
+            let usersRef = db.collection("users")
+            let usersCol = GeoFirestore(collectionRef: usersRef)
+                usersCol.setLocation(geopoint: GeoPoint(latitude: location.latitude, longitude: location.longitude), forDocumentWithID: user.uid) { (error) in
+                if let error = error {
+                    print("Une erreur est survenue : \(error)")
+                } else {
+                    print("Position de l'utilisateur \(user.uid) mise à jour !")
+                }
+            }
+        }
+    }
+    
 }
