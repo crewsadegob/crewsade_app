@@ -13,6 +13,7 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     var showPasswordIcon:Bool = true
     
     @IBOutlet weak var usernameInput: UITextField!
@@ -37,13 +38,22 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+    
     @IBAction func buttonSignUpClicked(_ sender: Any) {
+        indicator.startAnimating()
         if let email = emailInput.text,let password = passwordInput.text, let username = usernameInput.text, let image = profilePicture.image{
             signUpManager.createUser(username: username,Image: image,email: email, password: password, view: self) {[weak self] (success) in
                 guard let `self` = self else { return }
                 if (success) {
+                    self.indicator.stopAnimating()
                     self.switchToMainStoryboard()
                 } else {
+                    self.indicator.stopAnimating()
                     print("Error")
                 }
             }

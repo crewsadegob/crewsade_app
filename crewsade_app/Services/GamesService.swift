@@ -23,7 +23,7 @@ class GamesService {
     let locationManager = CLLocationManager()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
     
-    func getSurroundings(completionHandler: @escaping (_ result: [User]?) -> Void) {
+    func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void) {
         
         let usersRef = db.collection("users")
         let usersCol = GeoFirestore(collectionRef: usersRef)
@@ -114,33 +114,7 @@ class GamesService {
         
     }
     
-    func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void){
-        let group = DispatchGroup()
-        db.collection("users").addSnapshotListener() { (users, err) in
-            if let err = err {
-                print("Problème pour charger les tricks: \(err)")
-                completionHandler(nil)
-            } else {
-                var players = [User]()
-                for user in users!.documents {
-                    group.enter()
-                    let name = user.get("Username") as? String
-                    let stats = user.get("Stats") as! [String: Int]
-                    let id = user.documentID
-                    if let image = user.get("Image") as? String{
-                        let imageUrl = URL(string: image)
-                        
-                        players.append(User(username: name, Image: imageUrl, id: id,stats: stats))
-                    }
-                    group.leave()
-                    
-                }
-                group.notify(queue: .main, execute: {
-                    completionHandler(players)
-                })
-            }
-        }
-    }
+
     
     func checkIsUserChallenged(view: UIViewController){
         if let user = user{

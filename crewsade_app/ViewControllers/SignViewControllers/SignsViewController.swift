@@ -12,10 +12,12 @@ import FBSDKLoginKit
 import GoogleSignIn
 class SignsViewController: UIViewController, GIDSignInDelegate {
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setCrewsadeNavigation()
+        
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
               GIDSignIn.sharedInstance()?.delegate = self
