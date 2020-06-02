@@ -11,10 +11,13 @@ import UIKit
 class LostChallengeViewController: UIViewController {
 
     @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        SessionService().manageScore(){result in
+            self.scoreLabel.setOutlineTextByScore(score: result)
+        }
         SessionService().displayWinner(){result in
             self.winnerLabel.text = result
         }

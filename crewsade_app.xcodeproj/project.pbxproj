@@ -23,6 +23,7 @@
 		0633FC7E245AC8C80096D2E4 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7D245AC8C80096D2E4 /* Map.storyboard */; };
 		0633FC80245AC8D60096D2E4 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC7F245AC8D60096D2E4 /* Games.storyboard */; };
 		0633FC82245AC8F20096D2E4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0633FC81245AC8F20096D2E4 /* Profile.storyboard */; };
+		063554C32486B485000B6ECA /* ChallengeRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063554C22486B485000B6ECA /* ChallengeRoundViewController.swift */; };
 		064D5FB32472A81F005747B4 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C7E292472F49A00037CE6 /* tableView.swift */; };
@@ -97,6 +98,7 @@
 		0633FC7D245AC8C80096D2E4 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		0633FC7F245AC8D60096D2E4 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
 		0633FC81245AC8F20096D2E4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		063554C22486B485000B6ECA /* ChallengeRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRoundViewController.swift; sourceTree = "<group>"; };
 		064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		065C7E292472F49A00037CE6 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */,
 				06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */,
 				06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */,
+				063554C22486B485000B6ECA /* ChallengeRoundViewController.swift */,
 			);
 			path = Out;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,
+				063554C32486B485000B6ECA /* ChallengeRoundViewController.swift in Sources */,
 				06805F6A24657EF000280A7F /* ProfileViewController.swift in Sources */,
 				061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */,
 				0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */,

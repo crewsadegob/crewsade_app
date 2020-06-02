@@ -148,6 +148,7 @@ class GamesService {
                         if let challengeData = player.get("challenge") as? [String: Any]{
                             if let state = challengeData["state"] as? Bool{
                                 if state{
+                                    self.db.collection("users").document(user.uid).updateData(["challenge.state": FieldValue.delete()])
                                     if let refId = challengeData["referenceId"] as? String{
                                         self.db.collection("games").document("OUT").collection("Sessions").document(refId).updateData(["create": true]) { err in
                                             if let err = err {

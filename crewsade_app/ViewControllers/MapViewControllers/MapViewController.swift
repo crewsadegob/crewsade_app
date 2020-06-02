@@ -28,6 +28,7 @@ class MapViewController: UIViewController {
         
         setupLocationManager()
         getDatabaseUpdates()
+        print("ok")
         GamesService().checkIsUserChallenged(view: self)
         
         view.bringSubviewToFront(addButton)

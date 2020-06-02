@@ -284,11 +284,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
-                                                    <rect key="frame" x="30" y="10" width="278" height="43"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
+                                                    <rect key="frame" x="30" y="10" width="229" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="SZl-kP-ghm"/>
-                                                        <constraint firstAttribute="width" constant="278" id="qBr-Sp-0Fn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="26"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -380,6 +379,17 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-mO-LtI">
+                                <rect key="frame" x="162.5" y="500" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="RXv-fR-MTu"/>
+                                    <constraint firstAttribute="height" constant="50" id="kmb-lp-I3x"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="pause"/>
+                                <connections>
+                                    <action selector="buttonPlay:" destination="EIX-cY-ksJ" eventType="touchUpInside" id="iqN-Gc-0RD"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-3f-u9M">
                                 <rect key="frame" x="30" y="30" width="315" height="25.5"/>
                                 <constraints>
@@ -389,11 +399,6 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-mO-LtI">
-                                <rect key="frame" x="263" y="285" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -401,11 +406,13 @@
                             <constraint firstItem="9bk-aa-pd4" firstAttribute="trailing" secondItem="pOn-3f-u9M" secondAttribute="trailing" constant="30" id="9Op-Lf-mvi"/>
                             <constraint firstItem="9bk-aa-pd4" firstAttribute="trailing" secondItem="saN-ze-973" secondAttribute="trailing" id="IRr-C5-Nqj"/>
                             <constraint firstItem="saN-ze-973" firstAttribute="leading" secondItem="9bk-aa-pd4" secondAttribute="leading" id="N5w-Ug-S9V"/>
+                            <constraint firstItem="3Cz-mO-LtI" firstAttribute="centerX" secondItem="9bk-aa-pd4" secondAttribute="centerX" id="OG4-oA-0th"/>
                             <constraint firstItem="saN-ze-973" firstAttribute="top" secondItem="9bk-aa-pd4" secondAttribute="top" id="aB8-du-yz3"/>
                             <constraint firstItem="bSg-xY-Nl9" firstAttribute="bottom" secondItem="9bk-aa-pd4" secondAttribute="bottom" constant="24" id="fJY-Pa-nXN"/>
                             <constraint firstItem="pOn-3f-u9M" firstAttribute="leading" secondItem="9bk-aa-pd4" secondAttribute="leading" constant="30" id="jWz-4A-ezY"/>
                             <constraint firstItem="pOn-3f-u9M" firstAttribute="top" secondItem="9bk-aa-pd4" secondAttribute="top" constant="30" id="orB-6Z-Ssg"/>
                             <constraint firstItem="saN-ze-973" firstAttribute="bottom" secondItem="9bk-aa-pd4" secondAttribute="bottom" constant="49" id="ufs-nw-atn"/>
+                            <constraint firstItem="9bk-aa-pd4" firstAttribute="bottom" secondItem="3Cz-mO-LtI" secondAttribute="bottom" constant="24" id="ui4-yr-CPk"/>
                             <constraint firstItem="bSg-xY-Nl9" firstAttribute="top" secondItem="9bk-aa-pd4" secondAttribute="top" constant="358" id="wqo-GF-0Wu"/>
                             <constraint firstItem="bSg-xY-Nl9" firstAttribute="leading" secondItem="9bk-aa-pd4" secondAttribute="leading" id="ysa-Vz-i7F"/>
                         </constraints>
@@ -420,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYo-iG-j9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="-656"/>
+            <point key="canvasLocation" x="1524" y="-656.22188905547227"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -429,6 +436,7 @@
     <resources>
         <image name="btnAdd" width="29" height="28.5"/>
         <image name="learn" width="24" height="24"/>
+        <image name="pause" width="50" height="50"/>
         <image name="save" width="15" height="23"/>
         <image name="saveFull" width="15" height="23"/>
         <image name="training" width="25" height="25"/>

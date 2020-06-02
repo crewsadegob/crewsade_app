@@ -12,8 +12,9 @@ import ARKit
 class ARViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
-    
     @IBOutlet weak var nameTrick: UILabel!
+    
+    var play: Bool = true
     var sceneMain = SCNScene()
     var sceneNode = SCNNode()
     var isSceneRendered = false
@@ -113,10 +114,21 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 sceneNode.addChildNode(childNode)
             }
         }
-        
-        
     }
     
+    @IBAction func buttonPlay(_ sender: UIButton) {
+        if play{
+            sceneView.scene.isPaused = false
+                     sender.setBackgroundImage(UIImage(named: "play.png"), for: .normal)
+                     play = !play
+           
+        }else{
+         sceneView.scene.isPaused = true
+                    sender.setBackgroundImage(UIImage(named: "pause.png"), for: .normal)
+                    play = !play
+        }
+        
+    }
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
         
