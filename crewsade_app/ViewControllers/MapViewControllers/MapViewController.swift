@@ -174,13 +174,15 @@ extension MapViewController: MGLMapViewDelegate {
         let camera = MGLMapCamera(lookingAtCenter: annotation.coordinate, altitude: 1500, pitch: 15, heading: 0)
         mapView.fly(to: camera, withDuration: 2, completionHandler: nil)
         
-        if let id = annotation.title {
+        if !(annotation is MGLUserLocation) {
+            if let id = annotation.title {
+                
+                self.displayedSpotId = id!
+                
+            }
             
-            self.displayedSpotId = id!
-            
+            self.performSegue(withIdentifier: "presentSpotDetail", sender: self)
         }
-        
-        self.performSegue(withIdentifier: "presentSpotDetail", sender: self)
     }
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
@@ -223,11 +225,13 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
             case .notDetermined, .restricted, .denied:
-                // Update les boutons de l'interface d'actifs vers inactifs
                 self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
+                addButton.isEnabled = false
+                centerButton.isEnabled = false
             case .authorizedAlways, .authorizedWhenInUse:
-                // Update les boutons de l'interface d'inactifs vers actifs
                 self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
+                addButton.isEnabled = true
+                centerButton.isEnabled = true
             @unknown default:
             break
         }
