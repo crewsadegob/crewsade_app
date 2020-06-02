@@ -29,13 +29,31 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         setupLocationManager()
-        getDatabaseUpdates()
         GamesService().checkIsUserChallenged(view: self)
         
         view.bringSubviewToFront(addButton)
         view.bringSubviewToFront(centerButton)
         
-        updateLocation()
+        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        mapView.delegate = self
+        mapView.isHidden = true
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .notDetermined, .restricted, .denied:
+                    self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
+                    addButton.isEnabled = false
+                    centerButton.isEnabled = false
+                case .authorizedAlways, .authorizedWhenInUse:
+                    self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
+                    addButton.isEnabled = true
+                    centerButton.isEnabled = true
+                @unknown default:
+                break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,6 +80,22 @@ class MapViewController: UIViewController {
     
     // ------------------- METHODS
     
+    func setupMap(center: CLLocationCoordinate2D, authorization: Bool) {
+
+    //        mapView.userTrackingMode = .followWithHeading
+    //        mapView.showsUserHeadingIndicator = true
+            
+        mapView.setCenter(center, zoomLevel: 15, animated: false)
+        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
+        mapView.isHidden = false
+        self.getSpotsUpdates()
+        
+        if authorization {
+            mapView.showsUserLocation = true
+            self.updateLocation()
+        }
+    }
+    
     func updateLocation() {
         print("update loc")
         UserService().updateUserLocation(location: locationManager.location!.coordinate)
@@ -71,7 +105,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func getDatabaseUpdates() {
+    func getSpotsUpdates() {
         
        db.collection("spots").addSnapshotListener { snapshot, err in
             if let err = err {
@@ -111,23 +145,10 @@ class MapViewController: UIViewController {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            
-            setupMap()
         }
     }
     
-    func setupMap() {
-
-//        mapView.userTrackingMode = .followWithHeading
-        mapView.showsUserHeadingIndicator = true
-
-        mapView.delegate = self
-        mapView.showsUserLocation = true
-
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        mapView.setCenter(CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), zoomLevel: 15, animated: false)
-        mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
-    }
+    
     
     func updateMapAnnotations(spot: Spot) {
         
@@ -196,6 +217,19 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let _ : CLLocationCoordinate2D = manager.location?.coordinate else {
             return
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+            case .notDetermined, .restricted, .denied:
+                // Update les boutons de l'interface d'actifs vers inactifs
+                self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
+            case .authorizedAlways, .authorizedWhenInUse:
+                // Update les boutons de l'interface d'inactifs vers actifs
+                self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
+            @unknown default:
+            break
         }
     }
 }

@@ -146,14 +146,25 @@ class SpotDetailViewController: UIViewController {
     
     func buildDetailView(name: String, location: GeoPoint, image: String) {
         
-        let user = locationManager.location!.coordinate
-        let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
-        
-        let distance = round(spotLocation.distance(from: userLocation))
-        
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .notDetermined, .restricted, .denied:
+                    spotDistanceLabel.text = "-"
+                case .authorizedAlways, .authorizedWhenInUse:
+                    let user = locationManager.location!.coordinate
+                    let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+                    let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                    let distance = round(spotLocation.distance(from: userLocation))
+                    spotDistanceLabel.text = "\(distance)m"
+                @unknown default:
+                break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+    
         spotName.text = name
-        spotDistanceLabel.text = "\(distance)m"
+        
         spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
         spotPicture.sd_setImage(with: URL(string: image))
     }
