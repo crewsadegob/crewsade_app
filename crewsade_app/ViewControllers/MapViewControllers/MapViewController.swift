@@ -240,8 +240,8 @@ extension MapViewController: CLLocationManagerDelegate {
 // CUSTOM USER VIEW
 
 class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
-    let big: CGFloat = 48
-    let small: CGFloat = 16
+    let big: CGFloat = 32
+    let small: CGFloat = 12
     var outer: CALayer!
     var inner: CALayer!
     
@@ -263,7 +263,7 @@ class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
             outer.bounds = CGRect(x: 0, y: 0, width: big, height: big)
             outer.cornerRadius = big / 2
             outer.backgroundColor = UIColor.CrewSade.mainColorTransparent.cgColor
-            outer.borderWidth = 2
+            outer.borderWidth = 1
             outer.borderColor = UIColor.CrewSade.mainColorLight.cgColor
             layer.addSublayer(outer)
         }
