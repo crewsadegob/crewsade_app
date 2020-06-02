@@ -30,9 +30,10 @@ class MapViewController: UIViewController {
         
         setupLocationManager()
         GamesService().checkIsUserChallenged(view: self)
+        customizeInterface()
         
-        view.bringSubviewToFront(addButton)
-        view.bringSubviewToFront(centerButton)
+//        view.bringSubviewToFront(addButton)
+//        view.bringSubviewToFront(centerButton)
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -80,10 +81,12 @@ class MapViewController: UIViewController {
     
     // ------------------- METHODS
     
+    func customizeInterface() {
+        centerButton.layer.cornerRadius = 25
+        centerButton.backgroundColor = UIColor.CrewSade.mainColorLight
+    }
+    
     func setupMap(center: CLLocationCoordinate2D, authorization: Bool) {
-
-            mapView.userTrackingMode = .followWithHeading
-            mapView.showsUserHeadingIndicator = true
             
         mapView.setCenter(center, zoomLevel: 15, animated: false)
         mapView.styleURL = URL(string: "mapbox://styles/loubatier/ck9s9jwa70afa1ipdyhuas2yk")
