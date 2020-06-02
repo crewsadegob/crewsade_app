@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import Geofirestore
+import FirebaseAuth
 import FirebaseFirestore
 import SDWebImage
 
@@ -22,6 +23,7 @@ class SpotDetailViewController: UIViewController {
     
     @IBOutlet weak var usersCarousel: UICollectionView!
     
+    let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
     let db = Firestore.firestore()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
@@ -83,59 +85,60 @@ class SpotDetailViewController: UIViewController {
                 print("Centre de la zone du spot : \(center)")
                 
                 let _ = rangeQuery.observe(.documentEntered, with: { (key, location) in
-                    if let userId = key {
-                        print("Le document d'id : '\(String(describing: userId))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
+                    if let key = key {
+                        print("Le document d'id : '\(String(describing: key))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
                         
-                        let user = usersRef.document(userId)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, Image: image, id: userId)
-                                self.users.append(user)
-                                
-                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                self.usersCarousel.reloadData()
+                                    let user = User(username: name, Image: image, id: key)
+                                    self.users.append(user)
+                                    
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    self.usersCarousel.reloadData()
 
-                            } else {
-                                
-                                print("User does not exist")
-                                
+                                } else {
+                                    
+                                    print("User does not exist")
+                                    
+                                }
                             }
                         }
                     }
-                    
                 })
                 
                 let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
-                    if let userId = key {
+                    if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
-                        
-                        let user = usersRef.document(userId)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
 
-                                let user = User(username: name, Image: image, id: userId)
-                                
-                                if let index = self.users.firstIndex(of: user) {
-                                    self.users.remove(at: index)
+                                    let user = User(username: name, Image: image, id: key)
+                                    
+                                    if let index = self.users.firstIndex(of: user) {
+                                        self.users.remove(at: index)
+                                    }
+                                    
+                                    self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    self.usersCarousel.reloadData()
+
+                                } else {
+                                    
+                                    print("User does not exist")
+                                    
                                 }
-                                
-                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                self.usersCarousel.reloadData()
-
-                            } else {
-                                
-                                print("User does not exist")
-                                
                             }
                         }
                     }
-                    
                 })
                 
             } else {
