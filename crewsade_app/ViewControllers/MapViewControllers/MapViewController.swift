@@ -137,6 +137,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
+
     }
     
     func setupLocationManager() {

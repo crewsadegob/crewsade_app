@@ -1,22 +1,20 @@
 //
-//  ListPlayersTableViewCell.swift
+//  ProfileStatsTableViewCell.swift
 //  crewsade_app
 //
-//  Created by Hugo Lefrant on 12/05/2020.
+//  Created by Hugo Lefrant on 30/05/2020.
 //  Copyright © 2020 Lou Batier. All rights reserved.
 //
 
 import UIKit
 
-class ListPlayersTableViewCell: UITableViewCell {
+class ProfileStatsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imagePlayer: UIImageView!
-    @IBOutlet weak var namePlayer: UILabel!
-    @IBOutlet weak var buttonIsChallenged: UIButton!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var nameValueLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        imagePlayer.setRoundedImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

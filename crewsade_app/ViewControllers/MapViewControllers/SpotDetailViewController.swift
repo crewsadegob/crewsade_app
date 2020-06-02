@@ -14,7 +14,7 @@ import FirebaseFirestore
 import SDWebImage
 
 class SpotDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -138,8 +138,9 @@ class SpotDetailViewController: UIViewController {
                                     
                                     let name = user.get("Username") as! String
                                     let image = URL(string: user.get("Image") as! String)
-
-                                    let user = User(username: name, Image: image, id: key)
+                                    let stats = user.get("Stats") as! [String: Int]
+                                    
+                                    let user = User(username: name, Image: image, id: key, stats: stats)
                                     self.users.append(user)
                                     
                                     if self.users.count == 0  {
@@ -172,8 +173,9 @@ class SpotDetailViewController: UIViewController {
                                 if let user = user, user.exists {
                                     let name = user.get("Username") as! String
                                     let image = URL(string: user.get("Image") as! String)
+                                    let stats = user.get("Stats") as! [String: Int]
 
-                                    let user = User(username: name, Image: image, id: key)
+                                    let user = User(username: name, Image: image, id: key, stats: stats)
                                     
                                     if let index = self.users.firstIndex(of: user) {
                                         self.users.remove(at: index)
@@ -192,7 +194,6 @@ class SpotDetailViewController: UIViewController {
                                 } else {
                                     
                                     print("User does not exist")
-                                    
                                 }
                             }
                         }

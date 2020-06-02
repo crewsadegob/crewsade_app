@@ -18,7 +18,7 @@ class ChallengeInvitationViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imageView.setRoundedImage()
         if let user = user{
               GamesService().getInformationsChallenge(userId: user.uid){ result in
                   if let players = result{

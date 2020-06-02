@@ -81,10 +81,11 @@ class SessionService{
                         if let challenger = challenge["challenger"] as? String{
                             self.db.collection("users").document(challenger).getDocument{(document, error) in
                                 if let challengerData = document, document!.exists{
+                                    let stats = challengerData.get("Stats") as! [String: Int]
                                     if let name = challengerData.get("Username") as? String, let image = challengerData.get("Image") as? String{
                                         print("Adversaire: \(name), \(image)")
                                         
-                                        completionHandler(User(username: name, Image: URL(string:image), id: challenger))
+                                        completionHandler(User(username: name, Image: URL(string:image), id: challenger,stats: stats ))
                                     }
                                 }
                                 else{
