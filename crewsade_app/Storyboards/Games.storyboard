@@ -432,7 +432,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundSpot" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lac-jD-JKv">
-                                <rect key="frame" x="0.0" y="-294" width="414" height="757"/>
+                                <rect key="frame" x="0.0" y="-294" width="414" height="872"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptf-5i-WUx">
                                 <rect key="frame" x="0.0" y="428" width="375" height="190"/>
@@ -571,7 +571,7 @@
                             <constraint firstItem="lIu-vg-dEJ" firstAttribute="top" secondItem="Cq7-fN-dYi" secondAttribute="bottom" constant="18" id="GfL-WE-yBb"/>
                             <constraint firstItem="lac-jD-JKv" firstAttribute="trailing" secondItem="HcV-ok-UVH" secondAttribute="trailing" constant="39" id="I1B-oY-o6G"/>
                             <constraint firstItem="HcV-ok-UVH" firstAttribute="top" secondItem="lac-jD-JKv" secondAttribute="top" constant="294" id="McP-Tv-vqT"/>
-                            <constraint firstItem="ptf-5i-WUx" firstAttribute="top" secondItem="lac-jD-JKv" secondAttribute="bottom" constant="-35" id="QS4-UI-1AR"/>
+                            <constraint firstItem="ptf-5i-WUx" firstAttribute="top" secondItem="lac-jD-JKv" secondAttribute="bottom" constant="-150" id="QS4-UI-1AR"/>
                             <constraint firstItem="Cq7-fN-dYi" firstAttribute="leading" secondItem="HcV-ok-UVH" secondAttribute="leading" constant="119" id="Yg1-eM-eFF"/>
                             <constraint firstItem="HcV-ok-UVH" firstAttribute="bottom" secondItem="ptf-5i-WUx" secondAttribute="bottom" id="YkG-xT-Mn4"/>
                             <constraint firstItem="E7N-YZ-soL" firstAttribute="centerX" secondItem="HcV-ok-UVH" secondAttribute="centerX" id="k7t-5V-MVy"/>

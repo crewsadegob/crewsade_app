@@ -159,8 +159,7 @@ class UserService {
     
     func updateChallenge(){
         if let user = user {
-          self.db.collection("users").document(user.uid).updateData(["Stats": [
-                "Challenge": FieldValue.increment(Int64(1))]])
+          self.db.collection("users").document(user.uid).updateData(["Stats.Challenge": FieldValue.increment(Int64(1))])
         }
     }
     
