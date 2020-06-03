@@ -12,7 +12,7 @@ import FirebaseAuth
 import Firebase
 
 class SessionService{
-    
+    //TODO: Grosse refacto !!!
     let db = Firestore.firestore()
     var i:Double = 1
     let user = Auth.auth().currentUser
@@ -253,7 +253,7 @@ class SessionService{
                                                             "UserId": idPlayer2,
                                                             "Score": scorePlayer2 - 1
                                                             ],"isPlayed": idPlayer1 ])
-                                             
+                                                        
                                                         
                                                         break
                                                     }
@@ -268,7 +268,7 @@ class SessionService{
                                                 if let Player2 = document.get("Player2") as? [String: Any]{
                                                     let idPlayer2 = Player2["UserId"] as! String
                                                     let scorePlayer2 = Player2["Score"] as! Int
-
+                                                    
                                                     switch challenger {
                                                     case idPlayer1:
                                                         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Player1":[
@@ -276,14 +276,14 @@ class SessionService{
                                                             "Score": scorePlayer1 - 1
                                                             ],
                                                                                                                                                            "isPlayed": idPlayer2])
-                                            
+                                                        
                                                         break
                                                     default:
                                                         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Player2":[
                                                             "UserId": idPlayer2,
                                                             "Score": scorePlayer2 - 1
                                                             ],"isPlayed": idPlayer1 ])
-                                  
+                                                        
                                                         
                                                         break
                                                     }
@@ -300,11 +300,11 @@ class SessionService{
                                                     switch isPlayed {
                                                     case idPlayer1:
                                                         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["isPlayed": idPlayer2])
-                                                  
+                                                        
                                                         break
                                                     default:
                                                         self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["isPlayed": idPlayer1 ])
-                                                     
+                                                        
                                                         break
                                                     }
                                                 }
@@ -327,37 +327,36 @@ class SessionService{
     }
     
     
-        func manageScore(completionHandler: @escaping (_ result: Int) -> Void){
-            if let user = user{
-                self.db.collection("users").document(user.uid).getDocument{(document, error) in
-                    if let player = document, document!.exists{
-                        if let challenge = player.get("challenge") as? [String: Any]{
-                            if let sessionId = challenge["referenceId"] as? String{
-                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{ documentSnapshot, error in
-                                    guard let document = documentSnapshot else {
-                                        print("Error fetching document: \(error!)")
-                                        return
-                                    }
-                                    guard let data = document.data() else {
-                                        print("Document data was empty.")
-                                        return
-                                    }
-                                    if let player1 =  data["Player1"] as? [String: Any]{
-                                        let idPlayer1 = player1["UserId"] as! String
-                                        let scorePlayer1 = player1["Score"] as! Int
-    
-                                        if let Player2 = data["Player2"] as? [String: Any]{
-                                            let scorePlayer2 = Player2["Score"] as! Int
-    
-    
-                                            switch user.uid {
-                                            case idPlayer1:
-                                                completionHandler(scorePlayer1)
-                                                break
-                                            default:
-                                                completionHandler(scorePlayer2)
-                                                break
-                                            }
+    func manageScore(completionHandler: @escaping (_ result: Int) -> Void){
+        if let user = user{
+            self.db.collection("users").document(user.uid).getDocument{(document, error) in
+                if let player = document, document!.exists{
+                    if let challenge = player.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{ documentSnapshot, error in
+                                guard let document = documentSnapshot else {
+                                    print("Error fetching document: \(error!)")
+                                    return
+                                }
+                                guard let data = document.data() else {
+                                    print("Document data was empty.")
+                                    return
+                                }
+                                if let player1 =  data["Player1"] as? [String: Any]{
+                                    let idPlayer1 = player1["UserId"] as! String
+                                    let scorePlayer1 = player1["Score"] as! Int
+                                    
+                                    if let Player2 = data["Player2"] as? [String: Any]{
+                                        let scorePlayer2 = Player2["Score"] as! Int
+                                        
+                                        
+                                        switch user.uid {
+                                        case idPlayer1:
+                                            completionHandler(scorePlayer1)
+                                            break
+                                        default:
+                                            completionHandler(scorePlayer2)
+                                            break
                                         }
                                     }
                                 }
@@ -367,7 +366,60 @@ class SessionService{
                 }
             }
         }
-
+    }
+    
+    func getPlayersDataGames(completionHandler: @escaping (_ result: Session) -> Void){
+        if let user = user{
+            self.db.collection("users").document(user.uid).getDocument{(document, error) in
+                if let user = document, document!.exists{
+                    if let challenge = user.get("challenge") as? [String: Any]{
+                        if let sessionId = challenge["referenceId"] as? String{
+                            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).getDocument(){ (result, error) in
+                                if let error = error{
+                                    print(error.localizedDescription)
+                                }else{
+                                    if let result = result, result.exists {
+                                        if let player1 =  result["Player1"] as? [String: Any]{
+                                            let idPlayer1 = player1["UserId"] as! String
+                                            let scorePlayer1 = player1["Score"] as! Int
+                                            
+                                            if let player2 = result["Player2"] as? [String: Any]{
+                                                let idPlayer2 = player2["UserId"] as! String
+                                                
+                                                let scorePlayer2 = player2["Score"] as! Int
+                                                
+                                                if let round = result["Round"] as? [String: Any]{
+                                                    let step = round["step"] as! Double
+                                                    UserService().getUserInformations(id: idPlayer1){ result in
+                                                                                                     if let user1 = result {
+                                                                                               
+                                                                                                         UserService().getUserInformations(id: idPlayer2){ result in
+                                                                                                             if let user2 = result {
+                                                                                                                 
+                                                                                                                 completionHandler(Session(player1: User(username: user1.username, Image: user1.Image, id: user1.id, stats: user1.stats, score: scorePlayer1), player2: User(username: user2.username, Image: user2.Image, id: user2.id, stats: user2.stats, score: scorePlayer2), roundStep: step))
+                                                                                                                 
+                                                                                                             }
+                                                                                                         }
+                                                                                                     }
+                                                                                                 }
+                                                }
+                                                
+                                             
+                                                
+                                                
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     func checkIsWin(completionHandler: @escaping (_ result: String) -> Void){
         if let user = user{
             self.db.collection("users").document(user.uid).getDocument{(document, error) in

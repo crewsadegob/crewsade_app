@@ -28,6 +28,8 @@ class UserService {
                 let username = document.get("Username") as? String
                 let stats = document.get("Stats") as! [String: Int]
                 if let image = document.get("Image") as? String{
+                    
+                    self.db.collection("games").document("OUT").collection("Sessions").document()
                     completionHandler(User(username: username, Image: URL(string:image), id: id, stats: stats))
                 }
                 

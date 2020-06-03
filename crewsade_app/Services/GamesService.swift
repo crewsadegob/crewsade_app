@@ -15,6 +15,7 @@ import CoreLocation
 
 
 class GamesService {
+    //TODO: Grosse refacto !!!
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
     var players = [User]()

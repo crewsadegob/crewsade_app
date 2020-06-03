@@ -13,5 +13,6 @@ struct User: Equatable {
     let Image: URL?
     let id: String?
     let stats: [String: Int]
+    var score: Int = 0
     
 }

@@ -525,6 +525,7 @@
                         <viewLayoutGuide key="safeArea" id="hRQ-Ah-kIf"/>
                     </view>
                     <connections>
+                        <outlet property="roundLabel" destination="hLh-4x-mc7" id="Ytx-bP-WeU"/>
                         <outlet property="scorePlayer1" destination="prF-vG-esd" id="QoG-lb-A4W"/>
                         <outlet property="scorePlayer2" destination="RWq-pm-gPr" id="uOC-yt-e1f"/>
                         <outlet property="usernamePlayer1" destination="ALw-Ww-o8p" id="kwz-zb-h6T"/>

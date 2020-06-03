@@ -15,13 +15,27 @@ class ChallengeRoundViewController: UIViewController {
     @IBOutlet weak var usernamePlayer1: UILabel!
     @IBOutlet weak var scorePlayer1: UILabel!
     
+    @IBOutlet weak var roundLabel: UILabel!
     
     @IBOutlet weak var usernamePlayer2: UILabel!
     @IBOutlet weak var scorePlayer2: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        SessionService().getPlayersDataGames(){ result in
+            self.usernamePlayer1.text = result.player1.username
+            self.scorePlayer1.setOutlineTextByScore(score: result.player1.score)
+            
+            self.roundLabel.text = "ROUND \(Int(result.roundStep))"
+            
+            self.usernamePlayer2.text = result.player2.username
+            self.scorePlayer2.setOutlineTextByScore(score: result.player2.score)
+            
+        }
     
         if let user = user{
             SessionService().checkIsWin(){ result in

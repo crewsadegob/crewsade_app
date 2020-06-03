@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		061195D72462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */; };
+		06142C9324871E7E007FCA15 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06142C9224871E7E007FCA15 /* Session.swift */; };
 		061AAAB9245B42000010152E /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061AAAB8245B42000010152E /* Sign.storyboard */; };
 		061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AAABB245B421A0010152E /* SignUpViewController.swift */; };
 		06222CF3246C067B00E3D454 /* ChallengeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTricksCollectionViewCell.swift; sourceTree = "<group>"; };
+		06142C9224871E7E007FCA15 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		061AAAB8245B42000010152E /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		061AAABB245B421A0010152E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		06222CF2246C067B00E3D454 /* ChallengeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeLandingViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				06D2AC1E24599554000CC0AB /* Trick.swift */,
 				06C6AF0424600A2A008E45AC /* User.swift */,
 				0F7906A0246D1282008A25B7 /* Spot.swift */,
+				06142C9224871E7E007FCA15 /* Session.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				06222CF3246C067B00E3D454 /* ChallengeLandingViewController.swift in Sources */,
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
+				06142C9324871E7E007FCA15 /* Session.swift in Sources */,
 				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
 				06E37F242469426F005CBFB4 /* Gradient.swift in Sources */,
 				06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */,
