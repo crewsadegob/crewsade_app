@@ -24,6 +24,9 @@ class ChallengeRoundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideNavigation()
+
+        
         // Do any additional setup after loading the view.
         
         SessionService().getPlayersDataGames(){ result in

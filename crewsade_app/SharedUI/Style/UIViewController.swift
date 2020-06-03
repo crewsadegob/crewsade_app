@@ -16,4 +16,11 @@ extension UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    func hideNavigation(){
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    func displayNavigation(){
+        self.navigationController?.isNavigationBarHidden = false
+    }
 }

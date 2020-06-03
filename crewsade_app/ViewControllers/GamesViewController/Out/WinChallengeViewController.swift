@@ -15,6 +15,9 @@ class WinChallengeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.hideNavigation()
+        UserService().updateVictory()
+
         SessionService().manageScore(){result in
             self.scoreLabel.setOutlineTextByScore(score: result)
         }
@@ -30,7 +33,7 @@ class WinChallengeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserService().updateVictory()
+        self.displayNavigation()
         SessionService().endSession()
     }
 
