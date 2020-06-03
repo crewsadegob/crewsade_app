@@ -14,6 +14,8 @@ class LostChallengeViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideNavigation()
+
 
         SessionService().manageScore(){result in
             self.scoreLabel.setOutlineTextByScore(score: result)
@@ -31,6 +33,7 @@ class LostChallengeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.displayNavigation()
         SessionService().endSession()
     }
     

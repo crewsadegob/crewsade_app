@@ -22,6 +22,8 @@ class ChallengeAcceptedViewController: UIViewController {
         challengerImage.setRoundedImage()
         SessionService().setRound(view: self)
 
+        self.hideNavigation()
+
         
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in

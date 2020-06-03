@@ -19,6 +19,8 @@ class ChallengeInvitationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.setRoundedImage()
+        self.hideNavigation()
+        
         if let user = user{
               GamesService().getInformationsChallenge(userId: user.uid){ result in
                   if let players = result{
