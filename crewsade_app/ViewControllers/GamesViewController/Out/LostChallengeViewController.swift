@@ -22,21 +22,19 @@ class LostChallengeViewController: UIViewController {
             self.winnerLabel.text = result
         }
         
-        
-        let backImage = UIImage(named: "backItem")?.withRenderingMode(.alwaysOriginal)
-          UINavigationBar.appearance().backIndicatorImage = backImage
-          UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
-          UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: 0.0), for: .default)
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
-        self.navigationItem.leftBarButtonItem?.action = #selector(back(sender:))
+       DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+                    self?.navigationController?.popToRootViewController(animated: true)
 
+       }
+                
     }
     
-   @objc func back(sender: UIBarButtonItem) {
-         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Map", bundle: nil)
-                         let mainViewController = mainStoryboard.instantiateViewController(identifier: "Map")
-                         self.show(mainViewController, sender: nil)
-     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        SessionService().endSession()
+    }
+    
+
 
     /*
     // MARK: - Navigation

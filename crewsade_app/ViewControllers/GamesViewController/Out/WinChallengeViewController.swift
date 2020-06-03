@@ -20,12 +20,18 @@ class WinChallengeViewController: UIViewController {
         }
         SessionService().displayWinner(){result in
             self.winnerLabel.text = result
+            
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UserService().updateVictory()
+        SessionService().endSession()
     }
 
     /*

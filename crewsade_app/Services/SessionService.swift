@@ -391,20 +391,20 @@ class SessionService{
                                                 if let round = result["Round"] as? [String: Any]{
                                                     let step = round["step"] as! Double
                                                     UserService().getUserInformations(id: idPlayer1){ result in
-                                                                                                     if let user1 = result {
-                                                                                               
-                                                                                                         UserService().getUserInformations(id: idPlayer2){ result in
-                                                                                                             if let user2 = result {
-                                                                                                                 
-                                                                                                                 completionHandler(Session(player1: User(username: user1.username, Image: user1.Image, id: user1.id, stats: user1.stats, score: scorePlayer1), player2: User(username: user2.username, Image: user2.Image, id: user2.id, stats: user2.stats, score: scorePlayer2), roundStep: step))
-                                                                                                                 
-                                                                                                             }
-                                                                                                         }
-                                                                                                     }
-                                                                                                 }
+                                                        if let user1 = result {
+                                                            
+                                                            UserService().getUserInformations(id: idPlayer2){ result in
+                                                                if let user2 = result {
+                                                                    
+                                                                    completionHandler(Session(player1: User(username: user1.username, Image: user1.Image, id: user1.id, stats: user1.stats, score: scorePlayer1), player2: User(username: user2.username, Image: user2.Image, id: user2.id, stats: user2.stats, score: scorePlayer2), roundStep: step))
+                                                                    
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                 }
                                                 
-                                             
+                                                
                                                 
                                                 
                                             }
@@ -496,6 +496,38 @@ class SessionService{
                                 }
                                 else{
                                     print(error?.localizedDescription)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func endSession(){
+        if let user = user{
+            db.collection("users").document(user.uid).getDocument() { (player, err) in
+                if let err = err {
+                    print("Problème pour l'event: \(err)")
+                } else {
+                    if let player = player, player.exists {
+                        if let challengeData = player.get("challenge") as? [String: Any]{
+                            if let refId = challengeData["referenceId"] as? String{
+                                self.db.collection("games").document("OUT").collection("Sessions").document(refId).delete() { err in
+                                    if let err = err {
+                                        print("Error removing document: \(err)")
+                                    } else {
+                                        print("Document successfully removed!")
+                                    }
+                                }
+                            }
+                            
+                            self.db.collection("users").document(user.uid).updateData(["challenge": FieldValue.delete()]) {  err in
+                                if let err = err {
+                                    print("Problème pour l'event: \(err)")
+                                } else {
+                                    print("Défi refusé")
                                 }
                             }
                         }
