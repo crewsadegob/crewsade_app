@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s37-5n-Sit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s37-5n-Sit">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -54,7 +54,7 @@
                                     <constraint firstAttribute="height" constant="40" id="FmT-Iz-5cY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                <state key="normal" title="INSCRIPTION">
+                                <state key="normal" title="TERMINER">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -97,7 +97,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="rec-11-Ywa"/>
                                 </constraints>
-                                <color key="textColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -129,6 +129,10 @@
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="zOM-Gz-ML9"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="She-UW-pbH">
+                                <rect key="frame" x="317" y="385" width="20" height="20"/>
+                                <color key="color" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -138,6 +142,7 @@
                             <constraint firstItem="O4t-n6-zT7" firstAttribute="top" secondItem="Qrz-sb-DTw" secondAttribute="bottom" constant="31" id="H3h-lF-PfO"/>
                             <constraint firstItem="znu-w6-sBs" firstAttribute="top" secondItem="QO1-3u-Qd3" secondAttribute="top" constant="16" id="JF5-Qn-Ia5"/>
                             <constraint firstItem="QO1-3u-Qd3" firstAttribute="trailing" secondItem="Aqv-6O-zVH" secondAttribute="trailing" constant="19" id="OxA-Ej-gTZ"/>
+                            <constraint firstItem="She-UW-pbH" firstAttribute="leading" secondItem="LLf-VW-4ZA" secondAttribute="trailing" constant="-41" id="TJD-vE-S09"/>
                             <constraint firstItem="Aqv-6O-zVH" firstAttribute="top" secondItem="znu-w6-sBs" secondAttribute="bottom" id="Ts3-dq-Y5J"/>
                             <constraint firstItem="Qrz-sb-DTw" firstAttribute="top" secondItem="Aqv-6O-zVH" secondAttribute="bottom" constant="5" id="Zfn-bp-BVO"/>
                             <constraint firstItem="LLf-VW-4ZA" firstAttribute="top" secondItem="O4t-n6-zT7" secondAttribute="bottom" constant="21" id="bOJ-n6-ILa"/>
@@ -146,6 +151,7 @@
                             <constraint firstItem="O4t-n6-zT7" firstAttribute="leading" secondItem="QO1-3u-Qd3" secondAttribute="leading" constant="16" id="hGp-2U-oNa"/>
                             <constraint firstItem="LLf-VW-4ZA" firstAttribute="leading" secondItem="QO1-3u-Qd3" secondAttribute="leading" constant="17" id="km9-KA-z4E"/>
                             <constraint firstItem="QO1-3u-Qd3" firstAttribute="trailing" secondItem="Qrz-sb-DTw" secondAttribute="trailing" constant="18" id="r0j-R2-80b"/>
+                            <constraint firstItem="She-UW-pbH" firstAttribute="top" secondItem="LLf-VW-4ZA" secondAttribute="bottom" constant="-30" id="sxk-7p-d8L"/>
                             <constraint firstItem="Qrz-sb-DTw" firstAttribute="leading" secondItem="QO1-3u-Qd3" secondAttribute="leading" constant="17" id="tMu-bG-uYf"/>
                             <constraint firstItem="QO1-3u-Qd3" firstAttribute="trailing" secondItem="O4t-n6-zT7" secondAttribute="trailing" constant="19" id="yor-fo-X7k"/>
                         </constraints>
@@ -154,6 +160,7 @@
                     <navigationItem key="navigationItem" title="INSCRIPTION" id="thz-mB-iER"/>
                     <connections>
                         <outlet property="emailInput" destination="Qrz-sb-DTw" id="KAx-yL-q1p"/>
+                        <outlet property="indicator" destination="She-UW-pbH" id="Umm-8K-2rh"/>
                         <outlet property="passwordInput" destination="O4t-n6-zT7" id="lWq-SQ-N2j"/>
                         <outlet property="profilePicture" destination="znu-w6-sBs" id="QL0-P6-Z9S"/>
                         <outlet property="usernameInput" destination="Aqv-6O-zVH" id="LxU-aK-tIf"/>
@@ -201,7 +208,7 @@
                                             <constraint firstAttribute="height" constant="40" id="hC6-bA-GXR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                        <state key="normal" title="S'inscrire">
+                                        <state key="normal" title="INSCRIPTION">
                                             <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -215,7 +222,7 @@
                                             <constraint firstAttribute="height" constant="40" id="ILH-29-cWB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                        <state key="normal" title="Se connecter">
+                                        <state key="normal" title="CONNEXION">
                                             <color key="titleColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -228,8 +235,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="w2a-Rt-67M"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                        <state key="normal" title="Continuer avec Facebook">
+                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                        <state key="normal" title="CONTINUER AVEC FACEBOOK">
                                             <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -243,8 +250,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="YIE-te-VNY"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                        <state key="normal" title="Continuer avec Google">
+                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                        <state key="normal" title="CONTINUER AVEC GOOGLE">
                                             <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -351,7 +358,7 @@
                                     <constraint firstAttribute="height" constant="40" id="ujU-8c-WZV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                <state key="normal" title="Se connecter">
+                                <state key="normal" title="TERMINER">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -373,6 +380,10 @@
                                     <segue destination="ETo-Pb-hFU" kind="show" id="hVG-tF-WXb"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-to-Zvw">
+                                <rect key="frame" x="318" y="330" width="20" height="20"/>
+                                <color key="color" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -381,11 +392,13 @@
                             <constraint firstItem="lfD-as-y3x" firstAttribute="leading" secondItem="iIu-is-4BZ" secondAttribute="leading" constant="107" id="4tW-2m-2zL"/>
                             <constraint firstItem="SsE-az-u1J" firstAttribute="top" secondItem="UCw-CU-zbG" secondAttribute="bottom" constant="46" id="5w2-nu-eXA"/>
                             <constraint firstItem="PH5-Em-br0" firstAttribute="leading" secondItem="UCw-CU-zbG" secondAttribute="trailing" constant="-40" id="AJf-TL-7IL"/>
+                            <constraint firstItem="ShS-to-Zvw" firstAttribute="leading" secondItem="SsE-az-u1J" secondAttribute="trailing" constant="-40" id="LGt-md-ATS"/>
                             <constraint firstItem="iIu-is-4BZ" firstAttribute="trailing" secondItem="SsE-az-u1J" secondAttribute="trailing" constant="17" id="NTO-2t-71t"/>
                             <constraint firstItem="5lg-xM-c99" firstAttribute="leading" secondItem="iIu-is-4BZ" secondAttribute="leading" constant="17" id="Qka-9U-aVa"/>
                             <constraint firstItem="5lg-xM-c99" firstAttribute="top" secondItem="iIu-is-4BZ" secondAttribute="top" constant="116" id="SDO-y6-3yw"/>
                             <constraint firstItem="PH5-Em-br0" firstAttribute="top" secondItem="UCw-CU-zbG" secondAttribute="bottom" constant="-24" id="UUZ-Hm-o9O"/>
                             <constraint firstItem="UCw-CU-zbG" firstAttribute="leading" secondItem="iIu-is-4BZ" secondAttribute="leading" constant="17" id="UiN-TT-OBw"/>
+                            <constraint firstItem="ShS-to-Zvw" firstAttribute="top" secondItem="SsE-az-u1J" secondAttribute="bottom" constant="-30" id="aZv-bv-uSI"/>
                             <constraint firstItem="iIu-is-4BZ" firstAttribute="trailing" secondItem="lfD-as-y3x" secondAttribute="trailing" constant="107" id="cnn-1a-G8e"/>
                             <constraint firstItem="lfD-as-y3x" firstAttribute="top" secondItem="SsE-az-u1J" secondAttribute="bottom" constant="30" id="k0Z-FP-tN5"/>
                             <constraint firstItem="SsE-az-u1J" firstAttribute="leading" secondItem="iIu-is-4BZ" secondAttribute="leading" constant="17" id="wO3-aJ-lVU"/>
@@ -397,6 +410,7 @@
                     <connections>
                         <outlet property="emailInput" destination="5lg-xM-c99" id="cTu-gU-Ipe"/>
                         <outlet property="forgotPasswordButton" destination="lfD-as-y3x" id="4MC-p8-Lpm"/>
+                        <outlet property="indicator" destination="ShS-to-Zvw" id="AOz-vH-5mh"/>
                         <outlet property="passwordInput" destination="UCw-CU-zbG" id="Qkd-FD-mDn"/>
                     </connections>
                 </viewController>
@@ -429,7 +443,7 @@
                                     <constraint firstAttribute="height" constant="40" id="dLG-Qu-tC3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
-                                <state key="normal" title="Terminer">
+                                <state key="normal" title="TERMINER">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

@@ -17,6 +17,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     let yourAttributes: [NSAttributedString.Key: Any] = [
         .font: UIFont(name: "Heebo-Regular.ttf", size: 12) ?? UIFont.systemFont(ofSize: 12),
         .foregroundColor: UIColor.CrewSade.darkGrey.withAlphaComponent(0.5),
@@ -39,16 +41,20 @@ class SignInViewController: UIViewController {
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.navigationController?.navigationBar.backgroundColor = UIColor.CrewSade.darkGrey
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
     }
     
     @IBAction func buttonSignInClicked(_ sender: Any) {
+        indicator.startAnimating()
         if let email = emailInput.text, let password = passwordInput.text {
             FirebaseAuthManager().signIn(email: email, password: password) {[weak self] (success) in
                 guard let `self` = self else { return }
                 if (success) {
+                    self.indicator.stopAnimating()
                     self.switchToMainStoryboard()
                 } else {
+                    self.indicator.stopAnimating()
                     print("There was an error.")
                 }
             }

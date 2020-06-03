@@ -11,18 +11,27 @@ import UIKit
 class WinChallengeViewController: UIViewController {
 
     @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-             SessionService().displayWinner(){result in
-                 self.winnerLabel.text = result
-             }
+        SessionService().manageScore(){result in
+            self.scoreLabel.setOutlineTextByScore(score: result)
+        }
+        SessionService().displayWinner(){result in
+            self.winnerLabel.text = result
+            
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UserService().updateVictory()
+        SessionService().endSession()
     }
 
     /*
