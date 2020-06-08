@@ -314,8 +314,6 @@ class SessionService{
                                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
                                         let mainViewController = mainStoryboard.instantiateViewController(identifier: "round")
                                         view.show(mainViewController, sender: nil)
-                                        
-                                        
                                     }
                                 }
                             }

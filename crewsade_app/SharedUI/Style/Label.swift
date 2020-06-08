@@ -11,6 +11,10 @@ import UIKit
 
 extension UILabel {
     
+    func setUppercased(){
+        self.text = self.text?.uppercased()
+    }
+    
     func setOutlineTextByScore(score: Int) {
         
         var coloredText: String = ""
