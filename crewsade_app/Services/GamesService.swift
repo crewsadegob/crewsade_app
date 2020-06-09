@@ -23,7 +23,7 @@ class GamesService {
     
     let locationManager = CLLocationManager()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
-    
+    //Don't append is user is in challenge
     func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void) {
         
         let usersRef = db.collection("users")

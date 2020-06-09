@@ -30,10 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let winScene = (scene as? UIWindowScene) else { return }
         
         let main =  UIStoryboard(name: "Main", bundle: nil)
-        let sign =  UIStoryboard(name: "Sign", bundle: nil)
+        let sign =  UIStoryboard(name: "OnBoarding", bundle: nil)
         
         let mainVC = main.instantiateViewController(withIdentifier: "TabBar")
-        let signVC = sign.instantiateViewController(withIdentifier: "Sign")
+        let signVC = sign.instantiateViewController(withIdentifier: "OnBoarding")
         
         
         if Auth.auth().currentUser?.uid != nil {

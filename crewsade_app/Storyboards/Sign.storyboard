@@ -186,15 +186,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1a-oF-ONc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="505"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="charaMainSign" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
-                                        <rect key="frame" x="48" y="50" width="278" height="368"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD4" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="390"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kus-up-uoU" secondAttribute="trailing" constant="49" id="GfP-jG-clS"/>
-                                    <constraint firstItem="kus-up-uoU" firstAttribute="top" secondItem="X1a-oF-ONc" secondAttribute="top" constant="50" id="LQR-G5-DBf"/>
-                                    <constraint firstItem="kus-up-uoU" firstAttribute="leading" secondItem="X1a-oF-ONc" secondAttribute="leading" constant="48" id="RVn-OR-ZmX"/>
+                                    <constraint firstAttribute="trailing" secondItem="kus-up-uoU" secondAttribute="trailing" id="GfP-jG-clS"/>
+                                    <constraint firstItem="kus-up-uoU" firstAttribute="top" secondItem="X1a-oF-ONc" secondAttribute="top" constant="28" id="LQR-G5-DBf"/>
+                                    <constraint firstItem="kus-up-uoU" firstAttribute="leading" secondItem="X1a-oF-ONc" secondAttribute="leading" id="RVn-OR-ZmX"/>
                                     <constraint firstAttribute="bottom" secondItem="kus-up-uoU" secondAttribute="bottom" constant="87" id="emf-nd-IdU"/>
                                 </constraints>
                             </view>
@@ -475,7 +475,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="charaMainSign" width="277" height="368"/>
+        <image name="ONBOARD4" width="375" height="460"/>
         <image name="eyeClose" width="24" height="16"/>
         <image name="picturePicker" width="120" height="120"/>
         <image name="separator" width="375" height="50"/>
