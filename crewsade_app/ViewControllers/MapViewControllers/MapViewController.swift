@@ -32,14 +32,9 @@ class MapViewController: UIViewController {
         GamesService().checkIsUserChallenged(view: self)
         customizeInterface()
         
-//        view.bringSubviewToFront(addButton)
-//        view.bringSubviewToFront(centerButton)
-        
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.isHidden = true
-        
-        hideTabBar()
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -239,48 +234,6 @@ extension MapViewController: CLLocationManagerDelegate {
                 centerButton.isEnabled = true
             @unknown default:
             break
-        }
-    }
-}
-
-// CUSTOM USER VIEW
-
-class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
-    let big: CGFloat = 32
-    let small: CGFloat = 12
-    var outer: CALayer!
-    var inner: CALayer!
-    
-    override func update() {
-        if frame.isNull {
-            frame = CGRect(x: 0, y: 0, width: big, height: big)
-            return setNeedsLayout()
-        }
-        
-        if CLLocationCoordinate2DIsValid(userLocation!.coordinate) {
-            setupLayers()
-        }
-    }
-     
-    private func setupLayers() {
-        
-        if outer == nil {
-            outer = CALayer()
-            outer.bounds = CGRect(x: 0, y: 0, width: big, height: big)
-            outer.cornerRadius = big / 2
-            outer.backgroundColor = UIColor.CrewSade.mainColorTransparent.cgColor
-            outer.borderWidth = 1
-            outer.borderColor = UIColor.CrewSade.mainColorLight.cgColor
-            layer.addSublayer(outer)
-        }
-        
-        if inner == nil {
-            inner = CALayer()
-            inner.bounds = CGRect(x: 0, y: 0, width: small, height: small)
-            inner.cornerRadius = small / 2
-            inner.backgroundColor = UIColor.CrewSade.mainColorLight.cgColor
-            layer.addSublayer(inner)
-            
         }
     }
 }

@@ -80,6 +80,7 @@
 		0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */; };
 		0F7906A1246D1282008A25B7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A0246D1282008A25B7 /* Spot.swift */; };
 		0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */; };
+		0F8BCDD3248F76A40013138C /* CustomUserLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCreationViewController.swift; sourceTree = "<group>"; };
 		0F7906A0246D1282008A25B7 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUsersTableViewCell.swift; sourceTree = "<group>"; };
+		0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocationAnnotationView.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				06849F552481558A00E10CFB /* UIViewController.swift */,
 				0F15416F2486AA5D00036B25 /* UILabelPadding.swift */,
 				069A91592483C1C7007432C9 /* UIImageView.swift */,
+				0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
+				0F8BCDD3248F76A40013138C /* CustomUserLocationAnnotationView.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
 				0F1541702486AA5D00036B25 /* UILabelPadding.swift in Sources */,
