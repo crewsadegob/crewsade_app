@@ -15,15 +15,20 @@ import Geofirestore
 
 class MapViewController: UIViewController {
     
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var centerButton: UIButton!
     @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var centerButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var customTabBar: UIView!
+    @IBOutlet weak var customTabBarStackView: UIStackView!
+    @IBOutlet weak var customTabBarSecondButton: UIButton!
     
     let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
     let db = Firestore.firestore()
     
     var displayedSpotId = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +40,14 @@ class MapViewController: UIViewController {
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.isHidden = true
+        
+        customTabBar.backgroundColor = UIColor.CrewSade.darkGrey
+        customTabBar.roundTopCorners()
+        // SEULEMENT POUR MAP
+        
+        customTabBarStackView.setCustomSpacing(120, after: customTabBarSecondButton)
+        addButton.backgroundColor = UIColor.CrewSade.mainColorLight
+        addButton.layer.cornerRadius = 30
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -76,6 +89,17 @@ class MapViewController: UIViewController {
         
     }
     
+    @IBAction func tabButtonClicked(_ sender: UIButton) {
+        
+        switch sender.tag {
+            case 0: self.tabBarController?.selectedIndex = 0
+            case 1: self.tabBarController?.selectedIndex = 1
+            case 2: self.tabBarController?.selectedIndex = 2
+            case 3: self.tabBarController?.selectedIndex = 3
+            default: break
+        }
+        
+    }
     // ------------------- METHODS
     
     func customizeInterface() {
@@ -206,7 +230,7 @@ extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
 
         if annotation is MGLUserLocation {
-            return CustomUserLocationAnnotationView()
+            return CustomUserLocation()
         }
         
         return nil

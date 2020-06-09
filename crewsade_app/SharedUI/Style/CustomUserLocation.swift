@@ -10,7 +10,7 @@ import UIKit
 import Mapbox
 import CoreLocation
 
-class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
+class CustomUserLocation: MGLUserLocationAnnotationView {
     let big: CGFloat = 32
     let small: CGFloat = 12
     var outer: CALayer!

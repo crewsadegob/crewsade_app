@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -57,6 +57,16 @@
                                                     <segue destination="jWd-QU-fUc" kind="show" id="6aD-n8-p3M"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
+                                                <rect key="frame" x="143.5" y="50" width="88.5" height="68.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
+                                                    <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
+                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flash" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-0U-5ha">
                                                 <rect key="frame" x="181" y="138.5" width="13" height="16"/>
                                                 <constraints>
@@ -71,16 +81,6 @@
                                                     <constraint firstAttribute="width" constant="245" id="vC8-cv-Ddx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
-                                                <rect key="frame" x="143.5" y="50" width="88.5" height="68.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
-                                                    <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
                                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -129,9 +129,59 @@
                                     <constraint firstAttribute="bottom" secondItem="g9S-pc-5oU" secondAttribute="bottom" id="xeG-JQ-gu1"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrj-97-RGB">
+                                <rect key="frame" x="0.0" y="531" width="375" height="85"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-W3-7ab">
+                                        <rect key="frame" x="36.5" y="30" width="302" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjY-ja-2Hq">
+                                                <rect key="frame" x="0.0" y="0.0" width="18" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="GTk-k8-hCK"/>
+                                                </constraints>
+                                                <state key="normal" image="map-icon"/>
+                                            </button>
+                                            <button opaque="NO" alpha="0.5" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d86-9R-nRT">
+                                                <rect key="frame" x="88" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="kR1-2W-efz"/>
+                                                </constraints>
+                                                <state key="normal" image="training"/>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-mJ-E7u">
+                                                <rect key="frame" x="183" y="0.0" width="24" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="oiq-uw-Clp"/>
+                                                </constraints>
+                                                <state key="normal" image="games_icon"/>
+                                            </button>
+                                            <button opaque="NO" alpha="0.5" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-os-Orw">
+                                                <rect key="frame" x="277" y="0.0" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="IJz-d1-BAO"/>
+                                                </constraints>
+                                                <state key="normal" image="profile_icon"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="yla-lQ-pba"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="O5A-W3-7ab" firstAttribute="centerY" secondItem="jrj-97-RGB" secondAttribute="centerY" id="TWl-Th-RAc"/>
+                                    <constraint firstItem="O5A-W3-7ab" firstAttribute="centerX" secondItem="jrj-97-RGB" secondAttribute="centerX" id="YCh-aQ-0Tk"/>
+                                    <constraint firstAttribute="height" constant="85" id="zkf-eB-Fx6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="jrj-97-RGB" firstAttribute="bottom" secondItem="Pi3-MB-sjO" secondAttribute="bottom" constant="42" id="2za-ld-4oF"/>
+                            <constraint firstItem="Pi3-MB-sjO" firstAttribute="trailing" secondItem="jrj-97-RGB" secondAttribute="trailing" id="3Uy-vq-oB4"/>
+                            <constraint firstItem="jrj-97-RGB" firstAttribute="leading" secondItem="Pi3-MB-sjO" secondAttribute="leading" id="FFP-MY-MD3"/>
                             <constraint firstItem="vDs-cY-7Up" firstAttribute="top" secondItem="Pi3-MB-sjO" secondAttribute="top" id="K4a-La-apv"/>
                             <constraint firstItem="Pi3-MB-sjO" firstAttribute="bottom" secondItem="vDs-cY-7Up" secondAttribute="bottom" id="Sqq-Vb-I1E"/>
                             <constraint firstItem="vDs-cY-7Up" firstAttribute="leading" secondItem="Pi3-MB-sjO" secondAttribute="leading" id="gh7-1s-u8x"/>
@@ -139,9 +189,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-MB-sjO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="games_icon" landscapeImage="games_icon" largeContentSizeImage="games_icon" id="lrT-Hc-agl"/>
                     <navigationItem key="navigationItem" title="GAMES" id="52t-kb-AR9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="customTabBar" destination="jrj-97-RGB" id="aHI-5p-whj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j6-b8-bty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -894,9 +946,12 @@
         <image name="backgroundSpot" width="375" height="612"/>
         <image name="flash" width="6.5" height="16"/>
         <image name="games_icon" width="24" height="25"/>
+        <image name="map-icon" width="18" height="25"/>
+        <image name="profile_icon" width="25" height="18"/>
         <image name="returnedSeparator" width="375" height="50"/>
         <image name="separator" width="375" height="50"/>
         <image name="thumbDown" width="36" height="40"/>
         <image name="thumbUp" width="36" height="40"/>
+        <image name="training" width="25" height="25"/>
     </resources>
 </document>

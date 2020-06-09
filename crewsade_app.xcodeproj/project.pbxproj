@@ -29,7 +29,6 @@
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
 		065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C7E292472F49A00037CE6 /* tableView.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
-		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
 		066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD08246AE56500F0147F /* GamesViewController.swift */; };
 		066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */; };
 		066AFD0D246AECD200F0147F /* GamesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066AFD0C246AECD200F0147F /* GamesService.swift */; };
@@ -80,7 +79,8 @@
 		0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */; };
 		0F7906A1246D1282008A25B7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A0246D1282008A25B7 /* Spot.swift */; };
 		0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */; };
-		0F8BCDD3248F76A40013138C /* CustomUserLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */; };
+		0F8BCDD3248F76A40013138C /* CustomUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */; };
+		0F8BCDD9248FD7840013138C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD8248FD7840013138C /* UIView.swift */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,6 @@
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
 		065C7E292472F49A00037CE6 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
-		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		066AFD08246AE56500F0147F /* GamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
 		066AFD0A246AE62800F0147F /* ListPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlayersViewController.swift; sourceTree = "<group>"; };
 		066AFD0C246AECD200F0147F /* GamesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesService.swift; sourceTree = "<group>"; };
@@ -160,7 +159,8 @@
 		0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCreationViewController.swift; sourceTree = "<group>"; };
 		0F7906A0246D1282008A25B7 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUsersTableViewCell.swift; sourceTree = "<group>"; };
-		0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocationAnnotationView.swift; sourceTree = "<group>"; };
+		0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocation.swift; sourceTree = "<group>"; };
+		0F8BCDD8248FD7840013138C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				06A52816245AE38D0026C2A1 /* TabBarViewController.swift */,
-				0669151824687BED003D2B29 /* CustomTabBar.swift */,
 				06E37F21246937C3005CBFB4 /* NavigationViewController.swift */,
 			);
 			path = NavigationControllers;
@@ -297,7 +296,8 @@
 				06849F552481558A00E10CFB /* UIViewController.swift */,
 				0F15416F2486AA5D00036B25 /* UILabelPadding.swift */,
 				069A91592483C1C7007432C9 /* UIImageView.swift */,
-				0F8BCDD2248F76A40013138C /* CustomUserLocationAnnotationView.swift */,
+				0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */,
+				0F8BCDD8248FD7840013138C /* UIView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -581,6 +581,7 @@
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* UITextField.swift in Sources */,
+				0F8BCDD9248FD7840013138C /* UIView.swift in Sources */,
 				06849F562481558A00E10CFB /* UIViewController.swift in Sources */,
 				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
@@ -606,7 +607,7 @@
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
-				0F8BCDD3248F76A40013138C /* CustomUserLocationAnnotationView.swift in Sources */,
+				0F8BCDD3248F76A40013138C /* CustomUserLocation.swift in Sources */,
 				061AAABC245B421A0010152E /* SignUpViewController.swift in Sources */,
 				069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */,
 				0F1541702486AA5D00036B25 /* UILabelPadding.swift in Sources */,
@@ -633,7 +634,6 @@
 				0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
 				069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */,
-				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
