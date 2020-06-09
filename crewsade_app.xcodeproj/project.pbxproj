@@ -39,17 +39,17 @@
 		06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */; };
 		06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F712465C18400280A7F /* GoogleAuthManager.swift */; };
 		06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06805F732465C19700280A7F /* FacebookAuthManager.swift */; };
-		06849F5224813A4800E10CFB /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F5124813A4800E10CFB /* Label.swift */; };
+		06849F5224813A4800E10CFB /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F5124813A4800E10CFB /* UILabel.swift */; };
 		06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */; };
 		06849F562481558A00E10CFB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06849F552481558A00E10CFB /* UIViewController.swift */; };
 		06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */; };
-		06987C9D2461A5B100D4BF8F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* Button.swift */; };
-		069A915A2483C1C7007432C9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A91592483C1C7007432C9 /* ImageView.swift */; };
+		06987C9D2461A5B100D4BF8F /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06987C9C2461A5B100D4BF8F /* UIButton.swift */; };
+		069A915A2483C1C7007432C9 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A91592483C1C7007432C9 /* UIImageView.swift */; };
 		069AC3EE245C4B4000AE0F2E /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */; };
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
-		06B03C432464553300191C15 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* textField.swift */; };
+		06B03C432464553300191C15 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* UITextField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
 		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
@@ -65,7 +65,7 @@
 		06E352C82459BE8600722B02 /* Heebo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC212459B8E2000CC0AB /* Heebo-Regular.ttf */; };
 		06E352C92459BE8900722B02 /* Polly-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC232459B905000CC0AB /* Polly-Regular.otf */; };
 		06E352CA2459BE8C00722B02 /* TuskerGrotesk-4500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */; };
-		06E352CC2459D14500722B02 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E352CB2459D14500722B02 /* StackView.swift */; };
+		06E352CC2459D14500722B02 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E352CB2459D14500722B02 /* UIStackView.swift */; };
 		06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F21246937C3005CBFB4 /* NavigationViewController.swift */; };
 		06E37F242469426F005CBFB4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E37F232469426F005CBFB4 /* Gradient.swift */; };
 		0F1541702486AA5D00036B25 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F15416F2486AA5D00036B25 /* UILabelPadding.swift */; };
@@ -116,17 +116,17 @@
 		06805F6F2465BC8F00280A7F /* SetProfileInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileInformationViewController.swift; sourceTree = "<group>"; };
 		06805F712465C18400280A7F /* GoogleAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthManager.swift; sourceTree = "<group>"; };
 		06805F732465C19700280A7F /* FacebookAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthManager.swift; sourceTree = "<group>"; };
-		06849F5124813A4800E10CFB /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		06849F5124813A4800E10CFB /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		06849F532481475D00E10CFB /* ChallengeInvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInvitationViewController.swift; sourceTree = "<group>"; };
 		06849F552481558A00E10CFB /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		06987C9A246194D500D4BF8F /* MainListTricksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksTableViewCell.swift; sourceTree = "<group>"; };
-		06987C9C2461A5B100D4BF8F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		069A91592483C1C7007432C9 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		06987C9C2461A5B100D4BF8F /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		069A91592483C1C7007432C9 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		069AC3ED245C4B4000AE0F2E /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		06B03C422464553300191C15 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		06B03C422464553300191C15 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
 		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		06D2AC232459B905000CC0AB /* Polly-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Polly-Regular.otf"; sourceTree = "<group>"; };
 		06D2AC252459B92C000CC0AB /* TuskerGrotesk-4500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TuskerGrotesk-4500Medium.ttf"; sourceTree = "<group>"; };
 		06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		06E352CB2459D14500722B02 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		06E352CB2459D14500722B02 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		06E37F21246937C3005CBFB4 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		06E37F232469426F005CBFB4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		0F15416F2486AA5D00036B25 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
@@ -287,14 +287,14 @@
 			isa = PBXGroup;
 			children = (
 				06BB7849245195910018F605 /* Colors.swift */,
-				06E352CB2459D14500722B02 /* StackView.swift */,
-				06987C9C2461A5B100D4BF8F /* Button.swift */,
-				06B03C422464553300191C15 /* textField.swift */,
+				06E352CB2459D14500722B02 /* UIStackView.swift */,
+				06987C9C2461A5B100D4BF8F /* UIButton.swift */,
+				06B03C422464553300191C15 /* UITextField.swift */,
 				06E37F232469426F005CBFB4 /* Gradient.swift */,
-				06849F5124813A4800E10CFB /* Label.swift */,
+				06849F5124813A4800E10CFB /* UILabel.swift */,
 				06849F552481558A00E10CFB /* UIViewController.swift */,
 				0F15416F2486AA5D00036B25 /* UILabelPadding.swift */,
-				069A91592483C1C7007432C9 /* ImageView.swift */,
+				069A91592483C1C7007432C9 /* UIImageView.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -577,7 +577,7 @@
 				0F79069B246D1181008A25B7 /* MapViewController.swift in Sources */,
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
-				06B03C432464553300191C15 /* textField.swift in Sources */,
+				06B03C432464553300191C15 /* UITextField.swift in Sources */,
 				06849F562481558A00E10CFB /* UIViewController.swift in Sources */,
 				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
@@ -586,20 +586,20 @@
 				06D2AC1F24599554000CC0AB /* Trick.swift in Sources */,
 				06BB784A245195910018F605 /* Colors.swift in Sources */,
 				06142C9324871E7E007FCA15 /* Session.swift in Sources */,
-				06987C9D2461A5B100D4BF8F /* Button.swift in Sources */,
+				06987C9D2461A5B100D4BF8F /* UIButton.swift in Sources */,
 				06E37F242469426F005CBFB4 /* Gradient.swift in Sources */,
 				06E37F22246937C3005CBFB4 /* NavigationViewController.swift in Sources */,
 				06805F742465C19700280A7F /* FacebookAuthManager.swift in Sources */,
 				06324E422467018F006EA196 /* ARViewController.swift in Sources */,
 				06805F702465BC8F00280A7F /* SetProfileInformationViewController.swift in Sources */,
-				06E352CC2459D14500722B02 /* StackView.swift in Sources */,
+				06E352CC2459D14500722B02 /* UIStackView.swift in Sources */,
 				0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */,
 				06C6AF0E24604507008E45AC /* UserService.swift in Sources */,
 				06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */,
 				06C6AF0C246021D5008E45AC /* LevelService.swift in Sources */,
 				063073772463FEEF00436F70 /* OnBoardingViewController.swift in Sources */,
 				06C6AF0524600A2A008E45AC /* User.swift in Sources */,
-				069A915A2483C1C7007432C9 /* ImageView.swift in Sources */,
+				069A915A2483C1C7007432C9 /* UIImageView.swift in Sources */,
 				06222CF5246C7C2600E3D454 /* ChallengeAcceptedViewController.swift in Sources */,
 				0F79069D246D1191008A25B7 /* SpotDetailViewController.swift in Sources */,
 				0F7906A1246D1282008A25B7 /* Spot.swift in Sources */,
@@ -619,7 +619,7 @@
 				06324E3C2466A32A006EA196 /* handleErrors.swift in Sources */,
 				06849F542481475E00E10CFB /* ChallengeInvitationViewController.swift in Sources */,
 				06987C9B246194D500D4BF8F /* MainListTricksTableViewCell.swift in Sources */,
-				06849F5224813A4800E10CFB /* Label.swift in Sources */,
+				06849F5224813A4800E10CFB /* UILabel.swift in Sources */,
 				06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */,
 				0630737924640A7F00436F70 /* SignsViewController.swift in Sources */,
 				066AFD0F246AFCDB00F0147F /* ListPlayersTableViewCell.swift in Sources */,

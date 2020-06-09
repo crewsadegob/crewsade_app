@@ -39,6 +39,8 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         mapView.isHidden = true
         
+        hideTabBar()
+        
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:

@@ -23,4 +23,7 @@ extension UIViewController {
     func displayNavigation(){
         self.navigationController?.isNavigationBarHidden = false
     }
+    func hideTabBar() {
+        self.tabBarController?.tabBar.isHidden = true
+    }
 }
