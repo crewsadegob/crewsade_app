@@ -16,6 +16,8 @@ import Geofirestore
 
 class SpotCreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var separator: UIImageView!
     @IBOutlet weak var spotNameInputLabel: UILabel!
@@ -26,6 +28,8 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +37,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         customizeInterface()
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func didTapSpotPicture(_ sender: UITapGestureRecognizer) {
         
@@ -109,7 +113,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         
@@ -154,7 +158,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
 }
 
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension SpotCreationViewController: CLLocationManagerDelegate {
     
@@ -165,4 +169,3 @@ extension SpotCreationViewController: CLLocationManagerDelegate {
     }
     
 }
-

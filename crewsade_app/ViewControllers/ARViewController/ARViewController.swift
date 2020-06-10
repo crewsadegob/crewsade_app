@@ -11,6 +11,8 @@ import ARKit
 
 class ARViewController: ViewController, ARSCNViewDelegate {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var nameTrick: UILabel!
     
@@ -19,6 +21,8 @@ class ARViewController: ViewController, ARSCNViewDelegate {
     var sceneNode = SCNNode()
     var isSceneRendered = false
     var trick:String? = ""
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +55,7 @@ class ARViewController: ViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    // MARK: - ARSCNViewDelegate
+// MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let planeAnchor = anchor as? ARPlaneAnchor {

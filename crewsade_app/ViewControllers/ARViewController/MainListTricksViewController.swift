@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class MainListTricksViewController: ViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var carouselTrick: UICollectionView!
     @IBOutlet weak var mainListTricksTable: UITableView!
     @IBOutlet weak var ctaButton: UIButton!
@@ -20,6 +22,8 @@ class MainListTricksViewController: ViewController {
     
     var tricksSaved = [Trick]()
     var tricks = [Trick]()
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +69,8 @@ class MainListTricksViewController: ViewController {
         }
     }
     
+// MARK: - ACTIONS
+    
     @objc private func buttonSaveClicked(_ sender: UIButton) {
         
         if let trickClicked = tricksSaved[sender.tag].reference{
@@ -82,6 +88,8 @@ class MainListTricksViewController: ViewController {
          
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension MainListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -10,9 +10,13 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func signOutButtonClicked(_ sender: Any) {
         UserService().logOut(view:self)

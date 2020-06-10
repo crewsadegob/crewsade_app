@@ -10,13 +10,19 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var emailInput: UITextField!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         emailInput.setLeftPaddingPoints(10)
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func finishButtonClicked(_ sender: Any) {
         if let email = emailInput.text{

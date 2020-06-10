@@ -13,6 +13,8 @@ import GoogleSignIn
 
 class SignsViewController: UIViewController, GIDSignInDelegate {
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,11 +34,7 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-    private func setCrewsadeNavigation(){
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
-    }
+// MARK: - ACTIONS
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
         FacebookAuthManager().facebookLogin(sender, viewController: self){[weak self] (success) in
@@ -53,12 +51,16 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance().signIn()
     }
     
+// MARK: - METHODS
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print("Google Sing In didSignInForUser")
+        
         if let error = error {
             print(error.localizedDescription)
             return
         }
+        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
         // When user is signed in
@@ -77,5 +79,10 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
- 
+    
+    private func setCrewsadeNavigation(){
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
+    }
 }

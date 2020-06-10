@@ -12,13 +12,17 @@ import SDWebImage
 
 class ChallengeLandingViewController: UIViewController {
     
-    let user = Auth.auth().currentUser
+// MARK: - VARIABLES
 
     @IBOutlet weak var imagePlayer1: UIImageView!
     @IBOutlet weak var imagePlayer2: UIImageView!
     
     @IBOutlet weak var usernamePlayer1: UILabel!
     @IBOutlet weak var usernamePlayer2: UILabel!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,5 +42,4 @@ class ChallengeLandingViewController: UIViewController {
             }
         }
     }
-
 }

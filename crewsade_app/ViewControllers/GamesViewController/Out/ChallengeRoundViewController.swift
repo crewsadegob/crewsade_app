@@ -12,8 +12,7 @@ import Firebase
 
 class ChallengeRoundViewController: UIViewController {
     
-    let db = Firestore.firestore()
-    let user = Auth.auth().currentUser
+// MARK: - VARIABLES
     
     @IBOutlet weak var usernamePlayer1: UILabel!
     @IBOutlet weak var scorePlayer1: UILabel!
@@ -23,6 +22,10 @@ class ChallengeRoundViewController: UIViewController {
     @IBOutlet weak var usernamePlayer2: UILabel!
     @IBOutlet weak var scorePlayer2: UILabel!
     
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()

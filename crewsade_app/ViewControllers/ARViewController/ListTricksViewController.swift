@@ -13,6 +13,8 @@ import FirebaseAuth
 
 class ListTricksViewController: ViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var ButtonSection: UIStackView!
     @IBOutlet weak var ListTricksTable: UITableView!
     
@@ -25,8 +27,9 @@ class ListTricksViewController: ViewController {
     let buttonWidth = 63
     let buttonHeight = 50
     
-    
     var urlScene:String?
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +69,19 @@ class ListTricksViewController: ViewController {
         super.viewWillAppear(animated)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toARViewController"{
+            if let dest = segue.destination as? ARViewController{
+                if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
+                    
+                    dest.trick = tricksDisplay[indexPath.row].name
+                }
+            }
+        }
+    }
+    
+// MARK: - ACTIONS
+    
     @objc private func levelClicked(_ sender: UIButton) {
         let buttons = ButtonSection.subviews.filter{$0 is UIButton}
         for button in buttons{
@@ -102,19 +118,10 @@ class ListTricksViewController: ViewController {
                 print(tricksDisplay[sender.tag])
               }
           }
-      }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toARViewController"{
-            if let dest = segue.destination as? ARViewController{
-                if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
-                    
-                    dest.trick = tricksDisplay[indexPath.row].name
-                }
-            }
-        }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

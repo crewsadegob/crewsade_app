@@ -10,7 +10,11 @@ import UIKit
 
 class OnBoarding3ViewController: UIViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var textLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         
@@ -24,6 +28,8 @@ class OnBoarding3ViewController: UIViewController {
         textLabel.setLineSpacing(lineSpacing: 6.0)
         
     }
+    
+// MARK: - ACTIONS
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -45,5 +51,4 @@ class OnBoarding3ViewController: UIViewController {
             }
         }
     }
-    
 }

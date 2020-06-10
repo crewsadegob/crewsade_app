@@ -14,6 +14,8 @@ import FBSDKCoreKit
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
@@ -24,6 +26,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var showPasswordIcon:Bool = true
 
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +49,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func buttonSignUpClicked(_ sender: Any) {
         indicator.startAnimating()
@@ -96,6 +102,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         self.present(profilePictureSheet, animated: true, completion: nil)
     }
+    
+// MARK: - METHODS
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage

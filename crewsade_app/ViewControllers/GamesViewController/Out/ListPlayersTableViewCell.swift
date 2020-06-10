@@ -10,9 +10,13 @@ import UIKit
 
 class ListPlayersTableViewCell: UITableViewCell {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var imagePlayer: UIImageView!
     @IBOutlet weak var namePlayer: UILabel!
     @IBOutlet weak var buttonIsChallenged: UIButton!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func awakeFromNib() {
         super.awakeFromNib()

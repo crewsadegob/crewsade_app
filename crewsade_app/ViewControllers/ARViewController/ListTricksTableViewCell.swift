@@ -12,11 +12,15 @@ import FirebaseFirestore
 
 class ListTricksTableViewCell: UITableViewCell {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var trickName: UILabel!
     @IBOutlet weak var trickLevel: UILabel!
     @IBOutlet weak var trickContent: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var learnButton: UIButton!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func awakeFromNib() {
         super.awakeFromNib()

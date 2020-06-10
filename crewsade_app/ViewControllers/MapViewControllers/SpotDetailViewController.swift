@@ -15,6 +15,8 @@ import SDWebImage
 
 class SpotDetailViewController: UIViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -31,6 +33,8 @@ class SpotDetailViewController: UIViewController {
     var id: String = ""
     var users = [User]()
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,13 +48,13 @@ class SpotDetailViewController: UIViewController {
         
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         spotDetailContainer.layer.cornerRadius = 15
@@ -226,7 +230,7 @@ class SpotDetailViewController: UIViewController {
     
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension SpotDetailViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

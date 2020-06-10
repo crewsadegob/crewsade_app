@@ -10,8 +10,12 @@ import UIKit
 
 class ProfileStatsTableViewCell: UITableViewCell {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameValueLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func awakeFromNib() {
         super.awakeFromNib()

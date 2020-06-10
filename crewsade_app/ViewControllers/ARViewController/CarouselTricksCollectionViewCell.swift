@@ -10,6 +10,8 @@ import UIKit
 
 class CarouselTricksCollectionViewCell: UICollectionViewCell {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var nameTrick: UILabel!
     @IBOutlet weak var nameLevel: UILabel!
     
@@ -18,17 +20,9 @@ class CarouselTricksCollectionViewCell: UICollectionViewCell {
           self.updateUI()
        }
     }
-       
-    private func updateUI() {
-       if let trick = trick {
-          nameTrick.text = trick.name
-          nameLevel.text = trick.level
-       } else {
-          nameTrick.text = nil
-          nameLevel.text = nil
-       }
-    }
-       
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func layoutSubviews() {
        super.layoutSubviews()
        
@@ -39,5 +33,16 @@ class CarouselTricksCollectionViewCell: UICollectionViewCell {
        
        self.clipsToBounds = false
     }
-
+       
+// MARK: - METHODS
+    
+    private func updateUI() {
+       if let trick = trick {
+          nameTrick.text = trick.name
+          nameLevel.text = trick.level
+       } else {
+          nameTrick.text = nil
+          nameLevel.text = nil
+       }
+    }
 }

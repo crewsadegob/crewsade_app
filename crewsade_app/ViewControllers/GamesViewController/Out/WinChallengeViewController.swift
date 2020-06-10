@@ -10,8 +10,12 @@ import UIKit
 
 class WinChallengeViewController: UIViewController {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,6 +13,9 @@ import GoogleSignIn
 
 class SignInViewController: UIViewController {
     
+    
+// MARK: - VARIABLES
+    
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var forgotPasswordButton: UIButton!
@@ -24,6 +27,8 @@ class SignInViewController: UIViewController {
         .underlineStyle: NSUnderlineStyle.single.rawValue]
     
     var showPasswordIcon:Bool = true
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +45,14 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = false
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func buttonSignInClicked(_ sender: Any) {
         indicator.startAnimating()
@@ -65,6 +73,7 @@ class SignInViewController: UIViewController {
     @IBAction func forgotPasswordButtonClicked(_ sender: Any) {
         
     }
+    
     @IBAction func showPassword(_ sender: UIButton) {
         if(showPasswordIcon == true) {
             passwordInput.isSecureTextEntry = false
@@ -76,11 +85,12 @@ class SignInViewController: UIViewController {
         
         showPasswordIcon = !showPasswordIcon
     }
+    
+// MARK: - METHODS
+    
     private func switchToMainStoryboard(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
-    
-    
 }

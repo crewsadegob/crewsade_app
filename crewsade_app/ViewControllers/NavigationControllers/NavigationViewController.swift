@@ -10,6 +10,8 @@ import UIKit
 
 class NavigationViewController: UINavigationController {
 
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,5 +24,4 @@ class NavigationViewController: UINavigationController {
         UINavigationBar.appearance().backIndicatorImage = backImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
     }
-
 }

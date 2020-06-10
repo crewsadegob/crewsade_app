@@ -9,11 +9,17 @@
 import UIKit
 import SDWebImage
 import Firebase
+
 class ListPlayersViewController: UIViewController {
+    
+// MARK: - VARIABLES
+    
+    @IBOutlet weak var playersTableView: UITableView!
     
     var players = [User]()
     
-    @IBOutlet weak var playersTableView: UITableView!
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +35,8 @@ class ListPlayersViewController: UIViewController {
         }
     }
     
+// MARK: - ACTIONS
+    
     @objc private func buttonIsChallengedClicked(_ sender: UIButton){
         if let id = players[sender.tag].id{
             if let user = Auth.auth().currentUser{
@@ -39,6 +47,8 @@ class ListPlayersViewController: UIViewController {
         }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ListPlayersViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

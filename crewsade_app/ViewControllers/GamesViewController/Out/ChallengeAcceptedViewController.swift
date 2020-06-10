@@ -9,14 +9,20 @@
 import UIKit
 import Firebase
 import SDWebImage
+
 class ChallengeAcceptedViewController: UIViewController {
-    let user = Auth.auth().currentUser
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var notPlaying: UIView!
     @IBOutlet weak var isPlaying: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var challengerName: UILabel!
     @IBOutlet weak var challengerImage: UIImageView!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +59,8 @@ class ChallengeAcceptedViewController: UIViewController {
             }
         }
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func validateButton(_ sender: UIButton) {
         SessionService().trickIsValidate()

@@ -15,6 +15,8 @@ import Geofirestore
 
 class MapViewController: ViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var centerButton: UIButton!
     
@@ -23,6 +25,8 @@ class MapViewController: ViewController {
     let db = Firestore.firestore()
     
     var displayedSpotId = ""
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +69,7 @@ class MapViewController: ViewController {
         self.performSegue(withIdentifier: "presentSpotCreation", sender: self)
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func centerMapOnUser(_ sender: UIButton) {
         
@@ -76,7 +80,7 @@ class MapViewController: ViewController {
         
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         centerButton.layer.cornerRadius = 25
@@ -160,7 +164,7 @@ class MapViewController: ViewController {
 
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension MapViewController: MGLMapViewDelegate {
     

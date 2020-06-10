@@ -11,10 +11,14 @@ import Firebase
 
 class SetProfileInformationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var usernameInput: UITextField!
     
     let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,8 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         profilePicture.layer.cornerRadius = profilePicture.frame.width / 2
         profilePicture.clipsToBounds = true
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func didTapProfilePicture(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -52,6 +58,21 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         self.present(profilePictureSheet, animated: true, completion: nil)
     }
     
+    @IBAction func buttonFinishClicked(_ sender: Any) {
+        if let username = usernameInput.text, let image = profilePicture.image, let user = user{
+            FirebaseAuthManager().setProfile(username: username, user: user, Image: image){[weak self] (success) in
+                guard let `self` = self else { return }
+                if (success) {
+                    self.switchToMainStoryboard()
+                } else {
+                    print("There was an error.")
+                }
+            }
+        }
+    }
+    
+// MARK: - METHODS
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
@@ -68,18 +89,5 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
-    }
-    
-    @IBAction func buttonFinishClicked(_ sender: Any) {
-        if let username = usernameInput.text, let image = profilePicture.image, let user = user{
-            FirebaseAuthManager().setProfile(username: username, user: user, Image: image){[weak self] (success) in
-                guard let `self` = self else { return }
-                if (success) {
-                    self.switchToMainStoryboard()
-                } else {
-                    print("There was an error.")
-                }
-            }
-        }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class GamesViewController: ViewController {
 
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

@@ -9,12 +9,17 @@
 import UIKit
 import FirebaseAuth
 import SDWebImage
+
 class ChallengeInvitationViewController: UIViewController {
 
-    let user = Auth.auth().currentUser
+// MARK: - VARIABLES
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +28,16 @@ class ChallengeInvitationViewController: UIViewController {
         self.hideNavigation()
         
         if let user = user {
-              GamesService().getInformationsChallenge(userId: user.uid){ result in
-                  if let players = result{
-                          self.usernameLabel.text = players[1].username
-                          self.imageView.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder.png"))
-                  }
+           GamesService().getInformationsChallenge(userId: user.uid){ result in
+              if let players = result{
+                      self.usernameLabel.text = players[1].username
+                      self.imageView.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder.png"))
               }
-      }
+           }
+        }
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func denyButtonClicked(_ sender: Any) {
         GamesService().denyChallenge(view: self)

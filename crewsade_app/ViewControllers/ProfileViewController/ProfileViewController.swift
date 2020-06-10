@@ -10,7 +10,8 @@ import UIKit
 import SDWebImage
 import Firebase
 class ProfileViewController: ViewController {
-    let user = Auth.auth().currentUser
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
@@ -18,6 +19,9 @@ class ProfileViewController: ViewController {
     
     var User: User?
     var stats =  [String: Int]()
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +48,8 @@ class ProfileViewController: ViewController {
         }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
