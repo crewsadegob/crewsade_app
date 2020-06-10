@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tR3-iO-7V4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tR3-iO-7V4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -215,7 +215,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e4u-62-5Yg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="training" landscapeImage="training" largeContentSizeImage="training" id="EJx-yj-S0a"/>
                     <navigationItem key="navigationItem" title="TRAINING" id="omI-Ed-tce"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -284,9 +283,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
-                                                    <rect key="frame" x="30" y="10" width="229" height="43"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3e-bM-Moc" userLabel="NameTrick">
+                                                    <rect key="frame" x="30" y="10" width="50" height="43"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="9Ah-LQ-9SV"/>
                                                         <constraint firstAttribute="height" constant="43" id="SZl-kP-ghm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="26"/>
@@ -439,6 +439,5 @@
         <image name="pause" width="50" height="50"/>
         <image name="save" width="15" height="23"/>
         <image name="saveFull" width="15" height="23"/>
-        <image name="training" width="25" height="25"/>
     </resources>
 </document>

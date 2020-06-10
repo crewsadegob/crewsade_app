@@ -9,12 +9,13 @@
 import UIKit
 import SDWebImage
 import Firebase
-class ProfileViewController: UIViewController {
+class ProfileViewController: ViewController {
     let user = Auth.auth().currentUser
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var statsTable: UITableView!
+    
     var User: User?
     var stats =  [String: Int]()
     override func viewDidLoad() {

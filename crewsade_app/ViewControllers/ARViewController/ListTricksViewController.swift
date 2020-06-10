@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
-class ListTricksViewController: UIViewController {
+class ListTricksViewController: ViewController {
     
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
@@ -42,6 +42,7 @@ class ListTricksViewController: UIViewController {
                 self.ListTricksTable.reloadData()
             }
         }
+        
         LevelService().getLevels(){ result in
             if let level = result{
                 
@@ -60,9 +61,9 @@ class ListTricksViewController: UIViewController {
             
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
     }
     
     @objc private func levelClicked(_ sender: UIButton) {

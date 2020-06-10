@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImageView{
+extension UIImageView {
     func setRoundedImage(){
         self.layer.masksToBounds = false
         self.layer.cornerRadius = self.frame.width/2

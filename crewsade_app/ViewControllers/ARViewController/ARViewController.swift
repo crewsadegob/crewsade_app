@@ -9,7 +9,7 @@
 import UIKit
 import ARKit
 
-class ARViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: ViewController, ARSCNViewDelegate {
     
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var nameTrick: UILabel!

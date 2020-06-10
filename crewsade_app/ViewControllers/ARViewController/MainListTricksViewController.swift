@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class MainListTricksViewController: UIViewController {
+class MainListTricksViewController: ViewController {
     
     let db = Firestore.firestore()
     
@@ -20,6 +20,7 @@ class MainListTricksViewController: UIViewController {
     @IBOutlet weak var carouselTrick: UICollectionView!
     @IBOutlet weak var mainListTricksTable: UITableView!
     @IBOutlet weak var ctaButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +37,6 @@ class MainListTricksViewController: UIViewController {
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
         
-   
         carouselTrick.dataSource = self
         carouselTrick.delegate = self
         
@@ -78,8 +78,7 @@ class MainListTricksViewController: UIViewController {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "ListTricksViewController")
         self.show(mainViewController, sender: nil)
          
-      }
-    
+    }
 }
 
 extension MainListTricksViewController: UITableViewDataSource{

@@ -18,13 +18,6 @@ class CustomTabBar: UITabBar {
         super.awakeFromNib()
         
         self.layer.cornerRadius = 30
-        
-//
-//        roundedView.layer.masksToBounds = true
-//        roundedView.layer.cornerRadius = 12.0
-//        roundedView.isUserInteractionEnabled = false
-//        roundedView.layer.backgroundColor = UIColor.CrewSade.darkGrey.cgColor
-//        self.addSubview(roundedView)
     }
 
     override func layoutSubviews() {

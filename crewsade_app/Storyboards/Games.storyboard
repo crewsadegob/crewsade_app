@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -57,6 +57,16 @@
                                                     <segue destination="jWd-QU-fUc" kind="show" id="6aD-n8-p3M"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
+                                                <rect key="frame" x="143.5" y="50" width="88.5" height="68.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
+                                                    <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
+                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flash" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-0U-5ha">
                                                 <rect key="frame" x="181" y="138.5" width="13" height="16"/>
                                                 <constraints>
@@ -71,16 +81,6 @@
                                                     <constraint firstAttribute="width" constant="245" id="vC8-cv-Ddx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
-                                                <rect key="frame" x="143.5" y="50" width="88.5" height="68.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
-                                                    <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
                                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -139,7 +139,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-MB-sjO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="games_icon" landscapeImage="games_icon" largeContentSizeImage="games_icon" id="lrT-Hc-agl"/>
                     <navigationItem key="navigationItem" title="GAMES" id="52t-kb-AR9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -893,7 +892,6 @@
         <image name="background" width="375" height="667"/>
         <image name="backgroundSpot" width="375" height="612"/>
         <image name="flash" width="6.5" height="16"/>
-        <image name="games_icon" width="24" height="25"/>
         <image name="returnedSeparator" width="375" height="50"/>
         <image name="separator" width="375" height="50"/>
         <image name="thumbDown" width="36" height="40"/>
