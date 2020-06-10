@@ -25,7 +25,8 @@ class ViewController: UIViewController, TapHandler {
         let allViews = Bundle.main.loadNibNamed("CrewsadeTabBar", owner: CrewsadeTabBar(), options: nil)
 
         let tabBar = allViews?.first as! CrewsadeTabBar
-        tabBar.frame = CGRect(x: 0, y: 190, width: view.frame.width, height: 170)
+        let y = view.frame.size.height - 170
+        tabBar.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 170)
         tabBar.tapHandler = self
         self.view.addSubview(tabBar)
     }

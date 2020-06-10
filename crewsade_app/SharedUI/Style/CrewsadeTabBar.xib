@@ -13,32 +13,48 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-Hx-avM">
-                    <rect key="frame" x="41" y="30" width="332" height="25"/>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-Hx-avM">
+                    <rect key="frame" x="32" y="17.5" width="350" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKB-SB-3CZ">
-                            <rect key="frame" x="0.0" y="0.0" width="18" height="25"/>
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="aPn-os-bEs"/>
+                                <constraint firstAttribute="width" constant="50" id="gbe-ME-AqY"/>
+                            </constraints>
                             <state key="normal" image="map-icon"/>
                             <connections>
                                 <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="yzD-C6-Brz"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAy-vR-fpI">
-                            <rect key="frame" x="98" y="0.0" width="25" height="25"/>
+                            <rect key="frame" x="100" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="bfh-G8-jvT"/>
+                                <constraint firstAttribute="height" constant="50" id="fHt-rP-II2"/>
+                            </constraints>
                             <state key="normal" image="training"/>
                             <connections>
                                 <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vqs-Fg-4Aq"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-VL-hCG">
-                            <rect key="frame" x="203" y="0.0" width="24" height="25"/>
+                            <rect key="frame" x="200" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="uMn-wh-Y4a"/>
+                                <constraint firstAttribute="width" constant="50" id="xej-9P-w4y"/>
+                            </constraints>
                             <state key="normal" image="games_icon"/>
                             <connections>
                                 <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="QKj-0r-1th"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-xm-suA">
-                            <rect key="frame" x="307" y="0.0" width="25" height="25"/>
+                            <rect key="frame" x="300" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="VYt-eY-m6U"/>
+                                <constraint firstAttribute="height" constant="50" id="jkf-9U-X3Z"/>
+                            </constraints>
                             <state key="normal" image="profile_icon"/>
                             <connections>
                                 <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="opR-pV-D6n"/>
