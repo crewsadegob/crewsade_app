@@ -141,6 +141,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="GTk-k8-hCK"/>
                                                 </constraints>
                                                 <state key="normal" image="map-icon"/>
+                                                <connections>
+                                                    <action selector="tabButtonClicked:" destination="xyH-v9-zGo" eventType="touchUpInside" id="Cmn-BW-R7m"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d86-9R-nRT">
                                                 <rect key="frame" x="88" y="0.0" width="25" height="25"/>
@@ -148,6 +151,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="kR1-2W-efz"/>
                                                 </constraints>
                                                 <state key="normal" image="training"/>
+                                                <connections>
+                                                    <action selector="tabButtonClicked:" destination="xyH-v9-zGo" eventType="touchUpInside" id="Bvg-PN-wuE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-mJ-E7u">
                                                 <rect key="frame" x="183" y="0.0" width="24" height="25"/>
@@ -155,6 +161,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="oiq-uw-Clp"/>
                                                 </constraints>
                                                 <state key="normal" image="games_icon"/>
+                                                <connections>
+                                                    <action selector="tabButtonClicked:" destination="xyH-v9-zGo" eventType="touchUpInside" id="qjr-fb-wnp"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.5" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3L-os-Orw">
                                                 <rect key="frame" x="277" y="0.0" width="25" height="25"/>
@@ -162,6 +171,9 @@
                                                     <constraint firstAttribute="height" constant="25" id="IJz-d1-BAO"/>
                                                 </constraints>
                                                 <state key="normal" image="profile_icon"/>
+                                                <connections>
+                                                    <action selector="tabButtonClicked:" destination="xyH-v9-zGo" eventType="touchUpInside" id="dRb-8C-BXw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

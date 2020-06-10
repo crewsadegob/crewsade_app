@@ -20,6 +20,8 @@ class MainListTricksViewController: UIViewController {
     @IBOutlet weak var carouselTrick: UICollectionView!
     @IBOutlet weak var mainListTricksTable: UITableView!
     @IBOutlet weak var ctaButton: UIButton!
+    @IBOutlet weak var customTabBar: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,9 @@ class MainListTricksViewController: UIViewController {
         
         ctaButton.layer.cornerRadius = 4.0
         ctaButton.addTextSpacing(6.0)
+        
+        customTabBar.backgroundColor = UIColor.CrewSade.darkGrey
+        customTabBar.roundTopCorners()
         
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
@@ -78,7 +83,19 @@ class MainListTricksViewController: UIViewController {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "ListTricksViewController")
         self.show(mainViewController, sender: nil)
          
-      }
+    }
+    
+    @IBAction func tabButtonClicked(_ sender: UIButton) {
+        
+        switch sender.tag {
+            case 0: self.tabBarController?.selectedIndex = 0
+            case 1: self.tabBarController?.selectedIndex = 1
+            case 2: self.tabBarController?.selectedIndex = 2
+            case 3: self.tabBarController?.selectedIndex = 3
+            default: break
+        }
+        
+    }
     
 }
 

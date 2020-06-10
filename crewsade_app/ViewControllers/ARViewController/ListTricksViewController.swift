@@ -25,6 +25,7 @@ class ListTricksViewController: UIViewController {
     
     var urlScene:String?
     
+    @IBOutlet weak var customTabBar: UIView!
     @IBOutlet weak var ButtonSection: UIStackView!
     @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
