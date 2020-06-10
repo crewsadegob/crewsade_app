@@ -37,7 +37,6 @@ class MainListTricksViewController: ViewController {
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
         
-   
         carouselTrick.dataSource = self
         carouselTrick.delegate = self
         

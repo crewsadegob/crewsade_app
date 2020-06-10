@@ -29,6 +29,7 @@ class ViewController: UIViewController, TapHandler {
         tabBar.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 170)
         tabBar.tapHandler = self
         self.view.addSubview(tabBar)
+        self.view.bringSubviewToFront(tabBar)
     }
     
     func tapped(index: Int) {
