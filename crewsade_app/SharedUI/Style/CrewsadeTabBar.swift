@@ -12,29 +12,47 @@ import UIKit
 
 class CrewsadeTabBar: UIView {
     weak var tapHandler: TapHandler?
+    
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var stackView: UIStackView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
         setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
     }
     
     private func setup() {
-        backgroundColor = UIColor.CrewSade.darkGrey
-        roundTopCorners()
+        addButton.backgroundColor = UIColor.CrewSade.mainColorLight
+        addButton.layer.cornerRadius = addButton.frame.width / 2
+        
+        contentView.backgroundColor = UIColor.CrewSade.darkGrey
+        contentView.roundTopCorners()
+    }
+    
+    func hideAddButton() {
+        addButton.isHidden = true
+    }
+    
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        tapHandler?.addButtonTapped()
     }
     
     @IBAction func tabBarButtonClicked(_ sender: UIButton) {
-        tapHandler?.tapped(index: sender.tag)
+        tapHandler?.tabBarButtonTapped(index: sender.tag)
     }
 }
 
 protocol TapHandler: class {
-    func tapped(index: Int)
+    func tabBarButtonTapped(index: Int)
+    func addButtonTapped()
 }

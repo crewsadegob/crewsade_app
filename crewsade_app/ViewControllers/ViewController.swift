@@ -16,7 +16,6 @@ class ViewController: UIViewController, TapHandler {
         super.viewDidLoad()
         
         GamesService().checkIsUserChallenged(view:self)
-        
         setupTabBar()
     }
     
@@ -25,14 +24,19 @@ class ViewController: UIViewController, TapHandler {
         let allViews = Bundle.main.loadNibNamed("CrewsadeTabBar", owner: CrewsadeTabBar(), options: nil)
 
         let tabBar = allViews?.first as! CrewsadeTabBar
-        let y = view.frame.size.height - 170
-        tabBar.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 170)
+        let y = view.frame.size.height - 185
+        tabBar.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 230)
         tabBar.tapHandler = self
-        self.view.addSubview(tabBar)
-        self.view.bringSubviewToFront(tabBar)
+        
+        if self.tabBarController?.selectedIndex != 0 {
+            tabBar.hideAddButton()
+        }
+        
+        view.addSubview(tabBar)
+        view.bringSubviewToFront(tabBar)
     }
     
-    func tapped(index: Int) {
+    func tabBarButtonTapped(index: Int) {
         switch index {
             case 0: self.tabBarController?.selectedIndex = 0
             case 1: self.tabBarController?.selectedIndex = 1
@@ -41,6 +45,8 @@ class ViewController: UIViewController, TapHandler {
             default: break
         }
     }
+    
+    func addButtonTapped() {}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

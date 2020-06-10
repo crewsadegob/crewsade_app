@@ -70,6 +70,10 @@ class MapViewController: ViewController {
         }
     }
     
+    override func addButtonTapped() {
+        self.performSegue(withIdentifier: "presentSpotCreation", sender: self)
+    }
+    
     // ------------------- ACTIONS
     
     @IBAction func centerMapOnUser(_ sender: UIButton) {
@@ -81,17 +85,6 @@ class MapViewController: ViewController {
         
     }
     
-    @IBAction func tabButtonClicked(_ sender: UIButton) {
-        
-        switch sender.tag {
-            case 0: self.tabBarController?.selectedIndex = 0
-            case 1: self.tabBarController?.selectedIndex = 1
-            case 2: self.tabBarController?.selectedIndex = 2
-            case 3: self.tabBarController?.selectedIndex = 3
-            default: break
-        }
-        
-    }
     // ------------------- METHODS
     
     func customizeInterface() {
@@ -150,7 +143,7 @@ class MapViewController: ViewController {
                 }
             }
         }
-
+        
     }
     
     func setupLocationManager() {
@@ -242,11 +235,9 @@ extension MapViewController: CLLocationManagerDelegate {
         switch status {
             case .notDetermined, .restricted, .denied:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-//                addButton.isEnabled = false
                 centerButton.isEnabled = false
             case .authorizedAlways, .authorizedWhenInUse:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-//                addButton.isEnabled = true
                 centerButton.isEnabled = true
             @unknown default:
             break

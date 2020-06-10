@@ -87,6 +87,7 @@
                         <outlet property="centerButton" destination="HQP-39-ofL" id="FAu-pP-Xjc"/>
                         <outlet property="mapView" destination="zz2-4c-hzv" id="X5L-m0-gUj"/>
                         <segue destination="fUb-oO-n23" kind="presentation" identifier="presentSpotDetail" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="i56-nd-sj4"/>
+                        <segue destination="0yB-Kb-00W" kind="presentation" identifier="presentSpotCreation" id="0np-7f-m3y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sw-33-sKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -265,11 +266,11 @@
             <objects>
                 <viewController id="0yB-Kb-00W" customClass="SpotCreationViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqO-qq-BYG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOv-B8-2qk">
-                                <rect key="frame" x="75" y="498" width="264" height="40"/>
+                                <rect key="frame" x="75" y="454" width="264" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Y00-CC-tPF"/>
@@ -282,7 +283,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotphoto-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iwI-k8-FlI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="T1n-qV-TwU"/>
@@ -292,13 +293,13 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom du spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFu-Hs-8cZ">
-                                <rect key="frame" x="25" y="359" width="364" height="14"/>
+                                <rect key="frame" x="25" y="315" width="364" height="14"/>
                                 <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Entrer un nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XKa-7N-ErP">
-                                <rect key="frame" x="25" y="398" width="364" height="50"/>
+                                <rect key="frame" x="25" y="354" width="364" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wba-LK-Spm"/>
                                 </constraints>
@@ -306,7 +307,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="returnedSeparator" translatesAutoresizingMaskIntoConstraints="NO" id="YjB-Ks-hAW">
-                                <rect key="frame" x="0.0" y="264" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="220" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4ND-rI-WlP"/>
                                     <constraint firstAttribute="width" constant="414" id="kxl-vn-bQO"/>
