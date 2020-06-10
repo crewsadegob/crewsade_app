@@ -118,77 +118,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoU-gx-QHU">
-                                <rect key="frame" x="0.0" y="531" width="375" height="85"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="X5w-pY-DPq">
-                                        <rect key="frame" x="36.5" y="30" width="302" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nws-X0-euc">
-                                                <rect key="frame" x="0.0" y="0.0" width="18" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="o2M-p4-yS2"/>
-                                                </constraints>
-                                                <state key="normal" image="map-icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="gl9-xn-iTr"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" alpha="0.5" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-MF-HoN">
-                                                <rect key="frame" x="88" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="OPm-1Z-nNd"/>
-                                                </constraints>
-                                                <state key="normal" image="training"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="qJ6-kg-FHg"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" alpha="0.5" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-L1-YPW">
-                                                <rect key="frame" x="183" y="0.0" width="24" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="56S-JJ-rfP"/>
-                                                </constraints>
-                                                <state key="normal" image="games_icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="B0H-QT-Wpi"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY3-ef-LVV">
-                                                <rect key="frame" x="277" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="cT0-uF-uC5"/>
-                                                </constraints>
-                                                <state key="normal" image="profile_icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="IMa-Ql-Gr5" eventType="touchUpInside" id="QAR-96-fUY"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Bu6-sX-haT"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="KuL-p2-dQr"/>
-                                    <constraint firstItem="X5w-pY-DPq" firstAttribute="centerY" secondItem="VoU-gx-QHU" secondAttribute="centerY" id="Uuq-uM-klt"/>
-                                    <constraint firstItem="X5w-pY-DPq" firstAttribute="centerX" secondItem="VoU-gx-QHU" secondAttribute="centerX" id="gl4-Vq-eP4"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oR4-x3-0Tj" firstAttribute="leading" secondItem="YDa-Dh-X6m" secondAttribute="leading" id="1hQ-aO-oQ7"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="top" secondItem="YDa-Dh-X6m" secondAttribute="top" id="4bD-5m-nEJ"/>
                             <constraint firstItem="YDa-Dh-X6m" firstAttribute="trailing" secondItem="oR4-x3-0Tj" secondAttribute="trailing" id="CvZ-p9-MB7"/>
-                            <constraint firstItem="YDa-Dh-X6m" firstAttribute="trailing" secondItem="VoU-gx-QHU" secondAttribute="trailing" id="FDW-xh-W1G"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="trailing" secondItem="YDa-Dh-X6m" secondAttribute="trailing" id="Gyi-dH-Luw"/>
                             <constraint firstItem="oR4-x3-0Tj" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="bottom" id="IIs-ZU-y0A"/>
-                            <constraint firstItem="VoU-gx-QHU" firstAttribute="bottom" secondItem="YDa-Dh-X6m" secondAttribute="bottom" constant="42" id="Sod-YV-Ond"/>
                             <constraint firstItem="YDa-Dh-X6m" firstAttribute="bottom" secondItem="oR4-x3-0Tj" secondAttribute="bottom" id="Zty-9R-MnB"/>
-                            <constraint firstItem="YDa-Dh-X6m" firstAttribute="leading" secondItem="VoU-gx-QHU" secondAttribute="leading" id="b6k-3s-JWa"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="leading" secondItem="YDa-Dh-X6m" secondAttribute="leading" id="c1C-iZ-Nfo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YDa-Dh-X6m"/>
@@ -207,7 +145,6 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="customTabBar" destination="VoU-gx-QHU" id="sVA-9L-Vp3"/>
                         <outlet property="imageProfile" destination="VTF-Ds-QTg" id="6vJ-dN-LS6"/>
                         <outlet property="statsTable" destination="oR4-x3-0Tj" id="CGF-LV-AZW"/>
                         <outlet property="usernameLabel" destination="FiC-we-cbz" id="oBW-VM-BW9"/>
@@ -255,10 +192,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="games_icon" width="24" height="25"/>
-        <image name="map-icon" width="18" height="25"/>
-        <image name="profile_icon" width="25" height="18"/>
         <image name="settings" width="22" height="22"/>
-        <image name="training" width="25" height="25"/>
     </resources>
 </document>

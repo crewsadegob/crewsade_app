@@ -11,20 +11,30 @@ import UIKit
 
 
 class CrewsadeTabBar: UIView {
-    
-    @IBOutlet weak var contentView: CrewsadeTabBar!
+    weak var tapHandler: TapHandler?
+    @IBOutlet weak var stackView: UIStackView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setup()
     }
     
     private func setup() {
-        backgroundColor = .red
+        backgroundColor = UIColor.CrewSade.darkGrey
+        roundTopCorners()
     }
     
+    @IBAction func tabBarButtonClicked(_ sender: UIButton) {
+        tapHandler?.tapped(index: sender.tag)
+    }
+}
+
+protocol TapHandler: class {
+    func tapped(index: Int)
 }

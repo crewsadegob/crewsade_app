@@ -17,10 +17,6 @@ class MapViewController: ViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var centerButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var customTabBar: UIView!
-    @IBOutlet weak var customTabBarStackView: UIStackView!
-    @IBOutlet weak var customTabBarSecondButton: UIButton!
     
     let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
@@ -31,11 +27,6 @@ class MapViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tabbar = CrewsadeTabBar(frame: CGRect(x: 0, y: view.bounds.maxY-170, width: view.frame.width, height: 85))
-        view.addSubview(tabbar)
-        view.bringSubviewToFront(tabbar)
-        view.bringSubviewToFront(addButton)
-        
         setupLocationManager()
         GamesService().checkIsUserChallenged(view: self)
         customizeInterface()
@@ -44,23 +35,21 @@ class MapViewController: ViewController {
         mapView.delegate = self
         mapView.isHidden = true
         
-        customTabBar.backgroundColor = UIColor.CrewSade.darkGrey
-        customTabBar.roundTopCorners()
         // SEULEMENT POUR MAP
         
-        customTabBarStackView.setCustomSpacing(120, after: customTabBarSecondButton)
-        addButton.backgroundColor = UIColor.CrewSade.mainColorLight
-        addButton.layer.cornerRadius = 30
+//        customTabBarStackView.setCustomSpacing(120, after: customTabBarSecondButton)
+//        addButton.backgroundColor = UIColor.CrewSade.mainColorLight
+//        addButton.layer.cornerRadius = 30
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-                    addButton.isEnabled = false
+//                    addButton.isEnabled = false
                     centerButton.isEnabled = false
                 case .authorizedAlways, .authorizedWhenInUse:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-                    addButton.isEnabled = true
+//                    addButton.isEnabled = true
                     centerButton.isEnabled = true
                 @unknown default:
                 break
@@ -253,11 +242,11 @@ extension MapViewController: CLLocationManagerDelegate {
         switch status {
             case .notDetermined, .restricted, .denied:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-                addButton.isEnabled = false
+//                addButton.isEnabled = false
                 centerButton.isEnabled = false
             case .authorizedAlways, .authorizedWhenInUse:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-                addButton.isEnabled = true
+//                addButton.isEnabled = true
                 centerButton.isEnabled = true
             @unknown default:
             break

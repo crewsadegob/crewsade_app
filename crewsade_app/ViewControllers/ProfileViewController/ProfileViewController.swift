@@ -9,10 +9,9 @@
 import UIKit
 import SDWebImage
 import Firebase
-class ProfileViewController: UIViewController {
+class ProfileViewController: ViewController {
     let user = Auth.auth().currentUser
     
-    @IBOutlet weak var customTabBar: UIView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
     @IBOutlet weak var statsTable: UITableView!
@@ -25,8 +24,6 @@ class ProfileViewController: UIViewController {
         statsTable.dataSource = self
         
         imageProfile.setRoundedImage()
-        customTabBar.backgroundColor = UIColor.CrewSade.darkGrey
-        customTabBar.roundTopCorners()
         
         self.navigationController?.navigationBar.topItem?.title = "PROFIL";
         
@@ -44,18 +41,6 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    @IBAction func tabButtonClicked(_ sender: UIButton) {
-        
-        switch sender.tag {
-            case 0: self.tabBarController?.selectedIndex = 0
-            case 1: self.tabBarController?.selectedIndex = 1
-            case 2: self.tabBarController?.selectedIndex = 2
-            case 3: self.tabBarController?.selectedIndex = 3
-            default: break
-        }
-        
     }
 }
 

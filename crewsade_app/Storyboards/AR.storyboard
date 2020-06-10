@@ -196,70 +196,10 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjq-BQ-YZT">
-                                <rect key="frame" x="0.0" y="531" width="375" height="85"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="7Fr-3D-V2u">
-                                        <rect key="frame" x="36.5" y="30" width="302" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZo-4X-HSY">
-                                                <rect key="frame" x="0.0" y="0.0" width="18" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="g4r-aZ-6D8"/>
-                                                </constraints>
-                                                <state key="normal" image="map-icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="3ji-q7-NH0" eventType="touchUpInside" id="4hQ-s1-Dfi"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYh-Jy-uaU">
-                                                <rect key="frame" x="88" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="K9M-tg-TPa"/>
-                                                </constraints>
-                                                <state key="normal" image="training"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="3ji-q7-NH0" eventType="touchUpInside" id="S3Y-xO-EKu"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" alpha="0.5" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRZ-rp-hJc">
-                                                <rect key="frame" x="183" y="0.0" width="24" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="V6s-Jh-6sY"/>
-                                                </constraints>
-                                                <state key="normal" image="games_icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="3ji-q7-NH0" eventType="touchUpInside" id="TtB-YV-rrO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" alpha="0.5" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-GT-IfR">
-                                                <rect key="frame" x="277" y="0.0" width="25" height="25"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="GbH-7j-x2h"/>
-                                                </constraints>
-                                                <state key="normal" image="profile_icon"/>
-                                                <connections>
-                                                    <action selector="tabButtonClicked:" destination="3ji-q7-NH0" eventType="touchUpInside" id="10H-9F-5pb"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="8Go-nj-khv"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="7Fr-3D-V2u" firstAttribute="centerX" secondItem="Qjq-BQ-YZT" secondAttribute="centerX" id="CdS-sW-VIF"/>
-                                    <constraint firstItem="7Fr-3D-V2u" firstAttribute="centerY" secondItem="Qjq-BQ-YZT" secondAttribute="centerY" id="Q2A-W2-eIe"/>
-                                    <constraint firstAttribute="height" constant="85" id="Zhk-Nz-LLI"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="GcI-17-Uhs" secondAttribute="trailing" constant="161" id="1Iy-DA-R1p"/>
-                            <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="Qjq-BQ-YZT" secondAttribute="trailing" id="4fE-Ph-Qbj"/>
                             <constraint firstItem="2tU-CS-ewj" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="97" id="5ha-CI-w3z"/>
                             <constraint firstItem="VFe-ZR-G9y" firstAttribute="bottom" secondItem="e4u-62-5Yg" secondAttribute="bottom" constant="49" id="BGo-Ew-Xde"/>
                             <constraint firstItem="VFe-ZR-G9y" firstAttribute="top" secondItem="GcI-17-Uhs" secondAttribute="bottom" constant="38" id="BVk-yJ-1zB"/>
@@ -268,8 +208,6 @@
                             <constraint firstItem="e4u-62-5Yg" firstAttribute="trailing" secondItem="2tU-CS-ewj" secondAttribute="trailing" constant="97" id="GWK-7h-jUx"/>
                             <constraint firstItem="2tU-CS-ewj" firstAttribute="top" secondItem="wby-TM-6DB" secondAttribute="bottom" constant="22" id="LFe-4f-wCg"/>
                             <constraint firstItem="wby-TM-6DB" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="20" id="UdW-0M-IxY"/>
-                            <constraint firstItem="Qjq-BQ-YZT" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" id="Y6t-ph-REn"/>
-                            <constraint firstItem="Qjq-BQ-YZT" firstAttribute="bottom" secondItem="e4u-62-5Yg" secondAttribute="bottom" constant="42" id="YqP-s0-aJK"/>
                             <constraint firstItem="VFe-ZR-G9y" firstAttribute="leading" secondItem="e4u-62-5Yg" secondAttribute="leading" constant="20" id="ZSX-Sc-Skg"/>
                             <constraint firstItem="wby-TM-6DB" firstAttribute="trailing" secondItem="e4u-62-5Yg" secondAttribute="trailing" constant="19" id="n9k-mE-9gv"/>
                             <constraint firstItem="wby-TM-6DB" firstAttribute="top" secondItem="e4u-62-5Yg" secondAttribute="top" constant="20" id="rhn-gF-sD3"/>
@@ -282,7 +220,6 @@
                     <connections>
                         <outlet property="carouselTrick" destination="wby-TM-6DB" id="DMS-Ue-h6z"/>
                         <outlet property="ctaButton" destination="2tU-CS-ewj" id="bzC-sK-8l8"/>
-                        <outlet property="customTabBar" destination="Qjq-BQ-YZT" id="rEo-gW-vct"/>
                         <outlet property="mainListTricksTable" destination="VFe-ZR-G9y" id="sxS-Fz-lZI"/>
                     </connections>
                 </viewController>
@@ -498,13 +435,9 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="btnAdd" width="29" height="28.5"/>
-        <image name="games_icon" width="24" height="25"/>
         <image name="learn" width="24" height="24"/>
-        <image name="map-icon" width="18" height="25"/>
         <image name="pause" width="50" height="50"/>
-        <image name="profile_icon" width="25" height="18"/>
         <image name="save" width="15" height="23"/>
         <image name="saveFull" width="15" height="23"/>
-        <image name="training" width="25" height="25"/>
     </resources>
 </document>

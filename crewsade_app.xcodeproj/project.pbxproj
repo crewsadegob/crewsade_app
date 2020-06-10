@@ -82,7 +82,7 @@
 		0F8BCDD3248F76A40013138C /* CustomUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */; };
 		0F8BCDD9248FD7840013138C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD8248FD7840013138C /* UIView.swift */; };
 		0F8BCDDD2490CDC90013138C /* CrewsadeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */; };
-		0F8BCDDF2490D1E80013138C /* CrewsadeTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8BCDDE2490D1E80013138C /* CrewsadeTabBar.xib */; };
+		0F8BCDE32491236D0013138C /* CrewsadeTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,7 +164,7 @@
 		0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocation.swift; sourceTree = "<group>"; };
 		0F8BCDD8248FD7840013138C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewsadeTabBar.swift; sourceTree = "<group>"; };
-		0F8BCDDE2490D1E80013138C /* CrewsadeTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewsadeTabBar.xib; sourceTree = "<group>"; };
+		0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewsadeTabBar.xib; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 				0F8BCDD8248FD7840013138C /* UIView.swift */,
 				0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */,
 				0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */,
-				0F8BCDDE2490D1E80013138C /* CrewsadeTabBar.xib */,
+				0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 				0F5D3D3E244D88D200D13D0C /* Main.storyboard in Resources */,
 				06E352CA2459BE8C00722B02 /* TuskerGrotesk-4500Medium.ttf in Resources */,
 				06601D012453187700267E5D /* AR.storyboard in Resources */,
-				0F8BCDDF2490D1E80013138C /* CrewsadeTabBar.xib in Resources */,
+				0F8BCDE32491236D0013138C /* CrewsadeTabBar.xib in Resources */,
 				06E352C82459BE8600722B02 /* Heebo-Regular.ttf in Resources */,
 				06E352C92459BE8900722B02 /* Polly-Regular.otf in Resources */,
 			);
