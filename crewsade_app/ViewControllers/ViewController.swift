@@ -28,12 +28,3 @@ class ViewController: UIViewController {
     // fonction de remplacement Swift viewDidLoad() { super.viewDidLoad() if let token = AccessToken.current, !token.isExpired { // User is logged in, do work such as go to next view controller. } }
         
 }
-
-extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let _ : CLLocationCoordinate2D = manager.location?.coordinate else {
-            return
-        }
-    }
-}
-

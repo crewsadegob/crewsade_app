@@ -13,7 +13,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Geofirestore
 
-class MapViewController: UIViewController {
+class MapViewController: ViewController {
     
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var centerButton: UIButton!
@@ -28,10 +28,13 @@ class MapViewController: UIViewController {
     
     var displayedSpotId = ""
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tabbar = CrewsadeTabBar(frame: CGRect(x: 0, y: view.bounds.maxY-170, width: view.frame.width, height: 85))
+        view.addSubview(tabbar)
+        view.bringSubviewToFront(tabbar)
+        view.bringSubviewToFront(addButton)
         
         setupLocationManager()
         GamesService().checkIsUserChallenged(view: self)
