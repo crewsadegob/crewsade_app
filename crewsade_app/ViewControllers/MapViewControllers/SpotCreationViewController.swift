@@ -109,7 +109,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
             }
         }
         
-        // A FAIRE DANS UN CALLBACK POUR S'ASSURER QUE LES INFOS SONT ENREGISTRÉES ?
+        // TODO: À faire dans un callback pour s'assurer que les informations sont enregistrées ?
         dismiss(animated: true, completion: nil)
     }
     
