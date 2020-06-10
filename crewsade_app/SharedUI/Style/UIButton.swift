@@ -8,11 +8,12 @@
 
 import UIKit
 
-extension UIButton{
+extension UIButton {
+    
     func addTextSpacing(_ letterSpacing: CGFloat){
         let attributedString = NSMutableAttributedString(string: (self.titleLabel?.text!)!)
         attributedString.addAttribute(NSAttributedString.Key.kern, value: letterSpacing, range: NSRange(location: 0, length: (self.titleLabel?.text!.count)!))
         self.setAttributedTitle(attributedString, for: .normal)
     }
-
+    
 }
