@@ -115,7 +115,7 @@ class SpotDetailViewController: UIViewController {
                                     let image = URL(string: user.get("Image") as! String)
                                     let stats = user.get("Stats") as! [String: Int]
                                     
-                                    let user = User(username: name, Image: image, id: key, stats: stats)
+                                    let user = User(username: name, image: image, id: key, stats: stats)
                                     self.users.append(user)
                                     
                                     if self.users.count == 0  {
@@ -150,7 +150,7 @@ class SpotDetailViewController: UIViewController {
                                     let image = URL(string: user.get("Image") as! String)
                                     let stats = user.get("Stats") as! [String: Int]
 
-                                    let user = User(username: name, Image: image, id: key, stats: stats)
+                                    let user = User(username: name, image: image, id: key, stats: stats)
                                     
                                     if let index = self.users.firstIndex(of: user) {
                                         self.users.remove(at: index)

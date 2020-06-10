@@ -36,7 +36,7 @@ class CarouselUsersCollectionViewCell: UICollectionViewCell {
         if let user = user {
             
             userName.text = user.username?.uppercased()
-            userPicture.sd_setImage(with: user.Image)
+            userPicture.sd_setImage(with: user.image)
             
         } else {
             

@@ -49,7 +49,7 @@ class ChallengeAcceptedViewController: UIViewController {
         SessionService().getChallengerInformations(){result in
             if let challenger = result{
                 self.challengerName.text = challenger.username
-                self.challengerImage.sd_setImage(with: challenger.Image, placeholderImage: UIImage(named:"placeholder.png"))
+                self.challengerImage.sd_setImage(with: challenger.image, placeholderImage: UIImage(named:"placeholder.png"))
             }
         }
     }

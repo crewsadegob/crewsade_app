@@ -30,7 +30,7 @@ class UserService {
                 if let image = document.get("Image") as? String{
                     
                     self.db.collection("games").document("OUT").collection("Sessions").document()
-                    completionHandler(User(username: username, Image: URL(string:image), id: id, stats: stats))
+                    completionHandler(User(username: username, image: URL(string:image), id: id, stats: stats))
                 }
                 
             } else {
@@ -57,6 +57,7 @@ class UserService {
             }
         }
     }
+    
     func learnTrick(trick: DocumentReference){
         if let user = user {
             trick.getDocument{(DocumentSnapshot, err) in
@@ -151,25 +152,25 @@ class UserService {
         }
     }
     
-    func updateVictory(){
+    func updateVictory() {
         if let user = user{
             self.db.collection("users").document(user.uid).updateData(["Stats.Victory": FieldValue.increment(Int64(1))])
         }
     }
     
-    func updateChallenge(){
+    func updateChallenge() {
         if let user = user {
           self.db.collection("users").document(user.uid).updateData(["Stats.Challenge": FieldValue.increment(Int64(1))])
         }
     }
     
-    func updateSpots(){
+    func updateSpots() {
         if let user = user{
             self.db.collection("users").document(user.uid).updateData(["Stats.Spots": FieldValue.increment(Int64(1))])
         }
     }
     
-    func updateTricks(){
+    func updateTricks() {
         if let user = user{
             self.db.collection("users").document(user.uid).updateData(["Stats.Tricks": FieldValue.increment(Int64(1))])
         }

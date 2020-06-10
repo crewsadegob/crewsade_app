@@ -13,7 +13,6 @@ import Firebase
 import Geofirestore
 import CoreLocation
 
-
 class GamesService {
     //TODO: Grosse refacto !!!
     let db = Firestore.firestore()
@@ -51,7 +50,7 @@ class GamesService {
                                         let name = user.get("Username") as! String
                                         let image = URL(string: user.get("Image") as! String)
                                         let stats = user.get("Stats") as! [String: Int]
-                                        let user = User(username: name, Image: image, id: userId, stats: stats)
+                                        let user = User(username: name, image: image, id: userId, stats: stats)
                                         self.players.append(user)
                                         completionHandler(self.players)
                                         
@@ -83,7 +82,7 @@ class GamesService {
                                         let image = URL(string: user.get("Image") as! String)
                                         let stats = user.get("Stats") as! [String: Int]
                                         
-                                        let user = User(username: name, Image: image, id: userId, stats: stats)
+                                        let user = User(username: name, image: image, id: userId, stats: stats)
                                         
                                         if let index = self.players.firstIndex(of: user) {
                                             self.players.remove(at: index)
@@ -266,7 +265,7 @@ class GamesService {
                                     group.enter()
                                     UserService().getUserInformations(id: playerId){result in
                                         if let user = result{
-                                            playersArray.append(User(username: user.username, Image: user.Image, id: user.id,stats: user.stats))
+                                            playersArray.append(User(username: user.username, image: user.image, id: user.id,stats: user.stats))
                                             group.leave()
                                         }
                                     }
@@ -309,4 +308,3 @@ class GamesService {
         }
     }
 }
-
