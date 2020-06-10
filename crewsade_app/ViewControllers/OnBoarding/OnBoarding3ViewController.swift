@@ -11,6 +11,7 @@ import UIKit
 class OnBoarding3ViewController: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -18,7 +19,6 @@ class OnBoarding3ViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeRight)
-        
         
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
@@ -37,7 +37,6 @@ class OnBoarding3ViewController: UIViewController {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "OnBoarding", bundle: nil)
                 let mainViewController = mainStoryboard.instantiateViewController(identifier: "OnBoarding4")
                 self.show(mainViewController, sender: nil)
-                
                 
             case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")

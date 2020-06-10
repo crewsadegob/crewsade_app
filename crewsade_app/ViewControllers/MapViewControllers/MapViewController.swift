@@ -28,7 +28,6 @@ class MapViewController: ViewController {
         super.viewDidLoad()
         
         setupLocationManager()
-        GamesService().checkIsUserChallenged(view: self)
         customizeInterface()
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -148,8 +147,6 @@ class MapViewController: ViewController {
             locationManager.startUpdatingLocation()
         }
     }
-    
-    
     
     func updateMapAnnotations(spot: Spot) {
         

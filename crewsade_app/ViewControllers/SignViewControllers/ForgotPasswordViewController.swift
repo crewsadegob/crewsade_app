@@ -11,12 +11,12 @@ import UIKit
 class ForgotPasswordViewController: UIViewController {
     
     @IBOutlet weak var emailInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         emailInput.setLeftPaddingPoints(10)
     }
-    
     
     @IBAction func finishButtonClicked(_ sender: Any) {
         if let email = emailInput.text{

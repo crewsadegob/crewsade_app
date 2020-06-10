@@ -13,6 +13,9 @@ import FirebaseAuth
 
 class ListTricksViewController: ViewController {
     
+    @IBOutlet weak var ButtonSection: UIStackView!
+    @IBOutlet weak var ListTricksTable: UITableView!
+    
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
     var tricksGet = [Trick]()
@@ -25,8 +28,6 @@ class ListTricksViewController: ViewController {
     
     var urlScene:String?
     
-    @IBOutlet weak var ButtonSection: UIStackView!
-    @IBOutlet weak var ListTricksTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,7 +59,6 @@ class ListTricksViewController: ViewController {
                 button.addTarget(self, action: #selector(self.levelClicked(_:)), for: .touchUpInside)
                 self.ButtonSection.addSubview(button)
             }
-            
         }
     }
     
@@ -158,11 +158,10 @@ extension ListTricksViewController: UITableViewDataSource{
     
 }
 
-extension ListTricksViewController: UITableViewDelegate{
+extension ListTricksViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.performSegue(withIdentifier: "toARViewController", sender: self)
-        
     }
     
     
@@ -170,5 +169,3 @@ extension ListTricksViewController: UITableViewDelegate{
         return 140
     }
 }
-
-

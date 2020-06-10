@@ -11,19 +11,22 @@ import FirebaseAuth
 import FirebaseFirestore
 import FBSDKLoginKit
 import FBSDKCoreKit
+
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
-    var showPasswordIcon:Bool = true
-    
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     
     let signUpManager = FirebaseAuthManager()
+    
+    var showPasswordIcon:Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         usernameInput.setLeftPaddingPoints(10)
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
@@ -34,11 +37,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         
         profilePicture.setRoundedImage()
-        // Do any additional setup after loading the view.
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 

@@ -122,10 +122,10 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         submitButton.backgroundColor = UIColor.CrewSade.mainColorLight
         submitButton.setTitle(submitButton.titleLabel?.text?.uppercased(), for: .normal)
         
-        
     }
     
     func setupLocationManager() {
+        
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -134,14 +134,17 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         spotPicture.image =  image
         
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -154,10 +157,12 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
 // ------------------- EXTENSIONS
 
 extension SpotCreationViewController: CLLocationManagerDelegate {
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let _ : CLLocationCoordinate2D = manager.location?.coordinate else {
             return
         }
     }
+    
 }
 

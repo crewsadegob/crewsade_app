@@ -11,17 +11,20 @@ import UIKit
 class OnBoardingViewController: UIViewController {
     
     @IBOutlet weak var OnBoardingButton: UIButton!
-    
     @IBOutlet weak var textLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeRight)
+        
+        self.hideNavigation()
+        
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
-        self.hideNavigation()
+        
     }
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -36,7 +39,6 @@ class OnBoardingViewController: UIViewController {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "OnBoarding", bundle: nil)
                 let mainViewController = mainStoryboard.instantiateViewController(identifier: "OnBoarding2")
                 self.show(mainViewController, sender: nil)
-                
                 
             case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")

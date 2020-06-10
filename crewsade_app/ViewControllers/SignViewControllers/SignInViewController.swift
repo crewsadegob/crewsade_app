@@ -10,9 +10,8 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
+
 class SignInViewController: UIViewController {
-    
-    var showPasswordIcon:Bool = true
     
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -24,9 +23,11 @@ class SignInViewController: UIViewController {
         .foregroundColor: UIColor.CrewSade.darkGrey.withAlphaComponent(0.5),
         .underlineStyle: NSUnderlineStyle.single.rawValue]
     
+    var showPasswordIcon:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
         

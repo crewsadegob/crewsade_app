@@ -17,14 +17,15 @@ class ChallengeAcceptedViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var challengerName: UILabel!
     @IBOutlet weak var challengerImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         challengerImage.setRoundedImage()
         SessionService().setRound(view: self)
 
         self.hideNavigation()
 
-        
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
 

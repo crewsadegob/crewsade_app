@@ -7,31 +7,29 @@
 //
 
 import UIKit
-import  FirebaseAuth
+import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
+
 class SignsViewController: UIViewController, GIDSignInDelegate {
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setCrewsadeNavigation()
         
+        setCrewsadeNavigation()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
               GIDSignIn.sharedInstance()?.delegate = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-
     }
     
     private func setCrewsadeNavigation(){
@@ -79,7 +77,5 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
-
-    // Remove the listener once it's no longer needed
  
 }

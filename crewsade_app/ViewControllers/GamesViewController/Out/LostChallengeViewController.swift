@@ -12,10 +12,11 @@ class LostChallengeViewController: UIViewController {
 
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.hideNavigation()
-
 
         SessionService().manageScore(){result in
             self.scoreLabel.setOutlineTextByScore(score: result)
@@ -36,17 +37,5 @@ class LostChallengeViewController: UIViewController {
         self.displayNavigation()
         SessionService().endSession()
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

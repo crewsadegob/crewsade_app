@@ -9,9 +9,12 @@
 import UIKit
 import FirebaseFirestore
 import Firebase
+
 class ChallengeRoundViewController: UIViewController {
+    
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
+    
     @IBOutlet weak var usernamePlayer1: UILabel!
     @IBOutlet weak var scorePlayer1: UILabel!
     
@@ -25,9 +28,6 @@ class ChallengeRoundViewController: UIViewController {
         super.viewDidLoad()
         
         self.hideNavigation()
-
-        
-        // Do any additional setup after loading the view.
         
         SessionService().getPlayersDataGames(){ result in
             self.usernamePlayer1.text = result.player1.username
@@ -65,25 +65,10 @@ class ChallengeRoundViewController: UIViewController {
                 }
             }
         }
-        
-        
-        
-        
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         SessionService().updateRound()
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

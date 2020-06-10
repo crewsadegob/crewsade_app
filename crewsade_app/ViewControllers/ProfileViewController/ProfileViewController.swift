@@ -18,6 +18,7 @@ class ProfileViewController: ViewController {
     
     var User: User?
     var stats =  [String: Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +29,6 @@ class ProfileViewController: ViewController {
         
         self.navigationController?.navigationBar.topItem?.title = "PROFIL";
         
-        // Do any additional setup after loading the view.
         if let user = user{
             UserService().getUserInformations(id: user.uid){ result in
                 if let user = result{
@@ -92,18 +92,13 @@ extension ProfileViewController: UITableViewDataSource{
             
         }
         
-        
-        
         return cell
     }
     
 }
 
 extension ProfileViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

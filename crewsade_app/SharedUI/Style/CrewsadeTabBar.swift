@@ -24,7 +24,6 @@ class CrewsadeTabBar: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
         setup()
     }
     

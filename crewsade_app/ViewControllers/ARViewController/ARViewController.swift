@@ -22,7 +22,7 @@ class ARViewController: ViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the view's delegate
+        
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
@@ -117,13 +117,13 @@ class ARViewController: ViewController, ARSCNViewDelegate {
     }
     
     @IBAction func buttonPlay(_ sender: UIButton) {
-        if play{
+        if play {
             sceneView.scene.isPaused = false
                      sender.setBackgroundImage(UIImage(named: "play.png"), for: .normal)
                      play = !play
            
-        }else{
-         sceneView.scene.isPaused = true
+        } else {
+            sceneView.scene.isPaused = true
                     sender.setBackgroundImage(UIImage(named: "pause.png"), for: .normal)
                     play = !play
         }
@@ -131,28 +131,13 @@ class ARViewController: ViewController, ARSCNViewDelegate {
     }
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
-        
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }

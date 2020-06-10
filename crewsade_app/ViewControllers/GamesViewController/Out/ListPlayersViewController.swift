@@ -20,8 +20,7 @@ class ListPlayersViewController: UIViewController {
         playersTableView.delegate = self
         playersTableView.dataSource = self
         
-        // Do any additional setup after loading the view.
-        GamesService().getPlayers(){result in
+        GamesService().getPlayers() { result in
             if let playersGet = result{
                 self.players = playersGet
                 self.playersTableView.reloadData()
@@ -71,10 +70,7 @@ extension ListPlayersViewController: UITableViewDataSource{
 }
 
 extension ListPlayersViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
