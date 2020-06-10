@@ -35,12 +35,6 @@ class MapViewController: ViewController {
         mapView.delegate = self
         mapView.isHidden = true
         
-        // SEULEMENT POUR MAP
-        
-//        customTabBarStackView.setCustomSpacing(120, after: customTabBarSecondButton)
-//        addButton.backgroundColor = UIColor.CrewSade.mainColorLight
-//        addButton.layer.cornerRadius = 30
-        
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:

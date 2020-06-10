@@ -21,15 +21,23 @@ class ViewController: UIViewController, TapHandler {
     
     private func setupTabBar() {
         
+        let currentIndex = self.tabBarController?.selectedIndex
         let allViews = Bundle.main.loadNibNamed("CrewsadeTabBar", owner: CrewsadeTabBar(), options: nil)
-
         let tabBar = allViews?.first as! CrewsadeTabBar
         let y = view.frame.size.height - 185
         tabBar.frame = CGRect(x: 0, y: y, width: view.frame.width, height: 230)
         tabBar.tapHandler = self
         
-        if self.tabBarController?.selectedIndex != 0 {
+        if currentIndex != 0 {
             tabBar.hideAddButton()
+        }
+        
+        switch currentIndex {
+            case 0: tabBar.updateTabBarButtons(index: 0)
+            case 1: tabBar.updateTabBarButtons(index: 1)
+            case 2: tabBar.updateTabBarButtons(index: 2)
+            case 3: tabBar.updateTabBarButtons(index: 3)
+            default: break
         }
         
         view.addSubview(tabBar)

@@ -16,6 +16,7 @@ class CrewsadeTabBar: UIView {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackViewSecondButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,12 +36,22 @@ class CrewsadeTabBar: UIView {
         addButton.backgroundColor = UIColor.CrewSade.mainColorLight
         addButton.layer.cornerRadius = addButton.frame.width / 2
         
+        stackView.setCustomSpacing(75, after: stackViewSecondButton)
+        
         contentView.backgroundColor = UIColor.CrewSade.darkGrey
         contentView.roundTopCorners()
     }
     
     func hideAddButton() {
         addButton.isHidden = true
+        stackView.setCustomSpacing(50, after: stackViewSecondButton)
+    }
+    
+    func updateTabBarButtons(index: Int) {
+        for view in stackView.subviews {
+            view.alpha = 0.5
+        }
+        stackView.subviews[index].alpha = 1
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
