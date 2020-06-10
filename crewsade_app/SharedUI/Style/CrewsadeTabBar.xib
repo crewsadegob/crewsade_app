@@ -27,7 +27,7 @@
                                     </constraints>
                                     <state key="normal" image="map-icon"/>
                                     <connections>
-                                        <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="yzD-C6-Brz"/>
+                                        <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="SAD-ow-wdD"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAy-vR-fpI">
@@ -38,7 +38,7 @@
                                     </constraints>
                                     <state key="normal" image="training"/>
                                     <connections>
-                                        <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Vqs-Fg-4Aq"/>
+                                        <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="492-pv-Jg0"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FvN-VL-hCG">
@@ -49,7 +49,7 @@
                                     </constraints>
                                     <state key="normal" image="games_icon"/>
                                     <connections>
-                                        <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="QKj-0r-1th"/>
+                                        <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="w9J-k1-B12"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPK-xm-suA">
@@ -60,7 +60,7 @@
                                     </constraints>
                                     <state key="normal" image="profile_icon"/>
                                     <connections>
-                                        <action selector="tabBarButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="opR-pV-D6n"/>
+                                        <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="R7V-cK-cuf"/>
                                     </connections>
                                 </button>
                             </subviews>

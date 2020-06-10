@@ -58,7 +58,7 @@ class CrewsadeTabBar: UIView {
         tapHandler?.addButtonTapped()
     }
     
-    @IBAction func tabBarButtonClicked(_ sender: UIButton) {
+    @IBAction func tabBarButtonTapped(_ sender: UIButton) {
         tapHandler?.tabBarButtonTapped(index: sender.tag)
     }
 }
