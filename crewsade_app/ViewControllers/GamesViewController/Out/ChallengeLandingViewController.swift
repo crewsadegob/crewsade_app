@@ -34,10 +34,10 @@ class ChallengeLandingViewController: UIViewController {
             GamesService().getInformationsChallenge(userId: user.uid){ result in
                 if let players = result{
                         self.usernamePlayer1.text = players[0].username
-                        self.imagePlayer1.sd_setImage(with: players[0].image, placeholderImage: UIImage(named:"placeholder.png"))
+                        self.imagePlayer1.sd_setImage(with: players[0].image, placeholderImage: UIImage(named:"placeholder-user.png"))
                     
                         self.usernamePlayer2.text = players[1].username
-                    self.imagePlayer2.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder.png"))
+                    self.imagePlayer2.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder-user.png"))
                 }
             }
         }

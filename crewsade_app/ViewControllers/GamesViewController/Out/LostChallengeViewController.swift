@@ -30,8 +30,7 @@ class LostChallengeViewController: UIViewController {
         }
         
        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
-                    self?.navigationController?.popToRootViewController(animated: true)
-
+            self?.navigationController?.popToRootViewController(animated: true)
        }
                 
     }

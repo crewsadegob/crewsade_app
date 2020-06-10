@@ -25,7 +25,7 @@
                                         <constraint firstAttribute="height" constant="50" id="aPn-os-bEs"/>
                                         <constraint firstAttribute="width" constant="50" id="gbe-ME-AqY"/>
                                     </constraints>
-                                    <state key="normal" image="map-icon"/>
+                                    <state key="normal" image="icon-tabbar_map"/>
                                     <connections>
                                         <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="SAD-ow-wdD"/>
                                     </connections>
@@ -36,7 +36,7 @@
                                         <constraint firstAttribute="width" constant="50" id="bfh-G8-jvT"/>
                                         <constraint firstAttribute="height" constant="50" id="fHt-rP-II2"/>
                                     </constraints>
-                                    <state key="normal" image="training"/>
+                                    <state key="normal" image="icon-tabbar_training"/>
                                     <connections>
                                         <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="492-pv-Jg0"/>
                                     </connections>
@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="height" constant="50" id="uMn-wh-Y4a"/>
                                         <constraint firstAttribute="width" constant="50" id="xej-9P-w4y"/>
                                     </constraints>
-                                    <state key="normal" image="games_icon"/>
+                                    <state key="normal" image="icon-tabbar_games"/>
                                     <connections>
                                         <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="w9J-k1-B12"/>
                                     </connections>
@@ -58,7 +58,7 @@
                                         <constraint firstAttribute="width" constant="50" id="VYt-eY-m6U"/>
                                         <constraint firstAttribute="height" constant="50" id="jkf-9U-X3Z"/>
                                     </constraints>
-                                    <state key="normal" image="profile_icon"/>
+                                    <state key="normal" image="icon-tabbar_profile"/>
                                     <connections>
                                         <action selector="tabBarButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="R7V-cK-cuf"/>
                                     </connections>
@@ -107,10 +107,10 @@
         </view>
     </objects>
     <resources>
-        <image name="games_icon" width="24" height="25"/>
         <image name="icon-plus" width="16" height="16"/>
-        <image name="map-icon" width="18" height="25"/>
-        <image name="profile_icon" width="25" height="18"/>
-        <image name="training" width="25" height="25"/>
+        <image name="icon-tabbar_games" width="24" height="25"/>
+        <image name="icon-tabbar_map" width="18" height="25"/>
+        <image name="icon-tabbar_profile" width="25" height="18"/>
+        <image name="icon-tabbar_training" width="25" height="25"/>
     </resources>
 </document>

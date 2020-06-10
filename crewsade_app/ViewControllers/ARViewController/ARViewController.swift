@@ -123,12 +123,12 @@ class ARViewController: ViewController, ARSCNViewDelegate {
     @IBAction func buttonPlay(_ sender: UIButton) {
         if play {
             sceneView.scene.isPaused = false
-                     sender.setBackgroundImage(UIImage(named: "play.png"), for: .normal)
+                     sender.setBackgroundImage(UIImage(named: "button-play.png"), for: .normal)
                      play = !play
            
         } else {
             sceneView.scene.isPaused = true
-                    sender.setBackgroundImage(UIImage(named: "pause.png"), for: .normal)
+                    sender.setBackgroundImage(UIImage(named: "button-pause.png"), for: .normal)
                     play = !play
         }
         

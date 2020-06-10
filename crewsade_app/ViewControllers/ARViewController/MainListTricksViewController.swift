@@ -31,7 +31,7 @@ class MainListTricksViewController: ViewController {
         self.navigationController?.navigationBar.topItem?.title = "TRAINING";
 
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.png")
+        backgroundImage.image = UIImage(named: "ui-background.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         

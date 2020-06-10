@@ -68,13 +68,15 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    // TODO: Trouver un moyen de refacto le duplicata de code via un utilitaire pour les formulaires ?
+    // On retrouve cette fonction dans SignInViewController
     @IBAction func showPassword(_ sender: UIButton) {
         if(showPasswordIcon == true) {
             passwordInput.isSecureTextEntry = false
-            sender.setBackgroundImage(UIImage(named: "eyeOpen.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_open.png"), for: .normal)
         } else {
             passwordInput.isSecureTextEntry = true
-            sender.setBackgroundImage(UIImage(named: "eyeClose.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_closed.png"), for: .normal)
         }
         
         showPasswordIcon = !showPasswordIcon

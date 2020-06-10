@@ -214,7 +214,14 @@ class SpotDetailViewController: UIViewController {
             spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
         }
         
-        spotPicture.sd_setImage(with: URL(string: image))
+        spotPicture.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named:"background-out.png"), options: .highPriority, completed: { (image, error, cacheType, url) in
+            guard image != nil else {
+                return
+            }
+            
+            self.spotPicture.image = self.spotPicture.image?.convertToGrayScale()
+            
+        })
     }
     
     func setupLocationManager() {

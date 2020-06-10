@@ -20,7 +20,7 @@ class NavigationViewController: UINavigationController {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.hidesBackButton = false
         
-        let backImage = UIImage(named: "backItemLight")?.withRenderingMode(.alwaysOriginal)
+        let backImage = UIImage(named: "icon-back_white")?.withRenderingMode(.alwaysOriginal)
         UINavigationBar.appearance().backIndicatorImage = backImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
     }

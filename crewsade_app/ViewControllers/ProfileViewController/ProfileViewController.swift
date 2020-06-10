@@ -39,7 +39,7 @@ class ProfileViewController: ViewController {
                     self.User = user
                     self.usernameLabel.text = self.User?.username
                     let image = user.image
-                    self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder.png"))
+                    self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder-user.png"))
                     self.stats = user.stats
                     self.statsTable.reloadData()
                     

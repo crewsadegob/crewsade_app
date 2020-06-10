@@ -8,6 +8,9 @@
 
 import UIKit
 
+// TODO: S'inspirer du fonctionnement de l'héritage de ViewController avec la TabBar pour refacto le code des 4 ViewControllers
+// de l'onboarding
+
 class OnBoardingViewController: UIViewController {
     
 // MARK: - VARIABLES

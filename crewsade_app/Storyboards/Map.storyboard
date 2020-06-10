@@ -63,7 +63,7 @@
                                     <constraint firstAttribute="height" constant="50" id="yFP-mK-3ZG"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <state key="normal" image="localisation"/>
+                                <state key="normal" image="icon-localisation"/>
                                 <connections>
                                     <action selector="centerMapOnUser:" destination="NKh-Au-RZ8" eventType="touchUpInside" id="AFZ-fI-DzG"/>
                                 </connections>
@@ -143,7 +143,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWd-4Z-kEj">
-                                                    <rect key="frame" x="223" y="44" width="32" height="26"/>
+                                                    <rect key="frame" x="217" y="43" width="38" height="27"/>
                                                     <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
                                                     <state key="normal" title="Défier">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -282,7 +282,7 @@
                                     <action selector="submitSpot:" destination="0yB-Kb-00W" eventType="touchUpInside" id="jyO-el-4LF"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spotphoto-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iwI-k8-FlI">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-spot" translatesAutoresizingMaskIntoConstraints="NO" id="iwI-k8-FlI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -306,7 +306,7 @@
                                 <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="returnedSeparator" translatesAutoresizingMaskIntoConstraints="NO" id="YjB-Ks-hAW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui-separator_reversed" translatesAutoresizingMaskIntoConstraints="NO" id="YjB-Ks-hAW">
                                 <rect key="frame" x="0.0" y="220" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4ND-rI-WlP"/>
@@ -356,8 +356,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="localisation" width="32" height="32"/>
-        <image name="returnedSeparator" width="375" height="50"/>
-        <image name="spotphoto-placeholder" width="375" height="234"/>
+        <image name="icon-localisation" width="32" height="32"/>
+        <image name="placeholder-spot" width="375" height="234"/>
+        <image name="ui-separator_reversed" width="375" height="50"/>
     </resources>
 </document>

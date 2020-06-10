@@ -131,14 +131,14 @@ extension ListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
         if tricksDisplay[indexPath.row].saved {
-            cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
+            cell.saveButton.setImage(UIImage(named: "icon-save_active"), for: .normal)
         }
-        else{
-            cell.saveButton.setImage(UIImage(named: "save"), for: .normal)
+        else {
+            cell.saveButton.setImage(UIImage(named: "icon-save_regular"), for: .normal)
         }
         
-        if tricksDisplay[indexPath.row].learn{
-            cell.learnButton.setImage(UIImage(named: "learned.png"), for: .normal)
+        if tricksDisplay[indexPath.row].learn {
+            cell.learnButton.setImage(UIImage(named: "icon-learn_active.png"), for: .normal)
         }
         
         switch indexPath.row % 2 {

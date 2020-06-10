@@ -33,8 +33,8 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         setupLocationManager()
-        customizeInterface()
     }
     
 // MARK: - ACTIONS
@@ -115,7 +115,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     
 // MARK: - METHODS
     
-    func customizeInterface() {
+    func setup() {
         
         spotNameInputLabel.text = spotNameInputLabel.text?.uppercased()
         
@@ -145,7 +145,7 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        spotPicture.image =  image
+        spotPicture.image =  image.convertToGrayScale()
         
         picker.dismiss(animated: true, completion: nil)
         

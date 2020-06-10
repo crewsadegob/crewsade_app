@@ -194,9 +194,9 @@ extension MapViewController: MGLMapViewDelegate {
             var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: id!)
             
             if game == "true" {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_active")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_active")!, reuseIdentifier: id!)
             } else {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_regular")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_regular")!, reuseIdentifier: id!)
             }
             
             return annotationImage

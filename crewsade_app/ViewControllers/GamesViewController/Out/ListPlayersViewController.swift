@@ -70,7 +70,7 @@ extension ListPlayersViewController: UITableViewDataSource{
         }
         
         cell.namePlayer.text = players[indexPath.row].username
-        cell.imagePlayer.sd_setImage(with: players[indexPath.row].image, placeholderImage: UIImage(named:"placeholder.png"))
+        cell.imagePlayer.sd_setImage(with: players[indexPath.row].image, placeholderImage: UIImage(named:"placeholder-user.png"))
         cell.buttonIsChallenged.tag = indexPath.row
         cell.buttonIsChallenged.addTarget(self, action: #selector(buttonIsChallengedClicked(_:)), for: .touchUpInside)
         

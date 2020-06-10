@@ -48,11 +48,10 @@
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
-        
-		06B03C432464553300191C15 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* UITextField.swift */; };
 		06A61F3A248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F39248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift */; };
 		06A61F3C248E31F600F6BAA6 /* OnBoarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F3B248E31F600F6BAA6 /* OnBoarding3ViewController.swift */; };
 		06A61F3E248E320100F6BAA6 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F3D248E320100F6BAA6 /* OnBoarding4ViewController.swift */; };
+		06B03C432464553300191C15 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* UITextField.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
 		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
@@ -87,6 +86,7 @@
 		0F8BCDD9248FD7840013138C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDD8248FD7840013138C /* UIView.swift */; };
 		0F8BCDDD2490CDC90013138C /* CrewsadeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */; };
 		0F8BCDE32491236D0013138C /* CrewsadeTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */; };
+		0F8BCDE72491A5A10013138C /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BCDE62491A5A10013138C /* UIImage.swift */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -132,13 +132,10 @@
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-        
-		06B03C422464553300191C15 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-        
 		06A61F39248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2ViewController.swift; sourceTree = "<group>"; };
 		06A61F3B248E31F600F6BAA6 /* OnBoarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3ViewController.swift; sourceTree = "<group>"; };
 		06A61F3D248E320100F6BAA6 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
-        
+		06B03C422464553300191C15 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
 		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +172,7 @@
 		0F8BCDD8248FD7840013138C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewsadeTabBar.swift; sourceTree = "<group>"; };
 		0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrewsadeTabBar.xib; sourceTree = "<group>"; };
+		0F8BCDE62491A5A10013138C /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +315,7 @@
 				0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */,
 				0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */,
 				0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */,
+				0F8BCDE62491A5A10013138C /* UIImage.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -603,6 +602,7 @@
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* UITextField.swift in Sources */,
 				0F8BCDD9248FD7840013138C /* UIView.swift in Sources */,
+				0F8BCDE72491A5A10013138C /* UIImage.swift in Sources */,
 				06849F562481558A00E10CFB /* UIViewController.swift in Sources */,
 				066AFD0D246AECD200F0147F /* GamesService.swift in Sources */,
 				06C56B8C245C358D00BAC9FB /* SignInViewController.swift in Sources */,
@@ -657,10 +657,7 @@
 				0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
 				069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */,
-                
 				06A61F3C248E31F600F6BAA6 /* OnBoarding3ViewController.swift in Sources */,
-				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
-                
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

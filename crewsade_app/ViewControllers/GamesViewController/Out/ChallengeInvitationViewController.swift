@@ -31,7 +31,7 @@ class ChallengeInvitationViewController: UIViewController {
            GamesService().getInformationsChallenge(userId: user.uid){ result in
               if let players = result{
                       self.usernameLabel.text = players[1].username
-                      self.imageView.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder.png"))
+                      self.imageView.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder-user.png"))
               }
            }
         }
