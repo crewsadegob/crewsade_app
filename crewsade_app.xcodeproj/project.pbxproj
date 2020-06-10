@@ -48,7 +48,11 @@
 		069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */; };
 		069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069CE52B246D9F5900C0EFE8 /* SessionService.swift */; };
 		06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A52816245AE38D0026C2A1 /* TabBarViewController.swift */; };
+        
 		06B03C432464553300191C15 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B03C422464553300191C15 /* UITextField.swift */; };
+		06A61F3A248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F39248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift */; };
+		06A61F3C248E31F600F6BAA6 /* OnBoarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F3B248E31F600F6BAA6 /* OnBoarding3ViewController.swift */; };
+		06A61F3E248E320100F6BAA6 /* OnBoarding4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A61F3D248E320100F6BAA6 /* OnBoarding4ViewController.swift */; };
 		06BB784A245195910018F605 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BB7849245195910018F605 /* Colors.swift */; };
 		06BF0A892482AA31000E5F33 /* LostChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */; };
 		06BF0A8B2482AA40000E5F33 /* WinChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */; };
@@ -128,7 +132,13 @@
 		069AC3F3245C84CB00AE0F2E /* MainListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTricksViewController.swift; sourceTree = "<group>"; };
 		069CE52B246D9F5900C0EFE8 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		06A52816245AE38D0026C2A1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+        
 		06B03C422464553300191C15 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+        
+		06A61F39248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding2ViewController.swift; sourceTree = "<group>"; };
+		06A61F3B248E31F600F6BAA6 /* OnBoarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding3ViewController.swift; sourceTree = "<group>"; };
+		06A61F3D248E320100F6BAA6 /* OnBoarding4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding4ViewController.swift; sourceTree = "<group>"; };
+        
 		06BB7849245195910018F605 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		06BF0A882482AA31000E5F33 /* LostChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostChallengeViewController.swift; sourceTree = "<group>"; };
 		06BF0A8A2482AA40000E5F33 /* WinChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinChallengeViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				063073762463FEEF00436F70 /* OnBoardingViewController.swift */,
+				06A61F39248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift */,
+				06A61F3B248E31F600F6BAA6 /* OnBoarding3ViewController.swift */,
+				06A61F3D248E320100F6BAA6 /* OnBoarding4ViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -400,11 +413,11 @@
 				06BB784B24519D600018F605 /* ViewControllers */,
 				06BB7847245194F60018F605 /* SharedUI */,
 				0F5D3D36244D88D200D13D0C /* AppDelegate.swift */,
-				0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */,
-				0F5D3D44244D88D500D13D0C /* Info.plist */,
-				06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */,
-				0F5D3D3F244D88D500D13D0C /* Assets.xcassets */,
 				06324E3F2467012F006EA196 /* art.scnassets */,
+				0F5D3D3F244D88D500D13D0C /* Assets.xcassets */,
+				06E0F51224596BB6003CAB56 /* GoogleService-Info.plist */,
+				0F5D3D44244D88D500D13D0C /* Info.plist */,
+				0F5D3D38244D88D200D13D0C /* SceneDelegate.swift */,
 			);
 			path = crewsade_app;
 			sourceTree = "<group>";
@@ -586,6 +599,7 @@
 			files = (
 				0F79069B246D1181008A25B7 /* MapViewController.swift in Sources */,
 				06805F722465C18400280A7F /* GoogleAuthManager.swift in Sources */,
+				06A61F3A248E2B1C00F6BAA6 /* OnBoarding2ViewController.swift in Sources */,
 				069AC3F4245C84CB00AE0F2E /* MainListTricksViewController.swift in Sources */,
 				06B03C432464553300191C15 /* UITextField.swift in Sources */,
 				0F8BCDD9248FD7840013138C /* UIView.swift in Sources */,
@@ -621,6 +635,7 @@
 				06222CF7246D3BB300E3D454 /* SettingsViewController.swift in Sources */,
 				06A52817245AE38D0026C2A1 /* TabBarViewController.swift in Sources */,
 				066AFD0B246AE62800F0147F /* ListPlayersViewController.swift in Sources */,
+				06A61F3E248E320100F6BAA6 /* OnBoarding4ViewController.swift in Sources */,
 				0F5D3D37244D88D200D13D0C /* AppDelegate.swift in Sources */,
 				066AFD09246AE56500F0147F /* GamesViewController.swift in Sources */,
 				06C6AF0A24600F7D008E45AC /* TrickService.swift in Sources */,
@@ -642,6 +657,10 @@
 				0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */,
 				06324E3E2466AF47006EA196 /* ForgotPasswordViewController.swift in Sources */,
 				069CE52C246D9F5900C0EFE8 /* SessionService.swift in Sources */,
+                
+				06A61F3C248E31F600F6BAA6 /* OnBoarding3ViewController.swift in Sources */,
+				0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */,
+                
 				0F5D3D39244D88D200D13D0C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

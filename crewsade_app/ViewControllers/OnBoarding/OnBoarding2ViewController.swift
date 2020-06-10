@@ -1,19 +1,18 @@
 //
-//  OnBoardingViewController.swift
+//  OnBoarding2ViewController.swift
 //  crewsade_app
 //
-//  Created by Hugo Lefrant on 07/05/2020.
+//  Created by Hugo Lefrant on 08/06/2020.
 //  Copyright © 2020 Lou Batier. All rights reserved.
 //
 
 import UIKit
 
-class OnBoardingViewController: UIViewController {
-    
-    @IBOutlet weak var OnBoardingButton: UIButton!
+class OnBoarding2ViewController: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
@@ -21,7 +20,7 @@ class OnBoardingViewController: UIViewController {
         self.view.addGestureRecognizer(swipeRight)
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
-        self.hideNavigation()
+        
     }
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -34,7 +33,7 @@ class OnBoardingViewController: UIViewController {
             case UISwipeGestureRecognizer.Direction.left:
                 
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "OnBoarding", bundle: nil)
-                let mainViewController = mainStoryboard.instantiateViewController(identifier: "OnBoarding2")
+                let mainViewController = mainStoryboard.instantiateViewController(identifier: "OnBoarding3")
                 self.show(mainViewController, sender: nil)
                 
                 
