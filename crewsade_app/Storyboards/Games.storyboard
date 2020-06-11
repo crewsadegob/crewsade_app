@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -68,14 +68,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-0U-5ha">
-                                                <rect key="frame" x="181" y="138.5" width="13" height="16"/>
+                                                <rect key="frame" x="181" y="138.5" width="13" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="13" id="sXe-vr-uVf"/>
-                                                    <constraint firstAttribute="height" constant="16" id="yEV-HJ-z8d"/>
+                                                    <constraint firstAttribute="height" constant="32" id="yEV-HJ-z8d"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFFRONTES EN DUEL UN AUTRE RIDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eo-l0-jIt">
-                                                <rect key="frame" x="65" y="174.5" width="245" height="14.5"/>
+                                                <rect key="frame" x="65" y="190.5" width="245" height="14.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14.5" id="oTi-gD-bin"/>
                                                     <constraint firstAttribute="width" constant="245" id="vC8-cv-Ddx"/>
@@ -109,13 +109,43 @@
                                                     <constraint firstAttribute="height" constant="50" id="Zyn-Zg-8dN"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOW OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8x-uM-iY4">
+                                                <rect key="frame" x="73.5" y="57" width="228.5" height="68.5"/>
+                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RÉALISES TA MEILLEURE PERFORMANCE PARMIS D'AUTRES RIDERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-y7-yKH">
+                                                <rect key="frame" x="47" y="184" width="281" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="46" id="Ov5-Zz-dWj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Ckr-Cs-4I1">
+                                                <rect key="frame" x="181" y="143" width="13" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="2rR-hL-4uv"/>
+                                                    <constraint firstAttribute="width" constant="13" id="C6p-mS-Vbr"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="i8x-uM-iY4" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" constant="73.5" id="A5i-pg-ypB"/>
+                                            <constraint firstAttribute="trailing" secondItem="i8x-uM-iY4" secondAttribute="trailing" constant="73" id="Dds-bs-xhu"/>
+                                            <constraint firstAttribute="trailing" secondItem="aah-y7-yKH" secondAttribute="trailing" constant="47" id="IlB-EN-aey"/>
+                                            <constraint firstItem="aah-y7-yKH" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" constant="47" id="RVi-15-NiN"/>
+                                            <constraint firstItem="Ckr-Cs-4I1" firstAttribute="centerX" secondItem="g9S-pc-5oU" secondAttribute="centerX" id="TkI-tU-eDh"/>
+                                            <constraint firstItem="aah-y7-yKH" firstAttribute="top" secondItem="Ckr-Cs-4I1" secondAttribute="bottom" constant="9" id="XeZ-wM-M61"/>
                                             <constraint firstAttribute="trailing" secondItem="9cR-lq-WIv" secondAttribute="trailing" id="bSz-0u-834"/>
                                             <constraint firstItem="9cR-lq-WIv" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" id="dLS-rZ-CsF"/>
                                             <constraint firstItem="9cR-lq-WIv" firstAttribute="top" secondItem="g9S-pc-5oU" secondAttribute="top" constant="-21" id="kY4-xv-Ivv"/>
+                                            <constraint firstItem="Ckr-Cs-4I1" firstAttribute="top" secondItem="i8x-uM-iY4" secondAttribute="bottom" constant="17.5" id="khz-aR-B4d"/>
+                                            <constraint firstItem="i8x-uM-iY4" firstAttribute="top" secondItem="g9S-pc-5oU" secondAttribute="top" constant="57" id="x0g-Kg-PUY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -144,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j6-b8-bty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40.579710144927539" y="102.45535714285714"/>
+            <point key="canvasLocation" x="-40.799999999999997" y="102.09895052473765"/>
         </scene>
         <!--OUT-->
         <scene sceneID="W7w-0m-rwU">
@@ -890,6 +920,7 @@
     </scenes>
     <resources>
         <image name="icon-spark" width="6.5" height="16"/>
+        <image name="icon-spark_dark" width="13" height="32"/>
         <image name="thumbDown" width="36" height="40"/>
         <image name="thumbUp" width="36" height="40"/>
         <image name="ui-background" width="375" height="667"/>
