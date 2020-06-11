@@ -23,5 +23,10 @@ target 'crewsade_app' do
   pod 'FBSDKLoginKit'
 
   # Pods for crewsade_app
+  
+  target 'crewsade_appTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end
