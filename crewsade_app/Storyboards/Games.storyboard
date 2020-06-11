@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -57,46 +57,47 @@
                                                     <segue destination="jWd-QU-fUc" kind="show" id="6aD-n8-p3M"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
-                                                <rect key="frame" x="143.5" y="50" width="88.5" height="68.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
-                                                    <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
-                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-0U-5ha">
-                                                <rect key="frame" x="181" y="138.5" width="13" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="13" id="sXe-vr-uVf"/>
-                                                    <constraint firstAttribute="height" constant="32" id="yEV-HJ-z8d"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFFRONTES EN DUEL UN AUTRE RIDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eo-l0-jIt">
-                                                <rect key="frame" x="65" y="190.5" width="245" height="14.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="14.5" id="oTi-gD-bin"/>
-                                                    <constraint firstAttribute="width" constant="245" id="vC8-cv-Ddx"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                                <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j23-ra-NNn">
+                                                <rect key="frame" x="65" y="66" width="245" height="155"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPN-sK-WhR">
+                                                        <rect key="frame" x="78.5" y="0.0" width="88.5" height="68.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="88.5" id="Jkc-XK-iGv"/>
+                                                            <constraint firstAttribute="height" constant="68.5" id="jJS-8e-VZn"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
+                                                        <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-0U-5ha">
+                                                        <rect key="frame" x="116" y="88.5" width="13" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="13" id="sXe-vr-uVf"/>
+                                                            <constraint firstAttribute="height" constant="32" id="yEV-HJ-z8d"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFFRONTES EN DUEL UN AUTRE RIDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eo-l0-jIt">
+                                                        <rect key="frame" x="0.0" y="140.5" width="245" height="14.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="14.5" id="oTi-gD-bin"/>
+                                                            <constraint firstAttribute="width" constant="245" id="vC8-cv-Ddx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                                        <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="O9k-w3-WoD" secondAttribute="bottom" constant="-372" id="Ca8-2a-Q2y"/>
-                                            <constraint firstItem="0Ih-0U-5ha" firstAttribute="top" secondItem="BPN-sK-WhR" secondAttribute="bottom" constant="20" id="EMo-xl-yfB"/>
-                                            <constraint firstItem="6Eo-l0-jIt" firstAttribute="top" secondItem="0Ih-0U-5ha" secondAttribute="bottom" constant="20" id="JY8-9a-9IU"/>
-                                            <constraint firstItem="6Eo-l0-jIt" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="KGS-SK-3T9"/>
+                                            <constraint firstItem="j23-ra-NNn" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="Cls-8c-df0"/>
+                                            <constraint firstItem="j23-ra-NNn" firstAttribute="centerY" secondItem="2R2-aj-jPK" secondAttribute="centerY" id="Rc8-ml-TwJ"/>
                                             <constraint firstAttribute="trailing" secondItem="O9k-w3-WoD" secondAttribute="trailing" id="WTb-Aw-KBO"/>
                                             <constraint firstItem="O9k-w3-WoD" firstAttribute="leading" secondItem="2R2-aj-jPK" secondAttribute="leading" id="boW-Hm-IGl"/>
-                                            <constraint firstItem="BPN-sK-WhR" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="eXm-lf-FeD"/>
-                                            <constraint firstItem="BPN-sK-WhR" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="top" constant="50" id="iMq-iP-Q2s"/>
-                                            <constraint firstItem="0Ih-0U-5ha" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="rkg-Zl-zud"/>
                                             <constraint firstItem="O9k-w3-WoD" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="top" constant="-8" id="sbw-BY-O63"/>
                                         </constraints>
                                     </view>
@@ -109,43 +110,43 @@
                                                     <constraint firstAttribute="height" constant="50" id="Zyn-Zg-8dN"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOW OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8x-uM-iY4">
-                                                <rect key="frame" x="73.5" y="57" width="228.5" height="68.5"/>
-                                                <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RÉALISES TA MEILLEURE PERFORMANCE PARMIS D'AUTRES RIDERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-y7-yKH">
-                                                <rect key="frame" x="47" y="184" width="281" height="46"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="46" id="Ov5-Zz-dWj"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Ckr-Cs-4I1">
-                                                <rect key="frame" x="181" y="143" width="13" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="2rR-hL-4uv"/>
-                                                    <constraint firstAttribute="width" constant="13" id="C6p-mS-Vbr"/>
-                                                </constraints>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-qb-D9d">
+                                                <rect key="frame" x="12.5" y="57.5" width="350" height="172.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOW OFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8x-uM-iY4">
+                                                        <rect key="frame" x="61" y="0.0" width="228.5" height="68.5"/>
+                                                        <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-spark_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Ckr-Cs-4I1">
+                                                        <rect key="frame" x="168.5" y="81.5" width="13" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="2rR-hL-4uv"/>
+                                                            <constraint firstAttribute="width" constant="13" id="C6p-mS-Vbr"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RÉALISES TA MEILLEURE PERFORMANCE PARMIS D'AUTRES RIDERS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-y7-yKH">
+                                                        <rect key="frame" x="0.0" y="126.5" width="350" height="46"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="46" id="Ov5-Zz-dWj"/>
+                                                            <constraint firstAttribute="width" constant="350" id="agF-VB-dvJ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="i8x-uM-iY4" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" constant="73.5" id="A5i-pg-ypB"/>
-                                            <constraint firstAttribute="trailing" secondItem="i8x-uM-iY4" secondAttribute="trailing" constant="73" id="Dds-bs-xhu"/>
-                                            <constraint firstAttribute="trailing" secondItem="aah-y7-yKH" secondAttribute="trailing" constant="47" id="IlB-EN-aey"/>
-                                            <constraint firstItem="aah-y7-yKH" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" constant="47" id="RVi-15-NiN"/>
-                                            <constraint firstItem="Ckr-Cs-4I1" firstAttribute="centerX" secondItem="g9S-pc-5oU" secondAttribute="centerX" id="TkI-tU-eDh"/>
-                                            <constraint firstItem="aah-y7-yKH" firstAttribute="top" secondItem="Ckr-Cs-4I1" secondAttribute="bottom" constant="9" id="XeZ-wM-M61"/>
+                                            <constraint firstItem="Ady-qb-D9d" firstAttribute="centerX" secondItem="g9S-pc-5oU" secondAttribute="centerX" id="OqY-1C-rel"/>
                                             <constraint firstAttribute="trailing" secondItem="9cR-lq-WIv" secondAttribute="trailing" id="bSz-0u-834"/>
                                             <constraint firstItem="9cR-lq-WIv" firstAttribute="leading" secondItem="g9S-pc-5oU" secondAttribute="leading" id="dLS-rZ-CsF"/>
                                             <constraint firstItem="9cR-lq-WIv" firstAttribute="top" secondItem="g9S-pc-5oU" secondAttribute="top" constant="-21" id="kY4-xv-Ivv"/>
-                                            <constraint firstItem="Ckr-Cs-4I1" firstAttribute="top" secondItem="i8x-uM-iY4" secondAttribute="bottom" constant="17.5" id="khz-aR-B4d"/>
-                                            <constraint firstItem="i8x-uM-iY4" firstAttribute="top" secondItem="g9S-pc-5oU" secondAttribute="top" constant="57" id="x0g-Kg-PUY"/>
+                                            <constraint firstItem="Ady-qb-D9d" firstAttribute="centerY" secondItem="g9S-pc-5oU" secondAttribute="centerY" id="rPY-KJ-dQa"/>
                                         </constraints>
                                     </view>
                                 </subviews>
