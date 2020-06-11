@@ -31,7 +31,7 @@ class FirebaseAuthManager: UIViewController{
             
             if let user = authResult?.user {
                 self.setProfile(username: username,user: user,Image: Image){[weak self] (success) in
-                    guard let `self` = self else { return }
+                    guard let _ = self else { return }
                     if (success) {
                         completionBlock(true)
                     } else {
@@ -67,8 +67,9 @@ class FirebaseAuthManager: UIViewController{
                 
                 completionBlock(true)
             }
-            else{
-                print(error?.localizedDescription)
+            else {
+                // FIXME: Print à enlever
+//                print(error?.localizedDescription)
                 completionBlock(false)
             }
         }
@@ -85,7 +86,7 @@ class FirebaseAuthManager: UIViewController{
     func resetPassword(email:String,completionBlock: @escaping (_ success: Bool) -> Void){
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error != nil{
-                if let error = error{
+                if let _ = error {
                     completionBlock(false)
                 }
             }

@@ -158,8 +158,6 @@ class SessionService{
                     }
                 }
             }
-            
-            
         }
     }
     
@@ -440,7 +438,7 @@ class SessionService{
                                                         
                                                         UserService().getUserInformations(id: idPlayer2){userData in
                                                             if let userData = userData{
-                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username])
+                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username!])
                                                             }
                                                             
                                                         }
@@ -450,7 +448,7 @@ class SessionService{
                                                     if scorePlayer2 == 0{
                                                         UserService().getUserInformations(id: idPlayer1){userData in
                                                             if let userData = userData{
-                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username])
+                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username!])
                                                             }
                                                             
                                                         }
