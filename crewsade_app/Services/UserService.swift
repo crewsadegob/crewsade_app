@@ -70,7 +70,7 @@ class UserService {
                         self.db.collection("users").document(user.uid).collection("tricks").document(trickData.get("Name") as! String).setData([
                             "Trick": trick,
                             "Status": true
-                        ]){err in
+                        ]){ err in
                             if let err = err{
                                 print(err.localizedDescription)
                             }
@@ -129,7 +129,6 @@ class UserService {
                         }
                     }
                 }
-                
                 
                 group.notify(queue: .main, execute: {
                     completionHandler(self.tricks)

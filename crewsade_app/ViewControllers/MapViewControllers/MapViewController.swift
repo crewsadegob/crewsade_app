@@ -30,9 +30,10 @@ class MapViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCrewsadeNavigation()
         setupLocationManager()
         customizeInterface()
+
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -52,6 +53,13 @@ class MapViewController: ViewController {
         } else {
             print("Location services are not enabled")
         }
+    }
+    
+    private func setCrewsadeNavigation(){
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.CrewSade.secondaryColorLight]
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.darkGrey
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -26,4 +26,10 @@ extension UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
     
+    func showStoryboard(storyboard: String, identifier: String){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: storyboard, bundle: nil)
+        let mainViewController = mainStoryboard.instantiateViewController(identifier: identifier)
+        self.show(mainViewController, sender: nil)
+    }
+
 }

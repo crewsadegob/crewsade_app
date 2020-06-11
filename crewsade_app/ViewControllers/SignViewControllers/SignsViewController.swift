@@ -34,6 +34,7 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+
 // MARK: - ACTIONS
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
