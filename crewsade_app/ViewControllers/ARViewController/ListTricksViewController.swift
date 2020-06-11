@@ -11,7 +11,12 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
 
-class ListTricksViewController: UIViewController {
+class ListTricksViewController: ViewController {
+    
+// MARK: - VARIABLES
+    
+    @IBOutlet weak var ButtonSection: UIStackView!
+    @IBOutlet weak var ListTricksTable: UITableView!
     
     let db = Firestore.firestore()
     var tricksDisplay = [Trick]()
@@ -22,11 +27,10 @@ class ListTricksViewController: UIViewController {
     let buttonWidth = 63
     let buttonHeight = 50
     
-    
     var urlScene:String?
     
-    @IBOutlet weak var ButtonSection: UIStackView!
-    @IBOutlet weak var ListTricksTable: UITableView!
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +46,7 @@ class ListTricksViewController: UIViewController {
                 self.ListTricksTable.reloadData()
             }
         }
+        
         LevelService().getLevels(){ result in
             if let level = result{
                 
@@ -57,13 +62,25 @@ class ListTricksViewController: UIViewController {
                 button.addTarget(self, action: #selector(self.levelClicked(_:)), for: .touchUpInside)
                 self.ButtonSection.addSubview(button)
             }
-            
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toARViewController"{
+            if let dest = segue.destination as? ARViewController{
+                if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
+                    
+                    dest.trick = tricksDisplay[indexPath.row].name
+                }
+            }
+        }
+    }
+    
+// MARK: - ACTIONS
     
     @objc private func levelClicked(_ sender: UIButton) {
         let buttons = ButtonSection.subviews.filter{$0 is UIButton}
@@ -101,19 +118,10 @@ class ListTricksViewController: UIViewController {
                 print(tricksDisplay[sender.tag])
               }
           }
-      }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toARViewController"{
-            if let dest = segue.destination as? ARViewController{
-                if let indexPath = self.ListTricksTable.indexPathForSelectedRow{
-                    
-                    dest.trick = tricksDisplay[indexPath.row].name
-                }
-            }
-        }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,14 +131,14 @@ extension ListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTricksCell",for: indexPath) as! ListTricksTableViewCell
         if tricksDisplay[indexPath.row].saved {
-            cell.saveButton.setImage(UIImage(named: "saveFull"), for: .normal)
+            cell.saveButton.setImage(UIImage(named: "icon-save_active"), for: .normal)
         }
-        else{
-            cell.saveButton.setImage(UIImage(named: "save"), for: .normal)
+        else {
+            cell.saveButton.setImage(UIImage(named: "icon-save_regular"), for: .normal)
         }
         
-        if tricksDisplay[indexPath.row].learn{
-            cell.learnButton.setImage(UIImage(named: "learned.png"), for: .normal)
+        if tricksDisplay[indexPath.row].learn {
+            cell.learnButton.setImage(UIImage(named: "icon-learn_active.png"), for: .normal)
         }
         
         switch indexPath.row % 2 {
@@ -157,11 +165,10 @@ extension ListTricksViewController: UITableViewDataSource{
     
 }
 
-extension ListTricksViewController: UITableViewDelegate{
+extension ListTricksViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.performSegue(withIdentifier: "toARViewController", sender: self)
-        
     }
     
     
@@ -169,5 +176,3 @@ extension ListTricksViewController: UITableViewDelegate{
         return 140
     }
 }
-
-

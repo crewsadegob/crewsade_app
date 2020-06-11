@@ -9,19 +9,24 @@
 import UIKit
 import ARKit
 
-class ARViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: ViewController, ARSCNViewDelegate {
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var sceneView: ARSCNView!
-    
     @IBOutlet weak var nameTrick: UILabel!
+    
+    var play: Bool = true
     var sceneMain = SCNScene()
     var sceneNode = SCNNode()
     var isSceneRendered = false
     var trick:String? = ""
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the view's delegate
+        
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
@@ -50,7 +55,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    // MARK: - ARSCNViewDelegate
+// MARK: - ARSCNViewDelegate
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if let planeAnchor = anchor as? ARPlaneAnchor {
@@ -113,34 +118,30 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 sceneNode.addChildNode(childNode)
             }
         }
-        
-        
     }
     
+    @IBAction func buttonPlay(_ sender: UIButton) {
+        if play {
+            sceneView.scene.isPaused = false
+                     sender.setBackgroundImage(UIImage(named: "button-play.png"), for: .normal)
+                     play = !play
+           
+        } else {
+            sceneView.scene.isPaused = true
+                    sender.setBackgroundImage(UIImage(named: "button-pause.png"), for: .normal)
+                    play = !play
+        }
+        
+    }
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
-        
     }
     
     func sessionWasInterrupted(_ session: ARSession) {
         // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
     }
     
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    
 }

@@ -9,7 +9,11 @@
 import Foundation
 
 struct User: Equatable {
+    
     let username: String?
-    let Image: URL?
+    let image: URL?
     let id: String?
+    let stats: [String: Int]
+    var score: Int = 0
+    
 }

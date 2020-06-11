@@ -10,7 +10,6 @@ import Foundation
 import FirebaseFirestore
 import CoreLocation
 
-
 struct Spot {
     
     var id: String

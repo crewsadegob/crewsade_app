@@ -9,71 +9,64 @@
 import UIKit
 import Firebase
 import SDWebImage
+
 class ChallengeAcceptedViewController: UIViewController {
-    let user = Auth.auth().currentUser
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var notPlaying: UIView!
     @IBOutlet weak var isPlaying: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var challengerName: UILabel!
     @IBOutlet weak var challengerImage: UIImageView!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        challengerImage.setRoundedImage()
+        SessionService().setRound(view: self)
+
+        self.hideNavigation()
+
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
+
                 if result == user.uid{
                     self.notPlaying.isHidden = true
                     self.isPlaying.isHidden = false
-                    
-                    print("player")
+                    SessionService().manageScore(){result in
+                               self.scoreLabel.setOutlineTextByScore(score: result)
+                           }
                 }else{
                     self.isPlaying.isHidden = true
                     self.notPlaying.isHidden = false
-                    
-                    print("Not player")
-                    
+
+                    SessionService().manageScore(){result in
+                               self.scoreLabel.setOutlineTextByScore(score: result)
+                    }
                 }
-            }
-            SessionService().checkIsWin(){ result in
-                if result == user.uid{
-                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
-                    let mainViewController = mainStoryboard.instantiateViewController(identifier: "win")
-                    self.show(mainViewController, sender: nil)
-                }
-                else{
-                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
-                                 let mainViewController = mainStoryboard.instantiateViewController(identifier: "lose")
-                                 self.show(mainViewController, sender: nil)
-                }
-                
             }
         }
         
         SessionService().getChallengerInformations(){result in
             if let challenger = result{
-                print("challenger: \(challenger)")
                 self.challengerName.text = challenger.username
-                self.challengerImage.sd_setImage(with: challenger.Image, placeholderImage: UIImage(named:"placeholder.png"))
+                self.challengerImage.sd_setImage(with: challenger.image, placeholderImage: UIImage(named:"placeholder-user.png"))
             }
         }
-        
-        
     }
     
+// MARK: - ACTIONS
+    
     @IBAction func validateButton(_ sender: UIButton) {
-        SessionService().trickIsValidate(){ success in
-            if success{
-                //                self.notPlaying.isHidden = true
-                //                self.isPlaying.isHidden = false
-            }
-        }
+        SessionService().trickIsValidate()
     }
     
     @IBAction func denyButton(_ sender: UIButton) {
-        SessionService().trickIsDeny(){ success in
-            if success{
-                print("Perdu")
-            }
-        }
+        SessionService().trickIsDeny()
     }
 }

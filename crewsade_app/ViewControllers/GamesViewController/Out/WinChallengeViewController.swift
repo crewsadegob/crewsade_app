@@ -10,29 +10,35 @@ import UIKit
 
 class WinChallengeViewController: UIViewController {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var winnerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-             SessionService().displayWinner(){result in
-                 self.winnerLabel.text = result
-             }
+        self.hideNavigation()
+        UserService().updateVictory()
+
+        SessionService().manageScore(){result in
+            self.scoreLabel.setOutlineTextByScore(score: result)
+        }
+        SessionService().displayWinner(){result in
+            self.winnerLabel.text = result
+            
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserService().updateVictory()
+        self.displayNavigation()
+        SessionService().endSession()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

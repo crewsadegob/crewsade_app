@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+
 class TrickService {
     let storage = Storage.storage()
     
@@ -48,8 +49,6 @@ class TrickService {
                             }
                         }
                     }
-                    
-                    
                 }
                 
                 group.notify(queue: .main, execute: {
@@ -58,6 +57,7 @@ class TrickService {
             }
         }
     }
+    
     func compareSavedTricksAndListTricks(completionHandler: @escaping (_ result: [Trick]?) -> Void){
         getTricks(){ result in
             if var allTricks = result{

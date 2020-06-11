@@ -9,11 +9,14 @@
 import UIKit
 import CoreLocation
 import Geofirestore
+import FirebaseAuth
 import FirebaseFirestore
 import SDWebImage
 
 class SpotDetailViewController: UIViewController {
-
+    
+// MARK: - VARIABLES
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -22,12 +25,15 @@ class SpotDetailViewController: UIViewController {
     
     @IBOutlet weak var usersCarousel: UICollectionView!
     
+    let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
     let db = Firestore.firestore()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
     
     var id: String = ""
     var users = [User]()
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +44,34 @@ class SpotDetailViewController: UIViewController {
         setupLocationManager()
         getSurroundings()
         getRequestedSpot()
+        customizeInterface()
         
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
+    
+    func customizeInterface() {
+        spotDetailContainer.layer.cornerRadius = 15
+        spotPicture.roundTopCorners()
+        spotPicture.layer.masksToBounds = true
+        
+        spotDistanceLabel.textColor = UIColor.white
+        spotDistanceLabel.backgroundColor = UIColor.CrewSade.darkGrey
+        spotDistanceLabel.layer.cornerRadius = 9
+        spotDistanceLabel.layer.masksToBounds = true
+        spotCloseUsersLabel.textColor = UIColor.white
+        spotCloseUsersLabel.backgroundColor = UIColor.CrewSade.mainColorLight
+        spotCloseUsersLabel.layer.cornerRadius = 9
+        spotCloseUsersLabel.layer.masksToBounds = true
+        
+        spotCloseUsersLabel.sizeToFit()
+    }
     
     func getRequestedSpot() {
         let spot = db.collection("spots").document(id)
@@ -83,58 +107,76 @@ class SpotDetailViewController: UIViewController {
                 print("Centre de la zone du spot : \(center)")
                 
                 let _ = rangeQuery.observe(.documentEntered, with: { (key, location) in
-                    if let userId = key {
-                        print("Le document d'id : '\(String(describing: userId))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
+                    if let key = key {
+                        print("Le document d'id : '\(String(describing: key))' est entré dans la zone et est aux coordonnées : '\(String(describing: location))'")
                         
-                        let user = usersRef.document(userId)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
+                                    let stats = user.get("Stats") as! [String: Int]
+                                    
+                                    let user = User(username: name, image: image, id: key, stats: stats)
+                                    self.users.append(user)
+                                    
+                                    if self.users.count == 0  {
+                                        self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                    } else if self.users.count == 1{
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    } else {
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    }
+                                    
+                                    self.usersCarousel.reloadData()
 
-                                let user = User(username: name, Image: image, id: userId)
-                                self.users.append(user)
-                                
-                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                self.usersCarousel.reloadData()
-
-                            } else {
-                                
-                                print("User does not exist")
-                                
+                                } else {
+                                    
+                                    print("User does not exist")
+                                    
+                                }
                             }
                         }
                     }
-                    
                 })
                 
                 let _ = rangeQuery.observe(.documentExited, with: { (key, location) in
-                    if let userId = key {
+                    if let key = key {
                         print("Le document d'id : '\(String(describing: key))' est sorti de la zone et est aux coordonnées : '\(String(describing: location))'")
                         
-                        let user = usersRef.document(userId)
-                        user.getDocument { (user, error) in
-                            if let user = user, user.exists {
-                                let name = user.get("Username") as! String
-                                let image = URL(string: user.get("Image") as! String)
+                        if self.user!.uid != key {
+                            let user = usersRef.document(key)
+                            user.getDocument { (user, error) in
+                                if let user = user, user.exists {
+                                    let name = user.get("Username") as! String
+                                    let image = URL(string: user.get("Image") as! String)
+                                    let stats = user.get("Stats") as! [String: Int]
 
-                                let user = User(username: name, Image: image, id: userId)
-                                
-                                if let index = self.users.firstIndex(of: user) {
-                                    self.users.remove(at: index)
+                                    let user = User(username: name, image: image, id: key, stats: stats)
+                                    
+                                    if let index = self.users.firstIndex(of: user) {
+                                        self.users.remove(at: index)
+                                    }
+                                    
+                                    if self.users.count == 0  {
+                                        self.spotCloseUsersLabel.text = "Aucun rider à ce spot"
+                                    } else if self.users.count == 1{
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) rider est à ce spot"
+                                    } else {
+                                        self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
+                                    }
+                                    
+                                    self.usersCarousel.reloadData()
+
+                                } else {
+                                    
+                                    print("User does not exist")
                                 }
-                                
-                                self.spotCloseUsersLabel.text = "\(self.users.count) riders sont à ce spot"
-                                self.usersCarousel.reloadData()
-
-                            } else {
-                                
-                                print("User does not exist")
-                                
                             }
                         }
                     }
-                    
                 })
                 
             } else {
@@ -145,16 +187,43 @@ class SpotDetailViewController: UIViewController {
     
     func buildDetailView(name: String, location: GeoPoint, image: String) {
         
-        let user = locationManager.location!.coordinate
-        let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .notDetermined, .restricted, .denied:
+                    spotDistanceLabel.text = "-"
+                case .authorizedAlways, .authorizedWhenInUse:
+                    let user = locationManager.location!.coordinate
+                    let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+                    let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
+                    let distance = round(spotLocation.distance(from: userLocation))
+                    
+                    // FIXME: Gérer les cas où il serait plus pertinent de s'exprimer en km
+                    spotDistanceLabel.text = "\(distance)m"
+                @unknown default:
+                break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
         
-        let distance = round(spotLocation.distance(from: userLocation))
+        spotName.text = name.uppercased()
         
-        spotName.text = name
-        spotDistanceLabel.text = "\(distance)m"
-        spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
-        spotPicture.sd_setImage(with: URL(string: image))
+        if users.count == 0  {
+            spotCloseUsersLabel.text = "Aucun rider à ce spot"
+        } else if users.count == 1{
+            spotCloseUsersLabel.text = "\(users.count) rider est à ce spot"
+        } else {
+            spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
+        }
+        
+        spotPicture.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named:"background-out.png"), options: .highPriority, completed: { (image, error, cacheType, url) in
+            guard image != nil else {
+                return
+            }
+            
+            self.spotPicture.image = self.spotPicture.image?.convertToGrayScale()
+            
+        })
     }
     
     func setupLocationManager() {
@@ -170,7 +239,7 @@ class SpotDetailViewController: UIViewController {
     
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension SpotDetailViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -195,8 +264,9 @@ extension SpotDetailViewController : UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! CarouselUsersCollectionViewCell
         
         cell.user = users[indexPath.item]
-        cell.contentView.backgroundColor = UIColor.CrewSade.secondaryColor
+        cell.contentView.backgroundColor = UIColor.CrewSade.mainColorLight
         cell.contentView.layer.cornerRadius = 15.0
+        
         return cell
     }
 }

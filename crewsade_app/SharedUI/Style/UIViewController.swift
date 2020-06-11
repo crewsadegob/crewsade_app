@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func performSegueToReturnBack()  {
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
@@ -16,4 +17,13 @@ extension UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    func hideNavigation() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func displayNavigation() {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
 }

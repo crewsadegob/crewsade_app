@@ -9,44 +9,43 @@
 import UIKit
 import FirebaseAuth
 import SDWebImage
+
 class ChallengeInvitationViewController: UIViewController {
 
-    let user = Auth.auth().currentUser
+// MARK: - VARIABLES
 
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = user{
-              GamesService().getInformationsChallenge(userId: user.uid){ result in
-                  if let players = result{
-                          self.usernameLabel.text = players[1].username
-                          self.imageView.sd_setImage(with: players[1].Image, placeholderImage: UIImage(named:"placeholder.png"))
-                  }
+        imageView.setRoundedImage()
+        self.hideNavigation()
+        
+        if let user = user {
+           GamesService().getInformationsChallenge(userId: user.uid){ result in
+              if let players = result{
+                      self.usernameLabel.text = players[1].username
+                      self.imageView.sd_setImage(with: players[1].image, placeholderImage: UIImage(named:"placeholder-user.png"))
               }
-          }
-        // Do any additional setup after loading the view.
+           }
+        }
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func denyButtonClicked(_ sender: Any) {
         GamesService().denyChallenge(view: self)
         performSegueToReturnBack()
     }
+    
     @IBAction func acceptButtonClicked(_ sender: Any) {
         GamesService().acceptChallenge(view: self)
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

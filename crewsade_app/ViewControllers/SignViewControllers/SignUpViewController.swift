@@ -11,18 +11,26 @@ import FirebaseAuth
 import FirebaseFirestore
 import FBSDKLoginKit
 import FBSDKCoreKit
+
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var showPasswordIcon:Bool = true
+// MARK: - VARIABLES
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     
     let signUpManager = FirebaseAuthManager()
+    
+    var showPasswordIcon:Bool = true
+
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         usernameInput.setLeftPaddingPoints(10)
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
@@ -32,35 +40,43 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         passwordInput.underlined()
         
         
-        profilePicture.layer.borderWidth = 1
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.borderColor = UIColor.black.cgColor
-        profilePicture.layer.cornerRadius = profilePicture.frame.width/2 //This will change with corners of image and height/2 will make this circle shape
-        profilePicture.clipsToBounds = true
-        // Do any additional setup after loading the view.
-        
+        profilePicture.setRoundedImage()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+    }
+    
+// MARK: - ACTIONS
+    
     @IBAction func buttonSignUpClicked(_ sender: Any) {
+        indicator.startAnimating()
         if let email = emailInput.text,let password = passwordInput.text, let username = usernameInput.text, let image = profilePicture.image{
             signUpManager.createUser(username: username,Image: image,email: email, password: password, view: self) {[weak self] (success) in
                 guard let `self` = self else { return }
                 if (success) {
+                    self.indicator.stopAnimating()
                     self.switchToMainStoryboard()
                 } else {
+                    self.indicator.stopAnimating()
                     print("Error")
                 }
             }
         }
     }
     
+    // TODO: Trouver un moyen de refacto le duplicata de code via un utilitaire pour les formulaires ?
+    // On retrouve cette fonction dans SignInViewController
     @IBAction func showPassword(_ sender: UIButton) {
         if(showPasswordIcon == true) {
             passwordInput.isSecureTextEntry = false
-            sender.setBackgroundImage(UIImage(named: "eyeOpen.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_open.png"), for: .normal)
         } else {
             passwordInput.isSecureTextEntry = true
-            sender.setBackgroundImage(UIImage(named: "eyeClose.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_closed.png"), for: .normal)
         }
         
         showPasswordIcon = !showPasswordIcon
@@ -88,6 +104,8 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         self.present(profilePictureSheet, animated: true, completion: nil)
     }
+    
+// MARK: - METHODS
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage

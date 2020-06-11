@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Polly-Regular.otf">
+            <string>Polly-Regular</string>
+        </array>
         <array key="TuskerGrotesk-4500Medium.ttf">
             <string>TuskerGrotesk-4500Medium</string>
         </array>
@@ -71,22 +74,69 @@
                                     <constraint firstItem="FiC-we-cbz" firstAttribute="leading" secondItem="iR9-5c-Qww" secondAttribute="leading" constant="112" id="wLk-aM-78N"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oR4-x3-0Tj">
+                                <rect key="frame" x="0.0" y="307" width="375" height="267"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" rowHeight="60" id="It8-fg-hU2" customClass="ProfileStatsTableViewCell" customModule="crewsade_app" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="It8-fg-hU2" id="WCA-dQ-ZgF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3V-hT-yLK">
+                                                    <rect key="frame" x="47" y="17.5" width="46.5" height="25.5"/>
+                                                    <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRT-vM-kUE">
+                                                    <rect key="frame" x="121" y="23" width="182" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="182" id="EWo-dt-lxS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="y3V-hT-yLK" secondAttribute="bottom" constant="17" id="Ber-Gc-5WB"/>
+                                                <constraint firstItem="mRT-vM-kUE" firstAttribute="top" secondItem="WCA-dQ-ZgF" secondAttribute="top" constant="23" id="ICv-E5-CyU"/>
+                                                <constraint firstItem="y3V-hT-yLK" firstAttribute="top" secondItem="WCA-dQ-ZgF" secondAttribute="top" constant="17.5" id="OI0-6V-vvL"/>
+                                                <constraint firstAttribute="bottom" secondItem="mRT-vM-kUE" secondAttribute="bottom" constant="22" id="WGk-WK-xF9"/>
+                                                <constraint firstAttribute="trailing" secondItem="mRT-vM-kUE" secondAttribute="trailing" constant="72" id="lQn-Rp-TVB"/>
+                                                <constraint firstItem="mRT-vM-kUE" firstAttribute="leading" secondItem="WCA-dQ-ZgF" secondAttribute="leading" constant="121" id="sm7-pg-SKu"/>
+                                                <constraint firstItem="y3V-hT-yLK" firstAttribute="leading" secondItem="WCA-dQ-ZgF" secondAttribute="leading" constant="47" id="v0u-kn-big"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameValueLabel" destination="mRT-vM-kUE" id="t5h-bG-MnM"/>
+                                            <outlet property="valueLabel" destination="y3V-hT-yLK" id="o5f-zh-pYV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oR4-x3-0Tj" firstAttribute="leading" secondItem="YDa-Dh-X6m" secondAttribute="leading" id="1hQ-aO-oQ7"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="top" secondItem="YDa-Dh-X6m" secondAttribute="top" id="4bD-5m-nEJ"/>
+                            <constraint firstItem="YDa-Dh-X6m" firstAttribute="trailing" secondItem="oR4-x3-0Tj" secondAttribute="trailing" id="CvZ-p9-MB7"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="trailing" secondItem="YDa-Dh-X6m" secondAttribute="trailing" id="Gyi-dH-Luw"/>
+                            <constraint firstItem="oR4-x3-0Tj" firstAttribute="top" secondItem="iR9-5c-Qww" secondAttribute="bottom" id="IIs-ZU-y0A"/>
+                            <constraint firstItem="YDa-Dh-X6m" firstAttribute="bottom" secondItem="oR4-x3-0Tj" secondAttribute="bottom" id="Zty-9R-MnB"/>
                             <constraint firstItem="iR9-5c-Qww" firstAttribute="leading" secondItem="YDa-Dh-X6m" secondAttribute="leading" id="c1C-iZ-Nfo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YDa-Dh-X6m"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="profile_icon" landscapeImage="profile_icon" largeContentSizeImage="profile_icon" id="gPc-YW-0Zu"/>
                     <navigationItem key="navigationItem" title="PROFIL" id="7vT-Cd-JcG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="33G-GY-4Un">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OJe-CR-RiP">
                                 <rect key="frame" x="337" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="settings"/>
+                                <state key="normal" backgroundImage="icon-settings"/>
                                 <connections>
                                     <segue destination="5b1-LU-j8p" kind="show" id="gRV-qu-8cN"/>
                                 </connections>
@@ -96,6 +146,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageProfile" destination="VTF-Ds-QTg" id="6vJ-dN-LS6"/>
+                        <outlet property="statsTable" destination="oR4-x3-0Tj" id="CGF-LV-AZW"/>
                         <outlet property="usernameLabel" destination="FiC-we-cbz" id="oBW-VM-BW9"/>
                     </connections>
                 </viewController>
@@ -141,7 +192,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile_icon" width="25" height="18"/>
-        <image name="settings" width="22" height="22"/>
+        <image name="icon-settings" width="22" height="22"/>
     </resources>
 </document>
