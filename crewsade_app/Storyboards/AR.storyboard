@@ -380,7 +380,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cz-mO-LtI">
-                                <rect key="frame" x="162.5" y="500" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="424" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="RXv-fR-MTu"/>
                                     <constraint firstAttribute="height" constant="50" id="kmb-lp-I3x"/>
@@ -412,8 +412,8 @@
                             <constraint firstItem="pOn-3f-u9M" firstAttribute="leading" secondItem="9bk-aa-pd4" secondAttribute="leading" constant="30" id="jWz-4A-ezY"/>
                             <constraint firstItem="pOn-3f-u9M" firstAttribute="top" secondItem="9bk-aa-pd4" secondAttribute="top" constant="30" id="orB-6Z-Ssg"/>
                             <constraint firstItem="saN-ze-973" firstAttribute="bottom" secondItem="9bk-aa-pd4" secondAttribute="bottom" constant="49" id="ufs-nw-atn"/>
-                            <constraint firstItem="9bk-aa-pd4" firstAttribute="bottom" secondItem="3Cz-mO-LtI" secondAttribute="bottom" constant="24" id="ui4-yr-CPk"/>
                             <constraint firstItem="bSg-xY-Nl9" firstAttribute="top" secondItem="9bk-aa-pd4" secondAttribute="top" constant="358" id="wqo-GF-0Wu"/>
+                            <constraint firstItem="9bk-aa-pd4" firstAttribute="bottom" secondItem="3Cz-mO-LtI" secondAttribute="bottom" constant="100" id="xFa-pg-UcX"/>
                             <constraint firstItem="bSg-xY-Nl9" firstAttribute="leading" secondItem="9bk-aa-pd4" secondAttribute="leading" id="ysa-Vz-i7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9bk-aa-pd4"/>
