@@ -15,6 +15,8 @@ import Geofirestore
 
 class MapViewController: ViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var mapView: MGLMapView!
     @IBOutlet weak var centerButton: UIButton!
     
@@ -24,11 +26,12 @@ class MapViewController: ViewController {
     
     var displayedSpotId = ""
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLocationManager()
-        GamesService().checkIsUserChallenged(view: self)
         customizeInterface()
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -39,11 +42,9 @@ class MapViewController: ViewController {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-//                    addButton.isEnabled = false
                     centerButton.isEnabled = false
                 case .authorizedAlways, .authorizedWhenInUse:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-//                    addButton.isEnabled = true
                     centerButton.isEnabled = true
                 @unknown default:
                 break
@@ -68,7 +69,7 @@ class MapViewController: ViewController {
         self.performSegue(withIdentifier: "presentSpotCreation", sender: self)
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func centerMapOnUser(_ sender: UIButton) {
         
@@ -79,7 +80,7 @@ class MapViewController: ViewController {
         
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         centerButton.layer.cornerRadius = 25
@@ -151,8 +152,6 @@ class MapViewController: ViewController {
         }
     }
     
-    
-    
     func updateMapAnnotations(spot: Spot) {
         
         let point = MGLPointAnnotation()
@@ -165,7 +164,7 @@ class MapViewController: ViewController {
 
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension MapViewController: MGLMapViewDelegate {
     
@@ -195,9 +194,9 @@ extension MapViewController: MGLMapViewDelegate {
             var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: id!)
             
             if game == "true" {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_active")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_active")!, reuseIdentifier: id!)
             } else {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_regular")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_regular")!, reuseIdentifier: id!)
             }
             
             return annotationImage

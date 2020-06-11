@@ -99,7 +99,7 @@ class SessionService{
                                 if let challengerData = document, document!.exists{
                                     let stats = challengerData.get("Stats") as! [String: Int]
                                     if let name = challengerData.get("Username") as? String, let image = challengerData.get("Image") as? String{
-                                        completionHandler(User(username: name, Image: URL(string:image), id: challenger,stats: stats ))
+                                        completionHandler(User(username: name, image: URL(string:image), id: challenger,stats: stats ))
                                     }
                                 }
                                 else{
@@ -394,7 +394,7 @@ class SessionService{
                                                             UserService().getUserInformations(id: idPlayer2){ result in
                                                                 if let user2 = result {
                                                                     
-                                                                    completionHandler(Session(player1: User(username: user1.username, Image: user1.Image, id: user1.id, stats: user1.stats, score: scorePlayer1), player2: User(username: user2.username, Image: user2.Image, id: user2.id, stats: user2.stats, score: scorePlayer2), roundStep: step))
+                                                                    completionHandler(Session(player1: User(username: user1.username, image: user1.image, id: user1.id, stats: user1.stats, score: scorePlayer1), player2: User(username: user2.username, image: user2.image, id: user2.id, stats: user2.stats, score: scorePlayer2), roundStep: step))
                                                                     
                                                                 }
                                                             }

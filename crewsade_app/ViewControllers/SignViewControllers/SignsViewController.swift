@@ -7,38 +7,34 @@
 //
 
 import UIKit
-import  FirebaseAuth
+import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
+
 class SignsViewController: UIViewController, GIDSignInDelegate {
     
-
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setCrewsadeNavigation()
         
+        setCrewsadeNavigation()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
               GIDSignIn.sharedInstance()?.delegate = self
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
-
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-
     }
     
-    private func setCrewsadeNavigation(){
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
-    }
+// MARK: - ACTIONS
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
         FacebookAuthManager().facebookLogin(sender, viewController: self){[weak self] (success) in
@@ -55,12 +51,16 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance().signIn()
     }
     
+// MARK: - METHODS
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         print("Google Sing In didSignInForUser")
+        
         if let error = error {
             print(error.localizedDescription)
             return
         }
+        
         guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
         // When user is signed in
@@ -79,7 +79,10 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
-
-    // Remove the listener once it's no longer needed
- 
+    
+    private func setCrewsadeNavigation(){
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
+    }
 }

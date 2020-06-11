@@ -136,7 +136,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OJe-CR-RiP">
                                 <rect key="frame" x="337" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="settings"/>
+                                <state key="normal" backgroundImage="icon-settings"/>
                                 <connections>
                                     <segue destination="5b1-LU-j8p" kind="show" id="gRV-qu-8cN"/>
                                 </connections>
@@ -192,6 +192,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings" width="22" height="22"/>
+        <image name="icon-settings" width="22" height="22"/>
     </resources>
 </document>

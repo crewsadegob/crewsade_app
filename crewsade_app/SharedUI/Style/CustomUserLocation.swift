@@ -46,5 +46,6 @@ class CustomUserLocation: MGLUserLocationAnnotationView {
             inner.backgroundColor = UIColor.CrewSade.mainColorLight.cgColor
             layer.addSublayer(inner)
         }
+        
     }
 }

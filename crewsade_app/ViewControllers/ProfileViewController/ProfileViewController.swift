@@ -10,7 +10,8 @@ import UIKit
 import SDWebImage
 import Firebase
 class ProfileViewController: ViewController {
-    let user = Auth.auth().currentUser
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageProfile: UIImageView!
@@ -18,6 +19,10 @@ class ProfileViewController: ViewController {
     
     var User: User?
     var stats =  [String: Int]()
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,14 +33,13 @@ class ProfileViewController: ViewController {
         
         self.navigationController?.navigationBar.topItem?.title = "PROFIL";
         
-        // Do any additional setup after loading the view.
         if let user = user{
             UserService().getUserInformations(id: user.uid){ result in
                 if let user = result{
                     self.User = user
                     self.usernameLabel.text = self.User?.username
-                    let image = user.Image
-                    self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder.png"))
+                    let image = user.image
+                    self.imageProfile.sd_setImage(with: image, placeholderImage: UIImage(named:"placeholder-user.png"))
                     self.stats = user.stats
                     self.statsTable.reloadData()
                     
@@ -44,6 +48,8 @@ class ProfileViewController: ViewController {
         }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ProfileViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,18 +98,13 @@ extension ProfileViewController: UITableViewDataSource{
             
         }
         
-        
-        
         return cell
     }
     
 }
 
 extension ProfileViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

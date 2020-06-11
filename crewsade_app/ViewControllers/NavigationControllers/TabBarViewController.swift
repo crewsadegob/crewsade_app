@@ -10,7 +10,11 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var TabBar: UITabBar!
+    
+// MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         super.viewDidLoad()

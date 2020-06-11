@@ -1,22 +1,17 @@
 //
-//  ImageView.swift
+//  UIImage.swift
 //  crewsade_app
 //
-//  Created by Hugo Lefrant on 31/05/2020.
+//  Created by Lou Batier on 11/06/2020.
 //  Copyright © 2020 Lou Batier. All rights reserved.
 //
 
 import UIKit
 
-extension UIImageView {
+extension UIImage {
     
-    func setRoundedImage() {
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = self.frame.width/2
-        self.clipsToBounds = true
-    }
-    
-    func convertToGrayScale(image: UIImage) -> UIImage? {
+    func convertToGrayScale() -> UIImage? {
+        let image = self
         let imageRect:CGRect = CGRect(x:0, y:0, width:image.size.width, height: image.size.height)
         let colorSpace = CGColorSpaceCreateDeviceGray()
         let width = image.size.width
@@ -31,7 +26,6 @@ extension UIImageView {
                 return newImage
             }
         }
-        
         return UIImage()
     }
     

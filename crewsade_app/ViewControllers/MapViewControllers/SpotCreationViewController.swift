@@ -16,6 +16,8 @@ import Geofirestore
 
 class SpotCreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var separator: UIImageView!
     @IBOutlet weak var spotNameInputLabel: UILabel!
@@ -26,14 +28,16 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setup()
         setupLocationManager()
-        customizeInterface()
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func didTapSpotPicture(_ sender: UITapGestureRecognizer) {
         
@@ -105,13 +109,13 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
             }
         }
         
-        // A FAIRE DANS UN CALLBACK POUR S'ASSURER QUE LES INFOS SONT ENREGISTRÉES ?
+        // TODO: À faire dans un callback pour s'assurer que les informations sont enregistrées ?
         dismiss(animated: true, completion: nil)
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
-    func customizeInterface() {
+    func setup() {
         
         spotNameInputLabel.text = spotNameInputLabel.text?.uppercased()
         
@@ -122,10 +126,10 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
         submitButton.backgroundColor = UIColor.CrewSade.mainColorLight
         submitButton.setTitle(submitButton.titleLabel?.text?.uppercased(), for: .normal)
         
-        
     }
     
     func setupLocationManager() {
+        
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
         
@@ -134,14 +138,17 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
-        spotPicture.image =  image
+        spotPicture.image =  image.convertToGrayScale()
         
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -151,13 +158,14 @@ class SpotCreationViewController: UIViewController, UIImagePickerControllerDeleg
 }
 
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension SpotCreationViewController: CLLocationManagerDelegate {
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let _ : CLLocationCoordinate2D = manager.location?.coordinate else {
             return
         }
     }
+    
 }
-

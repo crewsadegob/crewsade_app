@@ -9,19 +9,24 @@
 import UIKit
 import SDWebImage
 import Firebase
+
 class ListPlayersViewController: UIViewController {
+    
+// MARK: - VARIABLES
+    
+    @IBOutlet weak var playersTableView: UITableView!
     
     var players = [User]()
     
-    @IBOutlet weak var playersTableView: UITableView!
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         playersTableView.delegate = self
         playersTableView.dataSource = self
         
-        // Do any additional setup after loading the view.
-        GamesService().getPlayers(){result in
+        GamesService().getPlayers() { result in
             if let playersGet = result{
                 self.players = playersGet
                 self.playersTableView.reloadData()
@@ -29,6 +34,8 @@ class ListPlayersViewController: UIViewController {
             
         }
     }
+    
+// MARK: - ACTIONS
     
     @objc private func buttonIsChallengedClicked(_ sender: UIButton){
         if let id = players[sender.tag].id{
@@ -40,6 +47,8 @@ class ListPlayersViewController: UIViewController {
         }
     }
 }
+
+// MARK: - EXTENSIONS
 
 extension ListPlayersViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +70,7 @@ extension ListPlayersViewController: UITableViewDataSource{
         }
         
         cell.namePlayer.text = players[indexPath.row].username
-        cell.imagePlayer.sd_setImage(with: players[indexPath.row].Image, placeholderImage: UIImage(named:"placeholder.png"))
+        cell.imagePlayer.sd_setImage(with: players[indexPath.row].image, placeholderImage: UIImage(named:"placeholder-user.png"))
         cell.buttonIsChallenged.tag = indexPath.row
         cell.buttonIsChallenged.addTarget(self, action: #selector(buttonIsChallengedClicked(_:)), for: .touchUpInside)
         
@@ -71,10 +80,7 @@ extension ListPlayersViewController: UITableViewDataSource{
 }
 
 extension ListPlayersViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120

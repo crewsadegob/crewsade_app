@@ -8,26 +8,32 @@
 
 import UIKit
 import Firebase
+
 class SetProfileInformationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    let user = Auth.auth().currentUser
-
+// MARK: - VARIABLES
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var usernameInput: UITextField!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         usernameInput.setLeftPaddingPoints(10)
         usernameInput.underlined()
         
         profilePicture.layer.borderWidth = 1
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.borderColor = UIColor.black.cgColor
-        profilePicture.layer.cornerRadius = profilePicture.frame.width/2 //This will change with corners of image and height/2 will make this circle shape
+        profilePicture.layer.cornerRadius = profilePicture.frame.width / 2
         profilePicture.clipsToBounds = true
-
-        // Do any additional setup after loading the view.
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func didTapProfilePicture(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -51,6 +57,22 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         
         self.present(profilePictureSheet, animated: true, completion: nil)
     }
+    
+    @IBAction func buttonFinishClicked(_ sender: Any) {
+        if let username = usernameInput.text, let image = profilePicture.image, let user = user{
+            FirebaseAuthManager().setProfile(username: username, user: user, Image: image){[weak self] (success) in
+                guard let `self` = self else { return }
+                if (success) {
+                    self.switchToMainStoryboard()
+                } else {
+                    print("There was an error.")
+                }
+            }
+        }
+    }
+    
+// MARK: - METHODS
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
@@ -67,18 +89,5 @@ class SetProfileInformationViewController: UIViewController, UIImagePickerContro
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
-    }
-    
-    @IBAction func buttonFinishClicked(_ sender: Any) {
-        if let username = usernameInput.text, let image = profilePicture.image, let user = user{
-            FirebaseAuthManager().setProfile(username: username, user: user, Image: image){[weak self] (success) in
-                guard let `self` = self else { return }
-                if (success) {
-                    self.switchToMainStoryboard()
-                } else {
-                    print("There was an error.")
-                }
-            }
-        }
     }
 }

@@ -9,22 +9,29 @@
 import UIKit
 import Firebase
 import SDWebImage
+
 class ChallengeAcceptedViewController: UIViewController {
-    let user = Auth.auth().currentUser
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var notPlaying: UIView!
     @IBOutlet weak var isPlaying: UIView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var challengerName: UILabel!
     @IBOutlet weak var challengerImage: UIImageView!
+    
+    let user = Auth.auth().currentUser
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         challengerImage.setRoundedImage()
         SessionService().setRound(view: self)
 
         self.hideNavigation()
 
-        
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
 
@@ -48,10 +55,12 @@ class ChallengeAcceptedViewController: UIViewController {
         SessionService().getChallengerInformations(){result in
             if let challenger = result{
                 self.challengerName.text = challenger.username
-                self.challengerImage.sd_setImage(with: challenger.Image, placeholderImage: UIImage(named:"placeholder.png"))
+                self.challengerImage.sd_setImage(with: challenger.image, placeholderImage: UIImage(named:"placeholder-user.png"))
             }
         }
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func validateButton(_ sender: UIButton) {
         SessionService().trickIsValidate()

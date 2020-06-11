@@ -15,6 +15,8 @@ import SDWebImage
 
 class SpotDetailViewController: UIViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var spotDetailContainer: UIView!
     @IBOutlet weak var spotPicture: UIImageView!
     @IBOutlet weak var spotName: UILabel!
@@ -31,6 +33,8 @@ class SpotDetailViewController: UIViewController {
     var id: String = ""
     var users = [User]()
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,13 +48,13 @@ class SpotDetailViewController: UIViewController {
         
     }
     
-    // ------------------- ACTIONS
+// MARK: - ACTIONS
     
     @IBAction func dismissSpotDetailView(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         spotDetailContainer.layer.cornerRadius = 15
@@ -115,7 +119,7 @@ class SpotDetailViewController: UIViewController {
                                     let image = URL(string: user.get("Image") as! String)
                                     let stats = user.get("Stats") as! [String: Int]
                                     
-                                    let user = User(username: name, Image: image, id: key, stats: stats)
+                                    let user = User(username: name, image: image, id: key, stats: stats)
                                     self.users.append(user)
                                     
                                     if self.users.count == 0  {
@@ -150,7 +154,7 @@ class SpotDetailViewController: UIViewController {
                                     let image = URL(string: user.get("Image") as! String)
                                     let stats = user.get("Stats") as! [String: Int]
 
-                                    let user = User(username: name, Image: image, id: key, stats: stats)
+                                    let user = User(username: name, image: image, id: key, stats: stats)
                                     
                                     if let index = self.users.firstIndex(of: user) {
                                         self.users.remove(at: index)
@@ -192,6 +196,8 @@ class SpotDetailViewController: UIViewController {
                     let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
                     let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
                     let distance = round(spotLocation.distance(from: userLocation))
+                    
+                    // FIXME: Gérer les cas où il serait plus pertinent de s'exprimer en km
                     spotDistanceLabel.text = "\(distance)m"
                 @unknown default:
                 break
@@ -210,7 +216,14 @@ class SpotDetailViewController: UIViewController {
             spotCloseUsersLabel.text = "\(users.count) riders sont à ce spot"
         }
         
-        spotPicture.sd_setImage(with: URL(string: image))
+        spotPicture.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named:"background-out.png"), options: .highPriority, completed: { (image, error, cacheType, url) in
+            guard image != nil else {
+                return
+            }
+            
+            self.spotPicture.image = self.spotPicture.image?.convertToGrayScale()
+            
+        })
     }
     
     func setupLocationManager() {
@@ -226,7 +239,7 @@ class SpotDetailViewController: UIViewController {
     
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension SpotDetailViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -10,19 +10,21 @@ import UIKit
 
 class ListPlayersTableViewCell: UITableViewCell {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var imagePlayer: UIImageView!
     @IBOutlet weak var namePlayer: UILabel!
     @IBOutlet weak var buttonIsChallenged: UIButton!
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         imagePlayer.setRoundedImage()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
