@@ -8,9 +8,10 @@
 
 import Foundation
 
-
 struct Session{
+    
     let player1: User
     let player2: User
     let roundStep: Double
+    
 }

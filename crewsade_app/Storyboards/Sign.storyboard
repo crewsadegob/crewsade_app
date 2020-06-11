@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s37-5n-Sit">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s37-5n-Sit">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -186,7 +186,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1a-oF-ONc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="505"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD4" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_4" translatesAutoresizingMaskIntoConstraints="NO" id="kus-up-uoU">
                                         <rect key="frame" x="0.0" y="28" width="375" height="390"/>
                                     </imageView>
                                 </subviews>
@@ -483,8 +483,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ONBOARD4" width="375" height="460"/>
         <image name="eyeClose" width="24" height="16"/>
+        <image name="illustration-onboard_4" width="375" height="460"/>
         <image name="picturePicker" width="120" height="120"/>
         <image name="separator" width="375" height="50"/>
     </resources>

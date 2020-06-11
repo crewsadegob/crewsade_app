@@ -10,9 +10,11 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
+
 class SignInViewController: UIViewController {
     
-    var showPasswordIcon:Bool = true
+    
+// MARK: - VARIABLES
     
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -24,9 +26,13 @@ class SignInViewController: UIViewController {
         .foregroundColor: UIColor.CrewSade.darkGrey.withAlphaComponent(0.5),
         .underlineStyle: NSUnderlineStyle.single.rawValue]
     
+    var showPasswordIcon:Bool = true
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         emailInput.setLeftPaddingPoints(10)
         passwordInput.setLeftPaddingPoints(10)
         
@@ -39,11 +45,14 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationItem.hidesBackButton = false
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
     }
+    
+// MARK: - ACTIONS
     
     @IBAction func buttonSignInClicked(_ sender: Any) {
         indicator.startAnimating()
@@ -64,22 +73,24 @@ class SignInViewController: UIViewController {
     @IBAction func forgotPasswordButtonClicked(_ sender: Any) {
         
     }
+    
     @IBAction func showPassword(_ sender: UIButton) {
         if(showPasswordIcon == true) {
             passwordInput.isSecureTextEntry = false
-            sender.setBackgroundImage(UIImage(named: "eyeOpen.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_open.png"), for: .normal)
         } else {
             passwordInput.isSecureTextEntry = true
-            sender.setBackgroundImage(UIImage(named: "eyeClose.png"), for: .normal)
+            sender.setBackgroundImage(UIImage(named: "icon-eye_closed.png"), for: .normal)
         }
         
         showPasswordIcon = !showPasswordIcon
     }
+    
+// MARK: - METHODS
+    
     private func switchToMainStoryboard(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
         self.show(mainViewController, sender: nil)
     }
-    
-    
 }

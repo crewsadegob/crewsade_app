@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUU-2B-MmZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUU-2B-MmZ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -46,7 +46,7 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD1" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-RO-W7u">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_1" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-RO-W7u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="606"/>
                             </imageView>
                         </subviews>
@@ -84,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level up ton skill, apprends de nouveaux tricks et repousse tes limites avec l'Ar, les videos de la communauté et le Mantoring." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-ci-tWf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level up ton skill, apprends de nouveaux tricks et repousse tes limites avec l'AR, les videos de la communauté et le Mantoring." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-ci-tWf">
                                 <rect key="frame" x="30" y="539" width="314" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="cxB-eS-Ynt"/>
@@ -93,7 +93,7 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD2" translatesAutoresizingMaskIntoConstraints="NO" id="28m-et-yck">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_2" translatesAutoresizingMaskIntoConstraints="NO" id="28m-et-yck">
                                 <rect key="frame" x="65" y="63" width="236" height="338"/>
                             </imageView>
                         </subviews>
@@ -134,7 +134,7 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD3" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-nd-0HS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_3" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-nd-0HS">
                                 <rect key="frame" x="0.0" y="-12" width="375" height="511"/>
                             </imageView>
                         </subviews>
@@ -175,7 +175,7 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ONBOARD4" translatesAutoresizingMaskIntoConstraints="NO" id="lms-Qn-zrw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_4" translatesAutoresizingMaskIntoConstraints="NO" id="lms-Qn-zrw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="460"/>
                             </imageView>
                         </subviews>
@@ -201,9 +201,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ONBOARD1" width="375" height="606"/>
-        <image name="ONBOARD2" width="236" height="338"/>
-        <image name="ONBOARD3" width="375" height="511"/>
-        <image name="ONBOARD4" width="375" height="460"/>
+        <image name="illustration-onboard_1" width="375" height="606"/>
+        <image name="illustration-onboard_2" width="236" height="338"/>
+        <image name="illustration-onboard_3" width="375" height="511"/>
+        <image name="illustration-onboard_4" width="375" height="460"/>
     </resources>
 </document>

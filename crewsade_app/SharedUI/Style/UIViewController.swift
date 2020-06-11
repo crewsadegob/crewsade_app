@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIViewController {
+    
     func performSegueToReturnBack()  {
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
@@ -17,10 +18,11 @@ extension UIViewController {
         }
     }
     
-    func hideNavigation(){
+    func hideNavigation() {
         self.navigationController?.isNavigationBarHidden = true
     }
-    func displayNavigation(){
+    
+    func displayNavigation() {
         self.navigationController?.isNavigationBarHidden = false
     }
     
@@ -29,4 +31,5 @@ extension UIViewController {
         let mainViewController = mainStoryboard.instantiateViewController(identifier: identifier)
         self.show(mainViewController, sender: nil)
     }
+
 }

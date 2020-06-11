@@ -8,21 +8,33 @@
 
 import UIKit
 
+// TODO: S'inspirer du fonctionnement de l'héritage de ViewController avec la TabBar pour refacto le code des 4 ViewControllers
+// de l'onboarding
+
 class OnBoardingViewController: UIViewController {
     
-    @IBOutlet weak var OnBoardingButton: UIButton!
+// MARK: - VARIABLES
     
+    @IBOutlet weak var OnBoardingButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeRight)
+        
+        self.hideNavigation()
+        
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
-        self.hideNavigation()
+        
     }
+    
+// MARK: - ACTIONS
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -36,7 +48,6 @@ class OnBoardingViewController: UIViewController {
                 let mainStoryboard: UIStoryboard = UIStoryboard(name: "OnBoarding", bundle: nil)
                 let mainViewController = mainStoryboard.instantiateViewController(identifier: "OnBoarding2")
                 self.show(mainViewController, sender: nil)
-                
                 
             case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")

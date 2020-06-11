@@ -10,23 +10,28 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 
-class MainListTricksViewController: UIViewController {
+class MainListTricksViewController: ViewController {
+    
+// MARK: - VARIABLES
+    
+    @IBOutlet weak var carouselTrick: UICollectionView!
+    @IBOutlet weak var mainListTricksTable: UITableView!
+    @IBOutlet weak var ctaButton: UIButton!
     
     let db = Firestore.firestore()
     
     var tricksSaved = [Trick]()
     var tricks = [Trick]()
     
-    @IBOutlet weak var carouselTrick: UICollectionView!
-    @IBOutlet weak var mainListTricksTable: UITableView!
-    @IBOutlet weak var ctaButton: UIButton!
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.topItem?.title = "TRAINING";
 
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.png")
+        backgroundImage.image = UIImage(named: "ui-background.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
@@ -36,11 +41,9 @@ class MainListTricksViewController: UIViewController {
         mainListTricksTable.dataSource = self
         mainListTricksTable.delegate = self
         
-   
         carouselTrick.dataSource = self
         carouselTrick.delegate = self
         
-        // Do any additional setup after loading the view.
         UserService().getTricksSaved(){ result in
             if let tricksSaved = result{
                 self.tricksSaved = tricksSaved
@@ -65,22 +68,28 @@ class MainListTricksViewController: UIViewController {
             }
         }
     }
-    @objc private func buttonSaveClicked(_ sender: UIButton){
+    
+// MARK: - ACTIONS
+    
+    @objc private func buttonSaveClicked(_ sender: UIButton) {
+        
         if let trickClicked = tricksSaved[sender.tag].reference{
             UserService().deleteTrick(trick: trickClicked)
             mainListTricksTable.reloadData()
         }
+        
     }
     
-    @objc private func emptyList(_ sender: UIButton){
+    @objc private func emptyList(_ sender: UIButton) {
         
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "AR", bundle: nil)
         let mainViewController = mainStoryboard.instantiateViewController(identifier: "ListTricksViewController")
         self.show(mainViewController, sender: nil)
          
-      }
-    
+    }
 }
+
+// MARK: - EXTENSIONS
 
 extension MainListTricksViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,7 +139,7 @@ extension MainListTricksViewController: UITableViewDataSource{
     
 }
 
-extension MainListTricksViewController: UITableViewDelegate{
+extension MainListTricksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
     }
@@ -140,8 +149,7 @@ extension MainListTricksViewController: UITableViewDelegate{
     }
 }
 
-extension MainListTricksViewController : UICollectionViewDataSource
-{
+extension MainListTricksViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -150,8 +158,8 @@ extension MainListTricksViewController : UICollectionViewDataSource
         return tricks.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrickCell", for: indexPath) as! CarouselTricksCollectionViewCell
         
         cell.trick = tricks[indexPath.item]
@@ -159,13 +167,13 @@ extension MainListTricksViewController : UICollectionViewDataSource
         cell.contentView.layer.cornerRadius = 15.0
         
         return cell
+        
     }
 }
 
-extension MainListTricksViewController: UIScrollViewDelegate, UICollectionViewDelegate
-{
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>)
-    {
+extension MainListTricksViewController: UIScrollViewDelegate, UICollectionViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
         let layout = self.carouselTrick.collectionViewLayout as! UICollectionViewFlowLayout
         let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
@@ -175,5 +183,6 @@ extension MainListTricksViewController: UIScrollViewDelegate, UICollectionViewDe
         
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+        
     }
 }

@@ -11,18 +11,36 @@ import SDWebImage
 
 class CarouselUsersCollectionViewCell: UICollectionViewCell {
 
+// MARK: - VARIABLES
+    
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var duelButton: UIButton!
     
     var user: User? {
         didSet {
-            customizeInterface()
+            setup()
             self.updateCell()
         }
     }
     
-    func customizeInterface() {
+// MARK: - LIFECYCLE & OVERRIDES
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = 3.0
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 5, height: 10)
+        
+        self.clipsToBounds = false
+    }
+    
+// MARK: - METHODS
+    
+    private func setup() {
+        
         userPicture.layer.cornerRadius = userPicture.frame.size.width / 2
         duelButton.setTitle(duelButton.titleLabel?.text?.uppercased(), for: .normal)
         duelButton.backgroundColor = UIColor.CrewSade.darkGrey
@@ -36,24 +54,13 @@ class CarouselUsersCollectionViewCell: UICollectionViewCell {
         if let user = user {
             
             userName.text = user.username?.uppercased()
-            userPicture.sd_setImage(with: user.Image)
+            userPicture.sd_setImage(with: user.image)
             
         } else {
             
             userName.text = nil
             
         }
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.layer.cornerRadius = 3.0
-        layer.shadowRadius = 10
-        layer.shadowOpacity = 0.2
-        layer.shadowOffset = CGSize(width: 5, height: 10)
-        
-        self.clipsToBounds = false
     }
 
 }

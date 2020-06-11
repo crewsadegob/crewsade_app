@@ -10,7 +10,12 @@ import UIKit
 
 class OnBoarding4ViewController: UIViewController {
     
+// MARK: - VARIABLES
+    
     @IBOutlet weak var textLabel: UILabel!
+    
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -18,10 +23,13 @@ class OnBoarding4ViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizer.Direction.left
         self.view.addGestureRecognizer(swipeRight)
+        
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
         
     }
+    
+// MARK: - ACTIONS
     
     @objc func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
@@ -36,7 +44,6 @@ class OnBoarding4ViewController: UIViewController {
                 let mainViewController = mainStoryboard.instantiateViewController(identifier: "SignView")
                 self.show(mainViewController, sender: nil)
                 
-                
             case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")
             default:
@@ -44,5 +51,4 @@ class OnBoarding4ViewController: UIViewController {
             }
         }
     }
-    
 }

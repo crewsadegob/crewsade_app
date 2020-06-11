@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseFirestore
 
-
 class LevelService {
     
     let db = Firestore.firestore()

@@ -15,7 +15,6 @@ extension UILabel {
         self.text = self.text?.uppercased()
     }
     
-    
     func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
 
         guard let labelText = self.text else { return }
@@ -56,7 +55,6 @@ extension UILabel {
             NSAttributedString.Key.foregroundColor : UIColor.CrewSade.secondaryColorLight]
                      as [NSAttributedString.Key : Any]
         
-        
         switch score {
         case 2:
             coloredText = "O"
@@ -79,4 +77,5 @@ extension UILabel {
                                        range: range)
         self.attributedText = attributedString
     }
+    
 }

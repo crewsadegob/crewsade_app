@@ -13,11 +13,12 @@ import FirebaseAuth
 import FirebaseFirestore
 import Geofirestore
 
-class MapViewController: UIViewController {
+class MapViewController: ViewController {
     
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var centerButton: UIButton!
+// MARK: - VARIABLES
+    
     @IBOutlet weak var mapView: MGLMapView!
+    @IBOutlet weak var centerButton: UIButton!
     
     let user = Auth.auth().currentUser
     let locationManager = CLLocationManager()
@@ -25,17 +26,14 @@ class MapViewController: UIViewController {
     
     var displayedSpotId = ""
     
+// MARK: - LIFECYCLE & OVERRIDES
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCrewsadeNavigation()
         setupLocationManager()
         customizeInterface()
-         UINavigationBar.appearance().shadowImage = UIImage()
-               UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-               UINavigationBar.appearance().barTintColor = UIColor.CrewSade.darkGrey
 
-//        view.bringSubviewToFront(addButton)
-//        view.bringSubviewToFront(centerButton)
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -45,11 +43,9 @@ class MapViewController: UIViewController {
             switch CLLocationManager.authorizationStatus() {
                 case .notDetermined, .restricted, .denied:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-                    addButton.isEnabled = false
                     centerButton.isEnabled = false
                 case .authorizedAlways, .authorizedWhenInUse:
                     self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-                    addButton.isEnabled = true
                     centerButton.isEnabled = true
                 @unknown default:
                 break
@@ -76,7 +72,11 @@ class MapViewController: UIViewController {
         }
     }
     
-    // ------------------- ACTIONS
+    override func addButtonTapped() {
+        self.performSegue(withIdentifier: "presentSpotCreation", sender: self)
+    }
+    
+// MARK: - ACTIONS
     
     @IBAction func centerMapOnUser(_ sender: UIButton) {
         
@@ -87,7 +87,7 @@ class MapViewController: UIViewController {
         
     }
     
-    // ------------------- METHODS
+// MARK: - METHODS
     
     func customizeInterface() {
         centerButton.layer.cornerRadius = 25
@@ -145,7 +145,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
-
+        
     }
     
     func setupLocationManager() {
@@ -159,8 +159,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    
-    
     func updateMapAnnotations(spot: Spot) {
         
         let point = MGLPointAnnotation()
@@ -173,7 +171,7 @@ class MapViewController: UIViewController {
 
 }
 
-// ------------------- EXTENSIONS
+// MARK: - EXTENSIONS
 
 extension MapViewController: MGLMapViewDelegate {
     
@@ -203,9 +201,9 @@ extension MapViewController: MGLMapViewDelegate {
             var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: id!)
             
             if game == "true" {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_active")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_active")!, reuseIdentifier: id!)
             } else {
-                annotationImage = MGLAnnotationImage(image: UIImage(named: "pin_regular")!, reuseIdentifier: id!)
+                annotationImage = MGLAnnotationImage(image: UIImage(named: "icon-pin_regular")!, reuseIdentifier: id!)
             }
             
             return annotationImage
@@ -217,7 +215,7 @@ extension MapViewController: MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
 
         if annotation is MGLUserLocation {
-            return CustomUserLocationAnnotationView()
+            return CustomUserLocation()
         }
         
         return nil
@@ -237,56 +235,12 @@ extension MapViewController: CLLocationManagerDelegate {
         switch status {
             case .notDetermined, .restricted, .denied:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: 48.859289, longitude: 2.340535), authorization: false)
-                addButton.isEnabled = false
                 centerButton.isEnabled = false
             case .authorizedAlways, .authorizedWhenInUse:
                 self.setupMap(center: CLLocationCoordinate2D(latitude: locationManager.location!.coordinate.latitude, longitude: locationManager.location!.coordinate.longitude), authorization: true)
-                addButton.isEnabled = true
                 centerButton.isEnabled = true
             @unknown default:
             break
-        }
-    }
-}
-
-// CUSTOM USER VIEW
-
-class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
-    let big: CGFloat = 32
-    let small: CGFloat = 12
-    var outer: CALayer!
-    var inner: CALayer!
-    
-    override func update() {
-        if frame.isNull {
-            frame = CGRect(x: 0, y: 0, width: big, height: big)
-            return setNeedsLayout()
-        }
-        
-        if CLLocationCoordinate2DIsValid(userLocation!.coordinate) {
-            setupLayers()
-        }
-    }
-     
-    private func setupLayers() {
-        
-        if outer == nil {
-            outer = CALayer()
-            outer.bounds = CGRect(x: 0, y: 0, width: big, height: big)
-            outer.cornerRadius = big / 2
-            outer.backgroundColor = UIColor.CrewSade.mainColorTransparent.cgColor
-            outer.borderWidth = 1
-            outer.borderColor = UIColor.CrewSade.mainColorLight.cgColor
-            layer.addSublayer(outer)
-        }
-        
-        if inner == nil {
-            inner = CALayer()
-            inner.bounds = CGRect(x: 0, y: 0, width: small, height: small)
-            inner.cornerRadius = small / 2
-            inner.backgroundColor = UIColor.CrewSade.mainColorLight.cgColor
-            layer.addSublayer(inner)
-            
         }
     }
 }

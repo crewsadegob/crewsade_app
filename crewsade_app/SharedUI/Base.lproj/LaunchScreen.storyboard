@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboaardingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-kE-vyI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-kE-vyI">
                                 <rect key="frame" x="87" y="263" width="201" height="140"/>
                             </imageView>
                         </subviews>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="OnboaardingLogo" width="201" height="140"/>
+        <image name="logo-onboarding" width="201" height="140"/>
     </resources>
 </document>
