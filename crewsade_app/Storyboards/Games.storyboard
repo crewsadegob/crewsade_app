@@ -491,7 +491,7 @@
                                                     <constraint firstAttribute="width" constant="36" id="RBd-Jr-YLn"/>
                                                     <constraint firstAttribute="height" constant="40" id="msX-6a-pLC"/>
                                                 </constraints>
-                                                <state key="normal" image="thumbUp"/>
+                                                <state key="normal" image="ui-thumb-up"/>
                                                 <connections>
                                                     <action selector="validateButton:" destination="LYn-zo-aHB" eventType="touchUpInside" id="WYK-tl-RfN"/>
                                                 </connections>
@@ -502,7 +502,7 @@
                                                     <constraint firstAttribute="width" constant="36" id="9HB-cu-YNg"/>
                                                     <constraint firstAttribute="height" constant="40" id="AOy-fJ-p1p"/>
                                                 </constraints>
-                                                <state key="normal" image="thumbDown"/>
+                                                <state key="normal" image="ui-thumb_down"/>
                                                 <connections>
                                                     <action selector="denyButton:" destination="LYn-zo-aHB" eventType="touchUpInside" id="yhw-lJ-zh4"/>
                                                 </connections>
@@ -922,11 +922,11 @@
     <resources>
         <image name="icon-spark" width="6.5" height="16"/>
         <image name="icon-spark_dark" width="13" height="32"/>
-        <image name="thumbDown" width="36" height="40"/>
-        <image name="thumbUp" width="36" height="40"/>
         <image name="ui-background" width="375" height="667"/>
         <image name="ui-background_out" width="375" height="612"/>
         <image name="ui-separator" width="375" height="50"/>
         <image name="ui-separator_reversed" width="375" height="50"/>
+        <image name="ui-thumb-up" width="36" height="40"/>
+        <image name="ui-thumb_down" width="36" height="40"/>
     </resources>
 </document>
