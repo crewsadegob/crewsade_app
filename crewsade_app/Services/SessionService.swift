@@ -138,10 +138,10 @@ class SessionService{
                                 if let document = document, document.exists {
                                     if let isPlayed = document.get("isPlayed") as? String {
                                         if let Player1 = document.get("Player1") as? [String: Any] {
-                                            let idPlayer1 = Player1["UserId"] as! String
+                                            let _ = Player1["UserId"] as! String
                                             
                                             if let Player2 = document.get("Player2") as? [String: Any]{
-                                                let idPlayer2 = Player2["UserId"] as! String
+                                                let _ = Player2["UserId"] as! String
                                                 
                                                 self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Round.\(isPlayed)":1])
                                                 self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Round.i":FieldValue.increment(Int64(1))])
@@ -446,7 +446,7 @@ class SessionService{
                                                         
                                                         UserService().getUserInformations(id: idPlayer2){userData in
                                                             if let userData = userData{
-                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username])
+                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username!])
                                                             }
                                                             
                                                         }
@@ -456,7 +456,7 @@ class SessionService{
                                                     if scorePlayer2 == 0{
                                                         UserService().getUserInformations(id: idPlayer1){userData in
                                                             if let userData = userData{
-                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username])
+                                                                self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).updateData(["Winner": userData.username!])
                                                             }
                                                             
                                                         }
@@ -492,8 +492,8 @@ class SessionService{
                                         completionHandler(winner)
                                     }
                                 }
-                                else{
-                                    print(error?.localizedDescription)
+                                else {
+                                    print(error?.localizedDescription ?? "")
                                 }
                             }
                         }

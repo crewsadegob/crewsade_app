@@ -55,7 +55,9 @@ class MainListTricksViewController: ViewController {
         TrickService().getTricks(){ result in
             if let tricks = result{
                 self.tricks = tricks
-                let screenSize = UIScreen.main.bounds.size
+                
+                // FIXME: Variable pour la taille de l'écran, utile ?
+                let _ = UIScreen.main.bounds.size
 
                 let cellWidth = CGFloat(160.0)
                 let cellHeight = CGFloat(240.0)

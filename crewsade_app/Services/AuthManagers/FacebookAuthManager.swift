@@ -16,7 +16,7 @@ class FacebookAuthManager {
 
       
       func facebookLogin(_ sender: Any, viewController: UIViewController, completionBlock: @escaping (_ success: Bool) -> Void){
-          if let sender = AccessToken.current {
+          if let _ = AccessToken.current {
               completionBlock(true)
               
           } else {
@@ -28,6 +28,7 @@ class FacebookAuthManager {
                       completionBlock(false)
                       return
                   }
+                
                   guard let result = result, !result.isCancelled else {
                       print("User cancelled login")
                       completionBlock(false)
