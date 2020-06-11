@@ -262,10 +262,15 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-h8-hNV">
                                         <rect key="frame" x="0.0" y="-29" width="375" height="50"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-Ih-neh">
+                                        <rect key="frame" x="17" y="146" width="340" height="2"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.91764705879999997" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Uj6-9I-dlO" firstAttribute="top" secondItem="eHf-7b-ePf" secondAttribute="bottom" constant="9" id="2Vp-de-X4U"/>
+                                    <constraint firstItem="zJh-Ih-neh" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" constant="17" id="4Ex-Cl-fuw"/>
                                     <constraint firstAttribute="trailing" secondItem="7V8-xG-duI" secondAttribute="trailing" constant="18" id="9St-SU-Na0"/>
                                     <constraint firstItem="MjT-Ci-PoZ" firstAttribute="top" secondItem="f6E-nC-vmz" secondAttribute="top" constant="43" id="9Vw-t6-lQI"/>
                                     <constraint firstAttribute="trailing" secondItem="Uj6-9I-dlO" secondAttribute="trailing" constant="18" id="AzP-vd-Piy"/>
@@ -273,7 +278,9 @@
                                     <constraint firstItem="eHf-7b-ePf" firstAttribute="top" secondItem="7V8-xG-duI" secondAttribute="bottom" constant="33" id="Emj-LY-ch3"/>
                                     <constraint firstItem="7V8-xG-duI" firstAttribute="top" secondItem="MjT-Ci-PoZ" secondAttribute="bottom" constant="8" id="Sn4-Ws-UIJ"/>
                                     <constraint firstItem="Pp9-h8-hNV" firstAttribute="top" secondItem="f6E-nC-vmz" secondAttribute="top" constant="-29" id="Thj-5N-x8A"/>
+                                    <constraint firstItem="eHf-7b-ePf" firstAttribute="top" secondItem="zJh-Ih-neh" secondAttribute="bottom" constant="16" id="TsK-c6-zdC"/>
                                     <constraint firstItem="Uj6-9I-dlO" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" constant="18" id="XQ6-RP-HNb"/>
+                                    <constraint firstItem="zJh-Ih-neh" firstAttribute="top" secondItem="7V8-xG-duI" secondAttribute="bottom" constant="15" id="Xk6-js-X4b"/>
                                     <constraint firstItem="Pp9-h8-hNV" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" id="b2o-at-RbW"/>
                                     <constraint firstItem="MjT-Ci-PoZ" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" constant="18" id="dnk-tA-VkY"/>
                                     <constraint firstAttribute="trailing" secondItem="MjT-Ci-PoZ" secondAttribute="trailing" constant="18" id="fnP-I4-Dad"/>
@@ -281,6 +288,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Pp9-h8-hNV" secondAttribute="trailing" id="rAh-2U-TvM"/>
                                     <constraint firstItem="eHf-7b-ePf" firstAttribute="leading" secondItem="f6E-nC-vmz" secondAttribute="leading" constant="18" id="sXe-zG-2Oh"/>
                                     <constraint firstAttribute="trailing" secondItem="eHf-7b-ePf" secondAttribute="trailing" constant="18" id="yJB-uk-EFE"/>
+                                    <constraint firstAttribute="trailing" secondItem="zJh-Ih-neh" secondAttribute="trailing" constant="18" id="yfa-pV-ohx"/>
                                 </constraints>
                             </view>
                         </subviews>

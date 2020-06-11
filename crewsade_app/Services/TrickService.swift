@@ -79,42 +79,4 @@ class TrickService {
             }
         }
     }
-    
-    //    func getSceneTrick(trickScene: String?, completionHandler: @escaping (_ success: URL?) -> Void){
-    //        if let trickScene = trickScene {
-    //            let trickReference = storage.reference().child("tricks/HEELFLIP.dae")
-    //            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    //            let sceneUrl = documentsURL.appendingPathComponent("scenes/")
-    //
-    ////            let fileManager = FileManager.default
-    ////            let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    ////            do {
-    ////                let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
-    ////                print(fileURLs)
-    ////                // process files
-    ////            } catch {
-    ////                print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
-    ////            }
-    //
-    //           trickReference.write(toFile: sceneUrl){ url, error in
-    //                if let error = error {
-    //                    print(error)
-    //                    completionHandler(nil)
-    //                } else{
-    //
-    //                    print("Scene télécharger: \(url)")
-    //                    completionHandler(url)
-    //                }
-    //            }
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //
-    //        }
-    //    }
 }

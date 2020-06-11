@@ -37,6 +37,7 @@ class SignsViewController: UIViewController, GIDSignInDelegate {
     private func setCrewsadeNavigation(){
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.CrewSade.secondaryColorLight]
         UINavigationBar.appearance().barTintColor = UIColor.CrewSade.secondaryColorLight
     }
     

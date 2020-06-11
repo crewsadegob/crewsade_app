@@ -27,11 +27,13 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setCrewsadeNavigation()
         setupLocationManager()
-        GamesService().checkIsUserChallenged(view: self)
         customizeInterface()
-        
+         UINavigationBar.appearance().shadowImage = UIImage()
+               UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+               UINavigationBar.appearance().barTintColor = UIColor.CrewSade.darkGrey
+
 //        view.bringSubviewToFront(addButton)
 //        view.bringSubviewToFront(centerButton)
         
@@ -55,6 +57,12 @@ class MapViewController: UIViewController {
         } else {
             print("Location services are not enabled")
         }
+    }
+    private func setCrewsadeNavigation(){
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.CrewSade.secondaryColorLight]
+        UINavigationBar.appearance().barTintColor = UIColor.CrewSade.darkGrey
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

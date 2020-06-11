@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="-439.19999999999999" y="-120.98950524737631"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--PROFIL-->
         <scene sceneID="3WD-JC-mj2">
             <objects>
                 <viewController modalPresentationStyle="currentContext" id="5b1-LU-j8p" customClass="SettingsViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -164,10 +164,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-IA-Sht">
-                                <rect key="frame" x="66" y="272" width="243" height="30"/>
+                                <rect key="frame" x="66" y="262" width="243" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.43137254899999999" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="koq-8v-bmT"/>
+                                    <constraint firstAttribute="height" constant="50" id="koq-8v-bmT"/>
                                 </constraints>
                                 <state key="normal" title="DÉCONNEXION">
                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -185,11 +185,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="65o-9c-ZIo"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9Nd-7G-Yrl"/>
+                    <navigationItem key="navigationItem" title="PROFIL" id="9Nd-7G-Yrl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fxa-Rc-WB6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367.19999999999999" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="390" y="-121"/>
         </scene>
     </scenes>
     <resources>

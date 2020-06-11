@@ -27,6 +27,12 @@
 		063554C32486B485000B6ECA /* ChallengeRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063554C22486B485000B6ECA /* ChallengeRoundViewController.swift */; };
 		064D5FB32472A81F005747B4 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */; };
 		0655284F2456CBC000EC2415 /* ListTricksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0655284E2456CBC000EC2415 /* ListTricksViewController.swift */; };
+		065ACD852490BFEB0028EB5E /* crewsade_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD842490BFEB0028EB5E /* crewsade_appTests.swift */; };
+		065ACD912490C8DA0028EB5E /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD902490C8DA0028EB5E /* UserTest.swift */; };
+		065ACD932490D0120028EB5E /* TrickTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD922490D0120028EB5E /* TrickTest.swift */; };
+		065ACD952490D5320028EB5E /* SpotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD942490D5320028EB5E /* SpotTest.swift */; };
+		065ACD982490D9950028EB5E /* UserServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD972490D9950028EB5E /* UserServiceTest.swift */; };
+		065ACD9A24913AAA0028EB5E /* LevelServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065ACD9924913AAA0028EB5E /* LevelServiceTest.swift */; };
 		065C7E2A2472F49A00037CE6 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065C7E292472F49A00037CE6 /* tableView.swift */; };
 		06601D012453187700267E5D /* AR.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06601D002453187700267E5D /* AR.storyboard */; };
 		0669151924687BED003D2B29 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669151824687BED003D2B29 /* CustomTabBar.swift */; };
@@ -83,8 +89,19 @@
 		0F79069F246D11A7008A25B7 /* SpotCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79069E246D11A7008A25B7 /* SpotCreationViewController.swift */; };
 		0F7906A1246D1282008A25B7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A0246D1282008A25B7 /* Spot.swift */; };
 		0F7906A6246D9660008A25B7 /* CarouselUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */; };
+		96B48808B8B88FD4CE256426 /* Pods_crewsade_appTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E4588E45B6C7AFB474BDDF6 /* Pods_crewsade_appTests.framework */; };
 		A70F1FE2DF6C2320A29A832A /* Pods_crewsade_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		065ACD872490BFEB0028EB5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F5D3D2B244D88D200D13D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5D3D32244D88D200D13D0C;
+			remoteInfo = crewsade_app;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		061195D62462C8DC00306DE0 /* CarouselTricksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTricksCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -107,6 +124,14 @@
 		063554C22486B485000B6ECA /* ChallengeRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRoundViewController.swift; sourceTree = "<group>"; };
 		064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0655284E2456CBC000EC2415 /* ListTricksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTricksViewController.swift; sourceTree = "<group>"; };
+		065ACD822490BFEB0028EB5E /* crewsade_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = crewsade_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		065ACD842490BFEB0028EB5E /* crewsade_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crewsade_appTests.swift; sourceTree = "<group>"; };
+		065ACD862490BFEB0028EB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		065ACD902490C8DA0028EB5E /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		065ACD922490D0120028EB5E /* TrickTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrickTest.swift; sourceTree = "<group>"; };
+		065ACD942490D5320028EB5E /* SpotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTest.swift; sourceTree = "<group>"; };
+		065ACD972490D9950028EB5E /* UserServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTest.swift; sourceTree = "<group>"; };
+		065ACD9924913AAA0028EB5E /* LevelServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelServiceTest.swift; sourceTree = "<group>"; };
 		065C7E292472F49A00037CE6 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
 		06601D002453187700267E5D /* AR.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AR.storyboard; sourceTree = "<group>"; };
 		0669151824687BED003D2B29 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
@@ -166,11 +191,22 @@
 		0F7906A0246D1282008A25B7 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		0F7906A5246D9660008A25B7 /* CarouselUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselUsersTableViewCell.swift; sourceTree = "<group>"; };
 		44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.debug.xcconfig"; sourceTree = "<group>"; };
+		782581448E6F21656C57A14D /* Pods-crewsade_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_appTests.release.xcconfig"; path = "Target Support Files/Pods-crewsade_appTests/Pods-crewsade_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E4588E45B6C7AFB474BDDF6 /* Pods_crewsade_appTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_appTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crewsade_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_app.release.xcconfig"; path = "Target Support Files/Pods-crewsade_app/Pods-crewsade_app.release.xcconfig"; sourceTree = "<group>"; };
+		C6E4B0B855CEAF792AF7D5DB /* Pods-crewsade_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crewsade_appTests.debug.xcconfig"; path = "Target Support Files/Pods-crewsade_appTests/Pods-crewsade_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		065ACD7F2490BFEB0028EB5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96B48808B8B88FD4CE256426 /* Pods_crewsade_appTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F5D3D30244D88D200D13D0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +259,36 @@
 				06E37F21246937C3005CBFB4 /* NavigationViewController.swift */,
 			);
 			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
+		065ACD832490BFEB0028EB5E /* crewsade_appTests */ = {
+			isa = PBXGroup;
+			children = (
+				065ACD962490D86F0028EB5E /* Services */,
+				065ACD8C2490C0140028EB5E /* Models */,
+				065ACD842490BFEB0028EB5E /* crewsade_appTests.swift */,
+				065ACD862490BFEB0028EB5E /* Info.plist */,
+			);
+			path = crewsade_appTests;
+			sourceTree = "<group>";
+		};
+		065ACD8C2490C0140028EB5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				065ACD902490C8DA0028EB5E /* UserTest.swift */,
+				065ACD922490D0120028EB5E /* TrickTest.swift */,
+				065ACD942490D5320028EB5E /* SpotTest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		065ACD962490D86F0028EB5E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				065ACD972490D9950028EB5E /* UserServiceTest.swift */,
+				065ACD9924913AAA0028EB5E /* LevelServiceTest.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		06601CFF2453167700267E5D /* ARViewController */ = {
@@ -376,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5D3D35244D88D200D13D0C /* crewsade_app */,
+				065ACD832490BFEB0028EB5E /* crewsade_appTests */,
 				0F5D3D34244D88D200D13D0C /* Products */,
 				3FC52445F4B40F92DDC12E8C /* Pods */,
 				DF7087A665FCF5AC616A4BB3 /* Frameworks */,
@@ -386,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				0F5D3D33244D88D200D13D0C /* crewsade_app.app */,
+				065ACD822490BFEB0028EB5E /* crewsade_appTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -425,6 +493,8 @@
 			children = (
 				44E3BDC00EDFE9D700A79688 /* Pods-crewsade_app.debug.xcconfig */,
 				ABD8AAAEB2A48B0A2BEFA2D7 /* Pods-crewsade_app.release.xcconfig */,
+				C6E4B0B855CEAF792AF7D5DB /* Pods-crewsade_appTests.debug.xcconfig */,
+				782581448E6F21656C57A14D /* Pods-crewsade_appTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -434,6 +504,7 @@
 			children = (
 				064D5FB22472A81F005747B4 /* MapboxMobileEvents.framework */,
 				97C5C50E0F4C9ED416B8CAE5 /* Pods_crewsade_app.framework */,
+				8E4588E45B6C7AFB474BDDF6 /* Pods_crewsade_appTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -441,6 +512,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		065ACD812490BFEB0028EB5E /* crewsade_appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 065ACD8B2490BFEB0028EB5E /* Build configuration list for PBXNativeTarget "crewsade_appTests" */;
+			buildPhases = (
+				603FAD507B6125029D180C67 /* [CP] Check Pods Manifest.lock */,
+				065ACD7E2490BFEB0028EB5E /* Sources */,
+				065ACD7F2490BFEB0028EB5E /* Frameworks */,
+				065ACD802490BFEB0028EB5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				065ACD882490BFEB0028EB5E /* PBXTargetDependency */,
+			);
+			name = crewsade_appTests;
+			productName = crewsade_appTests;
+			productReference = 065ACD822490BFEB0028EB5E /* crewsade_appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0F5D3D32244D88D200D13D0C /* crewsade_app */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F5D3D47244D88D500D13D0C /* Build configuration list for PBXNativeTarget "crewsade_app" */;
@@ -467,10 +557,14 @@
 		0F5D3D2B244D88D200D13D0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lou Batier";
 				TargetAttributes = {
+					065ACD812490BFEB0028EB5E = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 0F5D3D32244D88D200D13D0C;
+					};
 					0F5D3D32244D88D200D13D0C = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -490,11 +584,19 @@
 			projectRoot = "";
 			targets = (
 				0F5D3D32244D88D200D13D0C /* crewsade_app */,
+				065ACD812490BFEB0028EB5E /* crewsade_appTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		065ACD802490BFEB0028EB5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F5D3D31244D88D200D13D0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,6 +622,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		603FAD507B6125029D180C67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-crewsade_appTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		85B6D729DF078544FB728B29 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -579,6 +703,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		065ACD7E2490BFEB0028EB5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				065ACD912490C8DA0028EB5E /* UserTest.swift in Sources */,
+				065ACD932490D0120028EB5E /* TrickTest.swift in Sources */,
+				065ACD9A24913AAA0028EB5E /* LevelServiceTest.swift in Sources */,
+				065ACD852490BFEB0028EB5E /* crewsade_appTests.swift in Sources */,
+				065ACD982490D9950028EB5E /* UserServiceTest.swift in Sources */,
+				065ACD952490D5320028EB5E /* SpotTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0F5D3D2F244D88D200D13D0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -648,6 +785,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		065ACD882490BFEB0028EB5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0F5D3D32244D88D200D13D0C /* crewsade_app */;
+			targetProxy = 065ACD872490BFEB0028EB5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0F5D3D3C244D88D200D13D0C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -668,6 +813,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		065ACD892490BFEB0028EB5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E4B0B855CEAF792AF7D5DB /* Pods-crewsade_appTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC97RBW2Y8;
+				INFOPLIST_FILE = crewsade_appTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hugolefrant.crewsade-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crewsade_app.app/crewsade_app";
+			};
+			name = Debug;
+		};
+		065ACD8A2490BFEB0028EB5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 782581448E6F21656C57A14D /* Pods-crewsade_appTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC97RBW2Y8;
+				INFOPLIST_FILE = crewsade_appTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hugolefrant.crewsade-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/crewsade_app.app/crewsade_app";
+			};
+			name = Release;
+		};
 		0F5D3D45244D88D500D13D0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -825,6 +1014,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		065ACD8B2490BFEB0028EB5E /* Build configuration list for PBXNativeTarget "crewsade_appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				065ACD892490BFEB0028EB5E /* Debug */,
+				065ACD8A2490BFEB0028EB5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0F5D3D2E244D88D200D13D0C /* Build configuration list for PBXProject "crewsade_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

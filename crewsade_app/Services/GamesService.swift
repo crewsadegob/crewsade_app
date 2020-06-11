@@ -15,7 +15,6 @@ import CoreLocation
 
 
 class GamesService {
-    //TODO: Grosse refacto !!!
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
     var players = [User]()
@@ -23,7 +22,7 @@ class GamesService {
     
     let locationManager = CLLocationManager()
     let geofire = GeoFirestore(collectionRef: Firestore.firestore().collection("geofire"))
-    //Don't append is user is in challenge
+
     func getPlayers(completionHandler: @escaping (_ result: [User]?) -> Void) {
         
         let usersRef = db.collection("users")
@@ -115,7 +114,7 @@ class GamesService {
         
     }
     
-
+    
     
     func checkIsUserChallenged(view: UIViewController){
         if let user = user{
@@ -127,9 +126,9 @@ class GamesService {
                         if let challengeData = player.get("challenge") as? [String: Any]{
                             if let state = challengeData["state"] as? Bool{
                                 if state{
-                                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
-                                    let mainViewController = mainStoryboard.instantiateViewController(identifier: "challengeInvitation")
-                                    view.show(mainViewController, sender: nil)
+                                    view.showStoryboard(storyboard: "Games", identifier: "challengeInvitation")
+                                    
+
                                 }
                             }
                         }
@@ -250,39 +249,33 @@ class GamesService {
     
     func getInformationsChallenge(userId: String,completionHandler: @escaping (_ result: [User]?) -> Void){
         var playersArray = [User]()
-        self.db.collection("users").document(userId).getDocument{(document, error) in
-            if let user = document, document!.exists{
-                if let challenge = user.get("challenge") as? [String: Any]{
-                    if let sessionId = challenge["referenceId"] as? String{
-                        let group =  DispatchGroup()
-                        self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{(players, err) in
-                            if let player = players, players!.exists {
-                                let dataPlayer1 = player.get("Player1") as? [String: Any]
-                                let dataPlayer2 = player.get("Player2") as? [String: Any]
-                                
-                                let playersId = [dataPlayer1!["UserId"] as! String, dataPlayer2!["UserId"] as! String]
-                                
-                                for playerId in playersId{
-                                    group.enter()
-                                    UserService().getUserInformations(id: playerId){result in
-                                        if let user = result{
-                                            playersArray.append(User(username: user.username, Image: user.Image, id: user.id,stats: user.stats))
-                                            group.leave()
-                                        }
-                                    }
-                                }
-                                group.notify(queue: .main, execute: {
-                                    completionHandler(playersArray)
-                                })
-                                
-                            } else {
-                                print("Document does not exist")
-                                completionHandler(nil)
+        SessionService().getSession(){sessionId in
+            let group =  DispatchGroup()
+            self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).addSnapshotListener{(players, err) in
+                if let player = players, players!.exists {
+                    let dataPlayer1 = player.get("Player1") as? [String: Any]
+                    let dataPlayer2 = player.get("Player2") as? [String: Any]
+                    
+                    let playersId = [dataPlayer1!["UserId"] as! String, dataPlayer2!["UserId"] as! String]
+                    
+                    for playerId in playersId{
+                        group.enter()
+                        UserService().getUserInformations(id: playerId){result in
+                            if let user = result{
+                                playersArray.append(User(username: user.username, Image: user.Image, id: user.id,stats: user.stats))
+                                group.leave()
                             }
-                            
                         }
                     }
+                    group.notify(queue: .main, execute: {
+                        completionHandler(playersArray)
+                    })
+                    
+                } else {
+                    print("Document does not exist")
+                    completionHandler(nil)
                 }
+                
             }
         }
     }
@@ -297,9 +290,8 @@ class GamesService {
                     if let state = session.get("create") as? Bool{
                         if state && self.i == 0{
                             self.i += 1
-                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Games", bundle: nil)
-                            let mainViewController = mainStoryboard.instantiateViewController(identifier: "gameStart")
-                            view.show(mainViewController, sender: nil)
+                           
+                            view.showStoryboard(storyboard: "Games", identifier: "gameStart")
                             
                             SessionService().beginner(sessionId: sessionId)
                         }
