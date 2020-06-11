@@ -79,6 +79,7 @@ class SpotDetailViewController: UIViewController {
         spot.getDocument { (spot, error) in
             if let spot = spot, spot.exists {
                 
+                // FIXME: Passer le paramètre en Spot()
                 self.buildDetailView(name: spot.get("name") as! String, location: spot.get("l") as! GeoPoint, image: spot.get("image") as! String)
 
             } else {

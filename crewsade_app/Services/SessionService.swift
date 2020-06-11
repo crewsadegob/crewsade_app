@@ -490,7 +490,7 @@ class SessionService{
     
     func endSession(){
         if let user = user{
-            self.getSession(){sessionId in
+            self.getSession() { sessionId in
                 self.db.collection("games").document("OUT").collection("Sessions").document(sessionId).delete() { err in
                     if let err = err {
                         print("Document doesn't exist: \(err)")

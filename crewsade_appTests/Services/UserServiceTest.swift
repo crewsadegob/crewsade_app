@@ -11,6 +11,7 @@ import XCTest
 
 class UserServiceTest: XCTestCase {
 
+    // FIXME: getUserInformation() asynchrone donc le test executé en synchrone va se finir de suite sans tester
     func testGetInformationsUser(){
         UserService().getUserInformations(id: "1z38Vvou88RUmFUDnH109tQeqwX2"){user in
             XCTAssertEqual("hugo2", user?.username)

@@ -54,6 +54,7 @@ class MapViewController: ViewController {
             print("Location services are not enabled")
         }
     }
+    
     private func setCrewsadeNavigation(){
         UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
