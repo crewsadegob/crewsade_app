@@ -196,6 +196,8 @@ class SpotDetailViewController: UIViewController {
                     let spotLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
                     let userLocation = CLLocation(latitude: user.latitude, longitude: user.longitude)
                     let distance = round(spotLocation.distance(from: userLocation))
+                    
+                    // FIXME: Gérer les cas où il serait plus pertinent de s'exprimer en km
                     spotDistanceLabel.text = "\(distance)m"
                 @unknown default:
                 break
