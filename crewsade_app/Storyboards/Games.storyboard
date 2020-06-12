@@ -49,8 +49,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2R2-aj-jPK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9k-w3-WoD">
-                                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9k-w3-WoD">
+                                                <rect key="frame" x="0.0" y="-190" width="375" height="667"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="ui-background"/>
                                                 <connections>
@@ -93,12 +94,8 @@
                                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="O9k-w3-WoD" secondAttribute="bottom" constant="-372" id="Ca8-2a-Q2y"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="Cls-8c-df0"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerY" secondItem="2R2-aj-jPK" secondAttribute="centerY" id="Rc8-ml-TwJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="O9k-w3-WoD" secondAttribute="trailing" id="WTb-Aw-KBO"/>
-                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="leading" secondItem="2R2-aj-jPK" secondAttribute="leading" id="boW-Hm-IGl"/>
-                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="top" constant="-8" id="sbw-BY-O63"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-pc-5oU">
@@ -196,7 +193,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OeT-fX-HKW">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OeT-fX-HKW">
                                                     <rect key="frame" x="15" y="20" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="Csf-Jo-dSV"/>
@@ -287,14 +284,14 @@
                                         <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUi-vd-G8g">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MUi-vd-G8g">
                                         <rect key="frame" x="40" y="274" width="103" height="102"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="102" id="a6t-YQ-ev9"/>
                                             <constraint firstAttribute="width" constant="103" id="n4I-E8-FD3"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-R4-Iin">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-R4-Iin">
                                         <rect key="frame" x="231" y="274" width="103" height="102"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="102" id="3cv-5K-VbD"/>
@@ -372,7 +369,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-j1-fNU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DIh-j1-fNU">
                                 <rect key="frame" x="147.5" y="227" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="GEc-G5-S09"/>
@@ -581,7 +578,7 @@
                                 <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E7N-YZ-soL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E7N-YZ-soL">
                                 <rect key="frame" x="147.5" y="25" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="05Y-CH-0iw"/>
