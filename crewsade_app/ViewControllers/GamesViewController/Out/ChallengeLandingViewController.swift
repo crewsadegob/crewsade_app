@@ -29,6 +29,7 @@ class ChallengeLandingViewController: UIViewController {
         
         imagePlayer1.setRoundedImage()
         imagePlayer2.setRoundedImage()
+        hideNavigation()
         
         if let user = user{
             GamesService().getInformationsChallenge(userId: user.uid){ result in

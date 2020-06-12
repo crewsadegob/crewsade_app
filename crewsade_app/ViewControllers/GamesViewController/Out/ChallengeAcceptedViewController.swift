@@ -30,6 +30,7 @@ class ChallengeAcceptedViewController: UIViewController {
         
         challengerImage.setRoundedImage()
         SessionService().setRound(view: self)
+        hideNavigation()
         
         SessionService().getChallengerInformations() { result in
             if let challenger = result{

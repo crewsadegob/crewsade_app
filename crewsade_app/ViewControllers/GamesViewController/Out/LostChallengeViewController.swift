@@ -19,6 +19,8 @@ class LostChallengeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hideNavigation()
 
         SessionService().manageScore(){result in
             self.scoreLabel.setOutlineTextByScore(score: result)

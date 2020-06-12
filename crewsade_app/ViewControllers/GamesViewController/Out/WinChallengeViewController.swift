@@ -21,6 +21,7 @@ class WinChallengeViewController: UIViewController {
         super.viewDidLoad()
 
         UserService().updateVictory()
+        hideNavigation()
 
         SessionService().manageScore(){result in
             self.scoreLabel.setOutlineTextByScore(score: result)

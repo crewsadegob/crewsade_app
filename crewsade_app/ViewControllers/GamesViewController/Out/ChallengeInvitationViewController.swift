@@ -24,6 +24,8 @@ class ChallengeInvitationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideNavigation()
+        
         imageView.setRoundedImage()
         
         if let user = user {
