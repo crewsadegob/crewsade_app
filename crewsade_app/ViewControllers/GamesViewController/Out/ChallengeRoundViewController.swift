@@ -30,8 +30,6 @@ class ChallengeRoundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideNavigation()
-        
         SessionService().getPlayersDataGames(){ result in
             self.usernamePlayer1.text = result.player1.username
             self.scorePlayer1.setOutlineTextByScore(score: result.player1.score)

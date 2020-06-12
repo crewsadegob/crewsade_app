@@ -19,6 +19,7 @@ class ChallengeAcceptedViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var challengerName: UILabel!
     @IBOutlet weak var challengerImage: UIImageView!
+    @IBOutlet weak var votingChallengerName: UILabel!
     
     let user = Auth.auth().currentUser
     
@@ -29,24 +30,28 @@ class ChallengeAcceptedViewController: UIViewController {
         
         challengerImage.setRoundedImage()
         SessionService().setRound(view: self)
-
-        self.hideNavigation()
+        
+        SessionService().getChallengerInformations() { result in
+            if let challenger = result{
+                self.votingChallengerName.text = challenger.username
+            }
+        }
 
         if let user = user{
             SessionService().setViewPlayer(userId: user.uid){ result in
 
-                if result == user.uid{
+                if result == user.uid {
                     self.notPlaying.isHidden = true
                     self.isPlaying.isHidden = false
                     SessionService().manageScore(){result in
-                               self.scoreLabel.setOutlineTextByScore(score: result)
-                           }
-                }else{
+                       self.scoreLabel.setOutlineTextByScore(score: result)
+                    }
+                } else {
                     self.isPlaying.isHidden = true
                     self.notPlaying.isHidden = false
-
+                    
                     SessionService().manageScore(){result in
-                               self.scoreLabel.setOutlineTextByScore(score: result)
+                       self.scoreLabel.setOutlineTextByScore(score: result)
                     }
                 }
             }

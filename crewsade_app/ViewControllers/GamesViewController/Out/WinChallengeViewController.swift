@@ -20,7 +20,6 @@ class WinChallengeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.hideNavigation()
         UserService().updateVictory()
 
         SessionService().manageScore(){result in
@@ -38,7 +37,6 @@ class WinChallengeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.displayNavigation()
         SessionService().endSession()
     }
 }

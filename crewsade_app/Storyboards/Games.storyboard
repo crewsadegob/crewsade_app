@@ -148,12 +148,14 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="2R2-aj-jPK" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="Ege-Ut-gjF"/>
                                     <constraint firstItem="2R2-aj-jPK" firstAttribute="top" secondItem="vDs-cY-7Up" secondAttribute="top" id="KfU-lE-bDS"/>
                                     <constraint firstAttribute="trailing" secondItem="g9S-pc-5oU" secondAttribute="trailing" id="SZG-az-J3h"/>
                                     <constraint firstAttribute="trailing" secondItem="2R2-aj-jPK" secondAttribute="trailing" id="btd-6U-sHC"/>
                                     <constraint firstItem="g9S-pc-5oU" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="gua-hV-Lre"/>
                                     <constraint firstItem="g9S-pc-5oU" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="bottom" id="mI6-e5-qWa"/>
                                     <constraint firstItem="2R2-aj-jPK" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="qMB-fQ-w4n"/>
+                                    <constraint firstAttribute="trailing" secondItem="2R2-aj-jPK" secondAttribute="trailing" id="tPs-WZ-MSm"/>
                                     <constraint firstAttribute="bottom" secondItem="g9S-pc-5oU" secondAttribute="bottom" id="xeG-JQ-gu1"/>
                                 </constraints>
                             </stackView>
@@ -624,6 +626,7 @@
                         <outlet property="isPlaying" destination="LSe-92-ShQ" id="hmA-j3-xx2"/>
                         <outlet property="notPlaying" destination="8by-AL-afI" id="JXB-eA-f2B"/>
                         <outlet property="scoreLabel" destination="lIu-vg-dEJ" id="07x-az-1TS"/>
+                        <outlet property="votingChallengerName" destination="LvT-ml-3rA" id="64G-yL-azL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t86-BW-lIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
