@@ -106,7 +106,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picturePicker" translatesAutoresizingMaskIntoConstraints="NO" id="znu-w6-sBs">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-user_picker" translatesAutoresizingMaskIntoConstraints="NO" id="znu-w6-sBs">
                                 <rect key="frame" x="127.5" y="60" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -123,7 +123,7 @@
                                     <constraint firstAttribute="height" constant="15" id="4Yg-QX-LA5"/>
                                     <constraint firstAttribute="width" constant="24" id="sxq-QN-PH8"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="eyeClose"/>
+                                <state key="normal" backgroundImage="icon-eye_closed"/>
                                 <connections>
                                     <action selector="showPassword:" destination="Sle-FI-nEr" eventType="touchUpInside" id="VVI-IZ-7dq"/>
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="zOM-Gz-ML9"/>
@@ -259,7 +259,7 @@
                                             <action selector="googleButtonclicked:" destination="qmW-vq-Xne" eventType="touchUpInside" id="U19-TB-1iu"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-h8-hNV">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui-separator" translatesAutoresizingMaskIntoConstraints="NO" id="Pp9-h8-hNV">
                                         <rect key="frame" x="0.0" y="-29" width="375" height="50"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-Ih-neh">
@@ -354,7 +354,7 @@
                                     <constraint firstAttribute="width" constant="25" id="aaN-LI-8rc"/>
                                     <constraint firstAttribute="height" constant="15" id="hVM-g6-coo"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="eyeClose"/>
+                                <state key="normal" backgroundImage="icon-eye_closed"/>
                                 <connections>
                                     <action selector="showPassword:" destination="qmW-vq-Xne" eventType="touchUpInside" id="0df-dr-KyQ"/>
                                 </connections>
@@ -483,9 +483,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eyeClose" width="24" height="16"/>
+        <image name="icon-eye_closed" width="24" height="16"/>
         <image name="illustration-onboard_4" width="375" height="460"/>
-        <image name="picturePicker" width="120" height="120"/>
-        <image name="separator" width="375" height="50"/>
+        <image name="placeholder-user_picker" width="120" height="120"/>
+        <image name="ui-separator" width="375" height="50"/>
     </resources>
 </document>
