@@ -272,13 +272,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9v-Wz-szo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACCEPTEZ-VOUS LE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3N-VG-fbo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EN ATTENTE DE VOTRE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3N-VG-fbo">
                                         <rect key="frame" x="80" y="103" width="215" height="17"/>
                                         <fontDescription key="fontDescription" name="Polly-Regular" family="Polly" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHALLENGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29K-44-EZj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADVERSAIRE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29K-44-EZj">
                                         <rect key="frame" x="30" y="135" width="315" height="69"/>
                                         <fontDescription key="fontDescription" name="TuskerGrotesk-4500Medium" family="Tusker Grotesk" pointSize="65"/>
                                         <color key="textColor" red="1" green="0.98823529409999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -343,9 +343,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="f9v-Wz-szo" firstAttribute="leading" secondItem="QQQ-7P-f8K" secondAttribute="leading" id="JW8-hc-zQL"/>
+                            <constraint firstItem="QQQ-7P-f8K" firstAttribute="bottom" secondItem="f9v-Wz-szo" secondAttribute="bottom" id="a5p-3Z-4Ly"/>
                             <constraint firstItem="QQQ-7P-f8K" firstAttribute="trailing" secondItem="f9v-Wz-szo" secondAttribute="trailing" id="hvY-o0-Mpn"/>
                             <constraint firstItem="f9v-Wz-szo" firstAttribute="top" secondItem="QQQ-7P-f8K" secondAttribute="top" id="pre-IT-kDc"/>
-                            <constraint firstItem="QQQ-7P-f8K" firstAttribute="bottom" secondItem="f9v-Wz-szo" secondAttribute="bottom" id="sGc-Mg-I0o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QQQ-7P-f8K"/>
                     </view>
