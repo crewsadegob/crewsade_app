@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -50,7 +50,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9k-w3-WoD">
+
                                                 <rect key="frame" x="0.0" y="-190" width="375" height="667"/>
+
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="ui-background"/>
                                                 <connections>
@@ -93,11 +95,13 @@
                                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="leading" secondItem="2R2-aj-jPK" secondAttribute="leading" id="AP8-27-wON"/>
+                                            <constraint firstAttribute="trailing" secondItem="O9k-w3-WoD" secondAttribute="trailing" id="5Oi-Xz-VZ9"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="Cls-8c-df0"/>
-                                            <constraint firstAttribute="bottom" secondItem="O9k-w3-WoD" secondAttribute="bottom" constant="-190" id="PCQ-9U-PPB"/>
+                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="top" id="Gxw-wj-LX9"/>
+                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="leading" secondItem="2R2-aj-jPK" secondAttribute="leading" id="Ncj-Mx-B8t"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerY" secondItem="2R2-aj-jPK" secondAttribute="centerY" id="Rc8-ml-TwJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="O9k-w3-WoD" secondAttribute="trailing" id="m0P-xe-WpZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="O9k-w3-WoD" secondAttribute="bottom" constant="-0.33333333333331439" id="dqh-4L-5cF"/>
+
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-pc-5oU">
@@ -174,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j6-b8-bty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40.799999999999997" y="102.09895052473765"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="101.78571428571428"/>
         </scene>
         <!--OUT-->
         <scene sceneID="W7w-0m-rwU">

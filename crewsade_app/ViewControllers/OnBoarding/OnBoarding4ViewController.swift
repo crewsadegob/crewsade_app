@@ -40,8 +40,8 @@ class OnBoarding4ViewController: UIViewController {
                 print("Swiped down")
             case UISwipeGestureRecognizer.Direction.left:
                 
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Sign", bundle: nil)
-                let mainViewController = mainStoryboard.instantiateViewController(identifier: "SignView")
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
                 self.show(mainViewController, sender: nil)
                 
             case UISwipeGestureRecognizer.Direction.up:
