@@ -49,9 +49,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2R2-aj-jPK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="287"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9k-w3-WoD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9k-w3-WoD">
                                                 <rect key="frame" x="0.0" y="-190" width="375" height="667"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="ui-background"/>
                                                 <connections>
@@ -94,8 +93,11 @@
                                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="O9k-w3-WoD" firstAttribute="leading" secondItem="2R2-aj-jPK" secondAttribute="leading" id="AP8-27-wON"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerX" secondItem="2R2-aj-jPK" secondAttribute="centerX" id="Cls-8c-df0"/>
+                                            <constraint firstAttribute="bottom" secondItem="O9k-w3-WoD" secondAttribute="bottom" constant="-190" id="PCQ-9U-PPB"/>
                                             <constraint firstItem="j23-ra-NNn" firstAttribute="centerY" secondItem="2R2-aj-jPK" secondAttribute="centerY" id="Rc8-ml-TwJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="O9k-w3-WoD" secondAttribute="trailing" id="m0P-xe-WpZ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9S-pc-5oU">
@@ -149,23 +151,21 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2R2-aj-jPK" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="Ege-Ut-gjF"/>
+                                    <constraint firstAttribute="trailing" secondItem="g9S-pc-5oU" secondAttribute="trailing" id="HJk-YK-CDE"/>
                                     <constraint firstItem="2R2-aj-jPK" firstAttribute="top" secondItem="vDs-cY-7Up" secondAttribute="top" id="KfU-lE-bDS"/>
-                                    <constraint firstAttribute="trailing" secondItem="g9S-pc-5oU" secondAttribute="trailing" id="SZG-az-J3h"/>
+                                    <constraint firstItem="g9S-pc-5oU" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="Wqy-93-fn6"/>
                                     <constraint firstAttribute="trailing" secondItem="2R2-aj-jPK" secondAttribute="trailing" id="btd-6U-sHC"/>
-                                    <constraint firstItem="g9S-pc-5oU" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="gua-hV-Lre"/>
                                     <constraint firstItem="g9S-pc-5oU" firstAttribute="top" secondItem="2R2-aj-jPK" secondAttribute="bottom" id="mI6-e5-qWa"/>
-                                    <constraint firstItem="2R2-aj-jPK" firstAttribute="leading" secondItem="vDs-cY-7Up" secondAttribute="leading" id="qMB-fQ-w4n"/>
-                                    <constraint firstAttribute="trailing" secondItem="2R2-aj-jPK" secondAttribute="trailing" id="tPs-WZ-MSm"/>
                                     <constraint firstAttribute="bottom" secondItem="g9S-pc-5oU" secondAttribute="bottom" id="xeG-JQ-gu1"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vDs-cY-7Up" firstAttribute="top" secondItem="Pi3-MB-sjO" secondAttribute="top" id="K4a-La-apv"/>
-                            <constraint firstItem="Pi3-MB-sjO" firstAttribute="bottom" secondItem="vDs-cY-7Up" secondAttribute="bottom" id="Sqq-Vb-I1E"/>
-                            <constraint firstItem="vDs-cY-7Up" firstAttribute="leading" secondItem="Pi3-MB-sjO" secondAttribute="leading" id="gh7-1s-u8x"/>
-                            <constraint firstItem="Pi3-MB-sjO" firstAttribute="trailing" secondItem="vDs-cY-7Up" secondAttribute="trailing" id="zaU-ZJ-A9s"/>
+                            <constraint firstItem="Pi3-MB-sjO" firstAttribute="trailing" secondItem="vDs-cY-7Up" secondAttribute="trailing" id="Oll-HY-TE4"/>
+                            <constraint firstItem="vDs-cY-7Up" firstAttribute="leading" secondItem="Pi3-MB-sjO" secondAttribute="leading" id="T1C-Vi-lLl"/>
+                            <constraint firstItem="Pi3-MB-sjO" firstAttribute="bottom" secondItem="vDs-cY-7Up" secondAttribute="bottom" id="Tv8-4a-rWm"/>
+                            <constraint firstItem="vDs-cY-7Up" firstAttribute="top" secondItem="Pi3-MB-sjO" secondAttribute="top" id="kjE-Px-uPk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pi3-MB-sjO"/>
                     </view>

@@ -33,7 +33,7 @@ class MapViewController: ViewController {
         setCrewsadeNavigation()
         setupLocationManager()
         customizeInterface()
-
+        updateLocation()
         
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
@@ -111,7 +111,7 @@ class MapViewController: ViewController {
     func updateLocation() {
         UserService().updateUserLocation(location: locationManager.location!.coordinate)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 300.0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { [weak self] in
             self?.updateLocation()
         }
     }
