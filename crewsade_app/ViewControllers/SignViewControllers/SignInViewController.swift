@@ -61,7 +61,7 @@ class SignInViewController: UIViewController {
                 guard let `self` = self else { return }
                 if (success) {
                     self.indicator.stopAnimating()
-                    self.switchToMainStoryboard()
+                    self.showStoryboard(storyboard: "OnBoarding", identifier: "OnBoarding")
                 } else {
                     self.indicator.stopAnimating()
                     print("There was an error.")
@@ -84,13 +84,5 @@ class SignInViewController: UIViewController {
         }
         
         showPasswordIcon = !showPasswordIcon
-    }
-    
-// MARK: - METHODS
-    
-    private func switchToMainStoryboard(){
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
-        self.show(mainViewController, sender: nil)
     }
 }

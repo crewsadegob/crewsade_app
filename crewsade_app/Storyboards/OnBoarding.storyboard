@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EUU-2B-MmZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kew-FS-P6J">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -12,33 +12,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="XNB-qv-X7U">
-            <objects>
-                <navigationController storyboardIdentifier="OnBoarding" id="EUU-2B-MmZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UsM-d9-5aD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Kew-FS-P6J" kind="relationship" relationship="rootViewController" id="gnQ-ys-dei"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gFI-eH-YQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-663" y="95"/>
-        </scene>
         <!--On Boarding View Controller-->
         <scene sceneID="KN3-lV-BC2">
             <objects>
-                <viewController id="Kew-FS-P6J" customClass="OnBoardingViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnBoarding" id="Kew-FS-P6J" customClass="OnBoardingViewController" customModule="crewsade_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KWA-JY-aqO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conquiert les spots de ta villes et découvre de nouveaux territoires à explorer grace à la carte des spots." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWj-th-ppe">
-                                <rect key="frame" x="30" y="495" width="314" height="108"/>
+                                <rect key="frame" x="30" y="539" width="314" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="108" id="Nsg-6K-MUu"/>
                                 </constraints>
@@ -47,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illustration-onboard_1" translatesAutoresizingMaskIntoConstraints="NO" id="mK3-RO-W7u">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="606"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="650"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.17245867849999999" green="0.1724938452" blue="0.17245113849999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

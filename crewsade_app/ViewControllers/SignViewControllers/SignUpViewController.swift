@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 guard let `self` = self else { return }
                 if (success) {
                     self.indicator.stopAnimating()
-                    self.switchToMainStoryboard()
+                    self.showStoryboard(storyboard: "OnBoarding", identifier: "OnBoarding")
                 } else {
                     self.indicator.stopAnimating()
                     print("Error")
@@ -117,12 +117,6 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    private func switchToMainStoryboard(){
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = mainStoryboard.instantiateViewController(identifier: "TabBar")
-        self.show(mainViewController, sender: nil)
     }
 }
 

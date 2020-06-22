@@ -32,6 +32,7 @@ class ARViewController: ViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = false
         nameTrick.text = trick?.uppercased()
+        
         loadScene()
     }
     
@@ -117,6 +118,8 @@ class ARViewController: ViewController, ARSCNViewDelegate {
             for childNode in childNodes {
                 sceneNode.addChildNode(childNode)
             }
+            sceneView.scene.lightingEnvironment.contents = scene.lightingEnvironment.contents
+
         }
     }
     
