@@ -33,7 +33,7 @@ class GamesService {
                 } else if let location = location {
                     
                     let center = GeoPoint(latitude: location.latitude, longitude: location.longitude)
-                    let rangeQuery = usersCol.query(withCenter: center, radius: 1)
+                    let rangeQuery = usersCol.query(withCenter: center, radius: 0.05)
                     print("Centre de la zone du spot : \(center)")
                     
                     let _ = rangeQuery.observe(.documentEntered, with: { (key, location) in
