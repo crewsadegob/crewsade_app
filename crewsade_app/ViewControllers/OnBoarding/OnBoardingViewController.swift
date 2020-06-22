@@ -18,7 +18,7 @@ class OnBoardingViewController: UIViewController {
     
     @IBOutlet weak var OnBoardingButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var onboardingVisual: UIImageView!
+    @IBOutlet weak var onboardingVisual: SDAnimatedImageView!
     
 // MARK: - LIFECYCLE & OVERRIDES
     
@@ -34,12 +34,9 @@ class OnBoardingViewController: UIViewController {
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
         
-        let imageView = SDAnimatedImageView()
-        let image = SDAnimatedImage(named: "gif-onboarding_1")
-        imageView.image = image
-        onboardingVisual.addSubview(imageView)
+        let gifUrl = "https://firebasestorage.googleapis.com/v0/b/crewsade-f8c30.appspot.com/o/gifs%2Fgif-onboarding_1.gif?alt=media&token=18782400-7ce2-4d2b-999f-7899bfee130e"
         
-        
+        onboardingVisual.sd_setImage(with: URL(string: gifUrl))
         
     }
     

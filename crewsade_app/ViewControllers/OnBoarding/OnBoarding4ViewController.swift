@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class OnBoarding4ViewController: UIViewController {
     
 // MARK: - VARIABLES
     
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var onboardingVisual: SDAnimatedImageView!
     
-// MARK: - LIFECYCLE & OVERRIDES
+    // MARK: - LIFECYCLE & OVERRIDES
     
     override func viewDidLoad() {
         
@@ -26,6 +28,10 @@ class OnBoarding4ViewController: UIViewController {
         
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
+        
+        let gifUrl = "https://firebasestorage.googleapis.com/v0/b/crewsade-f8c30.appspot.com/o/gifs%2FShow-off-min.gif?alt=media&token=8063867d-96d2-4e6b-8eeb-87517332fa2f"
+        
+        onboardingVisual.sd_setImage(with: URL(string: gifUrl))
         
     }
     
