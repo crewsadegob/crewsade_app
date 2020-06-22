@@ -378,11 +378,11 @@
 				06849F552481558A00E10CFB /* UIViewController.swift */,
 				0F15416F2486AA5D00036B25 /* UILabelPadding.swift */,
 				069A91592483C1C7007432C9 /* UIImageView.swift */,
+				0F8BCDE62491A5A10013138C /* UIImage.swift */,
 				0F8BCDD8248FD7840013138C /* UIView.swift */,
 				0F8BCDD2248F76A40013138C /* CustomUserLocation.swift */,
 				0F8BCDDC2490CDC90013138C /* CrewsadeTabBar.swift */,
 				0F8BCDE22491236D0013138C /* CrewsadeTabBar.xib */,
-				0F8BCDE62491A5A10013138C /* UIImage.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";

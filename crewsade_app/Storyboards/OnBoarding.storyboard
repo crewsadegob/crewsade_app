@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kew-FS-P6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kew-FS-P6J">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -47,6 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KfT-ym-JnJ"/>
                     <connections>
+                        <outlet property="onboardingVisual" destination="mK3-RO-W7u" id="rPu-Sx-5tM"/>
                         <outlet property="textLabel" destination="sWj-th-ppe" id="WbQ-e9-VuQ"/>
                     </connections>
                 </viewController>

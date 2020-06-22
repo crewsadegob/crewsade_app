@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 // TODO: S'inspirer du fonctionnement de l'héritage de ViewController avec la TabBar pour refacto le code des 4 ViewControllers
 // de l'onboarding
@@ -17,6 +18,7 @@ class OnBoardingViewController: UIViewController {
     
     @IBOutlet weak var OnBoardingButton: UIButton!
     @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var onboardingVisual: UIImageView!
     
 // MARK: - LIFECYCLE & OVERRIDES
     
@@ -31,6 +33,13 @@ class OnBoardingViewController: UIViewController {
         
         textLabel.setUppercased()
         textLabel.setLineSpacing(lineSpacing: 6.0)
+        
+        let imageView = SDAnimatedImageView()
+        let image = SDAnimatedImage(named: "gif-onboarding_1")
+        imageView.image = image
+        onboardingVisual.addSubview(imageView)
+        
+        
         
     }
     
